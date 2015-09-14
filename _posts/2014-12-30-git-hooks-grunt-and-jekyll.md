@@ -10,7 +10,7 @@ resources:
 - text: An example post-receive Git hook
   url: https://gist.github.com/goodguyry/60661091c2bb68d9574c
 - text: My Gruntfile
-  url: https://github.com/goodguyry/ryandomingue.com/blob/master/Gruntfile.js
+  url: https://github.com/goodguyry/goodguyry.me/blob/master/Gruntfile.js
 
 ---
 

@@ -21,7 +21,7 @@ module.exports = function(grunt) {
     criticalcss: {
       home: {
         options: {
-          url: 'http://ryandomingue.dev',
+          url: 'http://goodguyry.dev',
           filename: '_site/css/base.css',
           outputfile: 'css/_critical.css',
           forceInclude: ['nav', 'footer'],
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
       },
       post: {
         options: {
-          url: 'http://ryandomingue.dev/thoughts-and-ramblings/multi-tenant-wordpress.html',
+          url: 'http://goodguyry.dev/thoughts-and-ramblings/multi-tenant-wordpress.html',
           filename: '_site/css/base.css',
           outputfile: 'css/_critical.post.css',
           forceInclude: ['nav'],

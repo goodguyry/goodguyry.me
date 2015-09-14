@@ -1,5 +1,5 @@
 {
-  "name": "ryandomingue.com",
+  "name": "goodguyry.me",
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
@@ -10,9 +10,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/gooydguyry/ryandomingue.com"
+    "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "author": "Ryan Domingue",
   "license": "GPL",
-  "homepage": "https://github.com/gooydguyry/ryandomingue.com"
+  "homepage": "https://github.com/goodguyry/goodguyry.me"
 }
