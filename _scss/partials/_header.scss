@@ -30,14 +30,10 @@ nav {
   li {
     float: left;
 
-    &:before {
+    &:not(:first-child):before {
       content: '/';
       display: inline;
       margin: 0 0.5rem;
-    }
-
-    &:first-of-type:before {
-      display: none;
     }
   }
 }
