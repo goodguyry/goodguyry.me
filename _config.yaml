@@ -4,7 +4,6 @@ description: 'Ryan Domingue works with HTML, CSS and JavaScript, and spends his 
 permalink: /notes/:title.html
 
 # Development/Serve
-host: goodguyry.dev # local vhost
 port: 8080
 
 # Build settings
