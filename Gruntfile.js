@@ -18,6 +18,14 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      loadCSS: {
+        files: {
+          '_includes/loadcss.min.js': '_loadCSS/loadCSS.js'
+        }
+      }
+    },
+
     criticalcss: {
       home: {
         options: {
@@ -100,7 +108,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'default',
     [
-      // 'imagemin',
+      'uglify',
       'criticalcss',
       'specialchar',
       'cssmin',

@@ -1,3 +1,6 @@
 [submodule "_drafts"]
 	path = _drafts
 	url = git@github.com:goodguyry/_drafts.git
+[submodule "_loadCSS"]
+	path = _loadCSS
+	url = git@github.com:filamentgroup/loadCSS.git
