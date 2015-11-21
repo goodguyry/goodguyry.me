@@ -83,9 +83,9 @@ We'll need to make some changes to the main <code class="path">wp-config.php</co
 {% highlight term %}
 ls -l
 
--rw-r--r-- 1 root root  418 Jan 15 22:08 index.php
-lrwxrwxrwx 1 root root   19 Jan 15 22:05 wordpress -> /opt/wordpress/4.1/
-drwxr-xr-x 4 root root 4096 Jan 15 22:07 wp-content
+1 root root  418 Jan 15 22:08 index.php
+1 root root   19 Jan 15 22:05 wordpress -> /opt/wordpress/4.1/
+4 root root 4096 Jan 15 22:07 wp-content
 {% endhighlight %}
 <figcaption>We're all set</figcaption>
 </figure>
