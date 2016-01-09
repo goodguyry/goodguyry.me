@@ -7,7 +7,7 @@ permalink: /about/
 
 I am a husband, dog father and Seattle transplant. I can be found cheering on [Sounders FC](http://soundersfc.com), playing my guitar, [hoarding GIFs](http://jif.io) or Googling the current topic of conversation.
 
-I work at [Story](http://storyworldwide.com/) as a <abbr title="Content Management System">CMS</abbr>/<abbr title="Quality Assurance">QA</abbr> Specialist, part of a close-knit Creative Technology team based in New York.
+I work at [Story](http://storyworldwide.com/) as a Developer, part of a close-knit Creative Technology team based in New York.
 
 I love coffee and cannot be trusted around cookies.
 

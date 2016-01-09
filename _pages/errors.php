@@ -1,5 +1,6 @@
 ---
 # Errors
+permalink: /errors.php
 ---
 <!DOCTYPE html>
 <html>
