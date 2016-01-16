@@ -1,6 +1,8 @@
 /**
- * Common base styles styles
+ * Common base styles
  */
+
+// Adjust base font size for screen size
 :root {
   font-size: small;
 
@@ -27,8 +29,10 @@ body {
   line-height: $line-height;
   background-color: $theme-base;
   color: $theme-font-dark;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
 }

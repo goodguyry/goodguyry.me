@@ -1,5 +1,13 @@
-/* ---- Block ---- */
+/**
+ * Common block styles
+ */
 
+/**
+ * Most of the <p> element's styling will be inherited from <body>
+ * Overrides:
+ *     _components.footer: <footer>
+ *     _overrides.block: <blockquote>
+ */
 p {
   margin-bottom: $vertical-rhythm;
 }
@@ -12,6 +20,7 @@ article {
   overflow: hidden;
 }
 
+// Full-width, double-lined box with large text
 blockquote {
   width: 100%;
   margin-bottom: $vertical-rhythm;
@@ -29,34 +38,47 @@ blockquote {
   }
 }
 
+/**
+ * This is mostly setup for <code>
+ * - Some padding for breathing room
+ * - The colored background
+ */
 pre {
   padding: 1rem;
   position: relative;
   background-color: #393939;
 }
 
+/**
+ * Code samples
+ * Syntax highlighting found in /css/code.scss
+ */
 code {
   overflow: auto;
   max-width: 100%;
   position: relative;
   line-height: inherit;
   font: {
+    // @TODO: put this in a variable
     family: Consolas, Monaco, 'Andale Mono', monospace;
     size: 0.75rem;
   }
   white-space: pre;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+     -moz-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
 }
 
+// No <figure> styling, as it's used only as a semantic
+//  wrapper for code blocks
 figcaption {
   text-align: right;
   font-size: 0.7rem;
   margin-bottom: $vertical-rhythm;
 }
 
+// Decoration styling
 hr {
   border: none;
   height: 1px;

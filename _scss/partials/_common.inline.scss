@@ -1,10 +1,6 @@
-/* ---- Inline ---- */
-
-em { font-style: italic; }
-
-strong { font-weight: bold; }
-
-sub, sup { line-height: 0; }
+/**
+ * Common inline styles
+ */
 
 a {
   color: $theme-main;
@@ -20,6 +16,12 @@ img {
   display: block;
   max-width: 100%;
 }
+
+em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+sub, sup { line-height: 0; }
 
 kbd {
   padding: 0.05em 0.2rem;

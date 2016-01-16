@@ -1,4 +1,6 @@
-/* ---- Headings ---- */
+/**
+ * Common heading styles
+ */
 
 h1, h2, h3, h4, h5 {
   font: {
@@ -12,25 +14,27 @@ h1 {
   // Declared in header.scss
 }
 
+// @TODO: consider updating this
 h2,
 .post-title {
   font-size: 2em;
   margin-bottom: $vertical-rhythm;
 }
 
+// Shared margin-bottom value
+$heading-margin: 0.25rem;
+
 h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-h4, h5 {
-  margin-bottom: 0.25rem;
+  margin-bottom: $heading-margin;
 }
 
 h4 {
   font-size: 1.25rem;
+  margin-bottom: $heading-margin;
 }
 
 h5 {
   font-size: 1rem;
+  margin-bottom: $heading-margin;
 }

@@ -1,4 +1,6 @@
-/* ---- Lists ---- */
+/**
+ * Common list styles
+ */
 
 ul, ol {
   margin-bottom: $vertical-rhythm;
@@ -14,7 +16,7 @@ ol {
   margin-left: 1.5rem;
 }
 
-// Nested list
+// Nested lists
 li ul,
 li ol {
   margin-bottom: 0;
