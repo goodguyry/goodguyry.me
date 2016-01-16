@@ -2,6 +2,17 @@
  * Helper class overrides
  */
 
+// The CTA for linking to more info/blog posts
+.more {
+  font-size: $small-font-size;
+
+  &:before {
+    content: "\203A";
+    display: inline;
+    padding-right: 0.25em;
+  }
+}
+
 // The blog post date
 .post-meta {
   font-size: 0.625em;

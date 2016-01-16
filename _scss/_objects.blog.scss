@@ -17,20 +17,6 @@
 }
 
 /**
- * The CTA for linking to more info/blog posts
- * @transition-duration: : Move this to overrides.helpers
- */
-.more {
-  font-size: $small-font-size;
-
-  &:before {
-    content: "\203A";
-    display: inline;
-    padding-right: 0.25em;
-  }
-}
-
-/**
  * A box for alling attention to content
  * @TODO: Possibly abstract the class name
  */
