@@ -1,17 +1,25 @@
+/**
+ * Block-level overrides
+ */
+
 blockquote {
   p {
-    margin-bottom: $small-font-size;
+    margin-bottom: $small-font-size; // @TODO: wat
   }
 
+  // To eliminate odd spacing at the bottom of the
+  //  <blockquote> box
   p:last-of-type {
     margin-bottom: 0;
   }
 
+  // The quote citation
   span {
     text-align: right;
     font-size: 0.75rem;
     display: block;
 
+    // Add a little dash before the quote citation
     &:before {
       content: "-";
       margin-right: 0.25rem;
@@ -20,17 +28,19 @@ blockquote {
 }
 
 code {
+  // All code blocks
   pre & {
     height: 100%;
     max-height: 20rem;
     display: block;
     color: rgb(255, 255, 255);
     -moz-tab-size: 2;
-    -o-tab-size: 2;
-    tab-size: 2;
+      -o-tab-size: 2;
+         tab-size: 2;
   }
 
   // Inline code
+  // @TODO: Update this styling
   :not(pre) > & {
     font-size: 0.90rem;
     color: #393939;
@@ -40,15 +50,20 @@ code {
     border: 1px solid $theme-decoration-dark;
   }
 
+  // Inline code that's inside an anchor
   :not(pre) > a & {
     font-size: 0.95rem;
     color: $theme-main;
   }
 
+  // Style file and directory paths as code,
+  //  but without the border
+  // @TODO: Meh
   &.path {
     border: none;
   }
 
+  // @TODO: What is this doing?
   figcaption & {
     font-size: inherit;
   }

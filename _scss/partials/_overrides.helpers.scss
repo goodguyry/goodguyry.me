@@ -1,14 +1,19 @@
-/* ---- Helper Classes ---- */
+/**
+ * Helper class overrides
+ */
 
+// The blog post date
 .post-meta {
   font-size: 0.625em;
 }
 
+// Strikethrough text
 .strike {
   color: $theme-font-light;
   text-decoration: line-through;
 }
 
+// Hide it
 .hidden {
   position: absolute;
   left: -10000px;
@@ -20,6 +25,8 @@
   opacity: 0;
 }
 
+// Style math equations as code
+// @TODO: Clean this up
 .math {
   font: {
     family: Consolas, Monaco, 'Andale Mono', monospace;
