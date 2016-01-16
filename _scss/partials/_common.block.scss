@@ -4,6 +4,14 @@ p {
   margin-bottom: $vertical-rhythm;
 }
 
+article {
+  padding: 0 $gutter-spacing;
+  margin-bottom: $vertical-rhythm;
+  width: 100%;
+  position: relative; // To contain text selection highlighting
+  overflow: hidden;
+}
+
 blockquote {
   width: 100%;
   margin-bottom: $vertical-rhythm;

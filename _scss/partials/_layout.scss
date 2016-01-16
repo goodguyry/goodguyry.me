@@ -1,5 +1,5 @@
 /**
- * Layout
+ * Layout objects
  */
 
 .grid {
@@ -10,14 +10,6 @@
     padding: 0;
     margin: 0 auto;
   }
-}
-
-article {
-  padding: 0 $gutter-spacing;
-  margin-bottom: $vertical-rhythm;
-  width: 100%;
-  position: relative; // To contain text selection highlighting
-  overflow: hidden;
 }
 
 .project {
@@ -52,10 +44,6 @@ article {
   li {
     margin-bottom: $vertical-rhythm;
   }
-}
-
-.post-meta {
-  font-size: 0.625em;
 }
 
 .more {
