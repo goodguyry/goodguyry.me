@@ -40,7 +40,6 @@ code {
   }
 
   // Inline code
-  // @TODO: Update this styling
   :not(pre) > & {
     font-size: 0.90rem;
     color: #393939;
@@ -48,6 +47,7 @@ code {
     padding: 0 0.15rem;
     border-radius: 3px;
     border: 1px solid $theme-decoration-dark;
+    background-color: $theme-decoration-light;
   }
 
   // Inline code that's inside an anchor
@@ -58,9 +58,10 @@ code {
 
   // Style file and directory paths as code,
   //  but without the border
-  // @TODO: Meh
+  // @TODO: Abstract class name
   &.path {
     border: none;
+    background-color: inherit;
   }
 
   // @TODO: What is this doing?
