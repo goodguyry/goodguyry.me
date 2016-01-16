@@ -1,0 +1,30 @@
+/* ---- Selection ---- */
+
+::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+  ::-moz-selection {
+    background: $theme-secondary;
+    color: $theme-base;
+  }
+
+a::selection,
+a h3::selection {
+  color: $theme-font-dark;
+}
+
+  a::-moz-selection {
+    color: $theme-font-dark;
+  }
+
+img::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+  img::-moz-selection {
+    background: $theme-secondary;
+    color: $theme-base;
+  }

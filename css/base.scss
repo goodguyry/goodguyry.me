@@ -24,3 +24,8 @@
 // Component styles
 @import "partials/components.header",
         "partials/components.footer";
+
+// Overrides
+@import "partials/overrides.block.scss",
+        "partials/overrides.helpers.scss",
+        "partials/overrides.selection.scss";

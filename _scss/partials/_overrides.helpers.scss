@@ -1,0 +1,28 @@
+/* ---- Helper Classes ---- */
+
+.post-meta {
+  font-size: 0.625em;
+}
+
+.strike {
+  color: $theme-font-light;
+  text-decoration: line-through;
+}
+
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+  opacity: 0;
+}
+
+.math {
+  font: {
+    family: Consolas, Monaco, 'Andale Mono', monospace;
+    size: $small-font-size;
+  }
+}

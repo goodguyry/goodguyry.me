@@ -1,0 +1,55 @@
+blockquote {
+  p {
+    margin-bottom: $small-font-size;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  span {
+    text-align: right;
+    font-size: 0.75rem;
+    display: block;
+
+    &:before {
+      content: "-";
+      margin-right: 0.25rem;
+    }
+  }
+}
+
+code {
+  pre & {
+    height: 100%;
+    max-height: 20rem;
+    display: block;
+    color: rgb(255, 255, 255);
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+  }
+
+  // Inline code
+  :not(pre) > & {
+    font-size: 0.90rem;
+    color: #393939;
+    display: inline;
+    padding: 0 0.15rem;
+    border-radius: 3px;
+    border: 1px solid $theme-decoration-dark;
+  }
+
+  :not(pre) > a & {
+    font-size: 0.95rem;
+    color: $theme-main;
+  }
+
+  &.path {
+    border: none;
+  }
+
+  figcaption & {
+    font-size: inherit;
+  }
+}
