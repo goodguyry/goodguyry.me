@@ -13,17 +13,14 @@
   }
 
 // Invert anchors to keep them legible
-a::selection,
-a h3::selection {
+a::selection {
   color: $theme-font-dark;
 }
 
-  // @TODO: Doesn't this need an h3?
   a::-moz-selection {
     color: $theme-font-dark;
   }
 
-// @TODO: Does this actually do anything?
 img::selection {
   background: $theme-secondary;
   color: $theme-base;
