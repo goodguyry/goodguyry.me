@@ -3,29 +3,29 @@
 ---
 
 // Sass-related settings and tools
-@import "partials/settings",
-        "partials/tools";
+@import "settings",
+        "tools";
 
 // Eric Meyer's Reset v2.0 | 20110126
-@import "partials/reset";
+@import "reset";
 
 // Common base styling
-@import "partials/common.base",
-        "partials/common.headings",
-        "partials/common.block",
-        "partials/common.inline",
-        "partials/common.lists",
-        "partials/common.forms";
+@import "common.base",
+        "common.headings",
+        "common.block",
+        "common.inline",
+        "common.lists",
+        "common.forms";
 
 // Objects
-@import "partials/objects.common",
-        "partials/objects.blog";
+@import "objects.common",
+        "objects.blog";
 
 // Component styles
-@import "partials/components.header",
-        "partials/components.footer";
+@import "components.header",
+        "components.footer";
 
 // Overrides
-@import "partials/overrides.block.scss",
-        "partials/overrides.helpers.scss",
-        "partials/overrides.selection.scss";
+@import "overrides.block.scss",
+        "overrides.helpers.scss",
+        "overrides.selection.scss";
