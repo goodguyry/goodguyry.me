@@ -21,6 +21,6 @@
 @import "partials/objects.common",
         "partials/objects.blog";
 
-// Load base element styles
-@import "partials/header",
-        "partials/footer";
+// Component styles
+@import "partials/components.header",
+        "partials/components.footer";
