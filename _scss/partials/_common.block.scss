@@ -59,8 +59,7 @@ code {
   position: relative;
   line-height: inherit;
   font: {
-    // @TODO: put this in a variable
-    family: Consolas, Monaco, 'Andale Mono', monospace;
+    family: $monospace-font-family;
     size: 0.75rem;
   }
   white-space: pre;
