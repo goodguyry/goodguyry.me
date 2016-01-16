@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       post: {
         options: {
-          url: 'http://goodguyry.dev/thoughts-and-ramblings/multi-tenant-wordpress.html',
+          url: 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
           filename: '_site/css/base.css',
           outputfile: 'css/_critical.post.css',
           forceInclude: ['nav'],
