@@ -17,9 +17,8 @@
  * Layout for multiple content blocks
  * - Stacked on small screens
  * - 50% on large screens
- * @TODO: Astract the class name
  */
-.project {
+.block {
   width: 100%;
 
   // Prevent stacking uneven boxes
@@ -28,6 +27,7 @@
   }
 
   @include responsive(400, min) {
+    // Split on larger screens
     @include column(1/2);
 
     // Pad the box margins

@@ -15,11 +15,8 @@
   }
 }
 
-/**
- * A box for alling attention to content
- * @TODO: Possibly abstract the class name
- */
-.note {
+// A box for calling attention to content
+.hey {
   font: {
     size: $small-font-size;
     style: italic;
