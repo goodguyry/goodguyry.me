@@ -2,6 +2,7 @@
  * Common objects
  */
 
+// The content wrapper/container
 .grid {
   position: relative; // To contain text selection highlighting
 
@@ -12,6 +13,12 @@
   }
 }
 
+/**
+ * Layout for multiple content blocks
+ * - Stacked on small screens
+ * - 50% on large screens
+ * @TODO: Astract the class name
+ */
 .project {
   width: 100%;
 

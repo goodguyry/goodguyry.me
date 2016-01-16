@@ -2,6 +2,11 @@
  * Blog objects
  */
 
+/**
+ * The list of blog posts
+ * Essentially just better vertical rhythm and no bullets
+ * @TODO: Abstract the class name
+ */
 .post-list {
   list-style-type: none;
   margin-left: 0;
@@ -11,6 +16,10 @@
   }
 }
 
+/**
+ * The CTA for linking to more info/blog posts
+ * @transition-duration: : Move this to overrides.helpers
+ */
 .more {
   font-size: $small-font-size;
 
@@ -21,6 +30,10 @@
   }
 }
 
+/**
+ * A box for alling attention to content
+ * @TODO: Possibly abstract the class name
+ */
 .note {
   font: {
     size: $small-font-size;
