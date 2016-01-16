@@ -1,0 +1,58 @@
+/* ---- Block ---- */
+
+p {
+  margin-bottom: $vertical-rhythm;
+}
+
+blockquote {
+  width: 100%;
+  margin-bottom: $vertical-rhythm;
+  padding: .5rem;
+  border-top: 3px double $theme-decoration-dark;
+  border-bottom: 3px double $theme-decoration-dark;
+  color: $theme-font-dark;
+  font-size: 1.25rem;
+  quotes: none;
+
+  &:before,
+  &:after {
+    content: '';
+    content: none;
+  }
+}
+
+pre {
+  padding: 1rem;
+  position: relative;
+  background-color: #393939;
+}
+
+code {
+  overflow: auto;
+  max-width: 100%;
+  position: relative;
+  line-height: inherit;
+  font: {
+    family: Consolas, Monaco, 'Andale Mono', monospace;
+    size: 0.75rem;
+  }
+  white-space: pre;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+figcaption {
+  text-align: right;
+  font-size: 0.7rem;
+  margin-bottom: $vertical-rhythm;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  width: 60%;
+  background-color: $theme-decoration-dark;
+  margin-bottom: $double-vertical-rhythm;
+}

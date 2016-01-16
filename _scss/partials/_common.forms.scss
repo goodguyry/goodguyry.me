@@ -1,0 +1,26 @@
+button {
+  display: block;
+  font: inherit;
+  font-weight: normal;
+  -webkit-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
+  color: $theme-main;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 0.75rem;
+  text-align: center;
+  @include transition((color, border-color));
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: $theme-secondary;
+  }
+
+  &:focus {
+    outline-color: $theme-secondary;
+  }
+}

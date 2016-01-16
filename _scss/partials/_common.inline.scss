@@ -1,0 +1,43 @@
+/* ---- Inline ---- */
+
+em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+sub, sup { line-height: 0; }
+
+a {
+  color: $theme-main;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+kbd {
+  padding: 0.05em 0.2rem;
+  font-family: monospace;
+  border: 1px solid $theme-decoration-dark;
+  background-color: $theme-decoration-light;
+  border-radius: 3px;
+}
+
+cite {
+  font-style: italic;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted $theme-font-light;
+  cursor: help;
+}
+
+output {
+  font-weight: bold;
+}

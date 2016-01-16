@@ -1,0 +1,34 @@
+/**
+ * Common base styles styles
+ */
+:root {
+  font-size: small;
+
+  @include responsive(220, min) {
+    font-size: medium;
+  }
+
+  @include responsive(250, min) {
+    font-size: large;
+  }
+
+  @include responsive(500, min) {
+    font-size: x-large;
+  }
+}
+
+body {
+  width: 100%;
+  font: {
+    family: $base-font-family;
+    style: normal;
+    weight: normal;
+  }
+  line-height: $line-height;
+  background-color: $theme-base;
+  color: $theme-font-dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
+}

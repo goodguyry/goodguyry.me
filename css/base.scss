@@ -9,8 +9,15 @@
 @import "partials/settings",
         "partials/tools";
 
+// Common base styling
+@import "partials/common.base",
+        "partials/common.headings",
+        "partials/common.block",
+        "partials/common.inline",
+        "partials/common.lists",
+        "partials/common.forms";
+
 // Load base element styles
-@import "partials/common",
-        "partials/header",
+@import "partials/header",
         "partials/layout",
         "partials/footer";
