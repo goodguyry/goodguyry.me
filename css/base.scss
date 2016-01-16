@@ -17,7 +17,10 @@
         "partials/common.lists",
         "partials/common.forms";
 
+// Objects
+@import "partials/objects.common",
+        "partials/objects.blog";
+
 // Load base element styles
 @import "partials/header",
-        "partials/layout",
         "partials/footer";

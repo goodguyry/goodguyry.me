@@ -1,0 +1,34 @@
+/**
+ * Blog objects
+ */
+
+.post-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    margin-bottom: $vertical-rhythm;
+  }
+}
+
+.more {
+  font-size: $small-font-size;
+
+  &:before {
+    content: "\203A";
+    display: inline;
+    padding-right: 0.25em;
+  }
+}
+
+.note {
+  font: {
+    size: $small-font-size;
+    style: italic;
+  }
+  padding: 0.5em;
+  color: $theme-font-light;
+  background-color: $theme-decoration-light;
+  border: 1px solid $theme-decoration-dark;
+  border-radius: 3px;
+}
