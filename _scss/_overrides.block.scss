@@ -4,9 +4,7 @@
 
 // Main header
 header[role="banner"] {
-  padding: $double-vertical-rhythm $gutter-spacing;
-
-  // To match common.base.h1
+  // To match common.base.h1 on blog posts
   h2 {
     font-size: 2.6rem;
     margin-bottom: 0;
@@ -85,5 +83,11 @@ code {
   // To keep code/path font sizes consistent within the figcaptions
   figcaption & {
     font-size: inherit;
+  }
+}
+
+footer[role="contentinfo"] {
+  p {
+    margin: 0;
   }
 }
