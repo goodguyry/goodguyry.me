@@ -58,10 +58,7 @@ code {
   max-width: 100%;
   position: relative;
   line-height: inherit;
-  font: {
-    family: $monospace-font-family;
-    size: 0.75rem;
-  }
+  @include font('code');
   white-space: pre;
   -webkit-hyphens: none;
      -moz-hyphens: none;

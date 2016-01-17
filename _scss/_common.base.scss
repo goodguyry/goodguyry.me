@@ -21,11 +21,7 @@
 
 body {
   width: 100%;
-  font: {
-    family: $base-font-family;
-    style: normal;
-    weight: normal;
-  }
+  @include font('content');
   line-height: $line-height;
   background-color: $theme-base;
   color: $theme-font-dark;
