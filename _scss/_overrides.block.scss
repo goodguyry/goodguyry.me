@@ -2,6 +2,25 @@
  * Block-level overrides
  */
 
+// Main header
+header[role="banner"] {
+  padding: $double-vertical-rhythm $gutter-spacing;
+
+  // To match common.base.h1
+  h2 {
+    font-size: 2.6rem;
+    margin-bottom: 0;
+  }
+}
+
+main {
+  // The blog post title
+  h1 {
+    font-size: 2em;
+    margin-bottom: $vertical-rhythm;
+  }
+}
+
 blockquote {
   p {
     margin-bottom: 0.875rem;
