@@ -7,7 +7,7 @@ nav {
   height: 1.5rem;
   font-size: 1rem;
 
-  @include responsive(650, min) {
+  @include responsive(650) {
     font-size: 0.875rem;
   }
 

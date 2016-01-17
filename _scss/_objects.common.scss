@@ -6,7 +6,7 @@
 .grid {
   position: relative; // To contain text selection highlighting
 
-  @include responsive($max-grid-width, min) {
+  @include responsive($max-grid-width) {
     max-width: $max-grid-width + px;
     padding: 0;
     margin: 0 auto;
@@ -26,7 +26,7 @@
     clear: both;
   }
 
-  @include responsive(400, min) {
+  @include responsive(400) {
     // Split on larger screens
     @include column(1/2);
 

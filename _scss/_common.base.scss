@@ -6,15 +6,15 @@
 :root {
   font-size: small;
 
-  @include responsive(220, min) {
+  @include responsive(220) {
     font-size: medium;
   }
 
-  @include responsive(250, min) {
+  @include responsive(250) {
     font-size: large;
   }
 
-  @include responsive(500, min) {
+  @include responsive(500) {
     font-size: x-large;
   }
 }
