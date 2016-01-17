@@ -15,18 +15,18 @@ main, article, aside, footer, header, nav, section {
   font: inherit;
   vertical-align: baseline;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/* HTML5 display-role reset for older browsers */
-main, article, aside, footer, header, nav, section {
-  display: block;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *:after,
 *:before {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+main, article, aside, footer, header, nav, section {
+  display: block;
 }

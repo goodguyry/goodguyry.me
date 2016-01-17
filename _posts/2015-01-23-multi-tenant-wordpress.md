@@ -6,7 +6,7 @@ description: The multi-tenant WordPress setup allows multiple 'tenant' sites to 
 code: true
 ---
 
-<p class="note">This post was inspired by Jason McCreary's <a href="http://jason.pureconcepts.net/2012/08/wordpress-multitenancy/">WordPress Multitenancy</a> (and <a href="http://jason.pureconcepts.net/2013/04/updated-wordpress-multitenancy/">his follow-up</a>).</p>
+<p class="hey">This post was inspired by Jason McCreary's <a href="http://jason.pureconcepts.net/2012/08/wordpress-multitenancy/">WordPress Multitenancy</a> (and <a href="http://jason.pureconcepts.net/2013/04/updated-wordpress-multitenancy/">his follow-up</a>).</p>
 
 ### Overview
 

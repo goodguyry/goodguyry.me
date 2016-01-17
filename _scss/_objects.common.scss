@@ -1,0 +1,45 @@
+/**
+ * Common objects
+ */
+
+// The content wrapper/container
+.grid {
+  position: relative; // To contain text selection highlighting
+
+  @include responsive($max-grid-width) {
+    max-width: $max-grid-width + px;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+/**
+ * Layout for multiple content blocks
+ * - Stacked on small screens
+ * - 50% on large screens
+ */
+.block {
+  width: 100%;
+
+  // Prevent stacking uneven boxes
+  &:nth-of-type(3) {
+    clear: both;
+  }
+
+  @include responsive(400) {
+    // Split on larger screens
+    @include column(1/2);
+
+    // Pad the box margins
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
+      padding-right: 0.5em;
+    }
+
+    // Pad the box margins
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      padding-left: 0.5em;
+    }
+  }
+}

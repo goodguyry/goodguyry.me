@@ -1,0 +1,36 @@
+/**
+ * Common heading styles
+ */
+
+h1, h2, h3, h4, h5 {
+  @include font('heading');
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: $vertical-rhythm;
+}
+
+// Shared margin-bottom value
+$heading-margin: 0.25rem;
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: $heading-margin;
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: $heading-margin;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-bottom: $heading-margin;
+}

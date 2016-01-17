@@ -1,0 +1,34 @@
+/**
+ * Common base styles
+ */
+
+// Adjust base font size for screen size
+:root {
+  font-size: small;
+
+  @include responsive(220) {
+    font-size: medium;
+  }
+
+  @include responsive(250) {
+    font-size: large;
+  }
+
+  @include responsive(500) {
+    font-size: x-large;
+  }
+}
+
+body {
+  width: 100%;
+  @include font('content');
+  line-height: $line-height;
+  background-color: $theme-base;
+  color: $theme-font-dark;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
+}

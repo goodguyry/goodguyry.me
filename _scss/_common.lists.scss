@@ -1,0 +1,32 @@
+/**
+ * Common list styles
+ */
+
+ul, ol {
+  margin-bottom: $vertical-rhythm;
+}
+
+ul {
+  list-style: disc outside none;
+  margin-left: 1rem;
+}
+
+ol {
+  list-style: decimal outside none;
+  margin-left: 1.5rem;
+}
+
+// Nested lists
+li ul,
+li ol {
+  margin-bottom: 0;
+  padding-left: 1.5rem;
+}
+
+li ul {
+  list-style-type: circle;
+}
+
+li ol {
+  list-style-type: lower-alpha;
+}

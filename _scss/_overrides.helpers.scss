@@ -1,0 +1,37 @@
+/**
+ * Helper class overrides
+ */
+
+// The CTA for linking to more info/blog posts
+.more {
+  font-size: $small-font-size;
+
+  &:before {
+    content: "\203A";
+    display: inline;
+    padding-right: 0.25em;
+  }
+}
+
+// The blog post date
+.post-meta {
+  font-size: 0.625em;
+}
+
+// Strikethrough text
+.strike {
+  color: $theme-font-light;
+  text-decoration: line-through;
+}
+
+// Hide it
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+  opacity: 0;
+}

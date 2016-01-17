@@ -1,4 +1,5 @@
 .ht[ap]*
+_env
+_posts/*test.md
 _site/
 _temp/
-_env
