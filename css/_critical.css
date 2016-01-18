@@ -16,9 +16,9 @@ h1{ font-size: 2.6rem; margin-bottom: 0px; }
 h2{ font-size: 2em; margin-bottom: 1.5rem; }
 h3{ font-size: 1.5rem; margin-bottom: 0.25rem; }
 p{ margin-bottom: 1.5rem; }
-header[role="banner"]{ padding-top: 3rem; padding-right: 0.625rem; padding-bottom: 3rem; padding-left: 0.625rem; }
+header{ padding-top: 3rem; padding-right: 0.625rem; padding-bottom: 3rem; padding-left: 0.625rem; }
 article{ padding-top: 0px; padding-right: 0.625rem; padding-bottom: 0px; padding-left: 0.625rem; margin-bottom: 1.5rem; width: 100%; position: relative; overflow-x: hidden; overflow-y: hidden; }
-footer[role="contentinfo"] { padding-top: 0.625rem; padding-right: 0.625rem; padding-bottom: 0.625rem; padding-left: 0.625rem; width: 100%; height: auto; font-size: 0.625em; color: rgb(50, 50, 50); text-align: right; }
+footer { padding-top: 0.625rem; padding-right: 0.625rem; padding-bottom: 0.625rem; padding-left: 0.625rem; width: 100%; height: auto; font-size: 0.625em; color: rgb(50, 50, 50); text-align: right; }
 a{ color: rgb(42, 143, 159); text-decoration: none; }
  sup{ line-height: 0; }
 ul{ margin-bottom: 1.5rem; }
