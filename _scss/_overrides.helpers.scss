@@ -2,6 +2,32 @@
  * Helper class overrides
  */
 
+/**
+ * The list of blog posts
+ * Essentially just better vertical rhythm and no bullets
+ */
+.post-list {
+  list-style-type: none;
+  margin-left: 0;
+
+  li {
+    margin-bottom: $vertical-rhythm;
+  }
+}
+
+// A box for calling attention to content
+.hey {
+  font: {
+    size: $small-font-size;
+    style: italic;
+  }
+  padding: 0.5em;
+  color: $theme-font-light;
+  background-color: $theme-decoration-light;
+  border: 1px solid $theme-decoration-dark;
+  border-radius: 3px;
+}
+
 // The CTA for linking to more info/blog posts
 .more {
   font-size: $small-font-size;
