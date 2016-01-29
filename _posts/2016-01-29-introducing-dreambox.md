@@ -24,7 +24,9 @@ vagrant up
 
 ### User setup
 
-Once the VM is created and ready, log in with `vagrant ssh` and run `sudo user_setup`. The `user_setup` script will prompt for the following information:
+Once the VM is created and ready, `ssh` into the VM and run `sudo user_setup`.
+
+The `user_setup` script will prompt for the following information:
 
 - **Username**: Your SSH/SFTP username.
 - **Site root**: Your website's root folder name, most-likely the same as your domain name.
@@ -32,4 +34,4 @@ Once the VM is created and ready, log in with `vagrant ssh` and run `sudo user_s
 
 See [the DreamBox documentation](https://github.com/goodguyry/dreambox) for information about automating `user_setup` as part of your Vagrant provisioning.
 
-I'm excited for this to finally be out in the world and hope DreamHost users find it useful.
+DreamBox is available for VirtualBox and VMware. I'm excited for this to finally be out in the world and hope DreamHost users find it useful.
