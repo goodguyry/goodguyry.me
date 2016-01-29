@@ -45,7 +45,7 @@ Vagrant.configure(2) do |config|
     # Pass user_setup ENV variables to this script
     :env => user_vars
 
-  config.vm.define 'goodguyry.me' do |node|
+  config.vm.define vm_name do |node|
     node.vm.hostname = vhost
     node.vm.network :private_network, ip: ip_address
   end
