@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introducing DreamBox
-excerpt: I've been using DreamHost for about a year and a half now, and I couldn't be happier. One thing I haven't been able to find is a Vagrant box for DreamHost, so I made one.
+excerpt: One thing I haven't been able to find is a Vagrant box replicating the DreamHost shared hosting environment, so I made one.
 code: true
 resources:
 - text: DreamHost's PHP Info page
