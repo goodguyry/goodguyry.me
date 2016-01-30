@@ -30,7 +30,7 @@ The `user_setup` script will prompt for the following information:
 
 - **Username**: Your SSH/SFTP username.
 - **Site root**: Your website's root folder name, most-likely the same as your domain name.
-- **Project root**: The local directory, relative to your project root, that will hold your web files; this defaults to <code class="path">/web</code>.
+- **Project root**: The local directory, relative to your project root, that will hold your web files; this defaults to <code class="path">web</code>.
 
 See [the DreamBox documentation](https://github.com/goodguyry/dreambox) for information about automating `user_setup` as part of your Vagrant provisioning.
 
