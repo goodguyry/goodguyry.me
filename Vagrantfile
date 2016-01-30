@@ -4,16 +4,16 @@
 # External YAML file for variables
 # h/t http://stackoverflow.com/a/23589414
 require 'yaml'
-settings = YAML.load_file '_env/config.yaml'
+settings = YAML.load_file 'vm-config.yaml'
 
 local_dir = settings['paths']['local_dir']
 guest_dir = settings['paths']['guest_dir']
-guest_port = settings['strings']['guest_port']
-host_port = settings['strings']['host_port']
-vm_name = settings['strings']['vm_name']
-vhost = settings['strings']['vhost']
-ip_address = settings['strings']['ip_address']
-username = settings['strings']['username']
+guest_port = settings['ports']['guest_port']
+host_port = settings['ports']['host_port']
+domain = settings['settings']['domain']
+vhost = settings['settings']['vhost']
+ip_address = settings['settings']['ip_address']
+username = settings['settings']['username']
 
 Vagrant.configure(2) do |config|
   config.vm.box = "goodguyry/dreambox"
@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder local_dir, guest_dir, create: true, owner: "www-data", group: "www-data"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.name = vm_name
+    vb.name = domain
     vb.customize ["modifyvm", :id, "--memory", "1024"]
   end
 
@@ -35,7 +35,7 @@ Vagrant.configure(2) do |config|
   # Environment variables for automating user_setup
   user_vars = {
     "DREAMBOX_USER_NAME" => username,
-    "DREAMBOX_SITE_ROOT" => vm_name,
+    "DREAMBOX_SITE_ROOT" => domain,
     "DREAMBOX_PROJECT_DIR" => "/#{local_dir}"
   }
 
@@ -45,7 +45,7 @@ Vagrant.configure(2) do |config|
     # Pass user_setup ENV variables to this script
     :env => user_vars
 
-  config.vm.define vm_name do |node|
+  config.vm.define domain do |node|
     node.vm.hostname = vhost
     node.vm.network :private_network, ip: ip_address
   end
