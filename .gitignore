@@ -1,5 +1,4 @@
 .ht[ap]*
-_env
-_posts/*test.md
+vm-config.yaml
 _site/
 _temp/
