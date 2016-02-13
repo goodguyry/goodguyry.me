@@ -2,6 +2,7 @@
 layout: post
 title: Introducing DreamBox
 excerpt: One thing I haven't been able to find is a Vagrant box replicating the DreamHost shared hosting environment, so I made one.
+description: DreamBox is a Vagrant environment for DreamHost users.
 code: true
 resources:
 - text: DreamHost's PHP Info page
