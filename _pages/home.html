@@ -18,21 +18,23 @@ projects:
     url: http://github.com/goodguyry/dotfiles
 ---
 
-      <article class="blocks">
+      <article>
 
         <h2>{{ site.heading_projects }}</h2>
 
-        {% for project in page.projects %}
-        <section class="block">
+        <ul class="blocks">
+          {% for project in page.projects %}
+          <li class="block">
 
-          <h3>
-            <a href="{{ project.url }}">{{ project.name }}</a>
-          </h3>
+            <h3>
+              <a href="{{ project.url }}">{{ project.name }}</a>
+            </h3>
 
-          <p>{{ project.description }}</p>
+            <p>{{ project.description }}</p>
 
-        </section>
-        {% endfor %}
+          </li>
+          {% endfor %}
+        </ul>
 
         <a class="more" href="{{ site.github_base_url }}">See more on GitHub</a>
 
