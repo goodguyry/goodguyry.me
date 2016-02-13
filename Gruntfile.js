@@ -5,6 +5,20 @@ module.exports = function(grunt) {
 
     pkg: grunt.file.readJSON('package.json'),
 
+    postcss: {
+      options: {
+        map: false, // inline sourcemaps
+
+        processors: [ require('autoprefixer')({browsers: 'last 2 versions'}) ]
+      },
+      critical: {
+        src: 'css/_critical*.css'
+      },
+      base: {
+        src: '_site/css/base.css'
+      }
+    },
+
     cssmin: {
       options: {
         report: 'min',
@@ -83,6 +97,29 @@ module.exports = function(grunt) {
   );
 
   grunt.registerTask(
+    'removePrefixes',
+    'Remove -webkit- prefixes from PhantomJS output.',
+    function() {
+      var pattern = /(\-webkit\-)(?!font|text)/gi,
+          replacement = '',
+          file = grunt.file.read('css/_critical.css');
+
+      // Test the pattern
+      if (pattern.test) {
+        // We have a match, so proceed
+        file = file.replace(pattern, replacement);
+        // Write changes back to css/_critical.css
+        grunt.file.write('css/_critical.css', file);
+        // A little feedback
+        grunt.log.write('Critical CSS -webkit- prefixes removed.\n');
+      } else {
+        // Fail if no matches are found
+        grunt.verbose.error('No -webkit- matches found');
+      }
+    }
+  );
+
+  grunt.registerTask(
     'criticalwrap',
     'Wrap minified CriticalCSS files in <style> tags.',
     function() {
@@ -109,7 +146,10 @@ module.exports = function(grunt) {
     'default',
     [
       'uglify',
+      'postcss:base',
       'criticalcss',
+      'removePrefixes',
+      'postcss:critical',
       'specialchar',
       'cssmin',
       'criticalwrap'
