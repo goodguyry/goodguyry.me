@@ -9,7 +9,12 @@
     "grunt-contrib-uglify": "^0.11.x",
     "grunt-criticalcss": "^1.0.x",
     "grunt-postcss": "^0.7.x",
-    "load-grunt-tasks": "^3.4.x"
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-rename": "^1.2.2",
+    "load-grunt-tasks": "^3.4.x",
+    "penthouse": "^0.9.1",
+    "vinyl-map": "^1.0.1"
   },
   "repository": {
     "type": "git",
