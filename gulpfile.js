@@ -8,17 +8,17 @@ gulp.task('critical', function() {
 
   // Strings for different templates
   var templates = {
-    home: {
+    home : {
       url : 'http://goodguyry.dev',
       css : '_site/css/base.css',
       forceInclude : ['nav', 'footer'],
-      outfile: '_includes/critical-home.html'
+      outfile : '_includes/critical-home.html'
     },
-    post: {
+    post : {
       url : 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
       css : '_site/css/base.css',
       forceInclude : ['nav'],
-      outfile: '_includes/critical-post.html'
+      outfile : '_includes/critical-post.html'
     }
   };
 
@@ -30,7 +30,7 @@ gulp.task('critical', function() {
       width : 720,
       height : 800,
       forceInclude : templates[key].forceInclude,
-      timeout: 30000
+      timeout : 30000
     }, function(err, critical) {
       // Minify the output
       nano.process(critical, { autoprefixer : { add : true } }).then(function (result) {
@@ -49,7 +49,7 @@ gulp.task('scripts', function() {
   return gulp.src('_loadCSS/loadCSS.js')
     .pipe(uglify())
     .pipe(rename({
-      suffix: ".min"
+      suffix : ".min"
     }))
     .pipe(gulp.dest('./_includes/'));
 });
