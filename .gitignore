@@ -1,4 +1,4 @@
 .ht[ap]*
 vm-config.yaml
 _site/
-_temp/
+css/*
