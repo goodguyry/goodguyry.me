@@ -4,6 +4,12 @@ var penthouse = require('penthouse');
 var nano = require('cssnano');
 var fs = require('fs');
 
+var nanoOpts = {
+  autoprefixer : {
+    add : true
+  }
+};
+
 gulp.task('critical', function() {
 
   // Strings for different templates
@@ -33,7 +39,7 @@ gulp.task('critical', function() {
       timeout : 30000
     }, function(err, critical) {
       // Minify the output
-      nano.process(critical, { autoprefixer : { add : true } }).then(function (result) {
+      nano.process(critical, nanoOpts).then(function (result) {
         // Wrap output in <style> tags
         fs.writeFileSync(templates[key].outfile, '<style>' + result.css + '</style>');
       });
@@ -52,4 +58,17 @@ gulp.task('scripts', function() {
       suffix : ".min"
     }))
     .pipe(gulp.dest('./_includes/'));
+});
+
+var sass = require('gulp-sass');
+var gulpNano = require('gulp-cssnano');
+
+gulp.task('styles', function () {
+  return gulp.src('./_scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulpNano(nanoOpts))
+    .pipe(rename({
+      suffix : ".min"
+    }))
+    .pipe(gulp.dest('./css/'));
 });
