@@ -72,3 +72,9 @@ gulp.task('styles', function () {
     }))
     .pipe(gulp.dest('./css/'));
 });
+
+var shell = require('gulp-shell')
+
+gulp.task('jekyll', ['styles', 'scripts'], shell.task([
+  'jekyll build'
+]));
