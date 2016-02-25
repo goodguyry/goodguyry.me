@@ -4,21 +4,27 @@ var penthouse = require('penthouse');
 var nano = require('cssnano');
 var fs = require('fs');
 
+var nanoOpts = {
+  autoprefixer : {
+    add : true
+  }
+};
+
 gulp.task('critical', function() {
 
   // Strings for different templates
   var templates = {
-    home: {
+    home : {
       url : 'http://goodguyry.dev',
       css : '_site/css/base.css',
       forceInclude : ['nav', 'footer'],
-      outfile: '_includes/critical-home.html'
+      outfile : '_includes/critical-home.html'
     },
-    post: {
+    post : {
       url : 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
       css : '_site/css/base.css',
       forceInclude : ['nav'],
-      outfile: '_includes/critical-post.html'
+      outfile : '_includes/critical-post.html'
     }
   };
 
@@ -30,10 +36,10 @@ gulp.task('critical', function() {
       width : 720,
       height : 800,
       forceInclude : templates[key].forceInclude,
-      timeout: 30000
+      timeout : 30000
     }, function(err, critical) {
       // Minify the output
-      nano.process(critical, { autoprefixer : { add : true } }).then(function (result) {
+      nano.process(critical, nanoOpts).then(function (result) {
         // Wrap output in <style> tags
         fs.writeFileSync(templates[key].outfile, '<style>' + result.css + '</style>');
       });
@@ -49,7 +55,20 @@ gulp.task('scripts', function() {
   return gulp.src('_loadCSS/loadCSS.js')
     .pipe(uglify())
     .pipe(rename({
-      suffix: ".min"
+      suffix : ".min"
     }))
     .pipe(gulp.dest('./_includes/'));
+});
+
+var sass = require('gulp-sass');
+var gulpNano = require('gulp-cssnano');
+
+gulp.task('styles', function () {
+  return gulp.src('./_scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulpNano(nanoOpts))
+    .pipe(rename({
+      suffix : ".min"
+    }))
+    .pipe(gulp.dest('./css/'));
 });
