@@ -1,7 +1,5 @@
-// Include gulp
 var gulp = require('gulp');
 
-// Include Our Plugins
 var penthouse = require('penthouse');
 var nano = require('cssnano');
 var fs = require('fs');
@@ -42,4 +40,16 @@ gulp.task('critical', function() {
     });
   });
 
+});
+
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+
+gulp.task('scripts', function() {
+  return gulp.src('_loadCSS/loadCSS.js')
+    .pipe(uglify())
+    .pipe(rename({
+      suffix: ".min"
+    }))
+    .pipe(gulp.dest('./_includes/'));
 });
