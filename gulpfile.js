@@ -17,13 +17,13 @@ gulp.task('critical', function() {
     home : {
       url : 'http://goodguyry.dev',
       css : '_site/css/base.min.css',
-      forceInclude : ['nav', 'footer'],
+      forceInclude : [/^nav\s*/, /footer\s*/],
       outfile : '_includes/critical-home.html'
     },
     post : {
       url : 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
       css : '_site/css/base.min.css',
-      forceInclude : ['nav'],
+      forceInclude : [/^nav\s*/],
       outfile : '_includes/critical-post.html'
     }
   };
