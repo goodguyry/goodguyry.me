@@ -10,21 +10,21 @@ var nanoOpts = {
   }
 };
 
-gulp.task('critical', function() {
+gulp.task('critical', ['styles'], function() {
 
   // Strings for different templates
   var templates = {
     home : {
       url : 'http://goodguyry.dev',
-      css : '_site/css/base.min.css',
+      css : './css/base.min.css',
       forceInclude : [/^nav\s*/, /footer\s*/],
-      outfile : '_includes/critical-home.html'
+      outfile : './_includes/critical-home.html'
     },
     post : {
       url : 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
-      css : '_site/css/base.min.css',
+      css : './css/base.min.css',
       forceInclude : [/^nav\s*/],
-      outfile : '_includes/critical-post.html'
+      outfile : './_includes/critical-post.html'
     }
   };
 
@@ -52,7 +52,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
 gulp.task('scripts', function() {
-  return gulp.src('_loadCSS/loadCSS.js')
+  return gulp.src('./_loadCSS/loadCSS.js')
     .pipe(uglify())
     .pipe(rename({
       suffix : ".min"
@@ -75,6 +75,6 @@ gulp.task('styles', function () {
 
 var shell = require('gulp-shell')
 
-gulp.task('jekyll', ['styles', 'scripts'], shell.task([
+gulp.task('default', ['scripts', 'critical'], shell.task([
   'jekyll build'
 ]));
