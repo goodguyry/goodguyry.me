@@ -10,7 +10,7 @@ var nanoOpts = {
   }
 };
 
-gulp.task('critical', function() {
+gulp.task('critical', ['styles'], function() {
 
   // Strings for different templates
   var templates = {
@@ -75,6 +75,6 @@ gulp.task('styles', function () {
 
 var shell = require('gulp-shell')
 
-gulp.task('jekyll', ['styles', 'scripts'], shell.task([
+gulp.task('default', ['scripts', 'critical'], shell.task([
   'jekyll build'
 ]));
