@@ -16,13 +16,13 @@ gulp.task('critical', function() {
   var templates = {
     home : {
       url : 'http://goodguyry.dev',
-      css : '_site/css/base.css',
+      css : '_site/css/base.min.css',
       forceInclude : ['nav', 'footer'],
       outfile : '_includes/critical-home.html'
     },
     post : {
       url : 'http://goodguyry.dev/notes/multi-tenant-wordpress.html',
-      css : '_site/css/base.css',
+      css : '_site/css/base.min.css',
       forceInclude : ['nav'],
       outfile : '_includes/critical-post.html'
     }

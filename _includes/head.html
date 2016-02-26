@@ -14,8 +14,8 @@
     {% include loadCSS.min.js %}
     loadCSS( "http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700italic,700" );
     loadCSS( "http://fonts.googleapis.com/css?family=Lato:700,700italic" );
-    loadCSS( "{{ '/css/base.css' }}" );
-    {% if page.code %}loadCSS( "{{ '/css/code.css' }}" );{% endif %}
+    loadCSS( "{{ '/css/base.min.css' }}" );
+    {% if page.code %}loadCSS( "{{ '/css/code.min.css' }}" );{% endif %}
   </script>
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
