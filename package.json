@@ -17,7 +17,8 @@
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "build" : "gulp; jekyll build"
+    "critical": "node _build-scripts/critical.js",
+    "build": "gulp; jekyll build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
