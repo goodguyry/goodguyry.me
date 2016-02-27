@@ -16,6 +16,9 @@
     "type": "git",
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
+  "scripts": {
+    "build" : "gulp; jekyll build"
+  },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
   "homepage": "https://github.com/goodguyry/goodguyry.me"

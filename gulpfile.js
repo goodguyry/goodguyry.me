@@ -73,8 +73,4 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('./css/'));
 });
 
-var shell = require('gulp-shell')
-
-gulp.task('default', ['scripts', 'critical'], shell.task([
-  'jekyll build'
-]));
+gulp.task('default', ['scripts', 'critical']);
