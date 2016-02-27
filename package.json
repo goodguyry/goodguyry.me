@@ -4,11 +4,9 @@
   "description": "A website",
   "devDependencies": {
     "cssnano": "^3.5.2",
-    "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.3",
     "node-sass": "^3.4.2",
-    "penthouse": "^0.9.1"
+    "penthouse": "^0.9.1",
+    "uglify-js": "^2.6.2"
   },
   "repository": {
     "type": "git",
@@ -16,8 +14,9 @@
   },
   "scripts": {
     "critical": "node _build-scripts/critical.js",
-    "scss" : "node _build-scripts/scss.js",
-    "build": "gulp; jekyll build"
+    "scss": "node _build-scripts/scss.js",
+    "uglify": "uglifyjs ./_loadCSS/loadCSS.js --mangle --compress --output ./_includes/loadCSS.min.js",
+    "build": "jekyll build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
