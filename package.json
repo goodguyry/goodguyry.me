@@ -13,10 +13,10 @@
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "critical": "node _build-scripts/critical.js",
     "scss": "node _build-scripts/scss.js",
     "uglify": "uglifyjs ./_loadCSS/loadCSS.js --mangle --compress --output ./_includes/loadCSS.min.js",
-    "build": "jekyll build"
+    "critical": "node _build-scripts/critical.js",
+    "build": "npm run scss && npm run uglify && npm run critical && jekyll build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
