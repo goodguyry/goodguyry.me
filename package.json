@@ -4,7 +4,6 @@
   "description": "A website",
   "devDependencies": {
     "cssnano": "^3.5.2",
-    "node-sass": "^3.4.2",
     "penthouse": "^0.9.1",
     "uglify-js": "^2.6.2"
   },
@@ -13,10 +12,8 @@
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "scss": "node _build-scripts/scss.js",
     "uglify": "uglifyjs ./_loadCSS/loadCSS.js --mangle --compress --output ./_includes/loadCSS.min.js",
-    "critical": "node _build-scripts/critical.js",
-    "build": "npm run scss && npm run uglify && npm run critical && jekyll build"
+    "critical": "node _build-scripts/critical.js"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
