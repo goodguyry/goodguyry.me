@@ -36,3 +36,6 @@ github_base_url: http://github.com/goodguyry
 codepen_username:  GoodGuyRy
 
 stuff: nonsense
+
+# gems:
+#   - octopress-autoprefixer
