@@ -17,7 +17,7 @@ timezone: America/Los_Angeles
 # sass settings
 sass:
   sass_dir: _scss
-  style: compressed
+  style: expanded
   precision: 4
 
 # kramdown settings
@@ -36,3 +36,6 @@ github_base_url: http://github.com/goodguyry
 codepen_username:  GoodGuyRy
 
 stuff: nonsense
+
+# gems:
+#   - octopress-autoprefixer
