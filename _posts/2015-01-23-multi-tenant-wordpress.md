@@ -10,9 +10,9 @@ code: true
 
 ### Overview
 
-The multi-tenant WordPress setup allows multiple "tenant" sites to run from one "core" WordPress install, but with separate databases. The WordPress files are placed in versioned directories outside of the site's root, such as <code class="path">/opt/wordpress/{version}/</code>, then symlinked to the tenant sites' root directories.
+The multi-tenant WordPress setup allows multiple &quot;tenant&quot; sites to run from one &quot;core&quot; WordPress install, but with separate databases. The WordPress files are placed in versioned directories outside of the site&rsquo;s root, such as <code class="path">/opt/wordpress/{version}/</code>, then symlinked to the tenant sites&rsquo; root directories.
 
-The main <code class="path">wp-config.php</code> file is in <code class="path">/opt/wordpress</code> and contains all shared WordPress settings and definitions, along with a bit of code to require the tenants' config files, based on the host.
+The main <code class="path">wp-config.php</code> file is in <code class="path">/opt/wordpress</code> and contains all shared WordPress settings and definitions, along with a bit of code to require the tenants&rsquo; config files, based on the host.
 
 {% codeblock cli caption="/opt/wordpress/" %}
 wordpress
@@ -38,21 +38,21 @@ By taking advantage of some fully supported alternative configuration and setup 
 - Separate databases for each of our sites (or branches)
 - Easily adding more sites as needed
 
-That last point is especially attractive if you develop multiple WordPress sites; make this your local setup and you're golden.
+That last point is especially attractive if you develop multiple WordPress sites; make this your local setup and you&rsquo;re golden.
 
 ### Getting Started
 
-We're essentially going to be [giving WordPress its own directory](http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory), then moving the <code class="path">wp-content</code> directory to the site's root.
+We're essentially going to be [giving WordPress its own directory](http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory), then moving the <code class="path">wp-content</code> directory to the site&rsquo;s root.
 
 #### Give WordPress its own directory
 
-As mentioned, the core WordPress files should be moved into versioned directories outside of the site's root. We then symlink the version directory to the site's root.
+As mentioned, the core WordPress files should be moved into versioned directories outside of the site&rsquo;s root. We then symlink the version directory to the site's root.
 
-{% codeblock term caption="Symlink the core WordPress files to the site's root" %}
+{% codeblock term caption="Symlink the core WordPress files to the site&rsquo;s root" %}
 ln -s /opt/wordpress/4.1/ /path/to/site/wordpress
 {% endcodeblock %}
 
-**Copy** index.php from <code class="path">/opt/wordpress/4.1/</code> to the site's root directory and edit the last line to add the <code class="path">wordpress</code> symlinked directory.
+**Copy** index.php from <code class="path">/opt/wordpress/4.1/</code> to the site&rsquo;s root directory and edit the last line to add the <code class="path">wordpress</code> symlinked directory.
 
 {% codeblock php caption="Tell WordPress where to find itself" %}
 <?php /** Loads the WordPress Environment and Template */
@@ -61,13 +61,13 @@ require( dirname( __FILE__ ) . '/wordpress/wp-blog-header.php' ); ?>
 
 #### Move wp-content
 
-In my experience, the <code class="path">wp-content</code> directory isn't necessary in the core WordPress files, so we can safely move it to our site's root.
+In my experience, the <code class="path">wp-content</code> directory isn&rsquo;t necessary in the core WordPress files, so we can safely move it to our site&rsquo;s root.
 
-One tip you may find useful: Copy <code class="path">wp-content</code> to the <code class="path">/opt/wordpress</code> directory so you've got a spare you can use when adding sites in the future.
+One tip you may find useful: Copy <code class="path">wp-content</code> to the <code class="path">/opt/wordpress</code> directory so you&rsquo;ve got a spare you can use when adding sites in the future.
 
 We'll need to make some changes to the main <code class="path">wp-config.php</code> and tenant config files to make sure WordPress can find our <code class="path">wp-content</code> directory, but the files are now all in place.
 
-{% codeblock term caption="We're all set" %}
+{% codeblock term caption="We&rsquo;re all set" %}
 ls -l
 
 1 root root  418 Jan 15 22:08 index.php
@@ -129,14 +129,14 @@ define('WP_CONTENT_URL', 'http://mysite.com/wp-content');
 
 ### Intall WordPress
 
-Be sure to visit your site at <code class="path">mysite.com/wordpress</code> in order to be prompted to start the installation. After installation, you shouldn't need to include the <code class="path">wordpress</code> directory in the URL when visiting the Admin Dashboard.
+Be sure to visit your site at <code class="path">mysite.com/wordpress</code> in order to be prompted to start the installation. After installation, you shouldn&rsquo;t need to include the <code class="path">wordpress</code> directory in the URL when visiting the Admin Dashboard.
 
 ---
 
 To add more sites:
 
 - Copy and modify <code class="path">index.php</code>
-- Symlink the core WordPress files to the site's root
+- Symlink the core WordPress files to the site&rsquo;s root
 - Add a <code class="path">wp-content</code> directory
 - Add a config file for the new tenant site
 - Visit <code class="path">your-site/wordpress</code> to install

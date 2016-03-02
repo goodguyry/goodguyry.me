@@ -32,7 +32,7 @@ First, create a list of items in <code class="path">_data/nav.yaml</code>, each 
 
 Now that the data file is ready, assign the current page&rsquo;s URL to a variable. &ldquo;Current page&rdquo; in this context refers to the page being processed during Jekyll&rsquo;s build.
 
-{% codeblock liquid caption="Capture the page's URL" %}
+{% codeblock liquid caption="Capture the page&rsquo;s URL" %}
 {%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
 {% endcodeblock %}
 
@@ -56,7 +56,7 @@ To set the `offset`, test whether or not the current page is the home page. If i
 
 Now that all the pieces are in place, add the loop to build the navigation list.
 
-Use a `for` loop to iterate over the items in `site.data.nav`, comparing each item to the current page's URL. If the item matches the page's URL, mark the navigation item as &ldquo;current&rdquo; for styling purposes.
+Use a `for` loop to iterate over the items in `site.data.nav`, comparing each item to the current page&rsquo;s URL. If the item matches the page's URL, mark the navigation item as &ldquo;current&rdquo; for styling purposes.
 
 {% codeblock html caption="The loop" %}
 <nav role="navigation">
@@ -112,7 +112,7 @@ other: /
 
 `home` and `other` will be used to tell the loop which site is being built. More on that later...
 
-As with _The Basic Nav_ example above, the current page's URL needs to be captured for use in the loop.
+As with _The Basic Nav_ example above, the current page&rsquo;s URL needs to be captured for use in the loop.
 
 {% codeblock liquid caption="Capture the page's URL" %}
 {%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
@@ -140,7 +140,7 @@ For the offset, the only difference is checking for the translated home page URL
 
 #### The Problem, Part Deux
 
-As with _The Basic Nav_ above, the home pages &mdash; both the translated site and the english site &mdash; shouldn't show a home link. We solve this by conditionally setting the `offset`. But on the home page, the link to the translated home page _should_ show.
+As with _The Basic Nav_ above, the home pages &mdash; both the translated site and the english site &mdash; shouldn&rsquo;t show a home link. We solve this by conditionally setting the `offset`. But on the home page, the link to the translated home page _should_ show.
 
 So the loop essentially says, for items in this list, if the item is not the home page, skip the translated home link. Otherwise, build the list normally. And, of course, the list may or may not be offset, based on the page's URL.
 
@@ -162,4 +162,4 @@ So the loop essentially says, for items in this list, if the item is not the hom
 </nav>
 {% endcodeblock %}
 
-In this post, I introduced a technique for creating site navigation using Jekyll data files and Liquid conditionals and loops. I then showed how I've extended this approach for use in a multi-lingual site I'm building. I hope you've found this exercise helpful.
+In this post, I introduced a technique for creating site navigation using Jekyll data files and Liquid conditionals and loops. I then showed how I&rsquo;ve extended this approach for use in a multi-lingual site I&rsquo;m building. I hope you&rsquo;ve found this exercise helpful.
