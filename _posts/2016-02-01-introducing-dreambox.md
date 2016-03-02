@@ -15,13 +15,10 @@ resources:
 
 To get started with DreamBox, run the following in Terminal:
 
-<figure>
-{% highlight shell %}
+{% codeblock shell caption="Or add 'goodguyry/dreambox' to an existing Vagrantfile" %}
 vagrant init goodguyry/dreambox
 vagrant up
-{% endhighlight %}
-<figcaption>Or add 'goodguyry/dreambox' to an existing Vagrantfile</figcaption>
-</figure>
+{% endcodeblock %}
 
 ### User setup
 
