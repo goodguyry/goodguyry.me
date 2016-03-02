@@ -139,13 +139,13 @@ $purple: rgb(177, 115, 113);
   // keyword reserved
   .kr { color: $orange; }
   // variable
-  .nv { color: $orange; }
+  .nv { color: $blue; }
   // function
   .nf { color: $orange; }
   // operator
   .o { color: $blue; }
   // string
-  .s2, .s1 { color: $green; }
+  .s2, .s1 { color: $green; font-style: italic; }
   // tag
   .nt { color: $orange; }
   // number
