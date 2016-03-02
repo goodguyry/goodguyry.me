@@ -11,13 +11,13 @@ markdown: kramdown
 highlighter: rouge
 url: http://goodguyry.me
 include: [_pages, .htaccess]
-exclude: [Gruntfile.js, package.json, node_modules, README.md, LICENSE, _drafts/README.md, Vagrantfile]
+exclude: [_drafts/README.md, LICENSE, node_modules, package.json, README.md, Vagrantfile, vm-config.yaml]
 timezone: America/Los_Angeles
 
 # sass settings
 sass:
   sass_dir: _scss
-  style: expanded
+  style: compressed
   precision: 4
 
 # kramdown settings
@@ -35,7 +35,5 @@ github_username:  goodguyry
 github_base_url: http://github.com/goodguyry
 codepen_username:  GoodGuyRy
 
-stuff: nonsense
-
-# gems:
-#   - octopress-autoprefixer
+gems:
+  - octopress-autoprefixer
