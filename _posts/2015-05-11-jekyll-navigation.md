@@ -120,7 +120,7 @@ As with _The Basic Nav_ example above, the current page&rsquo;s URL needs to be 
 
 Next, tell Jekyll which data file to use by checking the URL for the language-specific directory. If the URL contains the directory name &mdash; in this case '/es/' &mdash; use the translated strings. Otherwise, use the english strings.
 
-{% codeblock html caption="Tell Jekyll which data file to use" %}
+{% codeblock liquid caption="Tell Jekyll which data file to use" %}
 {%raw%}{% if thisUrl contains "/es/" %}
   {% assign strings = site.data.strings_es %}
 {% else %}
