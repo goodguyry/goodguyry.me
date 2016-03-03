@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
-    "grunt": "0.4.x",
-    "grunt-contrib-cssmin": "0.11.x",
-    "grunt-contrib-uglify": "^0.9.2",
-    "grunt-criticalcss": "^0.5.0",
-    "load-grunt-tasks": "2.0.x"
+    "autoprefixer": "^6.3.3",
+    "cssnano": "^3.5.2",
+    "penthouse": "^0.9.1",
+    "uglify-js": "^2.6.2"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
+  "scripts": {
+    "uglify": "uglifyjs ./_loadCSS/loadCSS.js --mangle --compress --output ./_includes/loadCSS.min.js",
+    "critical": "node _build-scripts/critical.js",
+    "nano": "node _build-scripts/nano.js",
+    "build": "JEKYLL_ENV=production jekyll build"
+  },
   "author": "Ryan Domingue",
-  "license": "GPL",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/goodguyry/goodguyry.me"
 }

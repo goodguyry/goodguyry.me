@@ -27,17 +27,6 @@
 }
 
 /**
- * Simple columns
- * @param $fraction  A fraction corresponding to the desired width
- *
- * @include column(1/3);
- */
-@mixin column($fraction) {
-  width: percentage($fraction);
-  float: left;
-}
-
-/**
  * Simple media query
  * Takes a pixel length, converts it to ems and adds the passed style declarations
  * Media query condition is always min-width

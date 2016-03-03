@@ -13,6 +13,14 @@
   }
 }
 
+.blocks {
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 /**
  * Layout for multiple content blocks
  * - Stacked on small screens
@@ -21,25 +29,8 @@
 .block {
   width: 100%;
 
-  // Prevent stacking uneven boxes
-  &:nth-of-type(3) {
-    clear: both;
-  }
-
   @include responsive(400) {
     // Split on larger screens
-    @include column(1/2);
-
-    // Pad the box margins
-    &:nth-of-type(1),
-    &:nth-of-type(3) {
-      padding-right: 0.5em;
-    }
-
-    // Pad the box margins
-    &:nth-of-type(2),
-    &:nth-of-type(4) {
-      padding-left: 0.5em;
-    }
+    width: 49%;
   }
 }
