@@ -15,12 +15,12 @@
 
     <script>
       {% include loadCSS.min.js %}
-      loadCSS( "{{ '/css/base.css' }}" );
-      {% if page.code %}loadCSS( "{{ '/css/code.css' }}" );{% endif %}
+      loadCSS( '/css/base.css' );
+      {% if page.code %}loadCSS( '/css/code.css' );{% endif %}
     </script>
   {% else %}
-    <link rel="stylesheet" href="{{ '/css/base.css' }}">
-  {% if page.code %}<link rel="stylesheet" href="{{ '/css/code.css' }}">{% endif %}
+    <link rel="stylesheet" href="/css/base.css">
+  {% if page.code %}<link rel="stylesheet" href="/css/code.css">{% endif %}
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
@@ -37,8 +37,8 @@
   <meta name="copyright" content="2009-{{ site.time | date: '%Y' }}">
   <meta name="robots" content="index, follow">
 
-  <noscript><link rel="stylesheet" href="{{ '/css/base.css' }}"></noscript>
-  {% if page.code %}<noscript><link rel="stylesheet" href="{{ '/css/code.css' }}"></noscript>{% endif %}
+  <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
+  {% if page.code %}<noscript><link rel="stylesheet" href="/css/code.css"></noscript>{% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
   {% if page.picturefill %}<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/2.3.1/picturefill.min.js" async></script>{% endif %}
