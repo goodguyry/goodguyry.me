@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: Ryan Domingue is a web designer and developer living in Seattle, Washington
+description: Ryan Domingue is more than just a Seattle-based web developer...
 permalink: /about/
 ---
 
