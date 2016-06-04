@@ -3,10 +3,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <noscript>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lato:700,700italic' rel='stylesheet' type='text/css'>
-  </noscript>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:700,700italic' rel='stylesheet' type='text/css'>
 
   {% if jekyll.environment == "production" %}
     {% if page.isPost %}
@@ -17,8 +15,6 @@
 
     <script>
       {% include loadCSS.min.js %}
-      loadCSS( "http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700italic,700" );
-      loadCSS( "http://fonts.googleapis.com/css?family=Lato:700,700italic" );
       loadCSS( "{{ '/css/base.css' }}" );
       {% if page.code %}loadCSS( "{{ '/css/code.css' }}" );{% endif %}
     </script>
