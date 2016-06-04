@@ -9,6 +9,6 @@ I am a husband, dog father and Seattle transplant. I can be found cheering on [S
 
 I love coffee and cannot be trusted around cookies.
 
-I'm currently looking for a Front-End Developer position in a stable, fun organization. Please drop me a line if know of a text editor in need of a character.
+I'm currently looking for a Front-End Developer position in a stable, fun organization. Please drop me a line if you know of a text editor in need of a character.
 
 Find me online at [Twitter](http://twitter.com/{{ site.twitter_username }}) and [GitHub](http://github.com/{{ site.github_username }}).
