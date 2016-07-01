@@ -15,8 +15,6 @@
     {% else %}
       {% include critical-home.html %}
     {% endif %}
-  <!--#endif -->
-  {% endif %}
 
   <link rel="preload" href="/css/base.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
@@ -26,6 +24,11 @@
   {% endif %}
 
   {% include loadCSS.js.html %}
+  <!--#else -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/code.css">
+  <!--#endif -->
+  {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
 
