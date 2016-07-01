@@ -9,7 +9,7 @@ port: 8080
 # Build settings
 markdown: kramdown
 highlighter: rouge
-url: http://goodguyry.me
+url: http://goodguyry.dev
 include: [_pages, .htaccess]
 exclude: [_drafts/README.md, LICENSE, node_modules, package.json, README.md, Vagrantfile, vm-config.yaml]
 timezone: America/Los_Angeles
@@ -34,6 +34,3 @@ twitter_username: goodguyry
 github_username:  goodguyry
 github_base_url: http://github.com/goodguyry
 codepen_username:  GoodGuyRy
-
-gems:
-  - octopress-autoprefixer
