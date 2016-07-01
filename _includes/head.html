@@ -10,7 +10,7 @@
 
   {% if jekyll.environment == "production" %}
   <!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
-    {% if page.isPost %}
+    {% if page.layout == 'post' %}
       {% include critical-post.html %}
     {% else %}
       {% include critical-home.html %}
