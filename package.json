@@ -16,7 +16,7 @@
     "uglify": "uglifyjs ./_loadCSS/loadCSS.js --mangle --compress --output ./_includes/loadCSS.min.js",
     "critical": "node _build-scripts/critical.js",
     "nano": "node _build-scripts/nano.js",
-    "build": "JEKYLL_ENV=production jekyll build"
+    "build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",

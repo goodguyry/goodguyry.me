@@ -1,0 +1,4 @@
+url: http://goodguyry.me
+
+gems:
+  - octopress-autoprefixer
