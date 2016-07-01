@@ -9,26 +9,25 @@
   <base href="{{ site.url }}">
 
   {% if jekyll.environment == "production" %}
-  <!--#if expr="$HTTP_COOKIE=/return_visit\=true/" -->
-    <!-- CriticalCSS hidden based on cookie value -->
-    <link rel="stylesheet" href="/css/base.css">
-    {% if page.code %}<link rel="stylesheet" href="/css/code.css">{% endif %}
-  <!--#else -->
-    {% if page.isPost %}
+  <!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
+    {% if page.layout == 'post' %}
       {% include critical-post.html %}
     {% else %}
       {% include critical-home.html %}
     {% endif %}
 
-    <script>
-      {% include loadCSS.min.js %}
-      loadCSS( '/css/base.css' );
-      {% if page.code %}loadCSS( '/css/code.css' );{% endif %}
-    </script>
+  <link rel="preload" href="/css/base.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
+  {% if page.code %}
+  <link rel="preload" href="/css/code.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/code.css"></noscript>
+  {% endif %}
+
+  {% include loadCSS.js.html %}
+  <!--#else -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/code.css">
   <!--#endif -->
-  {% else %}
-    <link rel="stylesheet" href="/css/base.css">
-  {% if page.code %}<link rel="stylesheet" href="/css/code.css">{% endif %}
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
@@ -45,8 +44,6 @@
   <meta name="copyright" content="2009-{{ site.time | date: '%Y' }}">
   <meta name="robots" content="index, follow">
 
-  <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
-  {% if page.code %}<noscript><link rel="stylesheet" href="/css/code.css"></noscript>{% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
   {% if page.picturefill %}<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/2.3.1/picturefill.min.js" async></script>{% endif %}
