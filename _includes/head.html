@@ -8,15 +8,6 @@
 
   <base href="{{ site.url }}">
 
-  {% capture css_links %}
-  <link rel="preload" href="/css/base.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
-  {% if page.code %}
-  <link rel="preload" href="/css/code.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/code.css"></noscript>
-  {% endif %}
-  {% endcapture %}
-
   {% if jekyll.environment == "production" %}
   <!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
     {% if page.isPost %}
@@ -27,7 +18,13 @@
   <!--#endif -->
   {% endif %}
 
-  {{ css_links }}
+  <link rel="preload" href="/css/base.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/base.css"></noscript>
+  {% if page.code %}
+  <link rel="preload" href="/css/code.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/code.css"></noscript>
+  {% endif %}
+
   {% include loadCSS.js.html %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
