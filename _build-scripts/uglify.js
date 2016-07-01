@@ -6,6 +6,11 @@ var opts = {
     files : ['./node_modules/fg-loadcss/src/loadCSS.js', './node_modules/fg-loadcss/src/cssrelpreload.js'],
     outfile : './_includes/loadCSS.js.html',
     wrap : true
+  },
+  cookies : {
+    files : './js/cookies.js',
+    outfile : './_includes/cookies.js.html',
+    wrap : true
   }
 };
 
