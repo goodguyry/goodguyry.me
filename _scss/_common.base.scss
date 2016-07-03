@@ -21,7 +21,10 @@
 
 body {
   width: 100%;
-  @include font('content');
+  font: {
+    family: $serif;
+    weight: 200;
+  }
   line-height: $line-height;
   background-color: $theme-base;
   color: $theme-font-dark;
