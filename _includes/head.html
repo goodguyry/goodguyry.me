@@ -28,6 +28,9 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/code.css">
   <!--#endif -->
+  {% else %}
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/code.css">
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
