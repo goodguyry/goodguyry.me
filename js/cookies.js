@@ -1,5 +1,14 @@
 (function(document) {
 
+  // Get the domain from the <base> href value
+  var baseUrl = document.querySelector('base').href
+                .replace(/\//g, '')
+                .split(':')[1];
+
+  // Expires one week from today
+  var exdate=new Date();
+  exdate.setDate(exdate.getDate() + 7);
+
   /**
    * createCookie
    * Creates a cookie, given a name and value
@@ -20,17 +29,10 @@
 
   }
 
-  // Expires one week from today
-  var exdate=new Date();
-  exdate.setDate(exdate.getDate() + 7);
-
-  // Get the domain from the <base> href value
-  var baseUrl = document.querySelector('base').href
-                .replace(/\//g, '')
-                .split(':')[1];
-
+  // Create the 'return_visit' cookie
   createCookie('return_visit', 'true');
 
+  // Check for the 'fonts-loaded' class first
   if ( ! (window.document.documentElement.className.indexOf('fonts-loaded') > -1) ) {
 
     // Instantiate FontFaceObservers
@@ -38,24 +40,16 @@
         serifBold = new window.FontFaceObserver('Merriweather', { weight: 700 }),
         sans = new window.FontFaceObserver('Lato', { weight: 700 });
 
-    // Expires one week from today
-    var exdate=new Date();
-    exdate.setDate(exdate.getDate() + 7);
-
-    // Get the domain from the <base> href value
-    var baseUrl = document.querySelector('base').href
-                  .replace(/\//g, '')
-                  .split(':')[1];
-
-      // When loaded, add a 'fonts-loaded' class to <html>
-      window.Promise.all([
-          serif.load(null, 5000),
-          serifBold.load(null, 5000),
-          sans.load(null, 5000)
-        ]).then(function() {
-          window.document.documentElement.className+=' fonts-loaded';
-          createCookie('fonts_loaded', 'true');
-        });
+    // When loaded, add a 'fonts-loaded' class to <html>
+    window.Promise.all([
+        serif.load(null, 5000),
+        serifBold.load(null, 5000),
+        sans.load(null, 5000)
+    ]).then(function() {
+      window.document.documentElement.className+=' fonts-loaded';
+      // Create the 'fonts_loaded' cookie
+      createCookie('fonts_loaded', 'true');
+    });
   }
 
 })(document);
