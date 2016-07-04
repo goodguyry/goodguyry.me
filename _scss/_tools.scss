@@ -1,32 +1,4 @@
 /**
- * Typography
- * @param $context  A string describing the context
- */
-
-@mixin font($context) {
-  @if $context == 'content' {
-    font: {
-      family: 'Merriweather', serif;
-      weight: normal;
-      style: normal;
-    }
-  } @else if $context == 'heading' {
-    font: {
-      family: 'Lato', sans-serif;
-      weight: bold;
-      style: normal;
-    }
-  } @else if $context == 'code' {
-    font: {
-      family: Consolas, Monaco, 'Andale Mono', monospace;
-      weight: normal;
-      style: normal;
-      size: 0.7rem;
-    }
-  }
-}
-
-/**
  * Simple media query
  * Takes a pixel length, converts it to ems and adds the passed style declarations
  * Media query condition is always min-width

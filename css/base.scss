@@ -10,7 +10,8 @@
 @import "reset";
 
 // Common base styling
-@import "common.base",
+@import "common.fonts",
+        "common.base",
         "common.headings",
         "common.block",
         "common.inline",

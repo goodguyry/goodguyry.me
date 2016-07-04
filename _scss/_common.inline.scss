@@ -19,13 +19,13 @@ img {
 
 em { font-style: italic; }
 
-strong { font-weight: bold; }
+strong { font-weight: 700; }
 
 sub, sup { line-height: 0; }
 
 kbd {
   padding: 0.05em 0.2rem;
-  font-family: monospace;
+  font-family: $mono;
   border: 1px solid $theme-decoration-dark;
   background-color: $theme-decoration-light;
   border-radius: 3px;
@@ -41,5 +41,5 @@ abbr[title] {
 }
 
 output {
-  font-weight: bold;
+  font-weight: 700;
 }

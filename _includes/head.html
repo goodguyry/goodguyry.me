@@ -1,10 +1,7 @@
 <head>
-
+  <script>window.document.documentElement.className+=' js';</script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700italic,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lato:700,700italic' rel='stylesheet' type='text/css'>
 
   <base href="{{ site.url }}">
 
@@ -28,6 +25,9 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/code.css">
   <!--#endif -->
+  {% else %}
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/code.css">
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>

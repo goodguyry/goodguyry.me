@@ -6,6 +6,7 @@
     "autoprefixer": "^6.3.3",
     "cssnano": "^3.5.2",
     "fg-loadcss": "^1.2.0",
+    "fontfaceobserver": "^1.7.1",
     "penthouse": "^0.9.1",
     "uglify-js": "^2.6.2"
   },

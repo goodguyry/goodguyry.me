@@ -3,8 +3,20 @@
  */
 
 h1, h2, h3, h4, h5 {
-  @include font('heading');
+  font-weight: 700;
   line-height: 1;
+
+  // JS enabled but fonts not loaded
+  .js:not(.fonts-loaded) & {
+    font-family: Helvetica, sans-serif;
+  }
+
+  // Fonts loaded
+  .fonts-loaded &,
+  // JS disabled
+  html:not(.fonts-loaded) & {
+    font-family: $sans
+  }
 }
 
 h1 {
