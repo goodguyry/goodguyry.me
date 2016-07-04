@@ -18,7 +18,7 @@
     "uglify": "node _build-scripts/uglify.js",
     "critical": "node _build-scripts/critical.js",
     "nano": "node _build-scripts/nano.js",
-    "build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml"
+    "build": "npm run uglify && JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
