@@ -7,11 +7,11 @@ var opts = {
     outfile : './_includes/loadCSS.js.html',
     wrap : true
   },
-  cookies : {
-    files : './js/cookies.js',
+  ffo : {
+    files : ['./node_modules/fontfaceobserver/fontfaceobserver.js', './js/cookies.js'],
     outfile : './_includes/cookies.js.html',
     wrap : true
-  }
+  },
 };
 
 // Loop through the files and uglify
