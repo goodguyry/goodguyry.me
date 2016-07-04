@@ -1,4 +1,4 @@
-(function(document) {
+(function(window, document) {
 
   // Get the domain from the <base> href value
   var baseUrl = document.querySelector('base').href
@@ -52,4 +52,4 @@
     });
   }
 
-})(document);
+})(this, document);
