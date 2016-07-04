@@ -8,8 +8,8 @@ var opts = {
     wrap : true
   },
   ffo : {
-    files : ['./node_modules/fontfaceobserver/fontfaceobserver.js', './js/cookies.js'],
-    outfile : './_includes/cookies.js.html',
+    files : ['./node_modules/fontfaceobserver/fontfaceobserver.js', './js/main.js'],
+    outfile : './_includes/main.js.html',
     wrap : true
   },
 };
