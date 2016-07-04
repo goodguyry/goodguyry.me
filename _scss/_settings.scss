@@ -36,6 +36,14 @@ $theme-decoration-light: lighten($theme-font-dark, 75%); // Background color for
 $theme-decoration-dark: lighten($theme-font-dark, 60%); // Horizontal rules
 
 /**
+ * Fonts
+ */
+
+$sans: 'Lato', Helvetica, sans-serif;
+$serif: 'Merriweather', Palatino, Georgia, serif;
+$mono: Consolas, Monaco, 'Andale Mono', monospace;
+
+/**
  * Misc.
  */
 
