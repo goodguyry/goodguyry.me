@@ -32,7 +32,7 @@ She was Chief Grocery Bag Inspector, insisting upon sticking her nose in every b
        src="/images/posts/remembering-pinky-good-sport.jpg"
        srcset="/images/posts/remembering-pinky-good-sport-400.jpg 400w, /images/posts/remembering-pinky-good-sport.jpg 720w"
        sizes="(min-width: 720px) 720px, 100vw">
-  <figcaption>Supporting mom&rsquo;s home side during the 2015 World Cup</figcaption>
+  <figcaption>Supporting mom&rsquo;s home side during the 2014 World Cup</figcaption>
 </figure>
 
 And she loved car rides. Car rides are the best!
