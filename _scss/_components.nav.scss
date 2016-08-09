@@ -12,14 +12,13 @@ nav {
   }
 
   ul {
+    display: flex;
     margin-bottom: 0;
     margin-left: 0;
     list-style-type: none;
   }
 
   li {
-    float: left;
-
     &:not(:first-child):before {
       content: '/';
       display: inline;
