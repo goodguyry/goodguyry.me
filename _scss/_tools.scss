@@ -5,9 +5,9 @@
  * @param $px  The pixel length to be converted to ems
  * @param $mm  Min/Max switch; defaults to min-width
  *
- * @include responsive(px) { ... }
+ * @include breakpoint(px) { ... }
  */
-@mixin responsive($px, $mm: 'min') {
+@mixin breakpoint($px, $mm: 'min') {
   $width: ($px/16) + em;
   @media only screen and (#{$mm}-width: ($width)) { @content; }
 }
