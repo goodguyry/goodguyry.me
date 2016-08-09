@@ -7,8 +7,8 @@ permalink: /about/
 
 I am a husband, dog father and Seattle transplant. I can be found cheering on [Sounders FC](http://soundersfc.com), playing my guitar, [hoarding GIFs](http://jif.io) or Googling the current topic of conversation.
 
-I love coffee and cannot be trusted around cookies.
+As a <abbr title="User Experience">UX</abbr> Developer at [Alley Interactive](https://www.alleyinteractive.com), I work with an immensely talented team of folks creating solutions for digital publishers.
 
-I'm currently looking for a Front-End Developer position in a stable, fun organization. Please drop me a line if you know of a text editor in need of a character.
+I love coffee and cannot be trusted around cookies.
 
 Find me online at [Twitter](http://twitter.com/{{ site.twitter_username }}) and [GitHub](http://github.com/{{ site.github_username }}).
