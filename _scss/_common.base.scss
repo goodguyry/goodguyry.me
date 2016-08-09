@@ -6,15 +6,15 @@
 :root {
   font-size: small;
 
-  @include responsive(220) {
+  @include breakpoint(220) {
     font-size: medium;
   }
 
-  @include responsive(250) {
+  @include breakpoint(250) {
     font-size: large;
   }
 
-  @include responsive(500) {
+  @include breakpoint(500) {
     font-size: x-large;
   }
 }
