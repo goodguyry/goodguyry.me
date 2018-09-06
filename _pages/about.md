@@ -7,7 +7,7 @@ permalink: /about/
 
 I am a husband, dog father and Seattle transplant. I can be found cheering on [Sounders FC](http://soundersfc.com), playing my guitar, [hoarding GIFs](http://jif.io) or Googling the current topic of conversation.
 
-As a <abbr title="User Experience">UX</abbr> Developer at [Alley Interactive](https://www.alleyinteractive.com), I work with an immensely talented team of folks creating solutions for digital publishers.
+As a <abbr title="User Experience">UX</abbr> Developer at [Alley Interactive](https://alley.co/), I work with an immensely talented team of folks creating solutions for digital publishers.
 
 I love coffee and cannot be trusted around cookies.
 
