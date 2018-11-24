@@ -115,6 +115,16 @@ module.exports = (env, argv) => {
         configFile: path.join(paths.config, 'stylelint.config.js'),
       }),
       new StatsPlugin({
+        transform(stats) {
+          const entries = stats.assetsByChunkName;
+
+          const assetMap = Object.keys(entries).reduce((acc, entry) => {
+            const assetList = Array.from(entries[entry]);
+            return Object.assign({}, acc, { [entry]: assetList });
+          }, {});
+
+          return JSON.stringify(assetMap);
+        },
         fields: ['assetsByChunkName', 'hash'],
         filename: 'assetMap.json',
       }),
