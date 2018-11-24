@@ -2,6 +2,7 @@
 const path = require('path');
 // Plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const paths = {
   build: path.join(__dirname, '../../build'),
@@ -90,6 +91,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
+    }),
+    new StylelintPlugin({
+      configFile: path.join(paths.config, 'stylelint.config.js'),
     }),
   ],
 };

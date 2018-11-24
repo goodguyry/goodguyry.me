@@ -26,21 +26,21 @@ body {
   background-color: $theme-base;
   color: $theme-font-dark;
   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-     -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
 
   // JS enabled but fonts not loaded
   .js:not(.fonts-loaded) & {
-    font-family: Palatino, Georgia, serif;
+    font-family: 'Palatino', 'Georgia', serif;
   }
 
   // Fonts loaded
   .fonts-loaded &,
   // JS disabled
   html:not(.fonts-loaded) & {
-    font-family: $serif
+    font-family: $serif;
   }
 }

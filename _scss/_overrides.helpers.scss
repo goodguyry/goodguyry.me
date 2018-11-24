@@ -32,7 +32,7 @@
 .more {
   font-size: $small-font-size;
 
-  &:before {
+  &::before {
     content: "\203A";
     display: inline;
     padding-right: 0.25rem;

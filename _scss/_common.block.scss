@@ -28,15 +28,15 @@ article {
 blockquote {
   width: 100%;
   margin-bottom: $vertical-rhythm;
-  padding: .5rem;
+  padding: 0.5rem;
   border-top: 3px double $theme-decoration-dark;
   border-bottom: 3px double $theme-decoration-dark;
   color: $theme-font-dark;
   font-size: 1.25rem;
   quotes: none;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     content: none;
   }
@@ -65,9 +65,9 @@ code {
   font-family: $mono;
   white-space: pre;
   -webkit-hyphens: none;
-     -moz-hyphens: none;
-      -ms-hyphens: none;
-          hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 // No <figure> styling, as it's used only as a semantic

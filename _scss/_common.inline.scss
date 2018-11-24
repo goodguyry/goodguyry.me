@@ -17,11 +17,18 @@ img {
   max-width: 100%;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
-strong { font-weight: 700; }
+strong {
+  font-weight: 700;
+}
 
-sub, sup { line-height: 0; }
+sub,
+sup {
+  line-height: 0;
+}
 
 kbd {
   padding: 0.05rem 0.2rem;

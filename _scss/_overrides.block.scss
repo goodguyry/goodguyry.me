@@ -20,6 +20,7 @@ main {
 }
 
 blockquote {
+
   p {
     margin-bottom: 0.875rem;
   }
@@ -37,7 +38,7 @@ blockquote {
     display: block;
 
     // Add a little dash before the quote citation
-    &:before {
+    &::before {
       content: "-";
       margin-right: 0.25rem;
     }
@@ -52,8 +53,8 @@ code {
     display: block;
     color: rgb(255, 255, 255);
     -moz-tab-size: 2;
-      -o-tab-size: 2;
-         tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
   }
 
   // Inline code
@@ -87,6 +88,7 @@ code {
 }
 
 footer[role="contentinfo"] {
+
   p {
     margin: 0;
   }

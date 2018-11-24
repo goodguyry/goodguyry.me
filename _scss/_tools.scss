@@ -1,3 +1,4 @@
+/* stylelint-disable at-rule-empty-line-before */
 /**
  * Simple media query
  * Takes a pixel length, converts it to ems and adds the passed style declarations
@@ -9,7 +10,9 @@
  */
 @mixin breakpoint($px, $mm: 'min') {
   $width: ($px/16) + em;
-  @media only screen and (#{$mm}-width: ($width)) { @content; }
+  @media only screen and (#{$mm}-width: ($width)) {
+    @content;
+  }
 }
 
 /**
@@ -23,7 +26,7 @@
   $values: ();
 
   @each $property in $properties {
-    $values: append($values, $property .2s ease, comma);
+    $values: append($values, $property 0.2s ease, comma);
   }
 
   transition: $values;

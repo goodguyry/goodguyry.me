@@ -1,3 +1,5 @@
+/* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
+
 $orange: rgb(214, 135, 50);
 $green: rgb(180, 199, 90);
 $blue: rgb(123, 170, 190);
@@ -140,7 +142,10 @@ $purple: rgb(177, 115, 113);
   // operator
   .o { color: $blue; }
   // string
-  .s2, .s1 { color: $green; font-style: italic; }
+  .s2, .s1 {
+    color: $green;
+    font-style: italic;
+  }
   // tag
   .nt { color: $orange; }
   // number
@@ -154,7 +159,7 @@ $purple: rgb(177, 115, 113);
   .s { color: $orange; }
 }
 
-.language-term:before {
+.language-term::before {
   content: '$';
   display: inline-block;
   margin-right: 0.5em;
