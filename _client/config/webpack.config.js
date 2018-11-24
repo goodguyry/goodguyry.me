@@ -12,6 +12,7 @@ const paths = {
   styles: path.join(__dirname, '../src/scss'),
   scripts: path.join(__dirname, '../src/js'),
   entries: path.join(__dirname, '../entries'),
+  jekyllSass: path.join(__dirname, '../../_scss'),
   config: __dirname,
 };
 
@@ -31,10 +32,13 @@ module.exports = (env, argv) => {
   const prod = 'production' === mode;
 
   return {
+    mode,
+
     entry: {
       base: '_client/entries/base',
       code: '_client/entries/code',
     },
+
     output: {
       path: paths.build,
       publicPath: paths.projectRoot,
@@ -45,6 +49,9 @@ module.exports = (env, argv) => {
         ? 'js/[name].[contenthash].chunk.min.js'
         : 'js/[name].chunk.js',
     },
+
+    devtool: prod ? 'source-map' : 'cheap-module-eval-source-map',
+
     module: {
       rules: [
         {
@@ -86,7 +93,7 @@ module.exports = (env, argv) => {
               loader: 'sass-loader',
               options: {
                 includePaths: [
-                  path.join(__dirname, '../../_scss'),
+                  paths.jekyllSass,
                 ],
               },
             },
@@ -94,6 +101,7 @@ module.exports = (env, argv) => {
         },
       ],
     },
+
     resolve: {
       modules: [
         paths.projectRoot,
