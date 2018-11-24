@@ -133,15 +133,19 @@ module.exports = (env, argv) => {
 
           const assetMap = Object.keys(entries).reduce((acc, entry) => {
             const assetList = Array.from(entries[entry])
-              .filter((asset) => '.map' !== path.parse(asset).ext);
+              .filter((asset) => '.map' !== path.parse(asset).ext)
+              .reduce((lines, line) => {
+                const { ext } = path.parse(line);
+                return `${lines}  ${ext.replace('.', '')}: ${line}\n`;
+              }, '');
 
-            return Object.assign({}, acc, { [entry]: assetList });
-          }, {});
+            return `${acc}${entry}:\n${assetList}\n`;
+          }, '');
 
-          return JSON.stringify(assetMap);
+          return assetMap;
         },
         fields: ['assetsByChunkName', 'hash'],
-        filename: 'assetMap.json',
+        filename: '../_data/assets.yaml',
       }),
     ],
   };
