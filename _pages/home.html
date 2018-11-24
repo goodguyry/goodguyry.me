@@ -2,6 +2,7 @@
 layout: front
 title: Ryan Domingue is a web developer living in Seattle, Washington
 permalink: /
+stylesheet: base
 
 projects:
   - name: DreamBox
@@ -14,14 +15,15 @@ projects:
     description: Package &amp; Bash settings.
     url: http://github.com/goodguyry/dotfiles
 ---
+{% assign classes = site.data.classnames[page.stylesheet] %}
 
       <article>
 
         <h2>{{ site.heading_projects }}</h2>
 
-        <ul class="blocks">
+        <ul class="{{ classes.blocks }}">
           {% for project in page.projects %}
-          <li class="block">
+          <li class="{{ classes.block }}">
 
             <h3>
               <a href="{{ project.url }}">{{ project.name }}</a>
@@ -33,6 +35,6 @@ projects:
           {% endfor %}
         </ul>
 
-        <a class="more" href="{{ site.github_base_url }}">See more on GitHub</a>
+        <a class="{{ classes.more }}" href="{{ site.github_base_url }}">See more on GitHub</a>
 
       </article>

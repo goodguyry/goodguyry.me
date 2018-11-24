@@ -1,6 +1,8 @@
 ---
 layout: default
+stylesheet: base
 ---
+{% assign classes = site.data.classnames[layout.stylesheet] %}
 
     <header role="banner">
 
@@ -19,7 +21,7 @@ layout: default
 
         <h2>{{ site.heading_blog }}</h2>
 
-        <ul class="post-list">
+        <ul class="{{ classes.post-list }}">
           {% for post in site.posts limit:4 %}
             <li>
 
@@ -34,7 +36,7 @@ layout: default
         </ul>
 
         {% if site.posts.size > 4 %}
-        <a class="more" href="{{ site.blogroll }}">View the Notes archive</a>
+        <a class="{{ classes.more }}" href="{{ site.blogroll }}">View the Notes archive</a>
         {% endif %}
 
       </article>

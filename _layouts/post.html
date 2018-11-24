@@ -1,6 +1,8 @@
 ---
 layout: default
+stylesheet: base
 ---
+{% assign classes = site.data.classnames[layout.stylesheet] %}
 
       <header role="banner">
 
@@ -13,11 +15,11 @@ layout: default
 
         <article>
 
-          <p class="post-meta">
+          <p class="{{ classes.post-meta }}">
             <time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
           </p>
 
-          <h1 class="post-title">{{ page.title }}</h1>
+          <h1 class="{{ classes.post-title }}">{{ page.title }}</h1>
 
 {{ content }}
 

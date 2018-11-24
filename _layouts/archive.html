@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Notes
+stylesheet: base
 permalink: /notes/
 ---
+{% assign classes = site.data.classnames[layout.stylesheet] %}
 
       <header role="banner">
 
@@ -16,7 +18,7 @@ permalink: /notes/
 
         <article>
 
-          <ul class="post-list">
+          <ul class="{{ classes.post-list }}">
             {% for post in site.posts %}
               <li>
                 <h3>
@@ -27,7 +29,7 @@ permalink: /notes/
             {% endfor %}
           </ul>
 
-          <p><a class="more" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
+          <p><a class="{{ classes.more }}" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
 
         </article>
 

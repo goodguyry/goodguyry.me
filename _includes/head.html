@@ -7,6 +7,10 @@
 
   {% assign assets = site.data.assets %}
 
+  <script>
+    // eslint-disable-next-line
+    {{ site.data.classnames | jsonify }}</script>
+
   {% if jekyll.environment == "production" %}
   <!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
     {% if page.layout == 'post' %}
@@ -16,20 +20,20 @@
     {% endif %}
 
   <link rel="preload" href="/css/base.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ assets.base.css }}"></noscript>
+  <noscript><link rel="stylesheet" href="build/{{ assets.base.css }}"></noscript>
   {% if page.code %}
   <link rel="preload" href="/css/code.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ assets.code.css }}"></noscript>
+  <noscript><link rel="stylesheet" href="build/{{ assets.code.css }}"></noscript>
   {% endif %}
 
   {% include loadCSS.js.html %}
   <!--#else -->
-  <link rel="stylesheet" href="{{ assets.base.css }}">
-  <link rel="stylesheet" href="{{ assets.code.css }}">
+  <link rel="stylesheet" href="build/{{ assets.base.css }}">
+  <link rel="stylesheet" href="build/{{ assets.code.css }}">
   <!--#endif -->
   {% else %}
-  <link rel="stylesheet" href="{{ assets.base.css }}">
-  <link rel="stylesheet" href="{{ assets.code.css }}">
+  <link rel="stylesheet" href="build/{{ assets.base.css }}">
+  <link rel="stylesheet" href="build/{{ assets.code.css }}">
   {% endif %}
 
   <title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>

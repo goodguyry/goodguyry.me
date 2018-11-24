@@ -1,3 +1,8 @@
+---
+stylesheet: base
+---
+{% assign classes = site.data.classnames[layout.stylesheet] %}
+
 <!DOCTYPE html>
 <!--#if expr="$HTTP_COOKIE=/fonts_loaded\=true/" -->
 <html class="fonts-loaded">
@@ -9,7 +14,7 @@
 
 <body>
 
-  <div class="grid">
+  <div class="{{ classes.grid }}">
 
 {{ content }}
 

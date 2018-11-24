@@ -11,7 +11,15 @@ markdown: kramdown
 highlighter: rouge
 url: http://goodguyry.http
 include: [_pages, .htaccess]
-exclude: [_drafts/README.md, LICENSE, node_modules, package.json, README.md, Vagrantfile, vm-config.yaml]
+exclude:
+  - _drafts/README.md
+  - LICENSE
+  - node_modules
+  - package-lock.json
+  - package.json
+  - README.md
+  - Vagrantfile
+  - vm-config.yaml
 timezone: America/Los_Angeles
 
 # sass settings

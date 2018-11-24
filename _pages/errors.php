@@ -1,7 +1,10 @@
 ---
 # Errors
 permalink: /errors.php
+stylesheet: base
 ---
+{% assign classes = site.data.classnames[page.stylesheet] %}
+
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +36,7 @@ permalink: /errors.php
   }
   ?>
 
-  <div class="grid">
+  <div class="{{ classes.grid }}">
 
     <header role="banner">
 
@@ -49,7 +52,7 @@ permalink: /errors.php
 
         <p><?php echo $message; ?></p>
 
-        <a class="more" href="/">Return to the home page</a>.
+        <a class="{{ classes.more }}" href="/">Return to the home page</a>.
 
       </article>
 
