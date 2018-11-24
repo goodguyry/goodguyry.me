@@ -119,7 +119,9 @@ module.exports = (env, argv) => {
           const entries = stats.assetsByChunkName;
 
           const assetMap = Object.keys(entries).reduce((acc, entry) => {
-            const assetList = Array.from(entries[entry]);
+            const assetList = Array.from(entries[entry])
+              .filter((asset) => '.map' !== path.parse(asset).ext);
+
             return Object.assign({}, acc, { [entry]: assetList });
           }, {});
 
