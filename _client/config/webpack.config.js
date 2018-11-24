@@ -2,6 +2,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // Helpers
 const path = require('path');
 const yamlDictFromObject = require('../bin/yamlDictFromObject');
@@ -52,6 +53,12 @@ module.exports = (env, argv) => {
     },
 
     devtool: prod ? 'source-map' : 'cheap-module-eval-source-map',
+
+    optimization: {
+      minimizer: [
+        new OptimizeCSSAssetsPlugin({}),
+      ],
+    },
 
     module: {
       rules: [
