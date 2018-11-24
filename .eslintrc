@@ -23,12 +23,6 @@
 		"protractor": false, // Enable if using Protractor testing framework
 		"mocha": false // Enable if using Mocha testing framework
 	},
-	"globals": {
-		"jQuery": true,
-		"angular": false, // Enable if using Angular
-		"shutterstockClassnames": true,
-		"shutterstock_wp_vars": true,
-	},
 	"settings": {
 		"import/resolver": {
 			"babel-module": {},

@@ -26,87 +26,98 @@ const exclude = [
   /\.min\.js$/,
 ];
 
-module.exports = {
-  entry: {
-    base: '_client/entries/base',
-    code: '_client/entries/code',
-  },
-  output: {
-    path: paths.build,
-    publicPath: paths.projectRoot,
-  },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude,
-        include,
-        use: 'eslint-loader',
-      },
-      {
-        test: /\.js$/,
-        exclude,
-        include,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: {
-                autoprefixer: false,
-              },
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.join(paths.config, 'postcss.config.js'),
-              },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [
-                path.join(__dirname, '../../_scss'),
-              ],
-            },
-          },
-        ],
-      },
-    ],
-  },
-  resolve: {
-    modules: [
-      paths.projectRoot,
-      'node_modules',
-    ],
-    extensions: ['.js', '.json', '.css'],
-    alias: {
-      components: paths.components,
-      scss: paths.styles,
-      js: paths.scripts,
+module.exports = (env, argv) => {
+  const { mode } = argv;
+  const prod = 'production' === mode;
+
+  return {
+    entry: {
+      base: '_client/entries/base',
+      code: '_client/entries/code',
     },
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-    new StylelintPlugin({
-      configFile: path.join(paths.config, 'stylelint.config.js'),
-    }),
-    new StatsPlugin({
-      fields: ['assetsByChunkName', 'hash'],
-      filename: 'assetMap.json',
-    }),
-  ],
+    output: {
+      path: paths.build,
+      publicPath: paths.projectRoot,
+      filename: prod
+        ? 'js/[name].[contenthash].bundle.min.js'
+        : 'js/[name].bundle.js',
+      chunkFilename: prod
+        ? 'js/[name].[contenthash].chunk.min.js'
+        : 'js/[name].chunk.js',
+    },
+    module: {
+      rules: [
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude,
+          include,
+          use: 'eslint-loader',
+        },
+        {
+          test: /\.js$/,
+          exclude,
+          include,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
+        {
+          test: /\.s?css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: {
+                  autoprefixer: false,
+                },
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: path.join(paths.config, 'postcss.config.js'),
+                },
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: [
+                  path.join(__dirname, '../../_scss'),
+                ],
+              },
+            },
+          ],
+        },
+      ],
+    },
+    resolve: {
+      modules: [
+        paths.projectRoot,
+        'node_modules',
+      ],
+      extensions: ['.js', '.json', '.css'],
+      alias: {
+        components: paths.components,
+        scss: paths.styles,
+        js: paths.scripts,
+      },
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash].min.css',
+        chunkFilename: 'css/[name].[contenthash].chunk.min.css',
+      }),
+      new StylelintPlugin({
+        configFile: path.join(paths.config, 'stylelint.config.js'),
+      }),
+      new StatsPlugin({
+        fields: ['assetsByChunkName', 'hash'],
+        filename: 'assetMap.json',
+      }),
+    ],
+  };
 };
