@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-// Plugin imports
 const path = require('path');
 const fs = require('fs');
 const readYaml = require('read-yaml');
