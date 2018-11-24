@@ -13,6 +13,9 @@ module.exports = () => ({
     autoprefixer(),
     modules({
       generateScopedName: '[name]__[local]___[hash:base64:5]',
+      globalModulePaths: [
+        /css\/code\.scss/,
+      ],
       getJSON: (cssFileName, json) => {
         const { name } = path.parse(cssFileName);
         const output = path.join(__dirname, '../../_data');
