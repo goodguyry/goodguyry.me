@@ -9,8 +9,20 @@ const paths = {
   components: path.join(__dirname, '../components'),
   styles: path.join(__dirname, '../src/scss'),
   scripts: path.join(__dirname, '../src/js'),
+  entries: path.join(__dirname, '../entries'),
   config: __dirname,
-}
+};
+
+const include = [
+  paths.components,
+  paths.scripts,
+  paths.entries,
+];
+
+const exclude = [
+  /node_modules/,
+  /\.min\.js$/,
+];
 
 module.exports = {
   entry: {
@@ -24,8 +36,16 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude,
+        include,
+        use: 'eslint-loader',
+      },
+      {
+        test: /\.js$/,
+        exclude,
+        include,
         use: {
           loader: 'babel-loader',
         },
@@ -48,11 +68,11 @@ module.exports = {
               includePaths: [
                 path.join(__dirname, '../../_scss'),
               ],
-            }
-          }
+            },
+          },
         ],
       },
-    ]
+    ],
   },
   resolve: {
     modules: [
@@ -69,7 +89,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
-  ]
+      chunkFilename: '[id].css',
+    }),
+  ],
 };
