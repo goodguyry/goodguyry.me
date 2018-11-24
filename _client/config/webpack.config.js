@@ -3,6 +3,7 @@ const path = require('path');
 // Plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 
 const paths = {
   build: path.join(__dirname, '../../build'),
@@ -94,6 +95,10 @@ module.exports = {
     }),
     new StylelintPlugin({
       configFile: path.join(paths.config, 'stylelint.config.js'),
+    }),
+    new StatsPlugin({
+      fields: ['assetsByChunkName', 'hash'],
+      filename: 'assetMap.json',
     }),
   ],
 };
