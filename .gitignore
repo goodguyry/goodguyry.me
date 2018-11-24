@@ -4,4 +4,5 @@ _site/
 css/*
 _includes/*.js.*
 build
-_data/assets.yaml
+_data/
+!_data/nav.yaml

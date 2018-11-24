@@ -2,8 +2,10 @@
 // Plugin imports
 const path = require('path');
 const fs = require('fs');
+const readYaml = require('read-yaml');
 const autoprefixer = require('autoprefixer');
 const modules = require('postcss-modules');
+const yamlDictFromObject = require('../bin/yamlDictFromObject');
 
 // Config
 module.exports = () => ({
@@ -13,22 +15,21 @@ module.exports = () => ({
       generateScopedName: '[name]__[local]___[hash:base64:5]',
       getJSON: (cssFileName, json) => {
         const { name } = path.parse(cssFileName);
-        const output = path.join(__dirname, '../../build');
+        const output = path.join(__dirname, '../../_data');
         let modulesMap;
 
         try {
-          modulesMap = JSON.parse(fs.readFileSync(
-            path.join(output, 'classnames.json'),
-            'utf8'
-          ));
+          modulesMap = readYaml.sync(
+            path.join(output, 'classnames.yaml')
+          );
         } catch (error) {
           modulesMap = {};
         }
 
         modulesMap[name] = json;
         fs.writeFileSync(
-          path.join(output, 'classnames.json'),
-          JSON.stringify(modulesMap)
+          path.join(output, 'classnames.yaml'),
+          yamlDictFromObject(modulesMap)
         );
       },
     }),

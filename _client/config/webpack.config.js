@@ -1,9 +1,10 @@
-// Helpers
-const path = require('path');
 // Plugins
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+// Helpers
+const path = require('path');
+const yamlDictFromObject = require('../bin/yamlDictFromObject');
 
 const paths = {
   build: path.join(__dirname, '../../build'),
@@ -132,17 +133,17 @@ module.exports = (env, argv) => {
           const entries = stats.assetsByChunkName;
 
           const assetMap = Object.keys(entries).reduce((acc, entry) => {
-            const assetList = Array.from(entries[entry])
+            const assetList = entries[entry]
               .filter((asset) => '.map' !== path.parse(asset).ext)
               .reduce((lines, line) => {
                 const { ext } = path.parse(line);
-                return `${lines}  ${ext.replace('.', '')}: ${line}\n`;
-              }, '');
+                return Object.assign({}, lines, { [ext.replace('.', '')]: line });
+              }, {});
 
-            return `${acc}${entry}:\n${assetList}\n`;
-          }, '');
+            return { ...acc, [entry]: assetList };
+          }, {});
 
-          return assetMap;
+          return yamlDictFromObject(assetMap);
         },
         fields: ['assetsByChunkName', 'hash'],
         filename: '../_data/assets.yaml',
