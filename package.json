@@ -18,7 +18,8 @@
     "critical": "node _build-scripts/critical.js",
     "nano": "node _build-scripts/nano.js",
     "build": "npm run uglify && JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
-    "webpack": "webpack --config _client/config/webpack.config.js --mode production"
+    "webpack": "webpack --config _client/config/webpack.config.js --mode production",
+    "dev": "webpack --config _client/config/webpack.config.js --mode development"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",

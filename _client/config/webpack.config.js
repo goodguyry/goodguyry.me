@@ -114,10 +114,15 @@ module.exports = (env, argv) => {
         js: paths.scripts,
       },
     },
+
     plugins: [
       new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash].min.css',
-        chunkFilename: 'css/[name].[contenthash].chunk.min.css',
+        filename: prod
+          ? 'css/[name].[contenthash].min.css'
+          : 'css/[name].css',
+        chunkFilename: prod
+          ? 'css/[name].[contenthash].chunk.min.css'
+          : 'css/[name].chunk.css',
       }),
       new StylelintPlugin({
         configFile: path.join(paths.config, 'stylelint.config.js'),
