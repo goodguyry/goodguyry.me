@@ -3,3 +3,4 @@ vm-config.yaml
 _site/
 css/*
 _includes/*.js.*
+build

@@ -1,12 +1,25 @@
+// Helpers
 const path = require('path');
+// Plugins
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const paths = {
+  build: path.join(__dirname, '../../build'),
+  projectRoot: path.join(__dirname, '../../'),
+  components: path.join(__dirname, '../components'),
+  styles: path.join(__dirname, '../src/scss'),
+  scripts: path.join(__dirname, '../src/js'),
+  config: __dirname,
+}
 
 module.exports = {
   entry: {
-    main: path.join(__dirname, '../../js/main'),
+    base: '_client/entries/base',
+    code: '_client/entries/code',
   },
   output: {
-    path: path.join(__dirname, '../../_site/js'),
-    publicPath: path.join(__dirname, '../../'),
+    path: paths.build,
+    publicPath: paths.projectRoot,
   },
   module: {
     rules: [
@@ -14,9 +27,49 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
-      }
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.s?css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: {
+                autoprefixer: false,
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.join(__dirname, '../../_scss'),
+              ],
+            }
+          }
+        ],
+      },
     ]
-  }
+  },
+  resolve: {
+    modules: [
+      paths.projectRoot,
+      'node_modules',
+    ],
+    extensions: ['.js', '.json', '.css'],
+    alias: {
+      components: paths.components,
+      scss: paths.styles,
+      js: paths.scripts,
+    },
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    })
+  ]
 };
