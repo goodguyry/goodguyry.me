@@ -12,9 +12,24 @@ module.exports = () => ({
     modules({
       generateScopedName: '[name]__[local]___[hash:base64:5]',
       getJSON: (cssFileName, json) => {
-        const cssName = path.basename(cssFileName, '.css');
-        const jsonFileName = path.resolve(`./build/${cssName}.json`);
-        fs.writeFileSync(jsonFileName, JSON.stringify(json));
+        const { name } = path.parse(cssFileName);
+        const output = path.join(__dirname, '../../build');
+        let modulesMap;
+
+        try {
+          modulesMap = JSON.parse(fs.readFileSync(
+            path.join(output, 'classnames.json'),
+            'utf8'
+          ));
+        } catch (error) {
+          modulesMap = {};
+        }
+
+        modulesMap[name] = json;
+        fs.writeFileSync(
+          path.join(output, 'classnames.json'),
+          JSON.stringify(modulesMap)
+        );
       },
     }),
   ],
