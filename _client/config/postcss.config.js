@@ -3,7 +3,7 @@ const fs = require('fs');
 const readYaml = require('read-yaml');
 const autoprefixer = require('autoprefixer');
 const modules = require('postcss-modules');
-const yamlDictFromObject = require('../bin/yamlDictFromObject');
+const yamlDictFromObject = require('./bin/yamlDictFromObject');
 
 // Config
 module.exports = () => ({
