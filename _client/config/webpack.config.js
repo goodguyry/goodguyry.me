@@ -4,6 +4,7 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Helpers
 const path = require('path');
@@ -126,6 +127,10 @@ module.exports = (env, argv) => {
     },
 
     plugins: [
+      new CleanWebpackPlugin(
+        [`${paths.build}/*`],
+        { root: paths.projectRoot }
+      ),
       new MiniCssExtractPlugin({
         filename: prod
           ? 'css/[name].[contenthash].min.css'
