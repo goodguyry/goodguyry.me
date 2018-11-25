@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
+
 // Helpers
 const path = require('path');
 const yamlDictFromObject = require('../bin/yamlDictFromObject');
@@ -154,6 +156,10 @@ module.exports = (env, argv) => {
         },
         fields: ['assetsByChunkName', 'hash'],
         filename: '../_data/assets.yaml',
+      }),
+      new LiveReloadPlugin({
+        appendScriptTag: true,
+        delay: 1000,
       }),
     ],
   };

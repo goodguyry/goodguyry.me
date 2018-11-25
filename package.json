@@ -19,7 +19,9 @@
     "nano": "node _build-scripts/nano.js",
     "build": "npm run uglify && JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
     "webpack": "webpack --config _client/config/webpack.config.js --mode production",
-    "dev": "webpack --config _client/config/webpack.config.js --mode development"
+    "dev": "concurrently 'npm run webpack:dev' 'npm run jekyll:dev'",
+    "webpack:dev": "webpack --config _client/config/webpack.config.js --mode development --watch",
+    "jekyll:dev": "jekyll build --config _config.yaml --watch"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
@@ -30,6 +32,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -52,6 +55,9 @@
     "stylelint-webpack-plugin": "^0.10.5",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2",
-    "webpack-stats-plugin": "^0.2.1"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-livereload-plugin": "^2.1.1",
+    "webpack-stats-plugin": "^0.2.1",
+    "write-file-webpack-plugin": "^4.5.0"
   }
 }
