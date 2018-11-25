@@ -1,9 +1,11 @@
-    <footer role="contentinfo">
+<footer role="contentinfo">
 
-      <p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
-      {% if site.github_base_url %}
-      <p>This site&rsquo;s source is on <a href="{{ "/goodguyry.me" | prepend: site.github_base_url }}">Github</a>.</p>
-      {% endif %}
-      <p>Thanks for visiting.</p>
+	<p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
 
-    </footer>
+	{% if site.github_base_url %}
+		<p>This site&rsquo;s source is on <a href="{{ "/goodguyry.me" | prepend: site.github_base_url }}">Github</a>.</p>
+	{% endif %}
+
+	<p>Thanks for visiting.</p>
+
+</footer>
