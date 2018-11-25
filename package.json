@@ -17,11 +17,13 @@
     "uglify": "node _build-scripts/uglify.js",
     "critical": "node _build-scripts/critical.js",
     "nano": "node _build-scripts/nano.js",
-    "build": "npm run webpack && JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
-    "webpack": "webpack --config _client/config/webpack.config.js --mode production",
-    "dev": "concurrently 'npm run webpack:dev' 'npm run jekyll:dev'",
-    "webpack:dev": "webpack --config _client/config/webpack.config.js --mode development --watch",
-    "jekyll:dev": "jekyll build --config _config.yaml --watch"
+    "webpack:watch": "webpack --config _client/config/webpack.config.js --mode development --watch",
+    "webpack:prod": "webpack --config _client/config/webpack.config.js --mode production",
+    "jekyll:watch": "jekyll build --config _config.yaml --watch",
+    "jekyll:dev": "jekyll build --config _config.yaml",
+    "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
+    "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
+    "build": "npm run webpack:prod && npm run jekyll:build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
