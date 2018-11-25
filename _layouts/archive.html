@@ -6,9 +6,7 @@ permalink: /notes/
 ---
 {% assign classes = site.data.classnames[layout.stylesheet] %}
 
-<main role"main">
-
-	<article>
+<article>
 
 	<ul class="{{ classes.post-list }}">
 		{% for post in site.posts %}
@@ -23,6 +21,4 @@ permalink: /notes/
 
 	<p><a class="{{ classes.more }}" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
 
-	</article>
-
-</main>
+</article>
