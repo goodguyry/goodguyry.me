@@ -1,5 +1,13 @@
 {
-	"presets": [
-		"env"
-	]
+  "plugins": [
+    ["module-resolver", {
+      "root": [
+        "./_client/src/**",
+        "./_client/src/js/**",
+      ],
+    }]
+  ],
+  "presets": [
+    "env"
+  ]
 }

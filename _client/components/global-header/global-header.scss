@@ -1,0 +1,13 @@
+@import '../../../_scss/_settings.scss';
+@import '../../../_scss/_tools.scss';
+
+.wrapper {
+  padding: $double-vertical-rhythm $gutter-spacing;
+}
+
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0;
+}

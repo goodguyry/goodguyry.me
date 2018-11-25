@@ -1,0 +1,20 @@
+{% assign classes = site.data.classnames.global-header %}
+
+<!-- front -->
+<header role="banner" class="{{ classes.wrapper }}">
+	{% if page.layout == 'front' %}
+
+		<h1 class="{{ classes.page-title }}">Greetings, Earthling!</h1>
+
+	{% elsif page.layout == 'post' %}
+
+		<h2 class="{{ classes.page-title }}">{{ site.heading_blog }}</h2>
+
+	{% else %}
+
+		<h1 class="{{ classes.page-title }}">{{ page.title }}</h1>
+
+	{% endif %}
+
+	{% include nav.html %}
+</header>
