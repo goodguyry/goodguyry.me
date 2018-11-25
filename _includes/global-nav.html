@@ -1,0 +1,20 @@
+{% assign classes = site.data.classnames.global-nav %}
+{% assign nav = site.data.nav %}
+{% assign navurl = page.url | remove: 'index.html' %}
+
+<nav role="navigation" class="{{ classes.wrapper }}">
+
+	{% if page.layout == 'front' %}
+
+		<a class="{{ classes.link }}" href='/about/'>I am Ryan</a>.
+
+	{% else %}
+
+		<ul class="{{ classes.list }}">
+			{% for item in nav %}
+				<li class="{{ classes.item }}">{% if item.url == navurl %}{{ item.text }}{% else %}<a class="{{ classes.link }}" href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+			{% endfor %}
+		</ul>
+
+	{% endif %}
+</nav>
