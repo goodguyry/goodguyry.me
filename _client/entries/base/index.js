@@ -1,6 +1,7 @@
-import '../../components/global-header';
-import '../../components/global-nav';
+// Global entry
+import '..';
+
+// Component Sass
 import '../../components/projects';
-import '../../components/global-footer';
 import '../../../js/main';
 import '../../../css/base.scss';

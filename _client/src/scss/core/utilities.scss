@@ -1,4 +1,3 @@
-/* stylelint-disable at-rule-empty-line-before */
 /**
  * Simple media query
  * Takes a pixel length, converts it to ems and adds the passed style declarations
@@ -31,23 +30,3 @@
 
   transition: $values;
 }
-
-@mixin layout-section {
-  padding: 0 $gutter-spacing;
-  margin-bottom: $vertical-rhythm;
-  width: 100%;
-  position: relative; // To contain text selection highlighting
-  overflow: hidden;
-}
-
-// The CTA for linking to more info/blog posts
-@mixin layout-more {
-  font-size: $small-font-size;
-
-  &::before {
-    content: "\203A";
-    display: inline;
-    padding-right: 0.25rem;
-  }
-}
-

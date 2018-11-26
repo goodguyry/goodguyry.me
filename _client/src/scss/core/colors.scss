@@ -1,0 +1,17 @@
+// Main theme color
+$theme-main: rgb(42, 143, 159);
+
+// Used as selection background
+$theme-secondary: rgb(247, 157, 0);
+
+// Alternate theme color
+$theme-alt: rgb(239, 34, 52);
+
+// Lightest theme color, used for body background
+$theme-base: rgb(255, 255, 255);
+
+$theme-font-dark: rgb(50, 50, 50); // Main font body color
+$theme-font-light: lighten($theme-font-dark, 20%); // Asides and font decorations
+
+$theme-decoration-light: lighten($theme-font-dark, 75%); // Background color for asides
+$theme-decoration-dark: lighten($theme-font-dark, 60%); // Horizontal rules

@@ -2,7 +2,7 @@
 @import '../../../_scss/_tools.scss';
 
 .wrapper {
-  @include layout-section;
+  @include section;
 }
 
 .heading {
@@ -30,5 +30,5 @@
 }
 
 .more {
-  @include layout-more;
+  @include more-link;
 }

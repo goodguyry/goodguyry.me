@@ -1,0 +1,27 @@
+$max-grid-width: 720;
+$gutter-spacing: 0.625rem;
+
+$line-height: 1.5;
+$small-font-size: 0.875rem;
+
+$vertical-rhythm: $line-height + rem;
+$double-vertical-rhythm: ($line-height * 2) + rem;
+
+@mixin section {
+  padding: 0 $gutter-spacing;
+  margin-bottom: $vertical-rhythm;
+  width: 100%;
+  position: relative; // To contain text selection highlighting
+  overflow: hidden;
+}
+
+// The CTA for linking to more info/blog posts
+@mixin more-link {
+  font-size: $small-font-size;
+
+  &::before {
+    content: "\203A";
+    display: inline;
+    padding-right: 0.25rem;
+  }
+}
