@@ -1,0 +1,11 @@
+@import "../core/core";
+
+.grid {
+  position: relative; // To contain text selection highlighting
+
+  @include breakpoint($max-grid-width) {
+    max-width: $max-grid-width + px;
+    padding: 0;
+    margin: 0 auto;
+  }
+}

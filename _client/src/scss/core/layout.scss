@@ -25,3 +25,16 @@ $double-vertical-rhythm: ($line-height * 2) + rem;
     padding-right: 0.25rem;
   }
 }
+
+// A box for calling attention to content
+@mixin hey {
+  font: {
+    size: $small-font-size;
+    style: italic;
+  }
+  padding: 0.5rem;
+  color: $theme-font-light;
+  background-color: $theme-decoration-light;
+  border: 1px solid $theme-decoration-dark;
+  border-radius: 3px;
+}

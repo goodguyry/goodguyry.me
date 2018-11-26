@@ -68,7 +68,7 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-    <div class="{{ classes.grid }}">
+    <div class="grid">
 
         <header role="banner">
 

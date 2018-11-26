@@ -9,6 +9,7 @@
  */
 @mixin breakpoint($px, $mm: 'min') {
   $width: ($px/16) + em;
+
   @media only screen and (#{$mm}-width: ($width)) {
     @content;
   }
