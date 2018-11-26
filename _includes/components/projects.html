@@ -1,0 +1,23 @@
+{% assign classes = site.data.classnames.projects %}
+
+<section class="{{ classes.wrapper }}">
+
+	<h2 class="{{ classes.heading }}">{{ site.heading_projects }}</h2>
+
+	<ul class="{{ classes.list }}">
+		{% for project in site.data.projects %}
+			<li class="{{ classes.item }}">
+
+				<h3>
+					<a href="{{ project.url }}">{{ project.name }}</a>
+				</h3>
+
+				<p>{{ project.description }}</p>
+
+			</li>
+		{% endfor %}
+	</ul>
+
+	<a class="{{ classes.more }}" href="{{ site.github_base_url }}">See more on GitHub</a>
+
+</section>

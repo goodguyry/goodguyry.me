@@ -2,28 +2,6 @@
 layout: front
 title: Ryan Domingue is a web developer living in Seattle, Washington
 permalink: /
-stylesheet: base
 ---
-{% assign classes = site.data.classnames[page.stylesheet] %}
 
-<article>
-
-	<h2>{{ site.heading_projects }}</h2>
-
-	<ul class="{{ classes.blocks }}">
-		{% for project in site.data.projects %}
-			<li class="{{ classes.block }}">
-
-				<h3>
-					<a href="{{ project.url }}">{{ project.name }}</a>
-				</h3>
-
-				<p>{{ project.description }}</p>
-
-			</li>
-		{% endfor %}
-	</ul>
-
-	<a class="{{ classes.more }}" href="{{ site.github_base_url }}">See more on GitHub</a>
-
-</article>
+{% include components/projects.html %}
