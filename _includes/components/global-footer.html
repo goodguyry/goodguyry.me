@@ -1,4 +1,6 @@
-<footer role="contentinfo">
+{% assign classes = site.data.classnames.global-footer %}
+
+<footer role="contentinfo" class="{{ classes.wrapper }}">
 
 	<p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
 

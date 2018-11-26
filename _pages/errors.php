@@ -90,7 +90,7 @@ if (false === $title || 3 !== strlen($status)) {
 
         </main>
 
-        {% include footer.html %}
+        {% include components/global-footer.html %}
 
         </div>
 
