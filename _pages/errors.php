@@ -84,7 +84,7 @@ if (false === $title || 3 !== strlen($status)) {
 
                 <p><?php echo $message; ?></p>
 
-                <a class="{{ classes.more }}" href="/">Return to the home page</a>.
+                <a class="more" href="/">Return to the home page</a>.
 
             </article>
 

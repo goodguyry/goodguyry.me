@@ -45,3 +45,19 @@ body {
     font-family: $serif;
   }
 }
+
+h2 {
+  font-family: $sans;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 2rem;
+  margin-bottom: $vertical-rhythm;
+}
+
+.section {
+  @include section;
+}
+
+.more {
+  @include more-link;
+}
