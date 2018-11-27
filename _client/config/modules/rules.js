@@ -30,6 +30,22 @@ module.exports = [
     },
   },
   {
+    test: [
+      /\.png$/,
+      /\.jpg$/,
+      /\.svg$/,
+      /\.woff2?$/,
+      /\.ttf$/,
+    ],
+    use: {
+      loader: 'url-loader',
+      options: {
+        limit: 10000,
+        name: 'media/[name].[ext]',
+      },
+    },
+  },
+  {
     test: /\.s?css$/,
     use: [
       MiniCssExtractPlugin.loader,
@@ -41,6 +57,7 @@ module.exports = [
           },
         },
       },
+      'resolve-url-loader',
       {
         loader: 'postcss-loader',
         options: {

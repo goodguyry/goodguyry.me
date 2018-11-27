@@ -3,7 +3,7 @@ const paths = require('../paths');
 module.exports = (productionMode) => {
   const common = {
     path: paths.build,
-    publicPath: paths.projectRoot,
+    publicPath: '/build/',
   };
 
   return productionMode
