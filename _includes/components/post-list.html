@@ -1,0 +1,19 @@
+{% assign classes = site.data.classnames.post-list %}
+
+<ul class="{{ classes.wrapper }}">
+
+	{% for post in site.posts | limit:include.limit %}
+
+		<li class="{{ classes.item }}">
+
+			<h3 class="{{ classes.title }}">
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</h3>
+
+			{{ post.excerpt }}
+
+		</li>
+
+	{% endfor %}
+
+</ul>
