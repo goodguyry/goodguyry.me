@@ -1,6 +1,6 @@
 @import "../../src/scss/core/core";
 
-.post-content {
+:global(.post-content) {
   @import '../../src/scss/global/content';
 }
 

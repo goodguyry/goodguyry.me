@@ -1,0 +1,27 @@
+@import "../../src/scss/core/core";
+
+.wrapper {
+  /* tbd */
+}
+
+.heading {
+  font-family: $sans;
+  font-size: 1.5rem;
+  margin-bottom: .25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.list {
+  margin-bottom: $vertical-rhythm;
+  list-style: disc outside none;
+  margin-left: 1rem;
+}
+
+.item {
+  /* tbd */
+}
+
+.issues {
+  /* tbd */
+}

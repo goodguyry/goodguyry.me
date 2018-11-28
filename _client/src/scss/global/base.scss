@@ -46,6 +46,16 @@ body {
   }
 }
 
+a {
+  color: $theme-main;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 h2 {
   font-family: $sans;
   font-weight: 700;

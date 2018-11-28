@@ -173,16 +173,6 @@ figcaption {
  * Common inline styles
  */
 
-a {
-  color: $theme-main;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -222,6 +212,7 @@ cite {
 
 abbr[title] {
   border-bottom: 1px dotted $theme-font-light;
+  text-decoration: none;
   cursor: help;
 }
 

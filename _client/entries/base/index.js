@@ -5,5 +5,5 @@ import '..';
 import '../../components/projects';
 import '../../components/post-list';
 import './post.scss';
+import '../../components/post-footer';
 import '../../../js/main';
-import '../../../css/base.scss';
