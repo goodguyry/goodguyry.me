@@ -1,11 +1,106 @@
 /**
+ * Strip CSS units from a value.
+ *
+ * @param {String} $value A CSS length value.
+ *
+ * @returns {String} A unitless value.
+ */
+@function _strip-units($value) {
+  @if (type-of($value) == 'number' and not unitless($value)) {
+    @return $value / ($value * 0 + 1);
+  }
+
+  @return $value;
+}
+
+/**
+ * Convert px to rem or em
+ * Unitless values are assumed to be in px
+ *
+ * @param {Number|List} $values Single value or list of values to convert
+ * @param {Number} $base-value  Root font size on which to base conversions
+ *
+ * @returns {String} A rem value.
+ */
+@function _px-to-relative($px, $base-value) {
+  @if ('rem' == unit($px) or 0 == $px) {
+    @return $px;
+  }
+
+  @return _strip-units($px) / $base-value * 1rem;
+}
+
+/**
+ * Convert a list of px values (with or without the 'px' string) to either rem or em
+ *
+ * @param {Number|List} $values Single value or list of values to convert
+ * @param {Number} $base-value  Root font size on which to base conversions
+ *
+ * @returns {List|Number} A list of rem values, or a single value.
+ */
+@function _px-to-relative-list($values, $base-value) {
+  $rem-values: ();
+
+  @for $i from 1 through length($values) {
+    $value: nth($values, $i);
+
+    $rem-value: if(
+      string == type-of($value),
+      $value,
+      _px-to-relative(nth($values, $i), $base-value)
+    );
+
+    $rem-values: append($rem-values, $rem-value);
+  }
+
+  @return if(
+    1 < length($rem-values),
+    $rem-values,
+    nth($rem-values, 1)
+  );
+}
+
+/**
+ * Convert a list of px values (with or without the 'px' string) to rem
+ *
+ * @param {List}   $values Single value or list of values to convert
+ * @param {Number} $base-value Root font size on which to base conversions
+ */
+@function rem($values, $base-value: 16) {
+  @return _px-to-relative-list($values, $base-value);
+}
+
+/**
+ * Better text underline
+ * Prevents text underline from crossing descenders
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+ */
+ @mixin text-underline($bg-color: $black) {
+  /* Fallback for unsupported property */
+  text-decoration: none;
+  text-shadow: 0.08em 0 0 $bg-color, -0.08em 0 0 $bg-color, 0 0.08em 0 $bg-color, 0 -0.08em 0 $bg-color, 0.1em 0 0 $bg-color, -0.1em 0 0 $bg-color, 0 0.1em 0 $bg-color, 0 -0.1em 0 $bg-color;
+  background: linear-gradient(to right, currentColor 0%, currentColor 100%) repeat-x bottom center / 100% 1px;
+
+  /* `text-decoration-skip: ink` has slightly better support than `text-decoration-skip-ink: auto` */
+  @supports (text-decoration-skip: ink) or (-webkit-text-decoration-skip: ink) or (text-decoration-skip-ink: auto) {
+    text-decoration: underline;
+    text-decoration-skip: ink; // deprecated
+    text-decoration-skip-ink: auto;
+    text-shadow: none;
+    background: none;
+  }
+}
+
+/**
  * Simple media query
  * Takes a pixel length, converts it to ems and adds the passed style declarations
  * Media query condition is always min-width
- * @param $px  The pixel length to be converted to ems
- * @param $mm  Min/Max switch; defaults to min-width
  *
  * @include breakpoint(px) { ... }
+ *
+ * @param $px  The pixel length to be converted to ems
+ * @param $mm  Min/Max switch; defaults to min-width
  */
 @mixin breakpoint($px, $mm: 'min') {
   $width: ($px/16) + em;
@@ -17,9 +112,9 @@
 
 /**
  * Add a 200ms transition
- * @param $properties  A list of the properties to be transitioned
- *
  * @include transition((property-1[, property-2]));
+ *
+ * @param $properties  A list of the properties to be transitioned
  */
 @mixin transition($properties...) {
 

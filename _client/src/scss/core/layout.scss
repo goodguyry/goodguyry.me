@@ -1,43 +1,40 @@
-$max-grid-width: 720;
-$gutter-spacing: 0.625rem;
+$site-max: 720;
+$gutter-spacing: rem(10);
+$site-edge: rem(10);
 
-$line-height: 1.5;
-$small-font-size: 0.875rem;
+/**
+ * Centered block.
+ */
+@mixin auto-margins {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-$vertical-rhythm: $line-height + rem;
-$double-vertical-rhythm: ($line-height * 2) + rem;
+/**
+ * Full-width container minus edge spacing.
+ */
+@mixin container {
+  @include auto-margins;
+  max-width: rem($site-max - ($site-edge * 2));
+  width: calc(100vw - #{rem($site-edge * 2)});
+}
 
-// Shared margin-bottom value
-$heading-margin: 0.25rem;
+/**
+ * Full-width container with edge padding for background bleed.
+ */
+@mixin container-bleed {
+  @include auto-margins;
+  max-width: rem($site-max);
+  padding-left: rem($site-edge);
+  padding-right: rem($site-edge);
+  width: 100vw;
+}
 
+// TODO: temporary section mixin
 @mixin section {
   padding: 0 $gutter-spacing;
   margin-bottom: $vertical-rhythm;
   width: 100%;
   position: relative; // To contain text selection highlighting
   overflow: hidden;
-}
-
-// The CTA for linking to more info/blog posts
-@mixin more-link {
-  font-size: $small-font-size;
-
-  &::before {
-    content: "\203A";
-    display: inline;
-    padding-right: 0.25rem;
-  }
-}
-
-// A box for calling attention to content
-@mixin hey {
-  font: {
-    size: $small-font-size;
-    style: italic;
-  }
-  padding: 0.5rem;
-  color: $theme-font-light;
-  background-color: $theme-decoration-light;
-  border: 1px solid $theme-decoration-dark;
-  border-radius: 3px;
 }

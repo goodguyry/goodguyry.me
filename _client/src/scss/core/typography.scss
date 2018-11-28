@@ -1,3 +1,73 @@
 $sans: 'Lato', Helvetica, sans-serif;
 $serif: 'Merriweather', Palatino, Georgia, serif;
 $mono: Consolas, Monaco, 'Andale Mono', monospace;
+
+$line-height: 1.5;
+$small-font-size: rem(14);
+
+// TODO: wat.
+$vertical-rhythm: #{$line-height}rem;
+$double-vertical-rhythm: ($vertical-rhythm * 2);
+
+// Shared margin-bottom value
+$heading-margin: 0.25rem;
+
+@mixin heading-base {
+  font-weight: 700;
+  line-height: 1;
+}
+
+@mixin heading-primary {
+  @include heading-base;
+  font-size: rem(42);
+  margin-bottom: 0;
+}
+
+@mixin heading-secondary {
+  @include heading-base;
+  font-size: rem(32);
+  margin-bottom: $vertical-rhythm;
+}
+
+@mixin heading-tertiary {
+  @include heading-base;
+  font-size: rem(24);
+  margin-bottom: $heading-margin;
+}
+
+@mixin heading-small {
+  @include heading-base;
+  font-size: rem(20);
+  margin-bottom: $heading-margin;
+}
+
+@mixin heading-smallest {
+  font-size: rem(16);
+  margin-bottom: $heading-margin;
+}
+
+/**
+ * The CTA for linking to more info/blog posts.
+ */
+@mixin more-link {
+  font-size: $small-font-size;
+
+  &::before {
+    content: "\203A";
+    display: inline;
+    padding-right: 0.25rem;
+  }
+}
+
+// TODO: A box for calling attention to content
+@mixin hey {
+  font: {
+    size: $small-font-size;
+    style: italic;
+  }
+  padding: 0.5rem;
+  color: $theme-font-light;
+  background-color: $theme-decoration-light;
+  border: 1px solid $theme-decoration-dark;
+  border-radius: 3px;
+}
