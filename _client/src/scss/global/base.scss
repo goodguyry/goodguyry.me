@@ -61,3 +61,26 @@ h2 {
 .more {
   @include more-link;
 }
+
+::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+// Invert anchors to keep them legible
+a::selection {
+  color: $theme-font-dark;
+}
+
+img::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  width: 60%;
+  background-color: $theme-decoration-dark;
+  margin-bottom: $double-vertical-rhythm;
+}
