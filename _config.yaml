@@ -22,12 +22,6 @@ exclude:
   - vm-config.yaml
 timezone: America/Los_Angeles
 
-# sass settings
-sass:
-  sass_dir: _scss
-  style: compressed
-  precision: 4
-
 # kramdown settings
 kramdown:
   auto_ids:      false
