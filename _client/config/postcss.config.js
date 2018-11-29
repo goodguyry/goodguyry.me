@@ -20,19 +20,21 @@ module.exports = () => ({
         const output = path.join(__dirname, '../../_data');
         let modulesMap;
 
-        try {
-          modulesMap = readYaml.sync(
-            path.join(output, 'classnames.yaml')
-          );
-        } catch (error) {
-          modulesMap = {};
-        }
+        if (0 < Object.keys(json).length) {
+          try {
+            modulesMap = readYaml.sync(
+              path.join(output, 'classnames.yaml')
+            );
+          } catch (error) {
+            modulesMap = {};
+          }
 
-        modulesMap[name] = json;
-        fs.writeFileSync(
-          path.join(output, 'classnames.yaml'),
-          yamlDictFromObject(modulesMap)
-        );
+          modulesMap[name] = json;
+          fs.writeFileSync(
+            path.join(output, 'classnames.yaml'),
+            yamlDictFromObject(modulesMap)
+          );
+        }
       },
     }),
   ],
