@@ -5,10 +5,6 @@ $mono: Consolas, Monaco, 'Andale Mono', monospace;
 $line-height: 1.5;
 $small-font-size: rem(14);
 
-// TODO: wat.
-$vertical-rhythm: #{$line-height}rem;
-$double-vertical-rhythm: ($vertical-rhythm * 2);
-
 // Shared margin-bottom value
 $heading-margin: 0.25rem;
 
@@ -57,17 +53,4 @@ $heading-margin: 0.25rem;
     display: inline;
     padding-right: 0.25rem;
   }
-}
-
-// TODO: A box for calling attention to content
-@mixin hey {
-  font: {
-    size: $small-font-size;
-    style: italic;
-  }
-  padding: 0.5rem;
-  color: $theme-font-light;
-  background-color: $theme-decoration-light;
-  border: 1px solid $theme-decoration-dark;
-  border-radius: 3px;
 }

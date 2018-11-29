@@ -2,11 +2,7 @@
 
 // TODO
 .grid {
+  @include container;
+  padding-top: $double-vertical-rhythm;
   position: relative; // To contain text selection highlighting
-
-  @include breakpoint($site-max) {
-    max-width: rem($site-max);
-    padding: 0;
-    margin: 0 auto;
-  }
 }

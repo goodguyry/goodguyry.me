@@ -188,7 +188,7 @@ strong {
 
 del,
 strike,
-.strike {
+:global(.strike) {
   color: $theme-font-light;
   text-decoration: line-through;
 }
@@ -252,4 +252,16 @@ li ul {
 
 li ol {
   list-style-type: lower-alpha;
+}
+
+:global(.hey) {
+  font: {
+    size: $small-font-size;
+    style: italic;
+  }
+  padding: 0.5rem;
+  color: $theme-font-light;
+  background-color: $theme-decoration-light;
+  border: 1px solid $theme-decoration-dark;
+  border-radius: 3px;
 }

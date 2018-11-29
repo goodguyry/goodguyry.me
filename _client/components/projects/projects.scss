@@ -1,7 +1,7 @@
 @import '../../src/scss/core/core';
 
 .wrapper {
-  @include section;
+  margin-bottom: $double-vertical-rhythm;
 }
 
 .heading {

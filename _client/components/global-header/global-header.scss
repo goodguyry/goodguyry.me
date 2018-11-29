@@ -1,7 +1,8 @@
 @import '../../src/scss/core/core';
 
 .wrapper {
-  padding: $double-vertical-rhythm $gutter-spacing;
+  @include container;
+  padding-bottom: $double-vertical-rhythm;
 }
 
 .page-title {

@@ -1,6 +1,11 @@
-$site-max: 720;
-$gutter-spacing: rem(10);
-$site-edge: rem(10);
+$value-site-max: 720;
+$site-max: rem($value-site-max, 24);
+
+$gutter-spacing: 0.625rem;
+$site-edge: 0.625rem;
+
+$vertical-rhythm: 1.5rem;
+$double-vertical-rhythm: 3rem;
 
 /**
  * Centered block.
@@ -15,8 +20,8 @@ $site-edge: rem(10);
  */
 @mixin container {
   @include auto-margins;
-  max-width: rem($site-max - ($site-edge * 2));
-  width: calc(100vw - #{rem($site-edge * 2)});
+  max-width: calc(#{$site-max} - #{$site-edge} * 2);
+  width: calc(100vw - #{$site-edge} * 2);
 }
 
 /**
@@ -24,17 +29,8 @@ $site-edge: rem(10);
  */
 @mixin container-bleed {
   @include auto-margins;
-  max-width: rem($site-max);
-  padding-left: rem($site-edge);
-  padding-right: rem($site-edge);
+  max-width: $site-max;
+  padding-left: $site-edge;
+  padding-right: $site-edge;
   width: 100vw;
-}
-
-// TODO: temporary section mixin
-@mixin section {
-  padding: 0 $gutter-spacing;
-  margin-bottom: $vertical-rhythm;
-  width: 100%;
-  position: relative; // To contain text selection highlighting
-  overflow: hidden;
 }

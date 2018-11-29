@@ -65,7 +65,10 @@ h2 {
 }
 
 .section {
-  @include section;
+  @include container;
+  margin-bottom: $double-vertical-rhythm;
+  overflow: hidden;
+  position: relative; // To contain text selection highlighting
 }
 
 .more {
