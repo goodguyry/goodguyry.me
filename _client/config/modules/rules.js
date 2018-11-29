@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const paths = require('../paths');
+const sassCoreResources = require('./sassCoreResources');
 
 const include = [
   paths.components,
@@ -72,6 +73,12 @@ module.exports = [
           includePaths: [
             paths.jekyllSass,
           ],
+        },
+      },
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: sassCoreResources,
         },
       },
     ],
