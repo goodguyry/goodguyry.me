@@ -1,9 +1,8 @@
 ---
 # Errors
 permalink: /errors.php
-stylesheet: base
 ---
-{% assign classes = site.data.classnames[page.stylesheet] %}
+{% assign classes = site.data.classnames.base %}
 
 <!DOCTYPE html>
 <html>
@@ -61,6 +60,7 @@ $codes = array(
 $title = $codes[$status][0];
 $message = $codes[$status][1];
 if (false === $title || 3 !== strlen($status)) {
+    $title   = 'Missing error code.'
     $message = 'Please supply a valid status code.';
 } else {
     $code = substr($title, 0, 3);
@@ -68,8 +68,9 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-    <div class="grid">
+    <div class="{{ classes.grid }}">
 
+        <!-- TODO: incorporate global-header -->
         <header role="banner">
 
             <h1><?php echo $code . ' Error'; ?></h1>
@@ -78,13 +79,13 @@ if (false === $title || 3 !== strlen($status)) {
 
         <main role="main">
 
-            <article>
+            <article class="{{ classes.section }} post-content">
 
                 <h2><?php echo $code_desc; ?></h2>
 
                 <p><?php echo $message; ?></p>
 
-                <a class="more" href="/">Return to the home page</a>.
+                <a class="{{ classes.more }}" href="/">Return to the home page</a>.
 
             </article>
 
