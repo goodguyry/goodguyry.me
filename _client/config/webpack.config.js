@@ -25,6 +25,10 @@ module.exports = (env, argv) => {
       rules,
     },
 
+    stats: {
+      colors: true,
+    },
+
     resolve,
 
     plugins: getPlugins(productionMode),
