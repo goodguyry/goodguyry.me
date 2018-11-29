@@ -76,7 +76,7 @@
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
  */
- @mixin text-underline($bg-color: $black) {
+@mixin text-underline($bg-color: $black) {
   /* Fallback for unsupported property */
   text-decoration: none;
   text-shadow: 0.08em 0 0 $bg-color, -0.08em 0 0 $bg-color, 0 0.08em 0 $bg-color, 0 -0.08em 0 $bg-color, 0.1em 0 0 $bg-color, -0.1em 0 0 $bg-color, 0 0.1em 0 $bg-color, 0 -0.1em 0 $bg-color;
