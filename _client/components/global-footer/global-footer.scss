@@ -1,9 +1,9 @@
 .wrapper {
-  padding: $gutter-spacing;
-  width: 100%;
-  height: auto;
-  font-size: 0.625rem;
+  @include container;
   color: $theme-font-dark;
+  font-size: 0.625rem;
+  height: auto;
+  padding-bottom: $gutter-spacing;
   text-align: right;
 
   p {

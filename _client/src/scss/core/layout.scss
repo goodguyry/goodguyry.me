@@ -21,6 +21,7 @@ $double-vertical-rhythm: 3rem;
 @mixin container {
   @include auto-margins;
   max-width: calc(#{$site-max} - #{$site-edge} * 2);
+  position: relative; // To contain text selection highlighting
   width: calc(100vw - #{$site-edge} * 2);
 }
 

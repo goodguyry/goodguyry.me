@@ -1,7 +1,4 @@
----
-stylesheet: base
----
-{% assign classes = site.data.classnames[layout.stylesheet] %}
+{% assign classes = site.data.classnames.default %}
 
 <!DOCTYPE html>
 <!--#if expr="$HTTP_COOKIE=/fonts_loaded\=true/" -->
@@ -14,11 +11,12 @@ stylesheet: base
 
 <body>
 
-	<div class="grid">
+	<div class="{{ classes.wrapper }}">
 
 		{% include components/global-header.html %}
 
-		<main role="main">
+		{% assign classes = site.data.classnames.default %}
+		<main role="main" class="{{ classes.main }}">
 
 			{{ content }}
 
