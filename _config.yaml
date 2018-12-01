@@ -21,6 +21,7 @@ exclude:
   - README.md
   - Vagrantfile
   - vm-config.yaml
+  - '*.sublime-*'
 timezone: America/Los_Angeles
 
 # kramdown settings
