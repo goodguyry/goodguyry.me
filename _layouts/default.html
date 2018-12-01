@@ -1,4 +1,5 @@
 {% assign default = site.data.classnames.default %}
+{% assign assets = site.data.assets %}
 
 <!DOCTYPE html>
 <!--#if expr="$HTTP_COOKIE=/fonts_loaded\=true/" -->
@@ -27,7 +28,7 @@
 
 	<!-- build: {{ site.time }} -->
 
-	{% include main.js.html %}
+	<script src="/build/{{ assets.base.js }}"></script>
 
 </body>
 
