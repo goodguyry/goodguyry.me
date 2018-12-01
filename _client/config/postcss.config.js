@@ -3,6 +3,7 @@ const fs = require('fs');
 const readYaml = require('read-yaml');
 const autoprefixer = require('autoprefixer');
 const modules = require('postcss-modules');
+const paths = require('./paths');
 const yamlDictFromObject = require('./bin/yamlDictFromObject');
 
 // Config
@@ -17,13 +18,12 @@ module.exports = () => ({
       ],
       getJSON: (cssFileName, json) => {
         const { name } = path.parse(cssFileName);
-        const output = path.join(__dirname, '../../_data');
         let modulesMap;
 
         if (0 < Object.keys(json).length) {
           try {
             modulesMap = readYaml.sync(
-              path.join(output, 'classnames.yaml')
+              path.join(paths.siteData, 'classnames.yaml')
             );
           } catch (error) {
             modulesMap = {};
@@ -31,7 +31,7 @@ module.exports = () => ({
 
           modulesMap[name] = json;
           fs.writeFileSync(
-            path.join(output, 'classnames.yaml'),
+            path.join(paths.siteData, 'classnames.yaml'),
             yamlDictFromObject(modulesMap)
           );
         }
