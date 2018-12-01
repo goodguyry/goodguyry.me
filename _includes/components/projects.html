@@ -1,8 +1,9 @@
 {% assign projects = site.data.classnames.projects %}
+{% assign strings = site.data.strings %}
 
 <section class="{{ projects.wrapper }}">
 
-	<h2 class="{{ projects.heading }}">{{ site.heading_projects }}</h2>
+	<h2 class="{{ projects.heading }}">{{ strings.projects_heading }}</h2>
 
 	<ul class="{{ projects.list }}">
 		{% for project in site.data.projects %}
@@ -18,6 +19,6 @@
 		{% endfor %}
 	</ul>
 
-	<a class="{{ projects.more }}" href="{{ site.github_base_url }}">See more on GitHub</a>
+	<a class="{{ projects.more }}" href="{{ strings.github_base_url }}">See more on GitHub</a>
 
 </section>

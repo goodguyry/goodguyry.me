@@ -2,6 +2,7 @@
 title: 'Ryan Domingue is a UX Developer living in Seattle, Washington'
 description: 'Ryan Domingue works with HTML, CSS, and JavaScript, and spends his time learning and creating. Ryan loves coffee and cannot be trusted around cookies.'
 permalink: /notes/:title.html
+blogroll: /notes/
 
 # Development/Serve
 port: 8080
@@ -26,13 +27,3 @@ timezone: America/Los_Angeles
 kramdown:
   auto_ids: false
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-
-# Misc constants
-blogroll: /notes/
-heading_blog: Notes
-heading_projects: Selected Projects
-
-twitter_username: goodguyry
-github_username:  goodguyry
-github_base_url: http://github.com/goodguyry
-codepen_username:  GoodGuyRy

@@ -3,7 +3,7 @@
 <!-- front -->
 <header role="banner" class="{{ global-header.wrapper }}">
 	{% capture theTitle %}
-		{% if page.layout == 'post' %}{{ site.heading_blog }}{% else %}{{ page.title }}{% endif %}
+		{% if page.layout == 'post' %}{{ strings.blog_heading }}{% else %}{{ page.title }}{% endif %}
 	{% endcapture %}
 
 	<h1 class="{{ global-header.page-title }}">{{ theTitle }}</h1>
