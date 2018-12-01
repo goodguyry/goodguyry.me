@@ -2,19 +2,13 @@
 
 <!-- front -->
 <header role="banner" class="{{ global-header.wrapper }}">
-	{% if page.permalink == '/' %}
+	{% capture theTitle %}
+		{% if page.layout == 'post' %}{{ site.heading_blog }}{% else %}{{ page.title }}{% endif %}
+	{% endcapture %}
 
-		<h1 class="{{ global-header.page-title }}">Greetings, Earthling!</h1>
+	<h1 class="{{ global-header.page-title }}">{{ theTitle }}</h1>
 
-	{% elsif page.layout == 'post' %}
-
-		<h2 class="{{ global-header.page-title }}">{{ site.heading_blog }}</h2>
-
-	{% else %}
-
-		<h1 class="{{ global-header.page-title }}">{{ page.title }}</h1>
-
-	{% endif %}
-
-	{% include components/global-nav.html %}
+	{% unless page.permalink == '/errors.php' %}
+		{% include components/global-nav.html %}
+	{% endunless %}
 </header>

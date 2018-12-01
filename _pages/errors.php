@@ -1,5 +1,6 @@
 ---
 # Errors
+title: Oops...
 permalink: /errors.php
 ---
 
@@ -72,18 +73,13 @@ if (false === $title || 3 !== strlen($status)) {
 
     <div class="{{ default.wrapper }}">
 
-        <!-- TODO: incorporate global-header -->
-        <header role="banner" class="{{ global-header.wrapper }}">
-
-            <h1 class="{{ global-header.page-title }}"><?php echo $code . ' Error'; ?></h1>
-
-        </header>
+        {% include components/global-header.html %}
 
         <main role="main" class="{{ default.main }}">
 
             <article class="post-content">
 
-                <h2><?php echo $code_desc; ?></h2>
+                <h2><?php echo "{$code}: {$code_desc}"; ?></h2>
 
                 <p><?php echo $message; ?></p>
 
