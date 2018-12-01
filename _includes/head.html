@@ -12,6 +12,11 @@
 		// eslint-disable-next-line
 		window.siteClassNames = {{ site.data.classnames | jsonify }};</script>
 
+	{% assign fontFiles = site.data.fonts %}
+	{% for fontFile in site.data.fonts %}
+		<link rel="preload" href="build/media/{{ fontFile }}" as="font" type="font/woff2" crossorigin>
+	{% endfor %}
+
 	{% if jekyll.environment == "production" %}
 		<!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
 		{% if page.layout == 'post' %}
