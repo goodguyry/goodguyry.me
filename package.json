@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
-    "fg-loadcss": "^1.2.0",
-    "uglify-js": "^2.6.2"
+    "fg-loadcss": "^1.2.0"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "uglify": "node _build-scripts/uglify.js",
-    "critical": "node _build-scripts/critical.js",
-    "nano": "node _build-scripts/nano.js",
+    "critical": "node _client/config/bin/critical.js",
     "webpack:watch": "webpack --config _client/config/webpack.config.js --mode development --watch",
     "webpack:prod": "webpack --config _client/config/webpack.config.js --mode production",
     "jekyll:watch": "jekyll build --config _config.yaml --watch",
@@ -36,7 +33,6 @@
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.1.0",
     "css-loader": "^1.0.1",
-    "cssnano": "^3.5.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",

@@ -24,8 +24,8 @@ timezone: America/Los_Angeles
 
 # kramdown settings
 kramdown:
-  auto_ids:      false
-  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  auto_ids: false
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
 
 # Misc constants
 blogroll: /notes/

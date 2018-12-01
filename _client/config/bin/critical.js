@@ -2,7 +2,7 @@ const penthouse = require('penthouse');
 const fs = require('fs');
 const path = require('path');
 const readYaml = require('read-yaml');
-const paths = require('../_client/config/paths');
+const paths = require('../paths');
 
 /**
  * Get the hashed filename for a given asset.
