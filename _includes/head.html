@@ -35,8 +35,12 @@
 
 		{% include loadCSS.js.html %}
 
+		<!--#else -->
+
 		<link rel="stylesheet" href="build/{{ assets.base.css }}">
 		<link rel="stylesheet" href="build/{{ assets.code.css }}">
+
+		 <!--#endif -->
 
 	{% else %}
 
