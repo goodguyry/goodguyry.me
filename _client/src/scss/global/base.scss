@@ -55,25 +55,6 @@ a {
   }
 }
 
-h2 {
-  font-family: $sans;
-  font-weight: 700;
-  line-height: 1;
-  font-size: 2rem;
-  margin-bottom: $vertical-rhythm;
-}
-
-.section {
-  @include container;
-  margin-bottom: $double-vertical-rhythm;
-  overflow: hidden;
-  position: relative; // To contain text selection highlighting
-}
-
-.more {
-  @include more-link;
-}
-
 ::selection {
   background: $theme-secondary;
   color: $theme-base;
