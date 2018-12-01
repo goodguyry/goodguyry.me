@@ -10,7 +10,7 @@ port: 8080
 markdown: kramdown
 highlighter: rouge
 url: http://goodguyry.http
-include: [_pages, .htaccess]
+include: [_pages, _files]
 exclude:
   - _drafts/README.md
   - LICENSE
