@@ -6,3 +6,7 @@
   @include container;
   margin-bottom: $double-vertical-rhythm;
 }
+
+.more {
+  @include more-link;
+}

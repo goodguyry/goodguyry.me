@@ -2,7 +2,6 @@
 # Errors
 permalink: /errors.php
 ---
-{% assign classes = site.data.classnames.base %}
 
 <!DOCTYPE html>
 <html>
@@ -68,24 +67,27 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-    <div class="{{ classes.grid }}">
+    {% assign default = site.data.classnames.default %}
+    {% assign global-header = site.data.classnames.global-header %}
+
+    <div class="{{ default.wrapper }}">
 
         <!-- TODO: incorporate global-header -->
-        <header role="banner">
+        <header role="banner" class="{{ global-header.wrapper }}">
 
-            <h1><?php echo $code . ' Error'; ?></h1>
+            <h1 class="{{ global-header.page-title }}"><?php echo $code . ' Error'; ?></h1>
 
         </header>
 
-        <main role="main">
+        <main role="main" class="{{ default.main }}">
 
-            <article class="{{ classes.section }} post-content">
+            <article class="post-content">
 
                 <h2><?php echo $code_desc; ?></h2>
 
                 <p><?php echo $message; ?></p>
 
-                <a class="{{ classes.more }}" href="/">Return to the home page</a>.
+                <a class="{{ default.more }}" href="/">Return to the home page</a>.
 
             </article>
 
