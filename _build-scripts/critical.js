@@ -1,5 +1,4 @@
 const penthouse = require('penthouse');
-const nano = require('cssnano');
 const fs = require('fs');
 const path = require('path');
 const readYaml = require('read-yaml');
@@ -50,13 +49,8 @@ Object.keys(templates).forEach((key) => {
     if (err) {
       throw err;
     } else {
-      // Minify the output
-      nano.process(critical, {
-        autoprefixer: { add: false },
-      }).then((result) => {
-        // Wrap output in <style></style>
-        fs.writeFileSync(templates[key].outfile, `<style>${result.css}</style>`);
-      });
+      // Wrap output in <style></style>
+      fs.writeFileSync(templates[key].outfile, `<style>${critical}</style>`);
     }
   });
 });
