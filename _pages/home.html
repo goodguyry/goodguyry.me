@@ -4,14 +4,14 @@ title: Greetings, Earthling!
 permalink: /
 ---
 
-{% assign classes = site.data.classnames.base %}
+{% assign classes = site.data.classnames.home %}
 
 {% include components/projects.html %}
 
 {% if site.posts.size > 0 %}
 	<article>
 
-		<h2 class="{{ classes.heading-two }}">{{ strings.blog_heading }}</h2>
+		<h2 class="{{ classes.post-list-heading }}">{{ strings.blog_heading }}</h2>
 
 		{% include components/post-list.html limit=4 %}
 
