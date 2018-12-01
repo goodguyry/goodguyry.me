@@ -1,12 +1,12 @@
-{% assign classes = site.data.classnames.post-list %}
+{% assign post-list = site.data.classnames.post-list %}
 
-<ul class="{{ classes.wrapper }}">
+<ul class="{{ post-list.wrapper }}">
 
 	{% for post in site.posts | limit:include.limit %}
 
-		<li class="{{ classes.item }}">
+		<li class="{{ post-list.item }}">
 
-			<h3 class="{{ classes.title }}">
+			<h3 class="{{ post-list.title }}">
 				<a href="{{ post.url }}">{{ post.title }}</a>
 			</h3>
 
@@ -19,7 +19,7 @@
 </ul>
 
 {% if site.posts.size > include.limit %}
-	<a class="{{ classes.more }}" href="{{ site.blogroll }}">View the Notes archive</a>
+	<a class="{{ post-list.more }}" href="{{ site.blogroll }}">View the Notes archive</a>
 {% else %}
-	<p><a class="{{ classes.more }}" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
+	<p><a class="{{ post-list.more }}" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
 {% endif %}

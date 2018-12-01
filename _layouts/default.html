@@ -1,4 +1,4 @@
-{% assign classes = site.data.classnames.default %}
+{% assign default = site.data.classnames.default %}
 
 <!DOCTYPE html>
 <!--#if expr="$HTTP_COOKIE=/fonts_loaded\=true/" -->
@@ -11,12 +11,11 @@
 
 <body>
 
-	<div class="{{ classes.wrapper }}">
+	<div class="{{ default.wrapper }}">
 
 		{% include components/global-header.html %}
 
-		{% assign classes = site.data.classnames.default %}
-		<main role="main" class="{{ classes.main }}">
+		<main role="main" class="{{ default.main }}">
 
 			{{ content }}
 

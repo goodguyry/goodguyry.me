@@ -1,18 +1,18 @@
-{% assign classes = site.data.classnames.global-header %}
+{% assign global-header = site.data.classnames.global-header %}
 
 <!-- front -->
-<header role="banner" class="{{ classes.wrapper }}">
+<header role="banner" class="{{ global-header.wrapper }}">
 	{% if page.permalink == '/' %}
 
-		<h1 class="{{ classes.page-title }}">Greetings, Earthling!</h1>
+		<h1 class="{{ global-header.page-title }}">Greetings, Earthling!</h1>
 
 	{% elsif page.layout == 'post' %}
 
-		<h2 class="{{ classes.page-title }}">{{ site.heading_blog }}</h2>
+		<h2 class="{{ global-header.page-title }}">{{ site.heading_blog }}</h2>
 
 	{% else %}
 
-		<h1 class="{{ classes.page-title }}">{{ page.title }}</h1>
+		<h1 class="{{ global-header.page-title }}">{{ page.title }}</h1>
 
 	{% endif %}
 

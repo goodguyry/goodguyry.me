@@ -1,18 +1,18 @@
-{% assign classes = site.data.classnames.global-nav %}
+{% assign global-nav = site.data.classnames.global-nav %}
 {% assign nav = site.data.nav %}
 {% assign navurl = page.url | remove: 'index.html' %}
 
-<nav role="navigation" class="{{ classes.wrapper }}">
+<nav role="navigation" class="{{ global-nav.wrapper }}">
 
 	{% if page.permalink == '/' %}
 
-		<a class="{{ classes.link }}" href='/about/'>I am Ryan</a>.
+		<a class="{{ global-nav.link }}" href='/about/'>I am Ryan</a>.
 
 	{% else %}
 
-		<ul class="{{ classes.list }}">
+		<ul class="{{ global-nav.list }}">
 			{% for item in nav %}
-				<li class="{{ classes.item }}">{% if item.url == navurl %}{{ item.text }}{% else %}<a class="{{ classes.link }}" href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+				<li class="{{ global-nav.item }}">{% if item.url == navurl %}{{ item.text }}{% else %}<a class="{{ global-nav.link }}" href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
 			{% endfor %}
 		</ul>
 
