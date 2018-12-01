@@ -2,7 +2,6 @@ ht[ap]*
 vm-config.yaml
 _site/
 css/*
-_includes/*.js.*
 build
 _data/assets.yaml
 _data/classnames.yaml

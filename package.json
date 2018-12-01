@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
-    "fg-loadcss": "^1.2.0"
+    "fg-loadcss": "^2.0.1"
   },
   "repository": {
     "type": "git",
