@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
 
     output: getOutput(productionMode),
 
-    devtool: productionMode ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: productionMode ? 'cheap-source-map' : 'cheap-module-eval-source-map',
 
     optimization: getOptimization(productionMode),
 
