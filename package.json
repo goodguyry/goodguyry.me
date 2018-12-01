@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
-    "cssnano": "^3.5.2",
     "fg-loadcss": "^1.2.0",
-    "penthouse": "^0.9.1",
     "uglify-js": "^2.6.2"
   },
   "repository": {
@@ -22,7 +20,7 @@
     "jekyll:dev": "jekyll build --config _config.yaml",
     "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
     "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
-    "build": "npm run webpack:prod && npm run jekyll:build"
+    "build": "npm run webpack:prod && npm run critical && npm run jekyll:build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
@@ -38,6 +36,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.1.0",
     "css-loader": "^1.0.1",
+    "cssnano": "^3.5.2",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -51,6 +50,7 @@
     "mini-css-extract-plugin": "^0.4.5",
     "node-sass": "^4.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "penthouse": "^1.10.2",
     "postcss": "^7.0.6",
     "postcss-loader": "^3.0.0",
     "postcss-modules": "^1.4.1",
