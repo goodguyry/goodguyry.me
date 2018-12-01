@@ -60,7 +60,7 @@ $codes = array(
 $title = $codes[$status][0];
 $message = $codes[$status][1];
 if (false === $title || 3 !== strlen($status)) {
-    $title   = 'Missing error code.'
+    $title   = 'Missing error code.';
     $message = 'Please supply a valid status code.';
 } else {
     $code = substr($title, 0, 3);
