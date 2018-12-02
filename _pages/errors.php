@@ -1,15 +1,9 @@
 ---
 # Errors
+layout: default
 title: Oops...
 permalink: /errors.php
 ---
-
-<!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-<body>
 
 <?php
 
@@ -17,7 +11,7 @@ permalink: /errors.php
  * Display a status code.
  */
 $status = $_SERVER['REDIRECT_STATUS'];
-$codes = array(
+$codes = [
     401 => [
         '401 Unauthorized',
         'This request requires user authentication.'
@@ -55,7 +49,7 @@ $codes = array(
         '504 Gateway Timeout',
         'The upstream server failed to send a request in the time allowed by the server.'
     ],
-);
+];
 
 $title = $codes[$status][0];
 $message = $codes[$status][1];
@@ -68,31 +62,14 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-    {% assign default = site.data.classnames.default %}
-    {% assign global-header = site.data.classnames.global-header %}
+{% assign default = site.data.classnames.default %}
 
-    <div class="{{ default.wrapper }}">
+<article class="post-content">
 
-        {% include components/global-header.html %}
+    <h2><?php echo "{$code}: {$code_desc}"; ?></h2>
 
-        <main role="main" class="{{ default.main }}">
+    <p><?php echo $message; ?></p>
 
-            <article class="post-content">
+    <a class="{{ default.more }}" href="/">Return to the home page</a>.
 
-                <h2><?php echo "{$code}: {$code_desc}"; ?></h2>
-
-                <p><?php echo $message; ?></p>
-
-                <a class="{{ default.more }}" href="/">Return to the home page</a>.
-
-            </article>
-
-        </main>
-
-        {% include components/global-footer.html %}
-
-        </div>
-
-    </body>
-
-</html>
+</article>
