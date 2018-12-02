@@ -1,0 +1,79 @@
+/**
+ * Common base styles
+ */
+
+// Adjust base font size for screen size
+:root {
+  font-size: small;
+
+  @include breakpoint(220) {
+    font-size: medium;
+  }
+
+  @include breakpoint(250) {
+    font-size: large;
+  }
+
+  @include breakpoint(500) {
+    font-size: x-large;
+  }
+}
+
+body {
+  width: 100%;
+  font-weight: 200;
+  line-height: $line-height;
+  background-color: $theme-base;
+  color: $theme-font-dark;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeSpeed;
+
+  // JS enabled but fonts not loaded
+  .js:not(.fonts-loaded) & {
+    font-family: 'Palatino', 'Georgia', serif;
+  }
+
+  // Fonts loaded
+  .fonts-loaded &,
+  // JS disabled
+  html:not(.fonts-loaded) & {
+    font-family: $serif;
+  }
+}
+
+a {
+  color: $theme-main;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+// Invert anchors to keep them legible
+a::selection {
+  color: $theme-font-dark;
+}
+
+img::selection {
+  background: $theme-secondary;
+  color: $theme-base;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  width: 60%;
+  background-color: $theme-decoration-dark;
+  margin-bottom: $double-vertical-rhythm;
+}

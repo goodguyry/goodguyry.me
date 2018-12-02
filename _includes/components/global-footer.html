@@ -1,0 +1,13 @@
+{% assign global-footer = site.data.classnames.global-footer %}
+
+<footer role="contentinfo" class="{{ global-footer.wrapper }}">
+
+	<p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
+
+	{% if strings.github_base_url %}
+		<p>This site&rsquo;s source is on <a href="{{ "/goodguyry.me" | prepend: strings.github_base_url }}">Github</a>.</p>
+	{% endif %}
+
+	<p>Thanks for visiting.</p>
+
+</footer>

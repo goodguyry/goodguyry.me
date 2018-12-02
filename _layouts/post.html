@@ -1,41 +1,22 @@
 ---
 layout: default
 ---
+{% assign post = site.data.classnames.post %}
 
-      <header role="banner">
+<article>
 
-        <h2>{{ site.heading_blog }}</h2>
-        {% include nav.html %}
+	<p class="{{ post.post-meta }}">
+		<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
+	</p>
 
-      </header>
+	<h1 class="{{ post.post-title }}">{{ page.title }}</h1>
 
-      <main role="main">
+	<div class="post-content">
+		{{ content }}
+	</div>
 
-        <article>
+	<hr>
 
-          <p class="post-meta">
-            <time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
-          </p>
+	{% include components/post-footer.html %}
 
-          <h1 class="post-title">{{ page.title }}</h1>
-
-{{ content }}
-
-          <hr>
-
-          {% if page.resources %}
-            <h3>{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
-            <ul>
-            {% for resource in page.resources %}
-              <li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
-            {% endfor %}
-            </ul>
-          {% endif %}
-
-          {% unless page.tags contains 'personal' %}
-            <p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ "/goodguyry.me/issues" | prepend: site.github_base_url }}">Open an issue on Github</a> or <a href="http://twitter.com/{{ site.twitter_username }}">let me know on Twitter</a>.</em></p>
-          {% endunless %}
-
-        </article>
-
-      </main>
+</article>

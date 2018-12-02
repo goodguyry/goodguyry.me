@@ -1,0 +1,25 @@
+{% assign post-footer = site.data.classnames.post-footer %}
+{% assign strings = site.data.strings %}
+{% assign accounts = site.data.accounts %}
+
+<footer class="{{ post-footer.wrapper }}">
+	{% if page.resources %}
+
+		<h3 class="{{ post-footer.heading }}">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
+
+		<ul class="{{ post-footer.list }}">
+			{% for resource in page.resources %}
+				<li class="{{ post-footer.item }}"><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+			{% endfor %}
+		</ul>
+
+	{% endif %}
+
+	{% unless page.tags contains 'personal' %}
+
+		<div class="{{ post-footer.issues }}">
+			<p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ "/goodguyry.me/issues" | prepend: strings.github_base_url }}">Open an issue on Github</a> or <a href="http://twitter.com/{{ accounts.twitter_username }}">let me know on Twitter</a>.</em></p>
+		</div>
+
+	{% endunless %}
+</footer>

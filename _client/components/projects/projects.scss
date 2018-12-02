@@ -1,0 +1,41 @@
+.wrapper {
+  margin-bottom: $double-vertical-rhythm;
+}
+
+.heading {
+  font-family: $sans;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: $vertical-rhythm;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  @include breakpoint(400) {
+    // Split on larger screens with 1% margin between
+    width: 49%;
+  }
+}
+
+.title {
+  font-family: $sans;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: $heading-margin;
+}
+
+.more {
+  @include more-link;
+}

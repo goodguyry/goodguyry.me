@@ -1,0 +1,12 @@
+.wrapper {
+  padding-top: $double-vertical-rhythm;
+}
+
+.main {
+  @include container;
+  margin-bottom: $double-vertical-rhythm;
+}
+
+.more {
+  @include more-link;
+}

@@ -1,38 +1,19 @@
 ---
-layout: front
-title: Ryan Domingue is a web developer living in Seattle, Washington
+layout: default
+title: Greetings, Earthling!
 permalink: /
-
-projects:
-  - name: DreamBox
-    description: DreamHost in Vagrant.
-    url: http://github.com/goodguyry/dreambox
-  - name: PostCSS Tidy Columns
-    description: Align yer columns.
-    url: http://github.com/goodguyry/postcss-tidy-columns
-  - name: Dotfiles
-    description: Package &amp; Bash settings.
-    url: http://github.com/goodguyry/dotfiles
 ---
 
-      <article>
+{% assign classes = site.data.classnames.home %}
 
-        <h2>{{ site.heading_projects }}</h2>
+{% include components/projects.html %}
 
-        <ul class="blocks">
-          {% for project in page.projects %}
-          <li class="block">
+{% if site.posts.size > 0 %}
+	<article>
 
-            <h3>
-              <a href="{{ project.url }}">{{ project.name }}</a>
-            </h3>
+		<h2 class="{{ classes.post-list-heading }}">{{ strings.blog_heading }}</h2>
 
-            <p>{{ project.description }}</p>
+		{% include components/post-list.html limit=4 %}
 
-          </li>
-          {% endfor %}
-        </ul>
-
-        <a class="more" href="{{ site.github_base_url }}">See more on GitHub</a>
-
-      </article>
+	</article>
+{% endif %}

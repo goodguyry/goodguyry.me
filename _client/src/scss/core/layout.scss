@@ -1,0 +1,37 @@
+$value-site-max: 720;
+$site-max: rem($value-site-max, 24);
+
+$gutter-spacing: 0.625rem;
+$site-edge: 0.625rem;
+
+$vertical-rhythm: 1.5rem;
+$double-vertical-rhythm: 3rem;
+
+/**
+ * Centered block.
+ */
+@mixin auto-margins {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Full-width container minus edge spacing.
+ */
+@mixin container {
+  @include auto-margins;
+  max-width: calc(#{$site-max} - #{$site-edge} * 2);
+  position: relative; // To contain text selection highlighting
+  width: calc(100vw - #{$site-edge} * 2);
+}
+
+/**
+ * Full-width container with edge padding for background bleed.
+ */
+@mixin container-bleed {
+  @include auto-margins;
+  max-width: $site-max;
+  padding-left: $site-edge;
+  padding-right: $site-edge;
+  width: 100vw;
+}

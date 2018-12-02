@@ -118,7 +118,7 @@ As with _The Basic Nav_ example above, the current page&rsquo;s URL needs to be 
 {%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
 {% endcodeblock %}
 
-Next, tell Jekyll which data file to use by checking the URL for the language-specific directory. If the URL contains the directory name &mdash; in this case '/es/' &mdash; use the translated strings. Otherwise, use the english strings.
+Next, tell Jekyll which data file to use by checking the URL for the language-specific directory. If the URL contains the directory name &mdash; in this case '<code class="path">/es/</code>' &mdash; use the translated strings. Otherwise, use the english strings.
 
 {% codeblock liquid caption="Tell Jekyll which data file to use" %}
 {%raw%}{% if thisUrl contains "/es/" %}
