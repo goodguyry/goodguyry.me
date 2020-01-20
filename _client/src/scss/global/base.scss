@@ -41,7 +41,7 @@ body {
   .fonts-loaded &,
   // JS disabled
   html:not(.fonts-loaded) & {
-    font-family: $serif;
+    font-family: $global-font;
   }
 }
 

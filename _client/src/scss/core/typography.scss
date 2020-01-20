@@ -1,6 +1,5 @@
-$sans: 'Lato', Helvetica, sans-serif;
-$serif: 'Merriweather', Palatino, Georgia, serif;
 $mono: Consolas, Monaco, 'Andale Mono', monospace;
+$global-font: 'Gelasio', 'Palatino', 'Georgia', serif;
 
 $line-height: 1.5;
 $small-font-size: rem(14);
@@ -12,14 +11,14 @@ $heading-margin: 0.25rem;
 @mixin fonts-loaded {
   // JS enabled but fonts not loaded
   .js:not(.fonts-loaded) & {
-    font-family: 'Helvetica', sans-serif;
+    font-family: Palatino, Georgia, serif;
   }
 
   // Fonts loaded
   .fonts-loaded &,
   // JS disabled
   html:not(.fonts-loaded) & {
-    font-family: $sans;
+    font-family: $global-font;
   }
 }
 
