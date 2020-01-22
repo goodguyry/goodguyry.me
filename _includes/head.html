@@ -1,8 +1,4 @@
 <head>
-	<script>
-		// eslint-disable-next-line
-		document.documentElement.classList.add('js');</script>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -18,7 +14,6 @@
 	{% endfor %}
 
 	{% if jekyll.environment == "production" %}
-		<!--#if expr="$HTTP_COOKIE!=/return_visit\=true/" -->
 		{% if page.layout == 'post' %}
 			{% include critical-post.html %}
 		{% else %}
@@ -34,19 +29,9 @@
 		{% endif %}
 
 		{% include loadCSS.js.html %}
-
-		<!--#else -->
-
-		<link rel="stylesheet" href="build/{{ assets.base.css }}">
-		<link rel="stylesheet" href="build/{{ assets.code.css }}">
-
-		 <!--#endif -->
-
 	{% else %}
-
 		<link rel="stylesheet" href="build/{{ assets.base.css }}">
 		<link rel="stylesheet" href="build/{{ assets.code.css }}">
-
 	{% endif %}
 
 	<title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>

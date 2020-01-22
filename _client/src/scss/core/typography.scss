@@ -7,23 +7,7 @@ $small-font-size: rem(14);
 // Shared margin-bottom value
 $heading-margin: 0.25rem;
 
-// Fallback fonts until they're loaded
-@mixin fonts-loaded {
-  // JS enabled but fonts not loaded
-  .js:not(.fonts-loaded) & {
-    font-family: 'Palatino', 'Georgia', serif;
-  }
-
-  // Fonts loaded
-  .fonts-loaded &,
-  // JS disabled
-  html:not(.fonts-loaded) & {
-    font-family: $global-font;
-  }
-}
-
 @mixin heading-base {
-  @include fonts-loaded;
   font-weight: 700;
   line-height: 1;
 }
@@ -53,7 +37,6 @@ $heading-margin: 0.25rem;
 }
 
 @mixin heading-smallest {
-  @include fonts-loaded;
   font-size: rem(16);
   margin-bottom: $heading-margin;
 }
