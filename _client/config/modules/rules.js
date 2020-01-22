@@ -5,7 +5,7 @@ const sassCoreResources = require('./sassCoreResources');
 
 const include = [
   paths.components,
-  paths.scripts,
+  paths.js,
   paths.entries,
 ];
 
@@ -58,7 +58,7 @@ module.exports = [
           },
         },
       },
-      'resolve-url-loader',
+      // 'resolve-url-loader',
       {
         loader: 'postcss-loader',
         options: {

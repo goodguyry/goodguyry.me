@@ -2,28 +2,24 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
 
 // Helpers
 const path = require('path');
 const paths = require('../paths');
 const yamlDictFromObject = require('../bin/yamlDictFromObject');
 
-module.exports = (productionMode) => {
-  const minExtractOptions = productionMode
-    ? {
-      filename: 'css/[name].[contenthash].min.css',
-      chunkFilename: 'css/[name].[contenthash].chunk.min.css',
-    }
-    : {
-      filename: 'css/[name].css',
-      chunkFilename: 'css/[name].chunk.css',
-    };
+module.exports = (mode) => {
+  const productionMode = ('production' === mode);
 
-  const common = [
-    new MiniCssExtractPlugin(minExtractOptions),
+  return [
+    new MiniCssExtractPlugin({
+      filename: productionMode
+        ? 'css/[name].[contenthash].min.css'
+        : 'css/[name].css',
+      chunkFilename: productionMode
+        ? 'css/[name].[contenthash].chunk.min.css'
+        : 'css/[name].chunk.css',
+    }),
     new StylelintPlugin({
       configFile: path.join(paths.config, 'stylelint.config.js'),
     }),
@@ -48,21 +44,4 @@ module.exports = (productionMode) => {
       filename: '../_data/assets.yaml',
     }),
   ];
-
-  if (productionMode) {
-    return [
-      new CleanWebpackPlugin(
-        [`${paths.build}/*`],
-        { root: paths.projectRoot }
-      ),
-      new MinifyPlugin({}, {}),
-    ].concat(common);
-  }
-
-  return [
-    new LiveReloadPlugin({
-      appendScriptTag: true,
-      delay: 1000,
-    }),
-  ].concat(common);
 };

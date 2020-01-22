@@ -1,36 +1,49 @@
-// Modules
+// Plugins.
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
+
+// Modules.
 const entry = require('./modules/entry');
-const getOutput = require('./modules/getOutput');
-const getOptimization = require('./modules/getOptimization');
+const output = require('./modules/output');
 const rules = require('./modules/rules');
 const resolve = require('./modules/resolve');
-const getPlugins = require('./modules/getPlugins');
+const getCommonPlugins = require('./modules/getCommonPlugins');
+const paths = require('./paths');
 
-module.exports = (env, argv) => {
-  const { mode } = argv;
-  const productionMode = ('production' === mode);
+module.exports = () => ({
+  mode: 'production',
 
-  return {
-    mode,
+  entry,
 
-    entry,
+  output: Object.assign({}, output, {
+    filename: 'js/[name].[contenthash].bundle.min.js',
+    chunkFilename: 'js/[name].[contenthash].chunk.min.js',
+  }),
 
-    output: getOutput(productionMode),
+  devtool: 'cheap-source-map',
 
-    devtool: productionMode ? 'cheap-source-map' : 'cheap-module-eval-source-map',
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
 
-    optimization: getOptimization(productionMode),
+  module: {
+    rules,
+  },
 
-    module: {
-      rules,
-    },
+  stats: {
+    colors: true,
+  },
 
-    stats: {
-      colors: true,
-    },
+  resolve,
 
-    resolve,
-
-    plugins: getPlugins(productionMode),
-  };
-};
+  plugins: [
+    new CleanWebpackPlugin(
+      [`${paths.build}/*`],
+      { root: paths.projectRoot }
+    ),
+    new MinifyPlugin({}, {}),
+  ].concat(getCommonPlugins('production')),
+});

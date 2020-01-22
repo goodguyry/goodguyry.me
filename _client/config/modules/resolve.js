@@ -1,5 +1,13 @@
 const paths = require('../paths');
 
+const {
+  entries,
+  components,
+  scss,
+  js,
+  fonts,
+} = paths;
+
 module.exports = {
   modules: [
     paths.projectRoot,
@@ -7,9 +15,10 @@ module.exports = {
   ],
   extensions: ['.js', '.json', '.scss'],
   alias: {
-    entries: paths.entries,
-    components: paths.components,
-    scss: paths.styles,
-    js: paths.scripts,
+    entries,
+    components,
+    scss,
+    js,
+    fonts,
   },
 };
