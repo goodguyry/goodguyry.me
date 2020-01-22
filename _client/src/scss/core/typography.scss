@@ -19,13 +19,12 @@ $heading-margin: 0.25rem;
 }
 
 @mixin heading-secondary {
-  @include heading-base;
-  font-size: rem(32);
+  font-size: rem(36);
+  font-weight: 600;
   margin-bottom: $vertical-rhythm;
 }
 
 @mixin heading-tertiary {
-  @include heading-base;
   font-size: rem(24);
   margin-bottom: $heading-margin;
 }
@@ -45,7 +44,7 @@ $heading-margin: 0.25rem;
  * The CTA for linking to more info/blog posts.
  */
 @mixin more-link {
-  font-size: $small-font-size;
+  font-size: rem(16);
 
   &::before {
     content: "\203A";

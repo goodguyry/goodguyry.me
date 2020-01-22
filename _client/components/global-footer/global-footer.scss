@@ -1,10 +1,9 @@
 .wrapper {
   @include container;
   color: $theme-font-dark;
-  font-size: 0.625rem;
+  font-size: rem(14);
   height: auto;
   padding-bottom: $gutter-spacing;
-  text-align: right;
 
   p {
     margin: 0;
@@ -12,5 +11,5 @@
 }
 
 .powered-by {
-  font-size: 0.5rem;
+  font-size: rem(12);
 }
