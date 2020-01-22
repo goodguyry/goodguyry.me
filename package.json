@@ -10,14 +10,13 @@
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "critical": "node _client/config/bin/critical.js",
     "webpack:watch": "webpack --config _client/config/webpack.develop.config.js --watch",
     "webpack:prod": "webpack --config _client/config/webpack.config.js",
     "jekyll:watch": "jekyll build --config _config.yaml --watch",
     "jekyll:dev": "jekyll build --config _config.yaml",
     "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
     "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
-    "build": "npm run webpack:prod && npm run critical && npm run jekyll:build"
+    "build": "npm run webpack:prod && npm run jekyll:build"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
