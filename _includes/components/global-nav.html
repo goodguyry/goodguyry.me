@@ -2,13 +2,8 @@
 {% assign nav = site.data.nav %}
 {% assign navurl = page.url | remove: 'index.html' %}
 
-<nav role="navigation" class="{{ global-nav.wrapper }}">
-
-	{% if page.permalink == '/' %}
-
-		<a class="{{ global-nav.link }}" href='/about/'>I am Ryan</a>.
-
-	{% else %}
+{% if page.permalink != '/' %}
+	<nav role="navigation" class="{{ global-nav.wrapper }}">
 
 		<ul class="{{ global-nav.list }}">
 			{% for item in nav %}
@@ -16,5 +11,5 @@
 			{% endfor %}
 		</ul>
 
-	{% endif %}
-</nav>
+	</nav>
+{% endif %}
