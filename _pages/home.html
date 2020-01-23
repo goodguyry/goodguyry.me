@@ -1,10 +1,16 @@
 ---
 layout: default
-title: Greetings, Earthling!
+title: I am Ryan.
 permalink: /
 ---
 
 {% assign classes = site.data.classnames.home %}
+
+{% assign accounts = site.data.accounts %}
+
+<article class="post-content">
+	{% include about.html %}
+</article>
 
 {% include components/projects.html %}
 
