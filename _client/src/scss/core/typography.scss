@@ -21,12 +21,10 @@ $heading-margin: 0.25rem;
 @mixin heading-secondary {
   font-size: rem(36);
   font-weight: 600;
-  margin-bottom: $vertical-rhythm;
 }
 
 @mixin heading-tertiary {
   font-size: rem(24);
-  margin-bottom: $heading-margin;
 }
 
 @mixin heading-small {
@@ -45,10 +43,22 @@ $heading-margin: 0.25rem;
  */
 @mixin more-link {
   font-size: rem(16);
+  padding-top: rem(5);
+  position: relative;
+  width: max-content;
 
   &::before {
-    content: "\203A";
-    display: inline;
-    padding-right: 0.25rem;
+    background-color: $theme-main;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }

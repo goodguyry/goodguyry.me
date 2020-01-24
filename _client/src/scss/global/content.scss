@@ -41,7 +41,7 @@ h5 {
  *     _components.footer: <footer>
  *     _overrides.block: <blockquote>
  */
-p {
+p:not(:last-of-type) {
   margin-bottom: $vertical-rhythm;
 }
 

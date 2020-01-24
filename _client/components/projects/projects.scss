@@ -1,33 +1,25 @@
 .wrapper {
-  margin-bottom: $double-vertical-rhythm;
+  display: grid;
+  grid-row-gap: rem(50);
 }
 
 .heading {
   @include heading-secondary;
-  margin-bottom: $vertical-rhythm;
 }
 
 .list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-gap: rem(50 16);
+  grid-template-columns: repeat(2, 1fr);
   list-style-type: none;
-  margin: 0;
 }
 
 .item {
-  margin-bottom: 1.5rem;
-  width: 100%;
-
-  @include breakpoint(400) {
-    // Split on larger screens with 1% margin between
-    width: 49%;
-  }
+  /* tbd */
 }
 
 .title {
   @include heading-tertiary;
-  margin-bottom: $heading-margin;
 }
 
 .more {

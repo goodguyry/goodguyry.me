@@ -15,11 +15,10 @@ permalink: /
 {% include components/projects.html %}
 
 {% if site.posts.size > 0 %}
-	<article>
-
+	<section class="{{ classes.posts-wrapper }}">
 		<h2 class="{{ classes.post-list-heading }}">{{ strings.blog_heading }}</h2>
 
 		{% include components/post-list.html limit=4 %}
 
-	</article>
+	</section>
 {% endif %}
