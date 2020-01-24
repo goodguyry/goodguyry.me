@@ -141,7 +141,7 @@ p code {
 // Inline code that's inside an anchor
 a code {
   // font-size: 0.95rem;
-  color: $theme-main;
+  color: var(--accent);
 }
 
 // Style file and directory paths as code,

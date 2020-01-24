@@ -48,7 +48,7 @@ $heading-margin: 0.25rem;
   width: max-content;
 
   &::before {
-    background-color: $theme-main;
+    background-color: currentColor;
     content: '';
     display: block;
     height: 1px;
