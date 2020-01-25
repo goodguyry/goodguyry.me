@@ -28,7 +28,7 @@ module.exports = (mode) => {
         const entries = stats.assetsByChunkName;
 
         const assetMap = Object.keys(entries).reduce((acc, key) => {
-          const assetList = entries[key]
+          const assetList = [].concat(entries[key])
             .filter((asset) => '.map' !== path.parse(asset).ext)
             .reduce((lines, line) => {
               const { ext } = path.parse(line);

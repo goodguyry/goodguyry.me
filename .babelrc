@@ -5,6 +5,9 @@
         "./_client/src/**",
         "./_client/src/js/**",
       ],
+      "alias": {
+        "components": "./_client/components",
+      }
     }]
   ],
   "presets": [
