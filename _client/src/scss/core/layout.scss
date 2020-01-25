@@ -1,7 +1,3 @@
-$value-site-max: 634;
-$site-max: rem($value-site-max);
-
-$gutter-spacing: 0.625rem;
 $site-edge: 0.625rem;
 
 $vertical-rhythm: 1.5rem;
@@ -20,9 +16,12 @@ $double-vertical-rhythm: 3rem;
  */
 @mixin container {
   @include auto-margins;
-  max-width: calc(#{$site-max} - #{$site-edge} * 2);
+  tidy-span: tidy-var(columns);
   position: relative; // To contain text selection highlighting
-  width: calc(100vw - #{$site-edge} * 2);
+
+  @include breakpoint(768) {
+    tidy-span: tidy-var(columns);
+  }
 }
 
 /**
@@ -30,8 +29,19 @@ $double-vertical-rhythm: 3rem;
  */
 @mixin container-bleed {
   @include auto-margins;
-  max-width: $site-max;
   padding-left: $site-edge;
   padding-right: $site-edge;
   width: 100vw;
+
+  @include breakpoint(768) {
+    max-width: tidy-var(siteMax);
+  }
+}
+
+/**
+ * 8-column grid.
+ */
+@mixin global-grid {
+  grid-column-gap: rem(16);
+  grid-template-columns: repeat(8, 1fr);
 }

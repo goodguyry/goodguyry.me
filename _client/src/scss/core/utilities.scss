@@ -103,9 +103,7 @@
  * @param $mm  Min/Max switch; defaults to min-width
  */
 @mixin breakpoint($px, $mm: 'min') {
-  $width: ($px/16) + em;
-
-  @media only screen and (#{$mm}-width: ($width)) {
+  @media only screen and (#{$mm}-width: rem($px)) {
     @content;
   }
 }

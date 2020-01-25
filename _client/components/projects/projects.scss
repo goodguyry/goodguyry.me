@@ -10,8 +10,11 @@
 .list {
   display: grid;
   grid-gap: rem(50 16);
-  grid-template-columns: repeat(2, 1fr);
   list-style-type: none;
+
+  @include breakpoint(768) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .item {

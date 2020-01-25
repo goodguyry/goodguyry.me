@@ -6,3 +6,16 @@
 .post-list-heading {
   @include heading-secondary;
 }
+
+:global(.post-content) {
+  position: relative;
+
+  @include breakpoint(768) {
+    @include global-grid;
+    display: grid;
+
+    > * {
+      grid-column: 1 / span 6;
+    }
+  }
+}
