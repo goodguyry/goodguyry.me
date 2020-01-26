@@ -8,6 +8,7 @@
 }
 
 :global(.post-content) {
+  @include content-text;
   position: relative;
 
   @include breakpoint(768) {

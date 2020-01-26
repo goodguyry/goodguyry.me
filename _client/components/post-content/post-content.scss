@@ -1,0 +1,9 @@
+:global(.post-content) {
+  @include content-headings;
+  @include content-text;
+  @include content-quotes;
+  @include content-code;
+  @include content-images;
+  @include content-lists;
+  @include content-hey;
+}

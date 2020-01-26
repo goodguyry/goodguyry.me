@@ -1,0 +1,280 @@
+/**
+ * Headings
+ */
+@mixin content-headings {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: $vertical-rhythm;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: $heading-margin;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: $heading-margin;
+  }
+
+  h5 {
+    font-size: 1rem;
+    margin-bottom: $heading-margin;
+  }
+}
+
+/**
+ * Inline text styles.
+ */
+@mixin content-text {
+  /**
+   * Most of the <p> element's styling will be inherited from <body>
+   * Overrides:
+   *     _components.footer: <footer>
+   *     _overrides.block: <blockquote>
+   */
+  p:not(:last-of-type) {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  del,
+  strike,
+  :global(.strike) {
+    color: $theme-font-light;
+    text-decoration: line-through;
+  }
+
+  sub,
+  sup {
+    line-height: 0;
+  }
+
+  kbd {
+    padding: 0.05rem 0.2rem;
+    font-family: $mono;
+    border: 1px solid $theme-decoration-dark;
+    background-color: $theme-decoration-light;
+    border-radius: 3px;
+  }
+
+  cite {
+    font-style: italic;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted $theme-font-light;
+    text-decoration: none;
+    cursor: help;
+  }
+
+  output {
+    font-weight: 700;
+  }
+}
+
+@mixin content-quotes {
+  /**
+   * Full-width, double-lined box with large text
+   */
+  blockquote {
+    width: 100%;
+    margin-bottom: $vertical-rhythm;
+    padding: 0.5rem;
+    border-top: 3px double $theme-decoration-dark;
+    border-bottom: 3px double $theme-decoration-dark;
+    color: $theme-font-dark;
+    font-size: 1.25rem;
+    quotes: none;
+
+    &::before,
+    &::after {
+      content: '';
+      content: none;
+    }
+  }
+
+  blockquote {
+
+    p {
+      margin-bottom: 0.875rem;
+    }
+
+    // To eliminate odd spacing at the bottom of the
+    //  <blockquote> box
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    // The quote citation
+    span {
+      text-align: right;
+      font-size: 0.75rem;
+      display: block;
+
+      // Add a little dash before the quote citation
+      &::before {
+        content: "-";
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}
+
+@mixin content-code {
+  /**
+   * This is mostly setup for <code>
+   * - Some padding for breathing room
+   * - The colored background
+   */
+  pre {
+    padding: 1rem;
+    position: relative;
+    background-color: #393939;
+  }
+
+  /**
+   * Code samples
+   * Syntax highlighting found in /css/code.scss
+   */
+  code {
+    overflow: auto;
+    max-width: 100%;
+    position: relative;
+    line-height: inherit;
+    font-family: $mono;
+    white-space: pre;
+    hyphens: none;
+  }
+
+  // All code blocks
+  pre code {
+    height: 100%;
+    max-height: 20rem;
+    display: block;
+    color: rgb(255, 255, 255);
+    // -moz-tab-size: 2;
+    // -o-tab-size: 2;
+    tab-size: 2;
+  }
+
+  // Inline code
+  p code {
+    font-size: 0.85rem;
+    color: #393939;
+    display: inline;
+    padding: 0 0.15rem;
+    border-radius: 3px;
+    border: 1px solid $theme-decoration-dark;
+    background-color: $theme-decoration-light;
+  }
+
+  // Inline code that's inside an anchor
+  a code {
+    // font-size: 0.95rem;
+    color: var(--accent);
+  }
+
+  // Style file and directory paths as code,
+  //  but without the border
+  code:global(.path) {
+    border: none;
+    background-color: inherit;
+  }
+
+  // To keep code/path font sizes consistent within the figcaptions
+  figcaption code {
+    font-size: inherit;
+  }
+
+  /**
+   * No <figure> styling, as it's used only as a semantic
+   *  wrapper for code blocks
+   */
+  figcaption {
+    text-align: right;
+    font-size: 0.7rem;
+    margin-bottom: $vertical-rhythm;
+  }
+}
+
+@mixin content-images {
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/**
+ * Common list styles
+ */
+@mixin content-lists {
+
+  ul,
+  ol {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  ul {
+    list-style: disc outside none;
+    margin-left: 1rem;
+  }
+
+  ol {
+    list-style: decimal outside none;
+    margin-left: 1.5rem;
+  }
+
+  // Nested lists
+  li ul,
+  li ol {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+  }
+
+  li ul {
+    list-style-type: circle;
+  }
+
+  li ol {
+    list-style-type: lower-alpha;
+  }
+}
+
+@mixin content-hey {
+
+  :global(.hey) {
+    font: {
+      size: $small-font-size;
+      style: italic;
+    }
+    padding: 0.5rem;
+    color: $theme-font-light;
+    background-color: $theme-decoration-light;
+    border: 1px solid $theme-decoration-dark;
+    border-radius: 3px;
+  }
+}
