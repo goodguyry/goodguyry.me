@@ -24,8 +24,8 @@
 
 		{% include loadCSS.js.html %}
 	{% else %}
-		<link rel="stylesheet" href="build/{{ assets.base.css }}">
-		<link rel="stylesheet" href="build/{{ assets.code.css }}">
+		<link rel="stylesheet" href="build/{{ assets.global.css }}">
+		<link rel="stylesheet" href="build/{{ assets.home.css }}">
 	{% endif %}
 
 	<title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
