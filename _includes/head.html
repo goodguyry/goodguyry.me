@@ -13,19 +13,16 @@
 		<link rel="preload" href="build/media/{{ fontFile }}" as="font" type="font/woff2" crossorigin>
 	{% endfor %}
 
-	{% if jekyll.environment == "production" %}
-		<link rel="preload" href="build/{{ assets.base.css }}" as="style" onload="this.rel='stylesheet'">
-		<noscript><link rel="stylesheet" href="build/{{ assets.base.css }}"></noscript>
+	<link rel="stylesheet" href="build/{{ assets.global.css }}">
 
-		{% if page.code %}
-			<link rel="preload" href="build/{{ assets.code.css }}" as="style" onload="this.rel='stylesheet'">
-			<noscript><link rel="stylesheet" href="build/{{ assets.code.css }}"></noscript>
-		{% endif %}
-
-		{% include loadCSS.js.html %}
-	{% else %}
-		<link rel="stylesheet" href="build/{{ assets.global.css }}">
+	{% if page.permalink == '/' %}
 		<link rel="stylesheet" href="build/{{ assets.home.css }}">
+	{% elseif page.layout == 'post' %}
+		<link rel="stylesheet" href="build/{{ assets.post.css }}">
+	{% endif %}
+
+	{% if page.code %}
+		<link rel="stylesheet" href="build/{{ assets.code.css }}">
 	{% endif %}
 
 	<title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
