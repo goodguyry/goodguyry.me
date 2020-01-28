@@ -63,7 +63,7 @@
   del,
   strike,
   :global(.strike) {
-    color: $theme-font-light;
+    color: var(--decoration);
     text-decoration: line-through;
   }
 
@@ -75,8 +75,9 @@
   kbd {
     padding: 0.05rem 0.2rem;
     font-family: $mono;
-    border: 1px solid $theme-decoration-dark;
-    background-color: $theme-decoration-light;
+    border: 1px solid var(--decoration-light);
+    background-color: var(--code-bg);
+    color: var(--white);
     border-radius: 3px;
   }
 
@@ -85,7 +86,7 @@
   }
 
   abbr[title] {
-    border-bottom: 1px dotted $theme-font-light;
+    border-bottom: 1px dotted var(--decoration);
     text-decoration: none;
     cursor: help;
   }
@@ -103,9 +104,8 @@
     width: 100%;
     margin-bottom: $vertical-rhythm;
     padding: 0.5rem;
-    border-top: 3px double $theme-decoration-dark;
-    border-bottom: 3px double $theme-decoration-dark;
-    color: $theme-font-dark;
+    border-top: 3px double var(--decoration);
+    border-bottom: 3px double var(--decoration);
     font-size: 1.25rem;
     quotes: none;
 
@@ -180,14 +180,19 @@
   }
 
   // Inline code
-  p code {
-    font-size: 0.85rem;
-    color: #393939;
-    display: inline;
-    padding: 0 0.15rem;
-    border-radius: 3px;
-    border: 1px solid $theme-decoration-dark;
-    background-color: $theme-decoration-light;
+  p,
+  li {
+
+    code {
+      background-color: var(--decoration-light);
+      border-radius: 3px;
+      border: 1px solid var(--decoration);
+      color: var(--black);
+      display: inline-block;
+      font-size: 0.85rem;
+      margin-bottom: -0.4em;
+      padding: 0 0.15rem;
+    }
   }
 
   // Inline code that's inside an anchor
@@ -200,7 +205,7 @@
   //  but without the border
   code:global(.path) {
     border: none;
-    background-color: inherit;
+    color: var(--black);
   }
 
   // To keep code/path font sizes consistent within the figcaptions
@@ -271,9 +276,8 @@
       style: italic;
     }
     padding: 0.5rem;
-    color: $theme-font-light;
-    background-color: $theme-decoration-light;
-    border: 1px solid $theme-decoration-dark;
+    background-color: var(--decoration-light);
+    border: 1px solid var(--decoration);
     border-radius: 3px;
   }
 }

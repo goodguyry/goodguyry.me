@@ -2,6 +2,18 @@
  * Common base styles
  */
 
+:root {
+  --white: #FFFFFF;
+  --black: #333333;
+  --accent: #16B3AD;
+  --code-orange: #D68732;
+  --gray-mid: #4C4B4B;
+  --decoration: #CCCCCC;
+  --decoration-light: #ECECEC;
+  --code-blue: #7BAABE;
+  --code-bg: #393939;
+}
+
 // Adjust base font size for screen size
 :root {
   font-size: medium;
@@ -14,7 +26,7 @@ body {
   font-size: rem(18);
   line-height: $line-height;
   background-color: var(--white);
-  color: $theme-font-dark;
+  color: var(--black);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -35,17 +47,17 @@ a {
 }
 
 ::selection {
-  background: $theme-secondary;
+  background: var(--accent);
   color: var(--white);
 }
 
 // Invert anchors to keep them legible
 a::selection {
-  color: $theme-font-dark;
+  color: var(--black);
 }
 
 img::selection {
-  background: $theme-secondary;
+  background: var(--accent);
   color: var(--white);
 }
 
@@ -53,7 +65,7 @@ hr {
   border: none;
   height: 1px;
   width: rem(100);
-  background-color: $theme-decoration-dark;
+  background-color: var(--decoration);
   margin: 0 0 rem(50) 0;
 
   @include breakpoint(768) {

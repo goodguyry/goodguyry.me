@@ -1,6 +1,5 @@
 .wrapper {
   @include container;
-  color: $theme-font-dark;
   font-size: rem(14);
 
   p {
