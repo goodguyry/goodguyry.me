@@ -19,6 +19,8 @@
 		<link rel="stylesheet" href="build/{{ assets.home.css }}">
 	{% elsif page.layout == 'post' %}
 		<link rel="stylesheet" href="build/{{ assets.post.css }}">
+	{% elsif page.layout == 'archive' %}
+		<link rel="stylesheet" href="build/{{ assets.archive.css }}">
 	{% endif %}
 
 	{% if page.code %}
