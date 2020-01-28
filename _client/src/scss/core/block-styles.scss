@@ -212,19 +212,18 @@
   figcaption code {
     font-size: inherit;
   }
-
-  /**
-   * No <figure> styling, as it's used only as a semantic
-   *  wrapper for code blocks
-   */
-  figcaption {
-    text-align: right;
-    font-size: rem(14);
-    margin-bottom: $vertical-rhythm;
-  }
 }
 
 @mixin content-images {
+
+  figure {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  figcaption {
+    text-align: right;
+    font-size: rem(14);
+  }
 
   img {
     display: block;
