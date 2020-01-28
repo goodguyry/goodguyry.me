@@ -4,19 +4,19 @@ layout: default
 {% assign post = site.data.classnames.post %}
 
 <article>
+	<header class="{{ post.header }}">
+		<p class="{{ post.meta }}">
+			<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
+		</p>
 
-	<p class="{{ post.post-meta }}">
-		<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
-	</p>
+		<h1 class="{{ post.title }}">{{ page.title }}</h1>
+	</header>
 
-	<h1 class="{{ post.post-title }}">{{ page.title }}</h1>
-
-	<div class="post-content">
+	<div class="post-content {{ post.content }}">
 		{{ content }}
 	</div>
 
 	<hr>
 
 	{% include components/post-footer.html %}
-
 </article>

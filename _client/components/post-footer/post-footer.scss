@@ -1,5 +1,9 @@
 .wrapper {
-  /* tbd */
+  margin-bottom: rem(100);
+
+  @include breakpoint(768) {
+    tidy-span: 6;
+  }
 }
 
 .heading {

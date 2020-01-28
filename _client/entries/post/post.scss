@@ -1,19 +1,26 @@
-:global(.post-content) {
-  @import '../../src/scss/global/content';
+.header {
+  margin-bottom: rem(50);
 }
 
-.post-meta {
-  font-size: 0.875rem;
-  margin-bottom: 1.5rem;
+.meta {
+  font-size: rem(14);
+  font-style: italic;
+}
 
-  @include breakpoint(500) {
-    font-size: 0.625rem;
+.title {
+  font-size: rem(32);
+  font-weight: 600;
+}
+
+:global(.post-content) {
+
+  > *:not(figure) {
+    @include breakpoint(768) {
+      tidy-span: 6;
+    }
   }
 }
 
-.post-title {
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 1.5rem;
+.content {
+  margin-bottom: rem(50);
 }

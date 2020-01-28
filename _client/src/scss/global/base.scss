@@ -52,7 +52,11 @@ img::selection {
 hr {
   border: none;
   height: 1px;
-  width: 60%;
+  width: rem(100);
   background-color: $theme-decoration-dark;
-  margin-bottom: $double-vertical-rhythm;
+  margin: 0 0 rem(50) 0;
+
+  @include breakpoint(768) {
+    tidy-span: 2;
+  }
 }
