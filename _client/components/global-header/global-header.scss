@@ -1,5 +1,6 @@
 .wrapper {
   @include container;
+  margin-bottom: rem(50);
 }
 
 .page-title {

@@ -1,16 +1,13 @@
-.wrapper {
-  display: grid;
-  grid-row-gap: rem(50);
-}
-
 .heading {
   @include heading-secondary;
+  margin-bottom: rem(50);
 }
 
 .list {
   display: grid;
   grid-gap: rem(50 16);
   list-style-type: none;
+  margin-bottom: rem(50);
 
   @include breakpoint(768) {
     grid-template-columns: repeat(2, 1fr);

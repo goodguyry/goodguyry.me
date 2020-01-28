@@ -8,17 +8,16 @@ permalink: /
 
 {% assign accounts = site.data.accounts %}
 
-<article class="post-content">
+<article class="{{ classes.about }}">
 	{% include about.html %}
 </article>
 
-{% include components/projects.html %}
+<section class="{{ classes.projects }}">
+	{% include components/projects.html %}
+</section>
 
 {% if site.posts.size > 0 %}
-	<section class="{{ classes.posts-wrapper }}">
-		<h2 class="{{ classes.post-list-heading }}">{{ strings.blog_heading }}</h2>
-
+	<section class="{{ classes.posts }}">
 		{% include components/post-list.html limit=4 %}
-
 	</section>
 {% endif %}

@@ -1,6 +1,8 @@
 {% assign post-list = site.data.classnames.post-list %}
 
-<ul class="{{ post-list.wrapper }}">
+<h2 class="{{ post-list.heading }}">{{ strings.blog_heading }}</h2>
+
+<ul class="{{ post-list.list }}">
 
 	{% for post in site.posts | limit:include.limit %}
 

@@ -1,22 +1,16 @@
-.posts-wrapper {
-  display: grid;
-  grid-row-gap: rem(50);
-}
-
-.post-list-heading {
-  @include heading-secondary;
-}
-
-:global(.post-content) {
+.about {
   @include content-text;
-  position: relative;
+  margin-bottom: rem(100);
 
   @include breakpoint(768) {
-    @include global-grid;
-    display: grid;
-
-    > * {
-      grid-column: 1 / span 6;
-    }
+    tidy-span: 6;
   }
+}
+
+.projects {
+  margin-bottom: rem(100);
+}
+
+.posts {
+  margin-bottom: rem(100);
 }

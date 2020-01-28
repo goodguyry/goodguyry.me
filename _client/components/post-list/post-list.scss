@@ -1,19 +1,22 @@
-.wrapper {
-  display: grid;
-  grid-row-gap: rem(50);
+.list {
   list-style-type: none;
+  margin-bottom: rem(50);
 
   @include breakpoint(768) {
-    @include global-grid;
-
-    li {
-      grid-column: 1 / span 6;
-    }
+    tidy-span: 6;
   }
 }
 
+.heading {
+  @include heading-secondary;
+  margin-bottom: rem(50);
+}
+
 .item {
-  /* tbd */
+
+  &:not(:last-of-type) {
+    margin-bottom: rem(50);
+  }
 }
 
 .title {
