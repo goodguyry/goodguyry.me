@@ -48,7 +48,7 @@
    *     _components.footer: <footer>
    *     _overrides.block: <blockquote>
    */
-  p:not(:last-of-type) {
+  p:not(:last-child) {
     margin-bottom: $vertical-rhythm;
   }
 
