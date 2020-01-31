@@ -111,7 +111,7 @@ $bp-values: (
   }
 
   @if map-has-key($bp-values, $key) {
-    @return map-get($bp-values, $key);
+    @return rem(map-get($bp-values, $key));
   } @else {
     @error "$bp-values[#{$key}] doesn't exist.";
     @return false;
