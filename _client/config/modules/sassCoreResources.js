@@ -7,7 +7,6 @@ const sassCoreResources = [
   './typography.scss',
   './theme.scss',
   './block-styles.scss',
-  './colors.scss',
 ].map((file) => path.resolve(`${paths.scss}/core`, file));
 
 module.exports = sassCoreResources;
