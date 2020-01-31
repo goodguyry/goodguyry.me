@@ -1,7 +1,4 @@
-$site-edge: 0.625rem;
-
 $vertical-rhythm: rem(24);
-$double-vertical-rhythm: 3rem;
 
 /**
  * Centered block.
@@ -22,26 +19,4 @@ $double-vertical-rhythm: 3rem;
   @media (min(md)) {
     tidy-span: tidy-var(columns);
   }
-}
-
-/**
- * Full-width container with edge padding for background bleed.
- */
-@mixin container-bleed {
-  @include auto-margins;
-  padding-left: $site-edge;
-  padding-right: $site-edge;
-  width: 100vw;
-
-  @media (min(md)) {
-    max-width: tidy-var(siteMax);
-  }
-}
-
-/**
- * 8-column grid.
- */
-@mixin global-grid {
-  grid-column-gap: rem(16);
-  grid-template-columns: repeat(8, 1fr);
 }

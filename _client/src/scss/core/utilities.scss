@@ -70,28 +70,6 @@
   @return _px-to-relative-list($values, $base-value);
 }
 
-/**
- * Better text underline
- * Prevents text underline from crossing descenders
- *
- * @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
- */
-@mixin text-underline($bg-color: $black) {
-  /* Fallback for unsupported property */
-  text-decoration: none;
-  text-shadow: 0.08em 0 0 $bg-color, -0.08em 0 0 $bg-color, 0 0.08em 0 $bg-color, 0 -0.08em 0 $bg-color, 0.1em 0 0 $bg-color, -0.1em 0 0 $bg-color, 0 0.1em 0 $bg-color, 0 -0.1em 0 $bg-color;
-  background: linear-gradient(to right, currentColor 0%, currentColor 100%) repeat-x bottom center / 100% 1px;
-
-  /* `text-decoration-skip: ink` has slightly better support than `text-decoration-skip-ink: auto` */
-  @supports (text-decoration-skip: ink) or (-webkit-text-decoration-skip: ink) or (text-decoration-skip-ink: auto) {
-    text-decoration: underline;
-    text-decoration-skip: ink; // deprecated
-    text-decoration-skip-ink: auto;
-    text-shadow: none;
-    background: none;
-  }
-}
-
 // Map of default breakpoint values.
 $bp-values: (
   md: 768,
@@ -130,21 +108,4 @@ $bp-values: (
   @if $params {
     @return 'min-width: #{$params}';
   }
-}
-
-/**
- * Add a 200ms transition
- * @include transition((property-1[, property-2]));
- *
- * @param $properties  A list of the properties to be transitioned
- */
-@mixin transition($properties...) {
-
-  $values: ();
-
-  @each $property in $properties {
-    $values: append($values, $property 0.2s ease, comma);
-  }
-
-  transition: $values;
 }
