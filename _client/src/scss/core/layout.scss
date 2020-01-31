@@ -19,7 +19,7 @@ $double-vertical-rhythm: 3rem;
   tidy-span: tidy-var(columns);
   position: relative; // To contain text selection highlighting
 
-  @include breakpoint(768) {
+  @media (min(md)) {
     tidy-span: tidy-var(columns);
   }
 }
@@ -33,7 +33,7 @@ $double-vertical-rhythm: 3rem;
   padding-right: $site-edge;
   width: 100vw;
 
-  @include breakpoint(768) {
+  @media (min(md)) {
     max-width: tidy-var(siteMax);
   }
 }

@@ -2,7 +2,7 @@
   list-style-type: none;
   margin-bottom: rem(50);
 
-  @include breakpoint(768) {
+  @media (min(md)) {
     tidy-span: 6;
   }
 }

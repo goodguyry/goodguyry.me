@@ -108,6 +108,46 @@
   }
 }
 
+// Map of default breakpoint values.
+$bp-values: (
+  md: 768,
+  lg: 1024,
+);
+
+/**
+ * Return a breakpoint value, either from the $bp-values map or a `rem()`
+ * calculation of the function argument.
+ *
+ * @param  {String|Number} $key The key to retrieve, or a number to format.
+ * @return {Number|Boolean}     The breakpoint value or false if none found.
+ */
+@function _get-mq-params($key) {
+  @if 'number' == type-of($key) {
+    @return rem($key);
+  }
+
+  @if map-has-key($bp-values, $key) {
+    @return map-get($bp-values, $key);
+  } @else {
+    @error "$bp-values[#{$key}] doesn't exist.";
+    @return false;
+  }
+}
+
+/**
+ * Print the media query parameter.
+ *
+ * @param  {String|Number} $key The key to retrieve, or a number to format.
+ * @return {String}
+ */
+@function min($key) {
+  $params: _get-mq-params($key);
+
+  @if $params {
+    @return 'min-width: #{$params}';
+  }
+}
+
 /**
  * Add a 200ms transition
  * @include transition((property-1[, property-2]));

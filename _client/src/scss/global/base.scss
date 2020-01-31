@@ -68,7 +68,7 @@ hr {
   background-color: var(--decoration);
   margin: 0 0 rem(50) 0;
 
-  @include breakpoint(768) {
+  @media (min(md)) {
     tidy-span: 2;
   }
 }
