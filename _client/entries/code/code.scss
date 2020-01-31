@@ -1,169 +1,172 @@
 /* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
 
-$orange: rgb(214, 135, 50);
-$green: rgb(180, 199, 90);
-$blue: rgb(123, 170, 190);
-$gray: rgb(121, 121, 121);
-$red: rgb(239, 93, 50);
-$white: rgb(255, 255, 255);
-$yellow: rgb(255, 212, 117);
-$purple: rgb(177, 115, 113);
+.highlight {
+  --orange: rgb(214, 135, 50);
+  --green: rgb(180, 199, 90);
+  --blue: rgb(123, 170, 190);
+  --gray: rgb(121, 121, 121);
+  --red: rgb(239, 93, 50);
+  --yellow: rgb(255, 212, 117);
+  --purple: rgb(177, 115, 113);
+}
 
 // Comments:
-.c, .cm, .cp, .c1, .cs { color: $gray; }
+.c, .cm, .cp, .c1, .cs { color: var(--gray); }
 
 // HTML:
 .language-html {
   // base
-  color: $white;
+  color: var(--white);
   // element
-  .nt { color: $yellow; }
+  .nt { color: var(--yellow); }
   // attribute
-  .na { color: $orange; }
+  .na { color: var(--orange); }
   // entity
-  .ni { color: $blue; }
+  .ni { color: var(--blue); }
   // string
-  .s { color: $green; }
+  .s { color: var(--green); }
 }
 
 // CSS:
 .language-css,
 .language-scss {
   // base
-  color: $white;
+  color: var(--white);
   // selector
-  .nt { color: $green; }
+  .nt { color: var(--green); }
   // class
-  .nc { color: $green; }
+  .nc { color: var(--green); }
   // rouge: property
-  .n, .nl, .na { color: $orange; }
+  .n, .nl, .na { color: var(--orange); }
   // rouge: value, prefixed value
-  .nb, .no, .nl + .p + .n, .na + .p + .n { color: $purple; }
+  .nb, .no, .nl + .p + .n, .na + .p + .n { color: var(--purple); }
   // scss: variable
-  .nv { color: $blue; }
+  .nv { color: var(--blue); }
   // number/hex
-  .m, .err { color: $blue; }
+  .m, .err { color: var(--blue); }
   // string
-  .s2, .s1 { color: $green; }
+  .s2, .s1 { color: var(--green); }
   // keyword
-  .k { color: $blue; }
+  .k { color: var(--blue); }
   // operator
-  .o { color: $blue; }
+  .o { color: var(--blue); }
   // pseudo-element
-  .nd { color: $red; }
+  .nd { color: var(--red); }
   // punctuation
-  .p { color: $white; }
+  .p, .p + .o, .n + .o { color: var(--white); }
+  // ID
+  .nf { color: var(--yellow); }
 }
 
 // Markdown
 .language-md {
   // base
-  color: $white;
+  color: var(--white);
   // heading
-  .gu { color: $orange; }
+  .gu { color: var(--orange); }
   // link text
-  .nv { color: $green; }
+  .nv { color: var(--green); }
   // attribute
-  .nn { color: $green; }
+  .nn { color: var(--green); }
   // link
-  .ss, .sx { color: $blue; }
+  .ss, .sx { color: var(--blue); }
 }
 
 // YAML
 .language-yml {
   // base
-  color: $white;
+  color: var(--white);
   // string
-  .s, .s1, .s2 { color: $orange; }
+  .s, .s1, .s2 { color: var(--orange); }
 }
 
 .language-php {
   // base
-  color: $white;
+  color: var(--white);
   // block comment
-  .sd { color: $gray; }
+  .sd { color: var(--gray); }
   // opening/close brackets
-  .cp { color: $white; }
+  .cp { color: var(--white); }
   // builtin
-  .nb { color: $orange; }
+  .nb { color: var(--orange); }
   // string
-  .s, .s1, .s2 { color: $green; }
+  .s, .s1, .s2 { color: var(--green); }
   // keyword
-  .k { color: $red; }
+  .k { color: var(--red); }
   // variable
-  .nv { color: $blue; }
+  .nv { color: var(--blue); }
   // name
-  .nx { color: $orange; }
-  // nameed function
-  .nf { color: $purple; }
+  .nx { color: var(--orange); }
+  // named function
+  .nf { color: var(--purple); }
   // number
-  .mi { color: $blue; }
+  .mi { color: var(--blue); }
   // operator
-  .o { color: $white; }
+  .o { color: var(--white); }
   // keyword constant
-  .kc { color: $blue; }
+  .kc { color: var(--blue); }
   // HMTL element
-  .nt { color: $yellow; }
+  .nt { color: var(--yellow); }
   //
-  .na { color: $orange; }
+  .na { color: var(--orange); }
 }
 
 // JavaScript:
 .language-js {
-  color: $white;
+  color: var(--white);
   // keyword.declaration
-  .kd { color: $red; }
+  .kd { color: var(--red); }
   // variable name
-  .nx { color: $orange; }
+  .nx { color: var(--orange); }
   // builtin
-  .nb { color: $orange; }
+  .nb { color: var(--orange); }
   // method
-  .nx + .p + .nx { color: $purple; }
+  .nx + .p + .nx { color: var(--purple); }
   // operator
-  .o { color: $blue; }
+  .o { color: var(--blue); }
   // string
-  .s2, .s1 { color: $green; }
+  .s2, .s1 { color: var(--green); }
   // keyword
-  .k { color: $blue; }
+  .k { color: var(--blue); }
   // punctuation
-  .p { color: $white; }
+  .p { color: var(--white); }
 }
 
 // Liquid
 .language-liquid {
   // punctuation
-  .p, .err { color: $white; }
+  .p, .err { color: var(--white); }
   // keyword reserved
-  .kr { color: $orange; }
+  .kr { color: var(--orange); }
   // variable
-  .nv { color: $blue; }
+  .nv { color: var(--blue); }
   // function
-  .nf { color: $orange; }
+  .nf { color: var(--orange); }
   // operator
-  .o { color: $blue; }
+  .o { color: var(--blue); }
   // string
   .s2, .s1 {
-    color: $green;
+    color: var(--green);
     font-style: italic;
   }
   // tag
-  .nt { color: $orange; }
+  .nt { color: var(--orange); }
   // number
-  .mi { color: $blue; }
+  .mi { color: var(--blue); }
 }
 
 .language-yaml {
   // punctuation
-  .p, .pi { color: $white; }
+  .p, .pi { color: var(--white); }
   // string
-  .s { color: $orange; }
+  .s { color: var(--orange); }
 }
 
 .language-term::before {
   content: '$';
   display: inline-block;
   margin-right: 0.5em;
-  color: lighten($gray, 10%);
+  color: var(--decoration);
 }
 
 /********************************************************
@@ -230,10 +233,10 @@ $purple: rgb(177, 115, 113);
               Text.Whitespace   .w
 
 // pigments: property/value
-.n, .nl, .nb { color: $orange; }
+.n, .nl, .nb { color: var(--orange); }
 // pigments: number inside media query
-.nt + .nc, .o + .nt { color: $blue; }
+.nt + .nc, .o + .nt { color: var(--blue); }
 // pigments: property
-.k { color: $orange; }
+.k { color: var(--orange); }
 
 ********************************************************/
