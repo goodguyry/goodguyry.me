@@ -66,7 +66,7 @@ hr {
   height: 1px;
   width: rem(100);
   background-color: var(--decoration);
-  margin: 0 0 rem(50) 0;
+  margin: 0;
 
   @media (min(md)) {
     tidy-span: 2;

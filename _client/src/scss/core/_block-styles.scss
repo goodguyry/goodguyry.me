@@ -265,6 +265,13 @@
   }
 }
 
+@mixin content-block-level {
+
+  hr {
+    margin-bottom: $vertical-rhythm;
+  }
+}
+
 @mixin content-hey {
 
   :global(.hey) {
