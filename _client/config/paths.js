@@ -7,7 +7,7 @@ module.exports = {
   components: path.join(__dirname, '../components'),
   scss: path.join(__dirname, '../src/scss'),
   js: path.join(__dirname, '../src/js'),
-  fonts: path.join(__dirname, '../src/scss/fonts'),
+  fonts: path.join(__dirname, '../src/fonts'),
   entries: path.join(__dirname, '../entries'),
   jekyllSass: path.join(__dirname, '../../_scss'),
   siteData: path.join(__dirname, '../../_data'),
