@@ -269,7 +269,7 @@
 
   :global(.hey) {
     font: {
-      size: $small-font-size;
+      size: rem(14);
       style: italic;
     }
     padding: 0.5rem;

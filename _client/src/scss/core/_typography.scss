@@ -1,23 +1,6 @@
 $mono: Consolas, Monaco, 'Andale Mono', monospace;
 $global-font: 'Gelasio', 'Palatino', 'Georgia', serif;
 
-$line-height: 1.5;
-$small-font-size: rem(14);
-
-// Shared margin-bottom value
-$heading-margin: 0.25rem;
-
-@mixin heading-base {
-  font-weight: 700;
-  line-height: 1;
-}
-
-@mixin heading-primary {
-  @include heading-base;
-  font-size: rem(42);
-  margin-bottom: 0;
-}
-
 @mixin heading-secondary {
   font-size: rem(36);
   font-weight: 600;
@@ -25,15 +8,4 @@ $heading-margin: 0.25rem;
 
 @mixin heading-tertiary {
   font-size: rem(24);
-}
-
-@mixin heading-small {
-  @include heading-base;
-  font-size: rem(20);
-  margin-bottom: $heading-margin;
-}
-
-@mixin heading-smallest {
-  font-size: rem(16);
-  margin-bottom: $heading-margin;
 }
