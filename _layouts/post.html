@@ -18,5 +18,7 @@ layout: default
 
 	<hr class="{{ post.divider }}">
 
-	{% include components/post-footer.html %}
+	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
+		{% include components/post-footer.html %}
+	{% endunless %}
 </article>
