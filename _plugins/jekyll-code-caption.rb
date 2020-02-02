@@ -67,7 +67,8 @@ eos
       def add_code_tag(code)
         code_attributes = [
           "class=\"language-#{@lang.to_s.tr('+', '-')}\"",
-          "data-lang=\"#{@lang}\""
+          "data-lang=\"#{@lang}\"",
+          "tabindex=\"0\""
         ].join(" ")
         "#{@mark}<figure class=\"highlight\"><pre><code #{code_attributes}>#{code.chomp}</code></pre><figcaption>#{@caption.join(' ')}</figcaption></figure>"
       end
