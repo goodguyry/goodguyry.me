@@ -5,7 +5,8 @@
 :root {
   --white: #FFFFFF;
   --black: #333333;
-  --accent: #16B3AD;
+  --actual-black: #000000;
+  --accent: #16A085;
   --code-orange: #D68732;
   --gray-mid: #4C4B4B;
   --decoration: #CCCCCC;
@@ -53,7 +54,7 @@ a {
 
 // Invert anchors to keep them legible
 a::selection {
-  color: var(--black);
+  color: var(--actual-black);
 }
 
 img::selection {
