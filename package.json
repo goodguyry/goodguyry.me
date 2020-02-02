@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "fg-loadcss": "^2.0.1"
   },
   "repository": {
