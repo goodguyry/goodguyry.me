@@ -8,20 +8,19 @@
 		// eslint-disable-next-line
 		window.siteClassNames = {{ classnames | jsonify }};</script>
 
-	{% assign fontFiles = site.data.fonts %}
-	{% for fontFile in site.data.fonts %}
+	{% for fontFile in fonts %}
 		<link rel="preload" href="build/media/{{ fontFile }}" as="font" type="font/woff2" crossorigin>
 	{% endfor %}
 
 	<link rel="stylesheet" href="build/{{ assets.global.css }}">
 
-	{% if page.permalink == '/' %}
+	{% if permalink == '/' %}
 		<link rel="stylesheet" href="build/{{ assets.home.css }}">
 	{% else %}
-		<link rel="stylesheet" href="build/{{ assets[page.layout].css }}">
+		<link rel="stylesheet" href="build/{{ assets[layout].css }}">
 	{% endif %}
 
-	{% if page.code %}
+	{% if code %}
 		<link rel="stylesheet" href="build/{{ assets.code.css }}">
 	{% endif %}
 
