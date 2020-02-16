@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
       input: '.',
       layouts: '_layouts',
       data: '_data',
-      output: 'dist',
+      output: '_site',
     }
   };
 };
