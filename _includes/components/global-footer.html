@@ -4,9 +4,8 @@
 
 	<p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
 
-	{% if strings.github_base_url %}
-		<p>This site&rsquo;s source is on <a href="{{ "/goodguyry.me" | prepend: strings.github_base_url }}">Github</a>.</p>
-	{% endif %}
+	{% capture github_url %}{% account 'github' %}{% endcapture %}
+	<p>This site&rsquo;s source is on <a href="{{ github_url | append: '/goodguyry.me' }}">Github</a>.</p>
 
 	<p class="{{ global-footer.powered-by }}">🍪 Powered by cookies.</p>
 

@@ -13,6 +13,20 @@ module.exports = function(eleventyConfig) {
   // Don't use the gitignore file.
   eleventyConfig.setUseGitIgnore(false);
 
+  eleventyConfig.addShortcode('account', function(site) {
+    const urls = {
+      github: 'https://github.com',
+      twitter: 'https://twitter.com',
+      codepen: 'https://codepen.io',
+    };
+
+    if (undefined === urls[site]) {
+      return '';
+    }
+
+    return `${urls[site]}/goodguyry`;
+  });
+
   // You can return your Config object (optional).
   return {
     dir: {

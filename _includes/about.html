@@ -4,4 +4,4 @@
 
 <p>I love coffee and cannot be trusted around cookies.</p>
 
-<p>Find me online at <a href="http://twitter.com/{{ accounts.twitter_username }}">Twitter</a> and <a href="http://github.com/{{ accounts.github_username }}">GitHub</a>.</p>
+<p>Find me online at <a href="{% account 'twitter' %}">Twitter</a> and <a href="{% account 'github' %}">GitHub</a>.</p>
