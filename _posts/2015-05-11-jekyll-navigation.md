@@ -5,6 +5,7 @@ title: Jekyll Navigation
 excerpt: An exploration of an approach to Jekyll site navigation, with an additional approach for multi-lingual sites.
 description: Exploring Jekyll site navigation options
 code: true
+tags: post
 resources:
 - text: Jekyll Documentation - Data Files
   url: http://jekyllrb.com/docs/datafiles/

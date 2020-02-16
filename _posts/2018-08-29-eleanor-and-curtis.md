@@ -3,7 +3,10 @@ layout: post
 title: Eleanor & Curtis
 excerpt: The story of my grandparents' fateful meeting – twice.
 description: My grandparents met by chance, fell out of touch, then reconnected by chance over a year later.
-tags: personal family
+tags: 
+  - personal
+  - family
+  - post
 ---
 
 My grandparents, Eleanor and Curtis Domingue, passed away this week; my grandma last Friday, and my grandpa early this morning. They would have celebrated their 71st anniversary this October.

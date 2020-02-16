@@ -16,8 +16,8 @@ permalink: /
 	{% include components/projects.html %}
 </section>
 
-{% if site.posts.size > 0 %}
+{% if collections.post.size > 0 %}
 	<section class="{{ classes.posts }}">
-		{% include components/post-list.html limit=4 %}
+		{% include components/post-list.html, count: 4 %}
 	</section>
 {% endif %}

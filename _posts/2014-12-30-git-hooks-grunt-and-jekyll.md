@@ -4,6 +4,7 @@ title: Git Hooks, Grunt and Jekyll on Dreamhost
 excerpt: I recently spent the better part of a day getting Grunt and Jekyll to properly execute via a Git post-receive hook. Here are some notes about getting Node, Grunt and Jekyll running on a shared Dreamhost server.
 description: Some tips for working with Node and Ruby on Dreamhost shared hosting
 code: true
+tags: post
 resources:
 - text: <em>How To Use Git Hooks To Automate Development and Deployment Tasks</em>
   url: https://www.digitalocean.com/community/tutorials/how-to-use-git-hooks-to-automate-development-and-deployment-tasks

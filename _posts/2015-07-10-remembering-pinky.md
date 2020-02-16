@@ -4,7 +4,10 @@ title: Remembering Pinky
 excerpt: A tribute to the best dog ever, and the source of my wife&rsquo;s greatest joy.
 description: A tribute to the best dog ever, and the source of my wife's greatest joy.
 mainImage: /images/posts/remembering-pinky-hero.jpg
-tags: personal family
+tags: 
+  - personal
+  - family
+  - post
 picturefill: true
 ---
 
