@@ -1,13 +1,12 @@
-{% assign projects = site.data.classnames.projects %}
-{% assign strings = site.data.strings %}
+{% assign classes = site.data.classnames.projects %}
 
-<h2 class="{{ projects.heading }}">{{ strings.projects_heading }}</h2>
+<h2 class="{{ classes.heading }}">{{ strings.projects_heading }}</h2>
 
-<ul class="{{ projects.list }}">
-	{% for project in site.data.projects %}
-		<li class="{{ projects.item }}">
+<ul class="{{ classes.list }}">
+	{% for project in projects %}
+		<li class="{{ classes.item }}">
 
-			<h3 class="{{ projects.title }}">
+			<h3 class="{{ classes.title }}">
 				<a href="{{ project.url }}">{{ project.name }}</a>
 			</h3>
 
@@ -17,4 +16,4 @@
 	{% endfor %}
 </ul>
 
-<a class="{{ projects.more }}" href="{{ strings.github_base_url }}">See more on GitHub</a>
+<a class="{{ classes.more }}" href="{{ strings.github_base_url }}">See more on GitHub</a>

@@ -3,12 +3,12 @@
 <!-- front -->
 <header role="banner" class="{{ global-header.wrapper }}">
 	{% capture theTitle %}
-		{% if page.layout == 'post' %}{{ strings.blog_heading }}{% else %}{{ page.title }}{% endif %}
+		{% if layout == 'post' %}{{ strings.blog_heading }}{% else %}{{ title }}{% endif %}
 	{% endcapture %}
 
 	<h1 class="{{ global-header.page-title }}">{{ theTitle }}</h1>
 
-	{% unless page.permalink == '/errors.php' %}
+	{% unless permalink == '/errors.php' %}
 		{% include components/global-nav.html %}
 	{% endunless %}
 </header>
