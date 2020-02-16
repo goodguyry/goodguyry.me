@@ -5,6 +5,7 @@ excerpt: Multi-Tenant WordPress is similar to WordPress Multisite, but each site
 description: The multi-tenant WordPress setup allows multiple 'tenant' sites to run from one 'core' WordPress install, but with separate databases.
 code: true
 tags: post
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 <p class="hey">This post was inspired by Jason McCreary's <a href="http://jason.pureconcepts.net/2012/08/wordpress-multitenancy/">WordPress Multitenancy</a> (and <a href="http://jason.pureconcepts.net/2013/04/updated-wordpress-multitenancy/">his follow-up</a>).</p>

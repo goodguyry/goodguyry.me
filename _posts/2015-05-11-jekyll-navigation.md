@@ -11,6 +11,7 @@ resources:
   url: http://jekyllrb.com/docs/datafiles/
 - text: Liquid for Designers
   url: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 

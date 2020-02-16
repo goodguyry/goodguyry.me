@@ -7,6 +7,7 @@ tags:
   - personal
   - family
   - post
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 My grandparents, Eleanor and Curtis Domingue, passed away this week; my grandma last Friday, and my grandpa early this morning. They would have celebrated their 71st anniversary this October.

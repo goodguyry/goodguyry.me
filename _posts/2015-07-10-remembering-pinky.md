@@ -9,6 +9,7 @@ tags:
   - family
   - post
 picturefill: true
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 <figure>

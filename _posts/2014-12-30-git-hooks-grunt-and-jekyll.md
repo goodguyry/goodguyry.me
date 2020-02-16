@@ -12,7 +12,7 @@ resources:
   url: https://gist.github.com/goodguyry/60661091c2bb68d9574c
 - text: My Gruntfile
   url: https://github.com/goodguyry/goodguyry.me/blob/master/Gruntfile.js
-
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 I've been meaning to get myself set up with Git deployment for a while now. What better time than right after a website refresh?

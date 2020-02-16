@@ -10,6 +10,7 @@ resources:
   url: http://php56.dreamhosters.com/
 - text: DreamHost Wiki - Supported and unsupported technologies
   url: http://wiki.dreamhost.com/Supported_and_unsupported_technologies
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
 [DreamBox](https://atlas.hashicorp.com/goodguyry/boxes/dreambox) is a Vagrant environment for DreamHost users. It replicates not only the package versions and server setup, but also the shared hosting setup, meaning any files that require a full path will work both locally and on your server.
