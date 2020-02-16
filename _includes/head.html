@@ -6,7 +6,7 @@
 
 	<script>
 		// eslint-disable-next-line
-		window.siteClassNames = {{ site.data.classnames | jsonify }};</script>
+		window.siteClassNames = {{ classnames | jsonify }};</script>
 
 	{% assign fontFiles = site.data.fonts %}
 	{% for fontFile in site.data.fonts %}
