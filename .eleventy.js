@@ -7,6 +7,9 @@ module.exports = function(eleventyConfig) {
   // Add syntax highlighting.
   eleventyConfig.addPlugin(syntaxHighlight);
 
+  // Copy the `build/` directory.
+  eleventyConfig.addPassthroughCopy('build');
+
   eleventyConfig.setUseGitIgnore(false);
 
   // You can return your Config object (optional).
