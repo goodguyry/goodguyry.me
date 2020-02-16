@@ -38,10 +38,10 @@ module.exports = (mode) => {
           return { ...acc, [key]: assetList };
         }, {});
 
-        return yamlDictFromObject(assetMap);
+        return JSON.stringify(yamlDictFromObject(assetMap));
       },
       fields: ['assetsByChunkName', 'hash'],
-      filename: '../_data/assets.yaml',
+      filename: '../_data/assets.json',
     }),
   ];
 };

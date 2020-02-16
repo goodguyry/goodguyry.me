@@ -8,10 +8,8 @@
 module.exports = (obj) => Object.keys(obj).reduce((acc, key) => {
   const pairs = Object.keys(obj[key])
     .reduce((pairAcc, assetKey) => (
-      pairAcc.length
-        ? `${pairAcc}, ${assetKey}: '${obj[key][assetKey]}'`
-        : `${assetKey}: '${obj[key][assetKey]}'`
-    ), '');
+      { ...pairAcc, [assetKey]: obj[key][assetKey] }
+    ), {});
 
-  return `${acc}${key}: { ${pairs} }\n`;
-}, '');
+  return { ...acc, [key]: { ...pairs } };
+}, {});
