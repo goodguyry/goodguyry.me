@@ -10,6 +10,7 @@ module.exports = function(eleventyConfig) {
   // Copy the `build/` directory.
   eleventyConfig.addPassthroughCopy('build');
 
+  // Don't use the gitignore file.
   eleventyConfig.setUseGitIgnore(false);
 
   // You can return your Config object (optional).
