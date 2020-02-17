@@ -20,7 +20,9 @@
     "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
     "build": "npm run webpack:prod && npm run jekyll:build",
     "11ty:dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
-    "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy"
+    "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "11ty:serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "11ty:watch": "ELEVENTY_ENV=development npx @11ty/eleventy --watch"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",

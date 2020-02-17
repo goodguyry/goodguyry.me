@@ -27,6 +27,11 @@ module.exports = function(eleventyConfig) {
     return `${urls[site]}/goodguyry`;
   });
 
+  eleventyConfig.setBrowserSyncConfig({
+    server: false,
+    proxy: 'http://goodguyry.http',
+  });
+
   // You can return your Config object (optional).
   return {
     dir: {
