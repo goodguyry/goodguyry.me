@@ -17,7 +17,7 @@
     "jekyll:watch": "jekyll build --config _config.yaml --watch --drafts",
     "jekyll:dev": "jekyll build --config _config.yaml --drafts",
     "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
-    "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
+    "dev": "concurrently 'npm run webpack:watch' 'npm run 11ty:watch'",
     "build": "npm run webpack:prod && npm run jekyll:build",
     "11ty:dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
     "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy",
