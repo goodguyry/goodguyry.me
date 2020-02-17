@@ -13,6 +13,14 @@ module.exports = function(eleventyConfig) {
   // Don't use the gitignore file.
   eleventyConfig.setUseGitIgnore(false);
 
+  /**
+   * Adds an account tag
+   * {% account 'twitter' %}
+   * -> 'https://twitter.com/godguyry'
+   *
+   * @param  {string} site The site for which the account URL should be retrieved.
+   * @return {string}
+   */
   eleventyConfig.addShortcode('account', function(site) {
     const urls = {
       github: 'https://github.com',
@@ -29,6 +37,7 @@ module.exports = function(eleventyConfig) {
     return '';
   });
 
+  // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({
     server: false,
     proxy: 'http://goodguyry.http',
