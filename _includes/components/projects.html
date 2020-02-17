@@ -1,13 +1,12 @@
-{% assign classes = classnames.projects %}
 {% capture github_url %}{% account 'github' %}{% endcapture %}
 
-<h2 class="{{ classes.heading }}">{{ strings.projects_heading }}</h2>
+<h2 class="{{ classnames.projects.heading }}">{{ strings.projects_heading }}</h2>
 
-<ul class="{{ classes.list }}">
+<ul class="{{ classnames.projects.list }}">
 	{% for project in projects %}
-		<li class="{{ classes.item }}">
+		<li class="{{ classnames.projects.item }}">
 
-			<h3 class="{{ classes.title }}">
+			<h3 class="{{ classnames.projects.title }}">
 				<a href="{{ github_url }}/{{ project.slug }}">{{ project.name }}</a>
 			</h3>
 
@@ -17,4 +16,4 @@
 	{% endfor %}
 </ul>
 
-<a class="{{ classes.more }}" href="{{ github_url }}">See more on GitHub</a>
+<a class="{{ classnames.projects.more }}" href="{{ github_url }}">See more on GitHub</a>

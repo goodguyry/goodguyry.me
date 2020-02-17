@@ -1,22 +1,21 @@
 ---
 layout: default
 ---
-{% assign classes = classnames.post %}
 
 <article>
-	<header class="{{ classes.header }}">
-		<p class="{{ classes.meta }}">
+	<header class="{{ classnames.post.header }}">
+		<p class="{{ classnames.post.meta }}">
 			<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
 		</p>
 
-		<h1 class="{{ classes.title }}">{{ page.title }}</h1>
+		<h1 class="{{ classnames.post.title }}">{{ page.title }}</h1>
 	</header>
 
-	<div class="post-content {{ classes.content }}">
+	<div class="post-content {{ classnames.post.content }}">
 		{{ content }}
 	</div>
 
-	<hr class="{{ classes.divider }}">
+	<hr class="{{ classnames.post.divider }}">
 
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
 		{% include components/post-footer.html %}
