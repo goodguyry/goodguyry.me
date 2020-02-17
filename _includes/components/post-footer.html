@@ -1,15 +1,15 @@
 <footer class="{{ classnames.post-footer.wrapper }}">
-	{% if page.resources %}
+	{% if resources %}
 		<h3 class="{{ classnames.post-footer.heading }}">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
 
 		<ul class="{{ classnames.post-footer.list }}">
-			{% for resource in page.resources %}
+			{% for resource in resources %}
 				<li class="{{ classnames.post-footer.item }}"><a href="{{ resource.url }}">{{ resource.text }}</a></li>
 			{% endfor %}
 		</ul>
 	{% endif %}
 
-	{% unless page.tags contains 'personal' %}
+	{% unless tags contains 'personal' %}
 		{% capture github_url %}{% account 'github' %}{% endcapture %}
 
 		<div class="{{ classnames.post-footer.issues }}">
