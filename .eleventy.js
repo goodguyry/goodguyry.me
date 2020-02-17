@@ -20,11 +20,13 @@ module.exports = function(eleventyConfig) {
       codepen: 'https://codepen.io',
     };
 
-    if (undefined === urls[site]) {
-      return '';
+    const { [site]: baseUrl } = urls;
+
+    if (undefined !== baseUrl) {
+      return `${baseUrl}/goodguyry`;
     }
 
-    return `${urls[site]}/goodguyry`;
+    return '';
   });
 
   eleventyConfig.setBrowserSyncConfig({
