@@ -23,7 +23,7 @@ In these examples, I&rsquo;ll use data files to hold the list of navigation item
 
 First, create a list of items in <code class="path">_data/nav.yaml</code>, each with &lsquo;text&rsquo; and &lsquo;url&rsquo; properties to hold the necessary information.
 
-<figure>
+{% codeblock 'From _data/nav.yaml' %}
   {% highlight yml %}
   - text: Home
     url: /
@@ -32,17 +32,15 @@ First, create a list of items in <code class="path">_data/nav.yaml</code>, each 
   - text: Blog
     url: /blog/
   {% endhighlight %}
-  <figcaption>From _data/nav.yaml</figcaption>
-</figure>
+{% endcodeblock %}
 
 Now that the data file is ready, assign the current page&rsquo;s URL to a variable. &ldquo;Current page&rdquo; in this context refers to the page being processed during Jekyll&rsquo;s build.
 
-<figure>
+{% codeblock "Capture the page&rsquo;s URL" %}
   {% highlight liquid %}
   {%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
   {% endhighlight %}
-  <figcaption>Capture the page&rsquo;s URL</figcaption>
-</figure>
+{% endcodeblock %}
 
 So as Jekyll iterates through the pages in the site, each page&rsquo;s URL will be captured and used for building the rest of the navigation.
 
@@ -52,7 +50,7 @@ The home page doesn&rsquo;t need the &lsquo;home&rsquo; link, so the loop should
 
 To set the `offset`, test whether or not the current page is the home page. If it is, set the offset to 1, which will skip over the first list item (&lsquo;home&rsquo;). Otherwise, let the loop start at the first item, as it would by default.
 
-<figure>
+{% codeblock 'Use a loop offset to skip the home link on the homepage' %}
   {% highlight liquid %}
   {%raw%}{% if thisUrl == "/" %}
     {% assign navOffset = 1 %}
@@ -60,8 +58,7 @@ To set the `offset`, test whether or not the current page is the home page. If i
     {% assign navOffset = 0 %}
   {% endif %}{%endraw%}
   {% endhighlight %}
-  <figcaption>Use a loop offset to skip the home link on the homepage</figcaption>
-</figure>
+{% endcodeblock %}
 
 #### The Loop
 
@@ -69,7 +66,7 @@ Now that all the pieces are in place, add the loop to build the navigation list.
 
 Use a `for` loop to iterate over the items in `site.data.nav`, comparing each item to the current page&rsquo;s URL. If the item matches the page's URL, mark the navigation item as &ldquo;current&rdquo; for styling purposes.
 
-<figure>
+{% codeblock 'The loop' %}
   {% highlight html %}
   <nav role="navigation">
     <ul>{%raw%}
@@ -83,8 +80,7 @@ Use a `for` loop to iterate over the items in `site.data.nav`, comparing each it
     </ul>
   </nav>
   {% endhighlight %}
-  <figcaption>The loop</figcaption>
-</figure>
+{% endcodeblock %}
 
 ### The Multi-Lingual Nav
 
@@ -94,7 +90,7 @@ I&rsquo;m in the process of building a website that needs to be translated into 
 
 For this site, the data files also serve to hold translated strings. As such, there are two data files:
 
-<figure>
+{% codeblock 'From _data/strings_en.yaml' %}
   {% highlight yml %}
   nav:
   - text: Home
@@ -109,10 +105,9 @@ For this site, the data files also serve to hold translated strings. As such, th
   home: /
   other: /es/
   {% endhighlight %}
-  <figcaption>From _data/strings_en.yaml</figcaption>
-</figure>
+{% endcodeblock %}
 
-<figure>
+{% codeblock 'From _data/strings_es.yaml' %}
   {% highlight yml %}
   nav:
   - text: Inicio
@@ -127,23 +122,21 @@ For this site, the data files also serve to hold translated strings. As such, th
   home: /es/
   other: /
   {% endhighlight %}
-  <figcaption>From _data/strings_es.yaml</figcaption>
-</figure>
+{% endcodeblock %}
 
 `home` and `other` will be used to tell the loop which site is being built. More on that later...
 
 As with _The Basic Nav_ example above, the current page&rsquo;s URL needs to be captured for use in the loop.
 
-<figure>
+{% codeblock "Capture the page&rsquo;s URL" %}
   {% highlight liquid %}
   {%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
   {% endhighlight %}
-  <figcaption>Capture the page's URL</figcaption>
-</figure>
+{% endcodeblock %}
 
 Next, tell Jekyll which data file to use by checking the URL for the language-specific directory. If the URL contains the directory name &mdash; in this case '<code class="path">/es/</code>' &mdash; use the translated strings. Otherwise, use the english strings.
 
-<figure>
+{% codeblock 'Tell Jekyll which data file to use' %}
   {% highlight liquid %}
   {%raw%}{% if thisUrl contains "/es/" %}
     {% assign strings = site.data.strings_es %}
@@ -151,12 +144,11 @@ Next, tell Jekyll which data file to use by checking the URL for the language-sp
     {% assign strings = site.data.strings_en %}
   {% endif %}{%endraw%}
   {% endhighlight %}
-  <figcaption>Tell Jekyll which data file to use</figcaption>
-</figure>
+{% endcodeblock %}
 
 For the offset, the only difference is checking for the translated home page URL in addition to the english home page URL.
 
-<figure>
+{% codeblock 'Set the offset using both home page URLs' %}
   {% highlight liquid %}
   {%raw%}{% if thisUrl == "/" or thisUrl == "/es/" %}
     {% assign navOffset = 1 %}
@@ -164,8 +156,7 @@ For the offset, the only difference is checking for the translated home page URL
     {% assign navOffset = 0 %}
   {% endif %}{%endraw%}
   {% endhighlight %}
-  <figcaption>Set the offset using both home page URLs</figcaption>
-</figure>
+{% endcodeblock %}
 
 #### The Problem, Part Deux
 
@@ -173,7 +164,7 @@ As with _The Basic Nav_ above, the home pages &mdash; both the translated site a
 
 So the loop essentially says, for items in this list, if the item is not the home page, skip the translated home link. Otherwise, build the list normally. And, of course, the list may or may not be offset, based on the page's URL.
 
-<figure>
+{% codeblock 'The multi-lingual loop' %}
   {% highlight html %}
   <nav role="navigation">
 
@@ -191,7 +182,6 @@ So the loop essentially says, for items in this list, if the item is not the hom
 
   </nav>
   {% endhighlight %}
-  <figcaption>The multi-lingual loop</figcaption>
-</figure>
+{% endcodeblock %}
 
 In this post, I introduced a technique for creating site navigation using Jekyll data files and Liquid conditionals and loops. I then showed how I&rsquo;ve extended this approach for use in a multi-lingual site I&rsquo;m building. I hope you&rsquo;ve found this exercise helpful.

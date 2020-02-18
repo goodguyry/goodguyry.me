@@ -1,4 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const Entities = require('html-entities').AllHtmlEntities;
+
 
 module.exports = function(eleventyConfig) {
   // https://www.11ty.dev/docs/custom-tags/#liquidjs-example
@@ -35,6 +37,16 @@ module.exports = function(eleventyConfig) {
     }
 
     return '';
+  });
+
+  eleventyConfig.addPairedShortcode('codeblock', function(content, caption) {
+    const entities = new Entities();
+    const decodedCaption = entities.decode(caption);
+
+    return `<figure>
+  ${content}
+  ${decodedCaption ? `<figcaption>${decodedCaption}</figcapton>` : ''}
+</figure>`
   });
 
   // Override BrowserSync options.
