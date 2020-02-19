@@ -38,7 +38,7 @@ Now that the data file is ready, assign the current page&rsquo;s URL to a variab
 
 {% codeblock "Capture the page&rsquo;s URL" %}
 {% highlight liquid %}
-{%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
+{% assign thisUrl = page.url | remove: 'index.html' %}
 {% endhighlight %}
 {% endcodeblock %}
 
@@ -52,11 +52,11 @@ To set the `offset`, test whether or not the current page is the home page. If i
 
 {% codeblock 'Use a loop offset to skip the home link on the homepage' %}
 {% highlight liquid %}
-{%raw%}{% if thisUrl == "/" %}
+{% if thisUrl == "/" %}
   {% assign navOffset = 1 %}
 {% else %}
   {% assign navOffset = 0 %}
-{% endif %}{%endraw%}
+{% endif %}
 {% endhighlight %}
 {% endcodeblock %}
 
@@ -69,14 +69,14 @@ Use a `for` loop to iterate over the items in `site.data.nav`, comparing each it
 {% codeblock 'The loop' %}
 {% highlight html %}
 <nav role="navigation">
-  <ul>{%raw%}
+  <ul>
   {% for item in site.data.nav offset:navOffset %}
     {% if item.url == thisUrl %}
       <li class="current">{{ item.text }}</li>
     {% else %}
       <li><a href="{{ item.url }}">{{ item.text }}</a></li>
     {% endif %}
-  {% endfor %}{%endraw%}
+  {% endfor %}
   </ul>
 </nav>
 {% endhighlight %}
@@ -130,7 +130,7 @@ As with _The Basic Nav_ example above, the current page&rsquo;s URL needs to be 
 
 {% codeblock "Capture the page&rsquo;s URL" %}
 {% highlight liquid %}
-{%raw%}{% assign thisUrl = page.url | remove: 'index.html' %}{%endraw%}
+{% assign thisUrl = page.url | remove: 'index.html' %}
 {% endhighlight %}
 {% endcodeblock %}
 
@@ -138,11 +138,11 @@ Next, tell Jekyll which data file to use by checking the URL for the language-sp
 
 {% codeblock 'Tell Jekyll which data file to use' %}
 {% highlight liquid %}
-{%raw%}{% if thisUrl contains "/es/" %}
+{% if thisUrl contains "/es/" %}
   {% assign strings = site.data.strings_es %}
 {% else %}
   {% assign strings = site.data.strings_en %}
-{% endif %}{%endraw%}
+{% endif %}
 {% endhighlight %}
 {% endcodeblock %}
 
@@ -150,11 +150,11 @@ For the offset, the only difference is checking for the translated home page URL
 
 {% codeblock 'Set the offset using both home page URLs' %}
 {% highlight liquid %}
-{%raw%}{% if thisUrl == "/" or thisUrl == "/es/" %}
+{% if thisUrl == "/" or thisUrl == "/es/" %}
   {% assign navOffset = 1 %}
 {% else %}
   {% assign navOffset = 0 %}
-{% endif %}{%endraw%}
+{% endif %}
 {% endhighlight %}
 {% endcodeblock %}
 
@@ -168,7 +168,7 @@ So the loop essentially says, for items in this list, if the item is not the hom
 {% highlight html %}
 <nav role="navigation">
 
-  <ul>{%raw%}
+  <ul>
   {% for item in strings.nav offset:navOffset %}
     {% if thisUrl != strings.home %}
       {% if item.url != strings.other %}
@@ -178,7 +178,7 @@ So the loop essentially says, for items in this list, if the item is not the hom
       {% if item.url == thisUrl %}<li class="current">{{ item.text }}{% else %}<li><a href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
     {% endif %}
   {% endfor %}
-  {%endraw%}</ul>
+  </ul>
 
 </nav>
 {% endhighlight %}
