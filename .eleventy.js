@@ -6,6 +6,11 @@ const codeblock = require('./.eleventy/shortcode-codeblock');
 const account = require('./.eleventy/shortcode-account');
 
 module.exports = function(eleventyConfig) {
+  // The Config object.
+  const dir = {
+    layouts: '_layouts',
+  };
+
   // Add syntax highlighting.
   eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -25,13 +30,5 @@ module.exports = function(eleventyConfig) {
     proxy: 'http://goodguyry.http',
   });
 
-  // You can return your Config object (optional).
-  return {
-    dir: {
-      input: '.',
-      layouts: '_layouts',
-      data: '_data',
-      output: '_site',
-    }
-  };
+  return { dir };
 };
