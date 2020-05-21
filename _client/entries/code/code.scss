@@ -1,242 +1,616 @@
-/* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
+// /* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
 
-.highlight {
-  --orange: rgb(214, 135, 50);
-  --green: rgb(180, 199, 90);
-  --blue: rgb(123, 170, 190);
-  --gray: rgb(121, 121, 121);
-  --red: rgb(239, 93, 50);
-  --yellow: rgb(255, 212, 117);
-  --purple: rgb(177, 115, 113);
+// .highlight {
+//   --orange: rgb(214, 135, 50);
+//   --green: rgb(180, 199, 90);
+//   --blue: rgb(123, 170, 190);
+//   --gray: rgb(121, 121, 121);
+//   --red: rgb(239, 93, 50);
+//   --yellow: rgb(255, 212, 117);
+//   --purple: rgb(177, 115, 113);
+// }
+
+// // Comments:
+// .c, .cm, .cp, .c1, .cs { color: var(--gray); }
+
+// // HTML:
+// .language-html {
+//   // base
+//   color: var(--white);
+//   // element
+//   .nt { color: var(--yellow); }
+//   // attribute
+//   .na { color: var(--orange); }
+//   // entity
+//   .ni { color: var(--blue); }
+//   // string
+//   .s { color: var(--green); }
+// }
+
+// // CSS:
+// .language-css,
+// .language-scss {
+//   // base
+//   color: var(--white);
+//   // selector
+//   .nt { color: var(--green); }
+//   // class
+//   .nc { color: var(--green); }
+//   // rouge: property
+//   .n, .nl, .na { color: var(--orange); }
+//   // rouge: value, prefixed value
+//   .nb, .no, .nl + .p + .n, .na + .p + .n { color: var(--purple); }
+//   // scss: variable
+//   .nv { color: var(--blue); }
+//   // number/hex
+//   .m, .err { color: var(--blue); }
+//   // string
+//   .s2, .s1 { color: var(--green); }
+//   // keyword
+//   .k { color: var(--blue); }
+//   // operator
+//   .o { color: var(--blue); }
+//   // pseudo-element
+//   .nd { color: var(--red); }
+//   // punctuation
+//   .p, .p + .o, .n + .o { color: var(--white); }
+//   // ID
+//   .nf { color: var(--yellow); }
+// }
+
+// // Markdown
+// .language-md {
+//   // base
+//   color: var(--white);
+//   // heading
+//   .gu { color: var(--orange); }
+//   // link text
+//   .nv { color: var(--green); }
+//   // attribute
+//   .nn { color: var(--green); }
+//   // link
+//   .ss, .sx { color: var(--blue); }
+// }
+
+// // YAML
+// .language-yml {
+//   // base
+//   color: var(--white);
+//   // string
+//   .s, .s1, .s2 { color: var(--orange); }
+// }
+
+// .language-php {
+//   // base
+//   color: var(--white);
+//   // block comment
+//   .sd { color: var(--gray); }
+//   // opening/close brackets
+//   .cp { color: var(--white); }
+//   // builtin
+//   .nb { color: var(--orange); }
+//   // string
+//   .s, .s1, .s2 { color: var(--green); }
+//   // keyword
+//   .k { color: var(--red); }
+//   // variable
+//   .nv { color: var(--blue); }
+//   // name
+//   .nx { color: var(--orange); }
+//   // named function
+//   .nf { color: var(--purple); }
+//   // number
+//   .mi { color: var(--blue); }
+//   // operator
+//   .o { color: var(--white); }
+//   // keyword constant
+//   .kc { color: var(--blue); }
+//   // HMTL element
+//   .nt { color: var(--yellow); }
+//   //
+//   .na { color: var(--orange); }
+// }
+
+// // JavaScript:
+// .language-js {
+//   color: var(--white);
+//   // keyword.declaration
+//   .kd { color: var(--red); }
+//   // variable name
+//   .nx { color: var(--orange); }
+//   // builtin
+//   .nb { color: var(--orange); }
+//   // method
+//   .nx + .p + .nx { color: var(--purple); }
+//   // operator
+//   .o { color: var(--blue); }
+//   // string
+//   .s2, .s1 { color: var(--green); }
+//   // keyword
+//   .k { color: var(--blue); }
+//   // punctuation
+//   .p { color: var(--white); }
+// }
+
+// // Liquid
+// .language-liquid {
+//   // punctuation
+//   .p, .err { color: var(--white); }
+//   // keyword reserved
+//   .kr { color: var(--orange); }
+//   // variable
+//   .nv { color: var(--blue); }
+//   // function
+//   .nf { color: var(--orange); }
+//   // operator
+//   .o { color: var(--blue); }
+//   // string
+//   .s2, .s1 {
+//     color: var(--green);
+//     font-style: italic;
+//   }
+//   // tag
+//   .nt { color: var(--orange); }
+//   // number
+//   .mi { color: var(--blue); }
+// }
+
+// .language-yaml {
+//   // punctuation
+//   .p, .pi { color: var(--white); }
+//   // string
+//   .s { color: var(--orange); }
+// }
+
+// .language-term::before {
+//   content: '$';
+//   display: inline-block;
+//   margin-right: 0.5em;
+//   color: var(--decoration);
+// }
+
+// /********************************************************
+//  * Legend:
+
+//           Name.Builtin.Pseudo   .bp
+//                       Comment   .c
+//                Comment.Single   .c1
+//             Comment.Multiline   .cm
+//               Comment.Preproc   .cp
+//               Comment.Special   .cs
+//                         Error   .err
+//               Generic.Deleted   .gd
+//      Generic.Deleted.Specific   .gd .x
+//                  Generic.Emph   .ge
+//               Generic.Heading   .gh
+//              Generic.Inserted   .gi
+//     Generic.Inserted.Specific   .gi .x
+//                Generic.Output   .go
+//                Generic.Prompt   .gp
+//                 Generic.Error   .gr
+//                Generic.Strong   .gs
+//             Generic.Traceback   .gt
+//            Generic.Subheading   .gu
+//   Literal.Number.Integer.Long   .il
+//                       Keyword   .k
+//              Keyword.Constant   .kc
+//           Keyword.Declaration   .kd
+//                Keyword.Pseudo   .kp
+//              Keyword.Reserved   .kr
+//                  Keyword.Type   .kt
+//                Literal.Number   .m
+//          Literal.Number.Float   .mf
+//            Literal.Number.Hex   .mh
+//        Literal.Number.Integer   .mi
+//            Literal.Number.Oct   .mo
+//                Name.Attribute   .na
+//                  Name.Builtin   .nb
+//                    Name.Class   .nc
+//                Name.Exception   .ne
+//                 Name.Function   .nf
+//                   Name.Entity   .ni
+//                Name.Namespace   .nn
+//                 Name.Constant   .no
+//                      Name.Tag   .nt
+//                 Name.Variable   .nv
+//                      Operator   .o
+//                 Operator.Word   .ow
+//                Literal.String   .s
+//         Literal.String.Single   .s1
+//         Literal.String.Double   .s2
+//       Literal.String.Backtick   .sb
+//           Literal.String.Char   .sc
+//            Literal.String.Doc   .sd
+//         Literal.String.Escape   .se
+//        Literal.String.Heredoc   .sh
+//       Literal.String.Interpol   .si
+//          Literal.String.Regex   .sr
+//         Literal.String.Symbol   .ss
+//          Literal.String.Other   .sx
+//           Name.Variable.Class   .vc
+//          Name.Variable.Global   .vg
+//        Name.Variable.Instance   .vi
+//               Text.Whitespace   .w
+
+// // pigments: property/value
+// .n, .nl, .nb { color: var(--orange); }
+// // pigments: number inside media query
+// .nt + .nc, .o + .nt { color: var(--blue); }
+// // pigments: property
+// .k { color: var(--orange); }
+
+// ********************************************************/
+
+// pre[class*="language-"],
+// code[class*="language-"] {
+//   color: #d4d4d4;
+//   font-size: 13px;
+//   text-shadow: none;
+//   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+//   direction: ltr;
+//   text-align: left;
+//   white-space: pre;
+//   word-spacing: normal;
+//   word-break: normal;
+//   line-height: 1.5;
+//   -moz-tab-size: 4;
+//   -o-tab-size: 4;
+//   tab-size: 4;
+//   -webkit-hyphens: none;
+//   -moz-hyphens: none;
+//   -ms-hyphens: none;
+//   hyphens: none;
+// }
+
+// pre[class*="language-"]::selection,
+// code[class*="language-"]::selection {
+//   text-shadow: none;
+//   background: #b3d4fc;
+// }
+
+// @media print {
+//   pre[class*="language-"],
+//   code[class*="language-"] {
+//     text-shadow: none;
+//   }
+// }
+
+// pre[class*="language-"] {
+//   padding: 1em;
+//   margin: .5em 0;
+//   overflow: auto;
+//   background: #1e1e1e;
+// }
+
+// :not(pre) > code[class*="language-"] {
+//   padding: .1em .3em;
+//   border-radius: .3em;
+//   color: #db4c69;
+//   background: #f9f2f4;
+// }
+// /*********************************************************
+// * Tokens
+// */
+// .namespace {
+//   opacity: .7;
+// }
+
+// .token.comment,
+// .token.prolog,
+// .token.doctype,
+// .token.cdata {
+//   color: #6a9955;
+// }
+
+// .token.punctuation {
+//   color: #d4d4d4;
+// }
+
+// .token.property,
+// .token.tag,
+// .token.boolean,
+// .token.number,
+// .token.constant,
+// .token.symbol,
+// .token.deleted {
+//   // color: #b5cea8;
+//   color: var(--tag);
+// }
+
+// .token.selector,
+// .token.attr-name,
+// .token.string,
+// .token.char,
+// .token.builtin,
+// .token.inserted {
+//   // color: #ce9178;
+//   color: var(--func);
+// }
+
+// .token.operator,
+// .token.entity,
+// .token.url,
+// .language-css .token.string,
+// .style .token.string {
+//   color: #d4d4d4;
+//   background: #1e1e1e;
+// }
+
+// .token.atrule,
+// .token.attr-value,
+// .token.keyword {
+//   color: #c586c0;
+// }
+
+// .token.function {
+//   color: #dcdcaa;
+// }
+
+// .token.regex,
+// .token.important,
+// .token.variable {
+//   color: #d16969;
+// }
+
+// .token.important,
+// .token.bold {
+//   font-weight: bold;
+// }
+
+// .token.italic {
+//   font-style: italic;
+// }
+
+// .token.constant {
+//   color: #9CDCFE;
+// }
+
+// .token.class-name {
+//   color: #4EC9B0;
+// }
+
+// .token.parameter {
+//   color: #9CDCFE;
+// }
+
+// .token.interpolation {
+//   color: #9CDCFE;
+// }
+
+// .token.punctuation.interpolation-punctuation {
+//   color: #569cd6;
+// }
+
+// .token.boolean {
+//   color: #569cd6;
+// }
+
+// .token.property {
+//   color: #9cdcfe;
+// }
+
+// .token.selector {
+//   color: #d7ba7d;
+// }
+
+// .token.tag {
+//   color: #569cd6;
+// }
+
+// .token.attr-name {
+//   color: #9cdcfe;
+// }
+
+// .token.attr-value {
+//   color: #ce9178;
+// }
+
+// .token.entity {
+//   color: #4ec9b0;
+//   cursor: unset;
+// }
+
+// .token.namespace {
+//   color: #4ec9b0;
+// }
+// /*********************************************************
+// * Language Specific
+// */
+// pre[class*="language-javascript"],
+// code[class*="language-javascript"] {
+//   color: #4ec9b0;
+// }
+
+// pre[class*="language-css"],
+// code[class*="language-css"] {
+//   color: #CE9178;
+// }
+
+// pre[class*="language-html"],
+// code[class*="language-html"] {
+//   color: #d4d4d4;
+// }
+
+// .language-html .token.punctuation {
+//   color: #808080;
+// }
+// /*********************************************************
+// * Line highlighting
+// */
+// pre[data-line] {
+//   position: relative;
+// }
+
+// pre[class*="language-"] > code[class*="language-"] {
+//   position: relative;
+//   z-index: 1;
+// }
+
+// .line-highlight {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   padding: inherit 0;
+//   margin-top: 1em;
+//   background: #f7ebc6;
+//   box-shadow: inset 5px 0 0 #f7d87c;
+//   z-index: 0;
+//   pointer-events: none;
+//   line-height: inherit;
+//   white-space: pre;
+// }
+
+/**
+ * =============================================================================
+ * New Styles
+ * =============================================================================
+ */
+
+[class^="language-"] {
+  --background: #212733;
+  --accent: #FFCC66;
+  --foreground: #CBCCC6;
+  --ui: #707A8C;
+  --tag: #5CCFE6;
+  --func: #FFD580;
+  --entity: #73D0FF;
+  --string: #BAE67E; // rgb(188, 228, 136)
+  --regexp: #95E6CB;
+  --markup: #F28779;
+  --keyword: #FFA759;
+  --special: #FFDD99;
+  --comment: #5C6773;
+  --constant: #D4BFFF;
+  --operator: #F29E74;
+  --error: #FF3333;
 }
 
-// Comments:
-.c, .cm, .cp, .c1, .cs { color: var(--gray); }
-
-// HTML:
 .language-html {
-  // base
   color: var(--white);
-  // element
-  .nt { color: var(--yellow); }
-  // attribute
-  .na { color: var(--orange); }
-  // entity
-  .ni { color: var(--blue); }
-  // string
-  .s { color: var(--green); }
-}
 
-// CSS:
-.language-css,
-.language-scss {
-  // base
-  color: var(--white);
-  // selector
-  .nt { color: var(--green); }
-  // class
-  .nc { color: var(--green); }
-  // rouge: property
-  .n, .nl, .na { color: var(--orange); }
-  // rouge: value, prefixed value
-  .nb, .no, .nl + .p + .n, .na + .p + .n { color: var(--purple); }
-  // scss: variable
-  .nv { color: var(--blue); }
-  // number/hex
-  .m, .err { color: var(--blue); }
-  // string
-  .s2, .s1 { color: var(--green); }
-  // keyword
-  .k { color: var(--blue); }
-  // operator
-  .o { color: var(--blue); }
-  // pseudo-element
-  .nd { color: var(--red); }
-  // punctuation
-  .p, .p + .o, .n + .o { color: var(--white); }
-  // ID
-  .nf { color: var(--yellow); }
-}
+  .token {
 
-// Markdown
-.language-md {
-  // base
-  color: var(--white);
-  // heading
-  .gu { color: var(--orange); }
-  // link text
-  .nv { color: var(--green); }
-  // attribute
-  .nn { color: var(--green); }
-  // link
-  .ss, .sx { color: var(--blue); }
-}
+    &.tag {
+      color: var(--tag);
+    }
 
-// YAML
-.language-yml {
-  // base
-  color: var(--white);
-  // string
-  .s, .s1, .s2 { color: var(--orange); }
-}
+    &.attr-name {
+      color: var(--func);
+    }
 
-.language-php {
-  // base
-  color: var(--white);
-  // block comment
-  .sd { color: var(--gray); }
-  // opening/close brackets
-  .cp { color: var(--white); }
-  // builtin
-  .nb { color: var(--orange); }
-  // string
-  .s, .s1, .s2 { color: var(--green); }
-  // keyword
-  .k { color: var(--red); }
-  // variable
-  .nv { color: var(--blue); }
-  // name
-  .nx { color: var(--orange); }
-  // named function
-  .nf { color: var(--purple); }
-  // number
-  .mi { color: var(--blue); }
-  // operator
-  .o { color: var(--white); }
-  // keyword constant
-  .kc { color: var(--blue); }
-  // HMTL element
-  .nt { color: var(--yellow); }
-  //
-  .na { color: var(--orange); }
-}
+    &.attr-value {
+      color: var(--string);
 
-// JavaScript:
-.language-js {
-  color: var(--white);
-  // keyword.declaration
-  .kd { color: var(--red); }
-  // variable name
-  .nx { color: var(--orange); }
-  // builtin
-  .nb { color: var(--orange); }
-  // method
-  .nx + .p + .nx { color: var(--purple); }
-  // operator
-  .o { color: var(--blue); }
-  // string
-  .s2, .s1 { color: var(--green); }
-  // keyword
-  .k { color: var(--blue); }
-  // punctuation
-  .p { color: var(--white); }
-}
-
-// Liquid
-.language-liquid {
-  // punctuation
-  .p, .err { color: var(--white); }
-  // keyword reserved
-  .kr { color: var(--orange); }
-  // variable
-  .nv { color: var(--blue); }
-  // function
-  .nf { color: var(--orange); }
-  // operator
-  .o { color: var(--blue); }
-  // string
-  .s2, .s1 {
-    color: var(--green);
-    font-style: italic;
+      .punctuation:first-child,
+      .punctuation:last-child, {
+        color: var(--string);
+      }
+    }
   }
-  // tag
-  .nt { color: var(--orange); }
-  // number
-  .mi { color: var(--blue); }
 }
 
-.language-yaml {
-  // punctuation
-  .p, .pi { color: var(--white); }
-  // string
-  .s { color: var(--orange); }
+.language-css {
+  color: var(--keyword) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--func);
+    }
+
+    &.property {
+      color: var(--tag);
+    }
+
+    &.string {
+      color: var(--string);
+    }
+
+    &.url {
+      color: var(--string);
+
+      .function {
+        color: var(--markup);
+      }
+    }
+  }
 }
 
-.language-term::before {
-  content: '$';
-  display: inline-block;
-  margin-right: 0.5em;
-  color: var(--decoration);
+.language-scss {
+  color: var(--keyword) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--func);
+    }
+
+    &.property {
+      color: var(--tag);
+    }
+
+    &.string {
+      color: var(--string);
+    }
+
+    &.url {
+      color: var(--markup);
+    }
+  }
 }
 
-/********************************************************
- * Legend:
+.language-javascript {
+  color: var(--white);
 
-          Name.Builtin.Pseudo   .bp
-                      Comment   .c
-               Comment.Single   .c1
-            Comment.Multiline   .cm
-              Comment.Preproc   .cp
-              Comment.Special   .cs
-                        Error   .err
-              Generic.Deleted   .gd
-     Generic.Deleted.Specific   .gd .x
-                 Generic.Emph   .ge
-              Generic.Heading   .gh
-             Generic.Inserted   .gi
-    Generic.Inserted.Specific   .gi .x
-               Generic.Output   .go
-               Generic.Prompt   .gp
-                Generic.Error   .gr
-               Generic.Strong   .gs
-            Generic.Traceback   .gt
-           Generic.Subheading   .gu
-  Literal.Number.Integer.Long   .il
-                      Keyword   .k
-             Keyword.Constant   .kc
-          Keyword.Declaration   .kd
-               Keyword.Pseudo   .kp
-             Keyword.Reserved   .kr
-                 Keyword.Type   .kt
-               Literal.Number   .m
-         Literal.Number.Float   .mf
-           Literal.Number.Hex   .mh
-       Literal.Number.Integer   .mi
-           Literal.Number.Oct   .mo
-               Name.Attribute   .na
-                 Name.Builtin   .nb
-                   Name.Class   .nc
-               Name.Exception   .ne
-                Name.Function   .nf
-                  Name.Entity   .ni
-               Name.Namespace   .nn
-                Name.Constant   .no
-                     Name.Tag   .nt
-                Name.Variable   .nv
-                     Operator   .o
-                Operator.Word   .ow
-               Literal.String   .s
-        Literal.String.Single   .s1
-        Literal.String.Double   .s2
-      Literal.String.Backtick   .sb
-          Literal.String.Char   .sc
-           Literal.String.Doc   .sd
-        Literal.String.Escape   .se
-       Literal.String.Heredoc   .sh
-      Literal.String.Interpol   .si
-         Literal.String.Regex   .sr
-        Literal.String.Symbol   .ss
-         Literal.String.Other   .sx
-          Name.Variable.Class   .vc
-         Name.Variable.Global   .vg
-       Name.Variable.Instance   .vi
-              Text.Whitespace   .w
+  .token {
 
-// pigments: property/value
-.n, .nl, .nb { color: var(--orange); }
-// pigments: number inside media query
-.nt + .nc, .o + .nt { color: var(--blue); }
-// pigments: property
-.k { color: var(--orange); }
+    &.keyword,
+    &.operator {
+      color: var(--keyword);
+    }
 
-********************************************************/
+    &.number {
+      color: var(--special);
+    }
+
+    &.function {
+      color: var(--func);
+    }
+
+    &.string {
+      color: var(--string);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.parameter {
+      color: var(--constant);
+    }
+  }
+}
+
+.language-json {
+  color: var(--white);
+
+  .token {
+
+    &.property,
+    &.string {
+      color: var(--string);
+    }
+
+    &.number {
+      color: var(--special);
+    }
+  }
+}
