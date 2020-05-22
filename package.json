@@ -14,11 +14,8 @@
   "scripts": {
     "webpack:watch": "webpack --config _client/config/webpack.develop.config.js --watch",
     "webpack:prod": "webpack --config _client/config/webpack.config.js",
-    "jekyll:watch": "jekyll build --config _config.yaml --watch --drafts",
-    "jekyll:dev": "jekyll build --config _config.yaml --drafts",
-    "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
     "dev": "concurrently 'npm run webpack:watch' 'npm run 11ty:watch'",
-    "build": "npm run webpack:prod && npm run jekyll:build",
+    "build": "npm run webpack:prod && npm run 11ty:prod",
     "11ty:dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
     "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy",
     "11ty:serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",

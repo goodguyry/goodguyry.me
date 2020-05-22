@@ -58,7 +58,6 @@ module.exports = [
           },
         },
       },
-      // 'resolve-url-loader',
       {
         loader: 'postcss-loader',
         options: {
@@ -67,14 +66,7 @@ module.exports = [
           },
         },
       },
-      {
-        loader: 'sass-loader',
-        options: {
-          includePaths: [
-            paths.jekyllSass,
-          ],
-        },
-      },
+      'sass-loader',
       {
         loader: 'sass-resources-loader',
         options: {
