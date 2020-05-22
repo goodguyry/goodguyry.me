@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
 const CopyPlugin = require('copy-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Helpers
 const path = require('path');
@@ -49,5 +50,6 @@ module.exports = (mode) => {
       fields: ['assetsByChunkName', 'hash'],
       filename: '../_data/assets.json',
     }),
+    new OptimizeCssAssetsPlugin({}),
   ];
 };
