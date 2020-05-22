@@ -1,21 +1,16 @@
 /* stylelint-disable selector-max-specificity, declaration-no-important */
 
 [class^="language-"] {
-  --background: #212733;
-  --accent: #FFCC66;
-  --foreground: #CBCCC6;
+  --gray-light: #CBCCC6;
   --ui: #707A8C;
-  --tag: #5CCFE6;
-  --func: #FFD580;
-  --entity: #73D0FF;
-  --string: #BAE67E; // rgb(188, 228, 136)
+  --teal: #73D0FF;
+  --green: #BAE67E; // rgb(188, 228, 136)
   --regexp: #95E6CB;
-  --markup: #F28779;
-  --keyword: #FFA759;
-  --special: #FFDD99;
+  --grapefruit: #F28779;
+  --orange: #FFA759;
+  --gold: #FFDD99;
   --comment: #5C6773;
-  --constant: #D4BFFF;
-  --operator: #F29E74;
+  --purple: #D4BFFF;
   --error: #FF3333;
 }
 
@@ -25,26 +20,26 @@
   .token {
 
     &.tag {
-      color: var(--tag);
+      color: var(--teal);
     }
 
     &.attr-name {
-      color: var(--func);
+      color: var(--gold);
     }
 
     &.attr-value {
-      color: var(--string);
+      color: var(--green);
 
       .punctuation:first-child,
       .punctuation:last-child, {
-        color: var(--string);
+        color: var(--green);
       }
     }
   }
 }
 
 .language-css {
-  color: var(--keyword) !important;
+  color: var(--orange) !important;
 
   .token {
 
@@ -53,29 +48,29 @@
     }
 
     &.selector {
-      color: var(--func);
+      color: var(--gold);
     }
 
     &.property {
-      color: var(--tag);
+      color: var(--teal);
     }
 
     &.string {
-      color: var(--string);
+      color: var(--green);
     }
 
     &.url {
-      color: var(--string);
+      color: var(--green);
 
       .function {
-        color: var(--markup);
+        color: var(--grapefruit);
       }
     }
   }
 }
 
 .language-scss {
-  color: var(--keyword) !important;
+  color: var(--orange) !important;
 
   .token {
 
@@ -84,19 +79,19 @@
     }
 
     &.selector {
-      color: var(--func);
+      color: var(--gold);
     }
 
     &.property {
-      color: var(--tag);
+      color: var(--teal);
     }
 
     &.string {
-      color: var(--string);
+      color: var(--green);
     }
 
     &.url {
-      color: var(--markup);
+      color: var(--grapefruit);
     }
   }
 }
@@ -108,19 +103,19 @@
 
     &.keyword,
     &.operator {
-      color: var(--keyword);
+      color: var(--orange);
     }
 
     &.number {
-      color: var(--special);
+      color: var(--gold);
     }
 
     &.function {
-      color: var(--func);
+      color: var(--gold);
     }
 
     &.string {
-      color: var(--string);
+      color: var(--green);
     }
 
     &.comment {
@@ -128,7 +123,7 @@
     }
 
     &.parameter {
-      color: var(--constant);
+      color: var(--purple);
     }
   }
 }
@@ -140,18 +135,18 @@
 
     &.property,
     &.string {
-      color: var(--string);
+      color: var(--green);
     }
 
     &.number {
-      color: var(--special);
+      color: var(--gold);
     }
   }
 }
 
 .language-yml,
 .language-yaml {
-  color: var(--string) !important;
+  color: var(--green) !important;
 
   .token {
 
@@ -160,15 +155,15 @@
     }
 
     &.key {
-      color: var(--entity);
+      color: var(--teal);
     }
 
     &.number {
-      color: var(--special);
+      color: var(--gold);
     }
 
     &.boolean {
-      color: var(--special);
+      color: var(--gold);
     }
 
     &.comment {
@@ -182,16 +177,16 @@
   .token {
 
     &.function {
-      color: var(--markup);
+      color: var(--grapefruit);
     }
 
     &.string {
-      color: var(--string);
+      color: var(--green);
     }
 
     &.operator,
     &.keyword {
-      color: var(--keyword);
+      color: var(--orange);
     }
 
     &.comment {
@@ -223,30 +218,30 @@
     }
 
     &.builtin {
-      color: var(--markup);
+      color: var(--grapefruit);
     }
 
     &.constant {
-      color: var(--special);
+      color: var(--gold);
     }
 
     &.operator {
-      color: var(--keyword);
+      color: var(--orange);
     }
 
     &.keyword {
-      color: var(--keyword);
+      color: var(--orange);
     }
 
     &.variable {
 
       .function {
-        color: var(--special);
+        color: var(--gold);
       }
     }
 
     &.string {
-      color: var(--string);
+      color: var(--green);
 
       .constant {
         color: var(--white);
@@ -260,11 +255,11 @@
   .token {
 
     &.keyword {
-      color: var(--entity);
+      color: var(--teal);
     }
 
     &.operator {
-      color: var(--keyword);
+      color: var(--orange);
     }
   }
 }
