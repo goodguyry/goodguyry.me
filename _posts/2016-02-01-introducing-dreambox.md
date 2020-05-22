@@ -17,12 +17,12 @@ permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 
 To get started with DreamBox, run the following in Terminal:
 
-{% codeblock "Or add 'goodguyry/dreambox' to an existing Vagrantfile" %}
+{% figure "Or add 'goodguyry/dreambox' to an existing Vagrantfile" %}
 {% highlight shell %}
 vagrant init goodguyry/dreambox
 vagrant up
 {% endhighlight %}
-{% endcodeblock %}
+{% endfigure %}
 
 ### User setup
 

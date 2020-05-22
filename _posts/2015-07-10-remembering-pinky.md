@@ -12,14 +12,14 @@ picturefill: true
 permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
-<figure>
+{% figure %}
   <img 
     alt=""
     src="/build/images/posts/remembering-pinky-hero.jpg"
     srcset="/build/images/posts/remembering-pinky-hero-400.jpg 400w, /build/images/posts/remembering-pinky-hero.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
-</figure>
+{% endfigure %}
 
 I first met Pinky after a night of partying that, I didn&rsquo;t realize at the time, changed the course of my life. It was the night Loren *finally* took interest in an invitation from me to go out after work on a Saturday, after three or four weeks of &ldquo;We&rsquo;re all going for beer and crawfish. Want to come?&rdquo;
 
@@ -35,15 +35,14 @@ Pinky never met anyone she didn&rsquo;t like. Over the years, our friends and fa
 
 She was Chief Grocery Bag Inspector, insisting upon sticking her nose in every bag we brought in, to which we happily obliged. She was incredibly obedient, and always willing to sit still while we dressed her up in swimming gear or soccer jerseys.
 
-<figure>
+{% figure "Supporting mom&rsquo;s home side during the 2014 World Cup" %}
   <img 
     alt="Pinky and Loren wearing matching Colombia soccer jerseys"
     src="/build/images/posts/remembering-pinky-good-sport.jpg"
     srcset="/build/images/posts/remembering-pinky-good-sport-400.jpg 400w, /build/images/posts/remembering-pinky-good-sport.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
-  <figcaption>Supporting mom&rsquo;s home side during the 2014 World Cup</figcaption>
-</figure>
+{% endfigure %}
 
 And she loved car rides. Car rides are the best!
 
@@ -55,15 +54,14 @@ Pinky was loyal, and loved Loren unconditionally. When Loren was upset, Pinky co
 
 I&rsquo;m not sure who loved who more: Pinky, or Loren. It&rsquo;s probably a draw.
 
-<figure>
+{% figure "Unconditional love" %}
   <img 
     alt="Pinky smiling big, posing with her mom"
     src="/build/images/posts/remembering-pinky-with-momma.jpg"
     srcset="/build/images/posts/remembering-pinky-with-momma-400.jpg 400w, /build/images/posts/remembering-pinky-with-momma.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
-  <figcaption>Unconditional love</figcaption>
-</figure>
+{% endfigure %}
 
 I&rsquo;ve had the privilege of knowing and caring for many dogs in my life, and Pinky is head and shoulders above all others. That&rsquo;s not to say I don&rsquo;t love the others just as much, but Pinky was one in a million. She was a great role model for her siblings, and they love her *dearly*. She was my step-dog, and she was awesome.
 
@@ -75,11 +73,11 @@ We said goodbye to Pinky Maria &ldquo;Big Mama&rdquo; Villegas today after 14 wo
 
 She was the best dog ever.
 
-<figure>
+{% figure %}
   <img 
     alt="Pinky, Loren and me at the park"
     src="/build/images/posts/remembering-pinky-family.jpg"
     srcset="/build/images/posts/remembering-pinky-family-400.jpg 400w, /build/images/posts/remembering-pinky-family.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
-</figure>
+{% endfigure %}

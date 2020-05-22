@@ -2,7 +2,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // Shortcodes.
-const codeblock = require('./.eleventy/shortcode-codeblock');
+const figure = require('./.eleventy/shortcode-figure');
 const account = require('./.eleventy/shortcode-account');
 
 module.exports = function(eleventyConfig) {
@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
 
   // Shortcodes.
   eleventyConfig.addShortcode('account', account);
-  eleventyConfig.addPairedShortcode('codeblock', codeblock);
+  eleventyConfig.addPairedShortcode('figure', figure);
 
   // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({
