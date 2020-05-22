@@ -614,3 +614,30 @@
     }
   }
 }
+
+.language-yaml {
+  color: var(--string) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.key {
+      color: var(--entity);
+    }
+
+    &.number {
+      color: var(--special);
+    }
+
+    &.boolean {
+      color: var(--special);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+  }
+}
