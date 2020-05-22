@@ -195,17 +195,9 @@
   }
 }
 
+.language-shell,
 .language-shell-session {
-
-  .token {
-
-    &.output::before {
-      color: var(--comment);
-      content: '$';
-      display: inline-block;
-      margin-right: 0.5em;
-    }
-  }
+  color: var(--gray-light) !important;
 }
 
 .language-bash {
