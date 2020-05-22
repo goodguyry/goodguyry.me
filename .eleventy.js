@@ -30,5 +30,11 @@ module.exports = function(eleventyConfig) {
     proxy: 'http://goodguyry.http',
   });
 
+  // Simple posts collection in descending order.
+  // Using Liquid's `reverse` filter had strange side-effects.
+  eleventyConfig.addCollection('descendingPosts', (collectionApi) => {
+    return collectionApi.getFilteredByTag('post').reverse();
+  });
+
   return { dir };
 };
