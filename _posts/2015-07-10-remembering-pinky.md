@@ -3,7 +3,7 @@ layout: post
 title: Remembering Pinky
 excerpt: A tribute to the best dog ever, and the source of my wife&rsquo;s greatest joy.
 description: A tribute to the best dog ever, and the source of my wife's greatest joy.
-mainImage: /images/posts/remembering-pinky-hero.jpg
+mainImage: /build/images/posts/remembering-pinky-hero.jpg
 tags: 
   - personal
   - family
@@ -15,8 +15,8 @@ permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 <figure>
   <img 
     alt=""
-    src="/images/posts/remembering-pinky-hero.jpg"
-    srcset="/images/posts/remembering-pinky-hero-400.jpg 400w, /images/posts/remembering-pinky-hero.jpg 720w"
+    src="/build/images/posts/remembering-pinky-hero.jpg"
+    srcset="/build/images/posts/remembering-pinky-hero-400.jpg 400w, /build/images/posts/remembering-pinky-hero.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
 </figure>
@@ -38,8 +38,8 @@ She was Chief Grocery Bag Inspector, insisting upon sticking her nose in every b
 <figure>
   <img 
     alt="Pinky and Loren wearing matching Colombia soccer jerseys"
-    src="/images/posts/remembering-pinky-good-sport.jpg"
-    srcset="/images/posts/remembering-pinky-good-sport-400.jpg 400w, /images/posts/remembering-pinky-good-sport.jpg 720w"
+    src="/build/images/posts/remembering-pinky-good-sport.jpg"
+    srcset="/build/images/posts/remembering-pinky-good-sport-400.jpg 400w, /build/images/posts/remembering-pinky-good-sport.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
   <figcaption>Supporting mom&rsquo;s home side during the 2014 World Cup</figcaption>
@@ -58,8 +58,8 @@ I&rsquo;m not sure who loved who more: Pinky, or Loren. It&rsquo;s probably a dr
 <figure>
   <img 
     alt="Pinky smiling big, posing with her mom"
-    src="/images/posts/remembering-pinky-with-momma.jpg"
-    srcset="/images/posts/remembering-pinky-with-momma-400.jpg 400w, /images/posts/remembering-pinky-with-momma.jpg 720w"
+    src="/build/images/posts/remembering-pinky-with-momma.jpg"
+    srcset="/build/images/posts/remembering-pinky-with-momma-400.jpg 400w, /build/images/posts/remembering-pinky-with-momma.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
   <figcaption>Unconditional love</figcaption>
@@ -78,8 +78,8 @@ She was the best dog ever.
 <figure>
   <img 
     alt="Pinky, Loren and me at the park"
-    src="/images/posts/remembering-pinky-family.jpg"
-    srcset="/images/posts/remembering-pinky-family-400.jpg 400w, /images/posts/remembering-pinky-family.jpg 720w"
+    src="/build/images/posts/remembering-pinky-family.jpg"
+    srcset="/build/images/posts/remembering-pinky-family-400.jpg 400w, /build/images/posts/remembering-pinky-family.jpg 720w"
     sizes="(min-width: 720px) 720px, 100vw"
   >
 </figure>

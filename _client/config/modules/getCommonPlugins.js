@@ -2,6 +2,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const CopyPlugin = require('copy-webpack-plugin');
 
 // Helpers
 const path = require('path');
@@ -12,6 +13,11 @@ module.exports = (mode) => {
   const productionMode = ('production' === mode);
 
   return [
+    new CopyPlugin({
+      patterns: [
+        { from: '_client/src/images', to: 'images' },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: productionMode
         ? 'css/[name].[contenthash].min.css'
