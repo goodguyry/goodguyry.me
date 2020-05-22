@@ -1,4 +1,4 @@
-// /* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
+/* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
 
 // .highlight {
 //   --orange: rgb(214, 135, 50);
@@ -615,6 +615,7 @@
   }
 }
 
+.language-yml,
 .language-yaml {
   color: var(--string) !important;
 
@@ -661,6 +662,75 @@
 
     &.comment {
       color: var(--comment);
+    }
+  }
+}
+
+.language-shell-session {
+
+  .token {
+
+    &.output::before {
+      color: var(--comment);
+      content: '$';
+      display: inline-block;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.language-bash {
+
+  .token {
+
+    &.shebang,
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.builtin {
+      color: var(--markup);
+    }
+
+    &.constant {
+      color: var(--special);
+    }
+
+    &.operator {
+      color: var(--keyword);
+    }
+
+    &.keyword {
+      color: var(--keyword);
+    }
+
+    &.variable {
+
+      .function {
+        color: var(--special);
+      }
+    }
+
+    &.string {
+      color: var(--string);
+
+      .constant {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.language-liquid {
+
+  .token {
+
+    &.keyword {
+      color: var(--entity);
+    }
+
+    &.operator {
+      color: var(--keyword);
     }
   }
 }
