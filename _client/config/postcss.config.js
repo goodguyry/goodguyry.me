@@ -1,6 +1,5 @@
 const path = require('path');
 const fs = require('fs');
-const readYaml = require('read-yaml');
 const autoprefixer = require('autoprefixer');
 const modules = require('postcss-modules');
 const columns = require('postcss-tidy-columns');
@@ -34,17 +33,18 @@ module.exports = () => ({
 
         if (0 < Object.keys(json).length) {
           try {
-            modulesMap = readYaml.sync(
-              path.join(paths.siteData, 'classnames.yaml')
-            );
+            modulesMap = JSON.parse(fs.readFileSync(
+              path.join(paths.siteData, 'classnames.json'),
+              'utf8'
+            ));
           } catch (error) {
             modulesMap = {};
           }
 
           modulesMap[name] = json;
           fs.writeFileSync(
-            path.join(paths.siteData, 'classnames.yaml'),
-            yamlDictFromObject(modulesMap)
+            path.join(paths.siteData, 'classnames.json'),
+            JSON.stringify(yamlDictFromObject(modulesMap))
           );
         }
       },

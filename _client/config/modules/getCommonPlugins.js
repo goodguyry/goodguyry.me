@@ -2,6 +2,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const StatsPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const CopyPlugin = require('copy-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 // Helpers
 const path = require('path');
@@ -12,6 +14,11 @@ module.exports = (mode) => {
   const productionMode = ('production' === mode);
 
   return [
+    new CopyPlugin({
+      patterns: [
+        { from: '_client/src/images', to: 'images' },
+      ],
+    }),
     new MiniCssExtractPlugin({
       filename: productionMode
         ? 'css/[name].[contenthash].min.css'
@@ -38,10 +45,11 @@ module.exports = (mode) => {
           return { ...acc, [key]: assetList };
         }, {});
 
-        return yamlDictFromObject(assetMap);
+        return JSON.stringify(yamlDictFromObject(assetMap));
       },
       fields: ['assetsByChunkName', 'hash'],
-      filename: '../_data/assets.yaml',
+      filename: '../_data/assets.json',
     }),
+    new OptimizeCssAssetsPlugin({}),
   ];
 };

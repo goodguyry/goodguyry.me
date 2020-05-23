@@ -62,7 +62,7 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-{% assign default = site.data.classnames.global %}
+{% assign default = classnames.global %}
 
 <article class="post-content">
 

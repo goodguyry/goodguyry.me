@@ -1,242 +1,257 @@
-/* stylelint-disable selector-list-comma-newline-after, block-opening-brace-newline-after, selector-max-specificity */
+/* stylelint-disable selector-max-specificity, declaration-no-important */
 
-.highlight {
-  --orange: rgb(214, 135, 50);
-  --green: rgb(180, 199, 90);
-  --blue: rgb(123, 170, 190);
-  --gray: rgb(121, 121, 121);
-  --red: rgb(239, 93, 50);
-  --yellow: rgb(255, 212, 117);
-  --purple: rgb(177, 115, 113);
+[class^="language-"] {
+  --gray-light: #CBCCC6;
+  --ui: #707A8C;
+  --teal: #73D0FF;
+  --green: #BAE67E; // rgb(188, 228, 136)
+  --regexp: #95E6CB;
+  --grapefruit: #F28779;
+  --orange: #FFA759;
+  --gold: #FFDD99;
+  --comment: #5C6773;
+  --purple: #D4BFFF;
+  --error: #FF3333;
 }
 
-// Comments:
-.c, .cm, .cp, .c1, .cs { color: var(--gray); }
-
-// HTML:
 .language-html {
-  // base
   color: var(--white);
-  // element
-  .nt { color: var(--yellow); }
-  // attribute
-  .na { color: var(--orange); }
-  // entity
-  .ni { color: var(--blue); }
-  // string
-  .s { color: var(--green); }
+
+  .token {
+
+    &.tag {
+      color: var(--teal);
+    }
+
+    &.attr-name {
+      color: var(--gold);
+    }
+
+    &.attr-value {
+      color: var(--green);
+
+      .punctuation:first-child,
+      .punctuation:last-child, {
+        color: var(--green);
+      }
+    }
+  }
 }
 
-// CSS:
-.language-css,
+.language-css {
+  color: var(--orange) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--gold);
+    }
+
+    &.property {
+      color: var(--teal);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.url {
+      color: var(--green);
+
+      .function {
+        color: var(--grapefruit);
+      }
+    }
+  }
+}
+
 .language-scss {
-  // base
-  color: var(--white);
-  // selector
-  .nt { color: var(--green); }
-  // class
-  .nc { color: var(--green); }
-  // rouge: property
-  .n, .nl, .na { color: var(--orange); }
-  // rouge: value, prefixed value
-  .nb, .no, .nl + .p + .n, .na + .p + .n { color: var(--purple); }
-  // scss: variable
-  .nv { color: var(--blue); }
-  // number/hex
-  .m, .err { color: var(--blue); }
-  // string
-  .s2, .s1 { color: var(--green); }
-  // keyword
-  .k { color: var(--blue); }
-  // operator
-  .o { color: var(--blue); }
-  // pseudo-element
-  .nd { color: var(--red); }
-  // punctuation
-  .p, .p + .o, .n + .o { color: var(--white); }
-  // ID
-  .nf { color: var(--yellow); }
+  color: var(--orange) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--gold);
+    }
+
+    &.property {
+      color: var(--teal);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.url {
+      color: var(--grapefruit);
+    }
+  }
 }
 
-// Markdown
-.language-md {
-  // base
+.language-javascript {
   color: var(--white);
-  // heading
-  .gu { color: var(--orange); }
-  // link text
-  .nv { color: var(--green); }
-  // attribute
-  .nn { color: var(--green); }
-  // link
-  .ss, .sx { color: var(--blue); }
+
+  .token {
+
+    &.keyword,
+    &.operator {
+      color: var(--orange);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+
+    &.function {
+      color: var(--gold);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.parameter {
+      color: var(--purple);
+    }
+  }
 }
 
-// YAML
-.language-yml {
-  // base
+.language-json {
   color: var(--white);
-  // string
-  .s, .s1, .s2 { color: var(--orange); }
+
+  .token {
+
+    &.property,
+    &.string {
+      color: var(--green);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+  }
+}
+
+.language-yml,
+.language-yaml {
+  color: var(--green) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.key {
+      color: var(--teal);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+
+    &.boolean {
+      color: var(--gold);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+  }
 }
 
 .language-php {
-  // base
-  color: var(--white);
-  // block comment
-  .sd { color: var(--gray); }
-  // opening/close brackets
-  .cp { color: var(--white); }
-  // builtin
-  .nb { color: var(--orange); }
-  // string
-  .s, .s1, .s2 { color: var(--green); }
-  // keyword
-  .k { color: var(--red); }
-  // variable
-  .nv { color: var(--blue); }
-  // name
-  .nx { color: var(--orange); }
-  // named function
-  .nf { color: var(--purple); }
-  // number
-  .mi { color: var(--blue); }
-  // operator
-  .o { color: var(--white); }
-  // keyword constant
-  .kc { color: var(--blue); }
-  // HMTL element
-  .nt { color: var(--yellow); }
-  //
-  .na { color: var(--orange); }
-}
 
-// JavaScript:
-.language-js {
-  color: var(--white);
-  // keyword.declaration
-  .kd { color: var(--red); }
-  // variable name
-  .nx { color: var(--orange); }
-  // builtin
-  .nb { color: var(--orange); }
-  // method
-  .nx + .p + .nx { color: var(--purple); }
-  // operator
-  .o { color: var(--blue); }
-  // string
-  .s2, .s1 { color: var(--green); }
-  // keyword
-  .k { color: var(--blue); }
-  // punctuation
-  .p { color: var(--white); }
-}
+  .token {
 
-// Liquid
-.language-liquid {
-  // punctuation
-  .p, .err { color: var(--white); }
-  // keyword reserved
-  .kr { color: var(--orange); }
-  // variable
-  .nv { color: var(--blue); }
-  // function
-  .nf { color: var(--orange); }
-  // operator
-  .o { color: var(--blue); }
-  // string
-  .s2, .s1 {
-    color: var(--green);
-    font-style: italic;
+    &.function {
+      color: var(--grapefruit);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.operator,
+    &.keyword {
+      color: var(--orange);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
   }
-  // tag
-  .nt { color: var(--orange); }
-  // number
-  .mi { color: var(--blue); }
 }
 
-.language-yaml {
-  // punctuation
-  .p, .pi { color: var(--white); }
-  // string
-  .s { color: var(--orange); }
+.language-shell,
+.language-shell-session {
+  color: var(--gray-light) !important;
 }
 
-.language-term::before {
-  content: '$';
-  display: inline-block;
-  margin-right: 0.5em;
-  color: var(--decoration);
+.language-bash {
+
+  .token {
+
+    &.shebang,
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.builtin {
+      color: var(--grapefruit);
+    }
+
+    &.constant {
+      color: var(--gold);
+    }
+
+    &.operator {
+      color: var(--orange);
+    }
+
+    &.keyword {
+      color: var(--orange);
+    }
+
+    &.variable {
+
+      .function {
+        color: var(--gold);
+      }
+    }
+
+    &.string {
+      color: var(--green);
+
+      .constant {
+        color: var(--white);
+      }
+    }
+  }
 }
 
-/********************************************************
- * Legend:
+.language-liquid {
 
-          Name.Builtin.Pseudo   .bp
-                      Comment   .c
-               Comment.Single   .c1
-            Comment.Multiline   .cm
-              Comment.Preproc   .cp
-              Comment.Special   .cs
-                        Error   .err
-              Generic.Deleted   .gd
-     Generic.Deleted.Specific   .gd .x
-                 Generic.Emph   .ge
-              Generic.Heading   .gh
-             Generic.Inserted   .gi
-    Generic.Inserted.Specific   .gi .x
-               Generic.Output   .go
-               Generic.Prompt   .gp
-                Generic.Error   .gr
-               Generic.Strong   .gs
-            Generic.Traceback   .gt
-           Generic.Subheading   .gu
-  Literal.Number.Integer.Long   .il
-                      Keyword   .k
-             Keyword.Constant   .kc
-          Keyword.Declaration   .kd
-               Keyword.Pseudo   .kp
-             Keyword.Reserved   .kr
-                 Keyword.Type   .kt
-               Literal.Number   .m
-         Literal.Number.Float   .mf
-           Literal.Number.Hex   .mh
-       Literal.Number.Integer   .mi
-           Literal.Number.Oct   .mo
-               Name.Attribute   .na
-                 Name.Builtin   .nb
-                   Name.Class   .nc
-               Name.Exception   .ne
-                Name.Function   .nf
-                  Name.Entity   .ni
-               Name.Namespace   .nn
-                Name.Constant   .no
-                     Name.Tag   .nt
-                Name.Variable   .nv
-                     Operator   .o
-                Operator.Word   .ow
-               Literal.String   .s
-        Literal.String.Single   .s1
-        Literal.String.Double   .s2
-      Literal.String.Backtick   .sb
-          Literal.String.Char   .sc
-           Literal.String.Doc   .sd
-        Literal.String.Escape   .se
-       Literal.String.Heredoc   .sh
-      Literal.String.Interpol   .si
-         Literal.String.Regex   .sr
-        Literal.String.Symbol   .ss
-         Literal.String.Other   .sx
-          Name.Variable.Class   .vc
-         Name.Variable.Global   .vg
-       Name.Variable.Instance   .vi
-              Text.Whitespace   .w
+  .token {
 
-// pigments: property/value
-.n, .nl, .nb { color: var(--orange); }
-// pigments: number inside media query
-.nt + .nc, .o + .nt { color: var(--blue); }
-// pigments: property
-.k { color: var(--orange); }
+    &.keyword {
+      color: var(--teal);
+    }
 
-********************************************************/
+    &.operator {
+      color: var(--orange);
+    }
+  }
+}

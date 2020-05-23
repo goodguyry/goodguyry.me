@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A website",
   "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "fg-loadcss": "^2.0.1"
   },
   "repository": {
@@ -12,11 +14,12 @@
   "scripts": {
     "webpack:watch": "webpack --config _client/config/webpack.develop.config.js --watch",
     "webpack:prod": "webpack --config _client/config/webpack.config.js",
-    "jekyll:watch": "jekyll build --config _config.yaml --watch --drafts",
-    "jekyll:dev": "jekyll build --config _config.yaml --drafts",
-    "jekyll:build": "JEKYLL_ENV=production jekyll build --config _config.yaml,_config-prod.yaml",
-    "dev": "concurrently 'npm run webpack:watch' 'npm run jekyll:watch'",
-    "build": "npm run webpack:prod && npm run jekyll:build"
+    "dev": "concurrently 'npm run webpack:watch' 'npm run 11ty:watch'",
+    "build": "npm run webpack:prod && npm run 11ty:prod",
+    "11ty:dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
+    "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "11ty:serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "11ty:watch": "ELEVENTY_ENV=development npx @11ty/eleventy --watch"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
@@ -32,6 +35,7 @@
     "babel-plugin-transform-object-assign": "^6.22.0",
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.1.0",
+    "copy-webpack-plugin": "^6.0.1",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -43,6 +47,7 @@
     "eslint-plugin-react": "^7.11.1",
     "file-loader": "^2.0.0",
     "fontfaceobserver": "^1.7.3",
+    "html-entities": "^1.2.1",
     "mini-css-extract-plugin": "^0.4.5",
     "node-sass": "^4.13.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",

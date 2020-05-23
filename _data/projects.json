@@ -1,0 +1,22 @@
+[
+  {
+    "name": "AriaComponents",
+    "description": "Quickly create accessible interactive components based on the W3C spec and examples.",
+    "slug": "AriaComponents"
+  },
+  {
+    "name": "PostCSS Tidy Columns",
+    "description": "PostCSS plugin to manage column and margin alignment.",
+    "slug": "postcss-tidy-columns"
+  },
+  {
+    "name": "DreamBox",
+    "description": "A Vagrant environment based on DreamHost's shared hosting.",
+    "slug": "dreambox"
+  },
+  {
+    "name": "Dotfiles",
+    "description": "Dev-related packages and shell configuration. Very exciting.",
+    "slug": "dotfiles"
+  }
+]

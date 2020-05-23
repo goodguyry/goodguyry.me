@@ -1,22 +1,21 @@
 ---
 layout: default
 ---
-{% assign post = site.data.classnames.post %}
 
 <article>
-	<header class="{{ post.header }}">
-		<p class="{{ post.meta }}">
-			<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
+	<header class="{{ classnames.post.header }}">
+		<p class="{{ classnames.post.meta }}">
+			<time datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | date: "%B %d, %Y" }}</time>
 		</p>
 
-		<h1 class="{{ post.title }}">{{ page.title }}</h1>
+		<h1 class="{{ classnames.post.title }}">{{ title }}</h1>
 	</header>
 
-	<div class="post-content {{ post.content }}">
+	<div class="post-content {{ classnames.post.content }}">
 		{{ content }}
 	</div>
 
-	<hr class="{{ post.divider }}">
+	<hr class="{{ classnames.post.divider }}">
 
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
 		{% include components/post-footer.html %}

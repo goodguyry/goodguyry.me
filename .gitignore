@@ -1,7 +1,8 @@
 ht[ap]*
 vm-config.yaml
 _site/
+dist/
 css/*
 build
-_data/assets.yaml
-_data/classnames.yaml
+_data/assets.json
+_data/classnames.json

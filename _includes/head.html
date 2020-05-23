@@ -6,28 +6,27 @@
 
 	<script>
 		// eslint-disable-next-line
-		window.siteClassNames = {{ site.data.classnames | jsonify }};</script>
+		window.siteClassNames = {{ classnames | jsonify }};</script>
 
-	{% assign fontFiles = site.data.fonts %}
-	{% for fontFile in site.data.fonts %}
+	{% for fontFile in fonts %}
 		<link rel="preload" href="build/media/{{ fontFile }}" as="font" type="font/woff2" crossorigin>
 	{% endfor %}
 
 	<link rel="stylesheet" href="build/{{ assets.global.css }}">
 
-	{% if page.permalink == '/' %}
+	{% if permalink == '/' %}
 		<link rel="stylesheet" href="build/{{ assets.home.css }}">
 	{% else %}
-		<link rel="stylesheet" href="build/{{ assets[page.layout].css }}">
+		<link rel="stylesheet" href="build/{{ assets[layout].css }}">
 	{% endif %}
 
-	{% if page.code %}
+	{% if code %}
 		<link rel="stylesheet" href="build/{{ assets.code.css }}">
 	{% endif %}
 
 	<title>{% if page.title %}{{ page.title | append: " | goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
 
-	<meta property="og:image" content="{% if page.mainImage %}{{ page.mainImage | prepend: site.url }}{% else %}{{ "/images/ryandomingue-bw.jpg" | prepend: site.url }}{% endif %}">
+	<meta property="og:image" content="{% if page.mainImage %}{{ page.mainImage | prepend: site.url }}{% else %}{{ "/build/images/ryandomingue-bw.jpg" | prepend: site.url }}{% endif %}">
 	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
 	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 	<meta property="og:site_name" content="Good Guy Ry dot me">
@@ -45,20 +44,19 @@
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
 
-	<link rel="shortcut icon" href="/images/device-icons/favicon.ico">
+	<link rel="shortcut icon" href="/build/images/device-icons/favicon.ico">
 
 	<!-- Tile image for Windows devices 144x144 -->
-	<meta name="msapplication-TileImage" content="/images/device-icons/icon-144.png">
+	<meta name="msapplication-TileImage" content="/build/images/device-icons/icon-144.png">
 	<!-- Tile color for Windows devices -->
 	<meta name="msapplication-TileColor" content="#2a8f9f">
 	<!-- 57x57 (precomposed) for iPhone 3GS, 2011 iPod Touch and older Android devices -->
-	<link rel="apple-touch-icon-precomposed" href="/images/device-icons/icon-57.png">
+	<link rel="apple-touch-icon-precomposed" href="/build/images/device-icons/icon-57.png">
 	<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/device-icons/icon-72.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/build/images/device-icons/icon-72.png">
 	<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and 2012 iPod Touch -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/device-icons/icon-114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/build/images/device-icons/icon-114.png">
 	<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/device-icons/icon-144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/build/images/device-icons/icon-144.png">
 	<meta name="apple-mobile-web-app-title" content="Ryan D.">
-
 </head>

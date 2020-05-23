@@ -1,27 +1,20 @@
-{% assign post-list = site.data.classnames.post-list %}
+<h2 class="{{ classnames.post-list.heading }}">{{ strings.blog_heading }}</h2>
 
-<h2 class="{{ post-list.heading }}">{{ strings.blog_heading }}</h2>
-
-<ul class="{{ post-list.list }}">
-
-	{% for post in site.posts | limit:include.limit %}
-
-		<li class="{{ post-list.item }}">
-
-			<h3 class="{{ post-list.title }}">
-				<a href="{{ post.url }}">{{ post.title }}</a>
+<ul class="{{ classnames.post-list.list }}">
+	{% assign posts = collections.descendingPosts %}
+	{% for post in posts limit: count %}
+		<li class="{{ classnames.post-list.item }}">
+			<h3 class="{{ classnames.post-list.title }}">
+				<a href="{{ post.url }}">{{ post.data.title }}</a>
 			</h3>
 
-			{{ post.excerpt }}
-
+			<p>{{ post.data.excerpt }}</p>
 		</li>
-
 	{% endfor %}
-
 </ul>
 
-{% if site.posts.size > include.limit %}
-	<a class="{{ post-list.more }}" href="{{ site.blogroll }}">View the Notes archive</a>
+{% if collections.post.size > count %}
+	<a class="{{ classnames.post-list.more }}" href="{{ site.blogroll }}">View the Notes archive</a>
 {% else %}
-	<p><a class="{{ post-list.more }}" href="{{ "/feed.xml" | prepend: site.url }}">Subscribe via RSS</a>.</p>
+	<p><a class="{{ classnames.post-list.more }}" href="{{ '/feed.xml' | prepend: site.url }}">Subscribe via RSS</a>.</p>
 {% endif %}

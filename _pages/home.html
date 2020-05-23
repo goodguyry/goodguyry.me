@@ -4,20 +4,16 @@ title: I am Ryan.
 permalink: /
 ---
 
-{% assign classes = site.data.classnames.home %}
-
-{% assign accounts = site.data.accounts %}
-
-<article class="{{ classes.about }}">
+<article class="{{ classnames.home.about }}">
 	{% include about.html %}
 </article>
 
-<section class="{{ classes.projects }}">
+<section class="{{ classnames.home.projects }}">
 	{% include components/projects.html %}
 </section>
 
-{% if site.posts.size > 0 %}
-	<section class="{{ classes.posts }}">
-		{% include components/post-list.html limit=4 %}
+{% if collections.post.size > 0 %}
+	<section class="{{ classnames.home.posts }}">
+		{% include components/post-list.html, count: 4 %}
 	</section>
 {% endif %}

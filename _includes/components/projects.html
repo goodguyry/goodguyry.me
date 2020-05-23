@@ -1,14 +1,13 @@
-{% assign projects = site.data.classnames.projects %}
-{% assign strings = site.data.strings %}
+{% capture github_url %}{% account 'github' %}{% endcapture %}
 
-<h2 class="{{ projects.heading }}">{{ strings.projects_heading }}</h2>
+<h2 class="{{ classnames.projects.heading }}">{{ strings.projects_heading }}</h2>
 
-<ul class="{{ projects.list }}">
-	{% for project in site.data.projects %}
-		<li class="{{ projects.item }}">
+<ul class="{{ classnames.projects.list }}">
+	{% for project in projects %}
+		<li class="{{ classnames.projects.item }}">
 
-			<h3 class="{{ projects.title }}">
-				<a href="{{ project.url }}">{{ project.name }}</a>
+			<h3 class="{{ classnames.projects.title }}">
+				<a href="{{ github_url }}/{{ project.slug }}">{{ project.name }}</a>
 			</h3>
 
 			<p>{{ project.description }}</p>
@@ -17,4 +16,4 @@
 	{% endfor %}
 </ul>
 
-<a class="{{ projects.more }}" href="{{ strings.github_base_url }}">See more on GitHub</a>
+<a class="{{ classnames.projects.more }}" href="{{ github_url }}">See more on GitHub</a>
