@@ -61,7 +61,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
 
   // Copy the `build/` directory.
-  eleventyConfig.addPassthroughCopy('build');
+  eleventyConfig.addPassthroughCopy({
+    '_client/src/images': 'images',
+    '_client/src/fonts': 'fonts',
+  });
 
   // Don't use the gitignore file.
   eleventyConfig.setUseGitIgnore(false);
