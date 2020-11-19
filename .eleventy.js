@@ -17,6 +17,9 @@ module.exports = function(eleventyConfig) {
     layouts: '_layouts',
   };
 
+  // Watch files.
+  eleventyConfig.addWatchTarget('./_client/src/scss/');
+
   eleventyConfig.addPlugin(
     pluginInjector,
     {
