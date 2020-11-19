@@ -4,10 +4,6 @@
 
 	<base href="{{ site.url }}">
 
-	<script>
-		// eslint-disable-next-line
-		window.siteClassNames = {{ classnames | jsonify }};</script>
-
 	{% for fontFile in fonts %}
 		<link rel="preload" href="/fonts/{{ fontFile }}" as="font" type="font/woff2" crossorigin>
 	{% endfor %}
