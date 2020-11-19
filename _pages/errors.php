@@ -62,14 +62,12 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-{% assign default = classnames.global %}
-
 <article class="post-content">
 
 	<h2><?php echo "{$code}: {$code_desc}"; ?></h2>
 
 	<p><?php echo $message; ?></p>
 
-	<a class="{{ default.more }}" href="/">Return to the home page</a>.
+	<a class="global__more" href="/">Return to the home page</a>.
 
 </article>

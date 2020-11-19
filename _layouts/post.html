@@ -3,19 +3,19 @@ layout: default
 ---
 
 <article>
-	<header class="{{ classnames.post.header }}">
-		<p class="{{ classnames.post.meta }}">
+	<header class="post__header">
+		<p class="post__meta">
 			<time datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | date: "%B %d, %Y" }}</time>
 		</p>
 
-		<h1 class="{{ classnames.post.title }}">{{ title }}</h1>
+		<h1 class="post__title">{{ title }}</h1>
 	</header>
 
-	<div class="post-content {{ classnames.post.content }}">
+	<div class="post-content post__content">
 		{{ content }}
 	</div>
 
-	<hr class="{{ classnames.post.divider }}">
+	<hr class="post__divider">
 
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
 		{% include components/post-footer.html %}

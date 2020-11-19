@@ -1,11 +1,11 @@
 {% assign navurl = page.url | remove: 'index.html' %}
 
 {% if page.permalink != '/' %}
-	<nav role="navigation" class="{{ classnames.global-nav.wrapper }}">
+	<nav role="navigation" class="nav }}">
 
-		<ul class="{{ classnames.global-nav.list }}">
+		<ul class="nav__list }}">
 			{% for item in nav %}
-				<li class="{{ classnames.global-nav.item }}">{% if item.url == navurl %}{{ item.text }}{% else %}<a class="{{ classnames.global-nav.link }}" href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+				<li class="nav__item }}">{% if item.url == navurl %}{{ item.text }}{% else %}<a class="nav__link }}" href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
 			{% endfor %}
 		</ul>
 

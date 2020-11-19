@@ -4,5 +4,3 @@ _site/
 dist/
 css/*
 build
-_data/assets.json
-_data/classnames.json
