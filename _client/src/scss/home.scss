@@ -3,23 +3,3 @@
 @use 'core/layout' as *;
 @use 'core/typography' as *;
 @use 'core/theme' as *;
-
-@import 'components/projects';
-@import 'components/post-list';
-
-.about {
-  @include content-text;
-  margin-bottom: rem(100);
-
-  @media (min-width(md)) {
-    tidy-span: 6;
-  }
-}
-
-.projects {
-  margin-bottom: rem(100);
-}
-
-.posts {
-  margin-bottom: rem(100);
-}

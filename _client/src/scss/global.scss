@@ -1,12 +1,12 @@
+@use 'core/block-styles' as *;
 @use 'core/utilities' as *;
 @use 'core/layout' as *;
 @use 'core/typography' as *;
 @use 'core/theme' as *;
 
-@import './global/index';
-@import 'components/global-header';
-@import 'components/global-nav';
-@import 'components/global-footer';
+@import './global/reset';
+@import './global/fonts';
+@import './global/base';
 
 .wrapper {
   /* tbd */

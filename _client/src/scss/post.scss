@@ -1,37 +1,16 @@
 @use 'core/block-styles' as *;
 @use 'core/utilities' as *;
 @use 'core/layout' as *;
-
-@import 'components/post-content';
-@import 'components/post-footer';
-
-.header {
-  margin-bottom: rem(50);
-}
-
-.meta {
-  font-size: rem(14);
-  font-style: italic;
-}
-
-.title {
-  font-size: rem(32);
-  font-weight: 600;
-}
+@use 'core/typography' as *;
+@use 'core/theme' as *;
 
 :global(.post-content) {
-
-  > *:not(figure):not(hr) {
-    @media (min-width(md)) {
-      tidy-span: 6;
-    }
-  }
-}
-
-.content {
-  margin-bottom: rem(50);
-}
-
-.divider {
-  margin-bottom: rem(50);
+  @include content-headings;
+  @include content-text;
+  @include content-quotes;
+  @include content-code;
+  @include content-images;
+  @include content-lists;
+  @include content-block-level;
+  @include content-hey;
 }
