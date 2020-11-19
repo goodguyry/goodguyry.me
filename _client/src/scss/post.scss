@@ -1,4 +1,9 @@
+@use 'core/block-styles' as *;
 @use 'core/utilities' as *;
+@use 'core/layout' as *;
+
+@import 'components/post-content';
+@import 'components/post-footer';
 
 .header {
   margin-bottom: rem(50);

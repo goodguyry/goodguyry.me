@@ -1,4 +1,7 @@
-@use 'core/utilities' as *;
+@use 'core/typography' as *;
+@use 'core/theme' as *;
+
+@import 'components/post-list';
 
 .posts {
   margin-bottom: rem(100);
