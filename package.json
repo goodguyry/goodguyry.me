@@ -9,13 +9,13 @@
     "autoprefixer": "^9.8.6",
     "concurrently": "^4.1.0",
     "cssnano": "^4.1.10",
-    "dart-sass": "^1.25.0",
     "html-entities": "^1.2.1",
     "postcss": "^7.0.35",
     "postcss-modules": "^1.4.1",
     "postcss-tidy-columns": "^0.4.0",
     "postcss-units": "^1.2.1",
     "read-yaml": "^1.1.0",
+    "sass": "^1.29.0",
     "stylelint": "^9.10.1"
   },
   "repository": {
