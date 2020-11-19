@@ -15,8 +15,7 @@
     "postcss-tidy-columns": "^0.4.0",
     "postcss-units": "^1.2.1",
     "read-yaml": "^1.1.0",
-    "sass": "^1.29.0",
-    "stylelint": "^9.10.1"
+    "sass": "^1.29.0"
   },
   "repository": {
     "type": "git",
