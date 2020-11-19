@@ -4,16 +4,16 @@ title: I am Ryan.
 permalink: /
 ---
 
-<article class="{{ classnames.home.about }}">
+<article class="home__about">
 	{% include about.html %}
 </article>
 
-<section class="{{ classnames.home.projects }}">
+<section class="home__projects">
 	{% include components/projects.html %}
 </section>
 
 {% if collections.post.size > 0 %}
-	<section class="{{ classnames.home.posts }}">
+	<section class="home__posts">
 		{% include components/post-list.html, count: 4 %}
 	</section>
 {% endif %}

@@ -69,7 +69,7 @@
 
   del,
   strike,
-  :global(.strike) {
+  .strike {
     color: var(--decoration);
     text-decoration: line-through;
   }
@@ -208,7 +208,7 @@
 
   // Style file and directory paths as code,
   //  but without the border
-  code:global(.path) {
+  code.path {
     border: none;
     color: var(--black);
   }
@@ -282,7 +282,7 @@
 
 @mixin content-hey {
 
-  :global(.hey) {
+  .hey {
     font: {
       size: rem(14);
       style: italic;

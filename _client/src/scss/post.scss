@@ -4,7 +4,7 @@
 @use 'core/typography' as *;
 @use 'core/theme' as *;
 
-:global(.post-content) {
+.post-content {
   @include content-headings;
   @include content-text;
   @include content-quotes;
