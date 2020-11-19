@@ -1,5 +1,11 @@
+const path = require('path');
+const fs = require('fs');
+const paths = require('./_client/config/paths');
+const doStyles = require('./_client/config/doStyles');
+
 // Plugins.
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginInjector = require('@infinity-interactive/eleventy-plugin-injector');
 
 // Shortcodes.
 const figure = require('./.eleventy/shortcode-figure');
@@ -10,6 +16,46 @@ module.exports = function(eleventyConfig) {
   const dir = {
     layouts: '_layouts',
   };
+
+  eleventyConfig.addPlugin(
+    pluginInjector,
+    {
+      watch: [
+        '_client/src/scss/**/*.scss',
+      ],
+      inject: function(eleventyInstance, options, file) {
+        [
+          './_client/src/scss/global.scss',
+          './_client/src/scss/home.scss',
+          './_client/src/scss/archive.scss',
+          './_client/src/scss/post.scss',
+          './_client/src/scss/code.scss',
+        ].forEach( async (entry) => {
+          const basename = path.basename(entry, '.scss');
+          const cssPath = path.resolve(paths.public, `css/${basename}.css`);
+
+          // Create css path if it doesn't exist.
+          if (! fs.existsSync(path.dirname(cssPath))) {
+            try {
+              fs.mkdirSync(path.dirname(cssPath), { recursive: true });
+            } catch (error) {
+              console.error(`Error making directory for CSS output: ${error}`);
+            }
+          }
+
+          // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
+          const processedCss = await doStyles(path.resolve(paths.projectRoot, entry));
+
+          // Write the output to disk.
+          fs.writeFileSync(
+            cssPath,
+            processedCss,
+            (error) => console.error(`Error writing generated CSS: ${error}`)
+          );
+        });
+      }
+    }
+  );
 
   // Add syntax highlighting.
   eleventyConfig.addPlugin(syntaxHighlight);

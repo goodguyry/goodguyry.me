@@ -16,7 +16,7 @@ $vertical-rhythm: rem(24);
   tidy-span: tidy-var(columns);
   position: relative; // To contain text selection highlighting
 
-  @media (min(md)) {
+  @media (min-width(md)) {
     tidy-span: tidy-var(columns);
   }
 }

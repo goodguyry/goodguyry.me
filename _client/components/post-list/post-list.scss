@@ -2,7 +2,7 @@
   list-style-type: none;
   margin-bottom: rem(50);
 
-  @media (min(md)) {
+  @media (min-width(md)) {
     tidy-span: 6;
   }
 }

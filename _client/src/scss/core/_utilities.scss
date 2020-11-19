@@ -102,7 +102,7 @@ $bp-values: (
  * @param  {String|Number} $key The key to retrieve, or a number to format.
  * @return {String}
  */
-@function min($key) {
+@function min-width($key) {
   $params: _get-mq-params($key);
 
   @if $params {

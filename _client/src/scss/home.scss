@@ -1,8 +1,11 @@
+@use 'core/block-styles' as *;
+@use 'core/utilities' as *;
+
 .about {
   @include content-text;
   margin-bottom: rem(100);
 
-  @media (min(md)) {
+  @media (min-width(md)) {
     tidy-span: 6;
   }
 }

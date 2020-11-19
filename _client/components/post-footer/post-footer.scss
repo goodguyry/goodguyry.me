@@ -1,7 +1,7 @@
 .wrapper {
   margin-bottom: rem(100);
 
-  @media (min(md)) {
+  @media (min-width(md)) {
     tidy-span: 6;
   }
 }

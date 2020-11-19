@@ -1,3 +1,5 @@
+@use 'core/utilities' as *;
+
 .header {
   margin-bottom: rem(50);
 }
@@ -15,7 +17,7 @@
 :global(.post-content) {
 
   > *:not(figure):not(hr) {
-    @media (min(md)) {
+    @media (min-width(md)) {
       tidy-span: 6;
     }
   }

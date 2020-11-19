@@ -9,7 +9,7 @@
   list-style-type: none;
   margin-bottom: rem(50);
 
-  @media (min(md)) {
+  @media (min-width(md)) {
     grid-template-columns: repeat(2, 1fr);
   }
 }

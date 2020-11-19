@@ -1,14 +1,17 @@
 const path = require('path');
 
+const projectRoot = path.join(__dirname, '../../');
+
 module.exports = {
-  build: path.join(__dirname, '../../build'),
-  projectRoot: path.join(__dirname, '../../'),
-  site: path.join(__dirname, '../../_site'),
-  components: path.join(__dirname, '../components'),
-  scss: path.join(__dirname, '../src/scss'),
-  js: path.join(__dirname, '../src/js'),
-  fonts: path.join(__dirname, '../src/fonts'),
-  entries: path.join(__dirname, '../entries'),
-  siteData: path.join(__dirname, '../../_data'),
+  build: path.join(projectRoot, 'build'),
+  projectRoot,
+  site: path.join(projectRoot, '_site'),
+  public: path.join(projectRoot, '_site'),
+  components: path.join(projectRoot, '_client/components'),
+  scss: path.join(projectRoot, '_client/src/scss'),
+  js: path.join(projectRoot, '_client/src/js'),
+  fonts: path.join(projectRoot, '_client/src/fonts'),
+  entries: path.join(projectRoot, '_client/entries'),
+  siteData: path.join(projectRoot, '_data'),
   config: __dirname,
 };

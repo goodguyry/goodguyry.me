@@ -2,7 +2,6 @@
  * Convert a JavaScript object to a YAML Dictionary.
  *
  * @param  {Object} obj A map of value pairs.
- *
  * @return {String}
  */
 module.exports = (obj) => Object.keys(obj).reduce((acc, key) => {

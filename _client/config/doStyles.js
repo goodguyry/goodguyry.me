@@ -1,15 +1,33 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const fs = require('fs');
-const autoprefixer = require('autoprefixer');
+const sass = require('sass');
+const postcss = require('postcss');
+const units = require('postcss-units');
 const modules = require('postcss-modules');
-const columns = require('postcss-tidy-columns');
+const tidyColumns = require('postcss-tidy-columns');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 const paths = require('./paths');
 const yamlDictFromObject = require('./bin/yamlDictFromObject');
 
-// Config
-module.exports = () => ({
-  plugins: [
-    columns({
+/**
+ * Process Sass styles.
+ *
+ * @param  {string} inputFile Absolute path to the input file.
+ * @return {string}           Processed CSS.
+ */
+module.exports = async (inputFile) => {
+  const { css } = await sass.renderSync({
+    file: inputFile,
+    includePaths: [
+      paths.scss,
+    ],
+  });
+
+  return postcss([
+    units(),
+    tidyColumns({
       columns: 8,
       gap: '0.375rem',
       edge: '1.25rem',
@@ -20,7 +38,6 @@ module.exports = () => ({
         },
       },
     }),
-    autoprefixer(),
     modules({
       generateScopedName: '[name]__[local]___[hash:base64:5]',
       globalModulePaths: [
@@ -49,5 +66,15 @@ module.exports = () => ({
         }
       },
     }),
-  ],
-});
+    autoprefixer(),
+    cssnano(),
+  ])
+    .process(css.toString(), { from: inputFile })
+    .then((result) => {
+      result.warnings().forEach((warn) => {
+        console.warn(warn.toString());
+      });
+
+      return result.css;
+    });
+};
