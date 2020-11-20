@@ -6,7 +6,7 @@ permalink: /
 
 <article >
 	<header>
-		<h1>I am Ryan</h1>
+		<h1 class="heading__base">I am Ryan</h1>
 	</header>
 
 	<section>
@@ -22,13 +22,13 @@ permalink: /
 	<section>
 		{% capture github_url %}{% account 'github' %}{% endcapture %}
 
-		<h2>{{ strings.projects_heading }}</h2>
+		<h2 class="heading__base">Projects</h2>
 
 		<ul>
 			{% for project in projects %}
 				<li>
 
-					<h3>
+					<h3 class="heading__base">
 						<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
 					</h3>
 
@@ -43,7 +43,7 @@ permalink: /
 
 	{% if collections.post.size > 0 %}
 		<section>
-			<h2>{{ strings.blog_heading }}</h2>
+			<h2 class="heading__base">Notes</h2>
 
 			{% include post-list.html, count: 4 %}
 		</section>

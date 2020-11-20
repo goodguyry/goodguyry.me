@@ -67,6 +67,10 @@ img::selection {
   @include layout.container;
 }
 
+.heading__base {
+  @include typography.heading-base;
+}
+
 .gradient-text {
   background: var(--text-gradient);
   background-clip: text;

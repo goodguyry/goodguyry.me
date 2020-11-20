@@ -18,7 +18,7 @@ layout: default
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
 		<footer>
 			{% if resources %}
-				<h3>{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
+				<h3 class="heading__base">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
 
 				<ul>
 					{% for resource in resources %}

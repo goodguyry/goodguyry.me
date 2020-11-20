@@ -1,5 +1,5 @@
 @use 'core/layout' as *;
-@use 'core/typography' as *;
+@use 'core/typography';
 
 $vertical-rhythm: rem(24);
 
@@ -13,7 +13,7 @@ $vertical-rhythm: rem(24);
   h3,
   h4,
   h5 {
-    font-weight: 700;
+    @include typography.heading-base;
     line-height: 1;
   }
 
@@ -66,7 +66,7 @@ $vertical-rhythm: rem(24);
   }
 
   strong {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   del,
@@ -83,8 +83,8 @@ $vertical-rhythm: rem(24);
 
   kbd {
     padding: 0.05rem 0.2rem;
-    font-family: $mono;
-    border: 1px solid var(--decoration-light);
+    font-family: typography.$mono;
+    border: 1px solid var(--decoration);
     background-color: #393939;
     color: var(--white);
     border-radius: 3px;
@@ -101,7 +101,7 @@ $vertical-rhythm: rem(24);
   }
 
   output {
-    font-weight: 700;
+    font-weight: 600;
   }
 }
 
@@ -173,7 +173,7 @@ $vertical-rhythm: rem(24);
     max-width: 100%;
     position: relative;
     line-height: inherit;
-    font-family: $mono;
+    font-family: typography.$mono;
     white-space: pre;
     hyphens: none;
   }
