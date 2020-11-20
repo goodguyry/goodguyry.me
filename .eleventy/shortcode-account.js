@@ -16,7 +16,7 @@ module.exports = function(site) {
   const { [site]: baseUrl } = urls;
 
   if (undefined !== baseUrl) {
-    return `${baseUrl}/goodguyry`;
+    return `${baseUrl}/goodguyry/`;
   }
 
   return '';
