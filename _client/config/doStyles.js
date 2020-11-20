@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs');
 const sass = require('sass');
 const postcss = require('postcss');
-const units = require('postcss-units');
 const tidyColumns = require('postcss-tidy-columns');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -24,7 +23,6 @@ module.exports = async (inputFile) => {
   });
 
   return postcss([
-    units(),
     tidyColumns({
       columns: 8,
       gap: '0.375rem',
