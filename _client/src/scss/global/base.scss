@@ -1,3 +1,6 @@
+@use 'core/layout';
+@use 'core/typography';
+
 /**
  * Common base styles
  */
@@ -6,7 +9,12 @@
   --white: #FFFFFF;
   --black: #333333;
   --actual-black: #000000;
-  --accent: #FF0000;
+  --accent: #008583;
+  --secondary: #5C0BAA;
+  --decoration: #CCCCCC;
+
+  --background-gradient: linear-gradient(to right, rgba(var(--accent), 0.7) 0%, rgba(var(--secondary), 0.7) 100%);
+  --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
 }
 
 // Adjust base font size for screen size
@@ -16,10 +24,10 @@
 
 body {
   width: 100%;
-  font-family: $global-font;
+  font-family: typography.$primary;
   font-weight: 400;
-  font-size: rem(18);
-  line-height: 1.5;
+  font-size: rem(16);
+  line-height: normal;
   background-color: var(--white);
   color: var(--black);
   -moz-osx-font-smoothing: grayscale;
@@ -27,7 +35,6 @@ body {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  padding: rem(50 0 24 0);
   text-rendering: optimizeSpeed;
 }
 
@@ -54,4 +61,15 @@ a::selection {
 img::selection {
   background: var(--accent);
   color: var(--white);
+}
+
+.container {
+  @include layout.container;
+}
+
+.gradient-text {
+  background: var(--text-gradient);
+  background-clip: text;
+  display: block;
+  -webkit-text-fill-color: transparent;
 }

@@ -25,12 +25,13 @@ module.exports = async (inputFile) => {
   return postcss([
     tidyColumns({
       columns: 8,
-      gap: '0.375rem',
+      gap: '0.5rem',
       edge: '1.25rem',
       breakpoints: {
         '48rem': {
-          gap: '1rem',
-          siteMax: '39.625rem',
+          columns: 12,
+          gap: '1.25rem',
+          siteMax: '60rem',
         },
       },
     }),

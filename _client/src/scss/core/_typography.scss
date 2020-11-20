@@ -1,11 +1,2 @@
 $mono: Consolas, Monaco, 'Andale Mono', monospace;
-$global-font: 'Gelasio', 'Palatino', 'Georgia', serif;
-
-@mixin heading-secondary {
-  font-size: rem(36);
-  font-weight: 600;
-}
-
-@mixin heading-tertiary {
-  font-size: rem(24);
-}
+$primary: 'Gelasio', 'Palatino', 'Georgia', serif;

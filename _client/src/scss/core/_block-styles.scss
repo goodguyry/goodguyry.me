@@ -1,6 +1,8 @@
 @use 'core/layout' as *;
 @use 'core/typography' as *;
 
+$vertical-rhythm: rem(24);
+
 /**
  * Headings
  */
