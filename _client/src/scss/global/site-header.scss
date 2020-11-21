@@ -25,6 +25,15 @@
   li:not(:last-of-type) {
     margin-right: rem(25);
   }
+
+  a {
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+  }
 }
 
 .site-header__title {
