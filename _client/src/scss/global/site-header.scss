@@ -1,0 +1,42 @@
+@use 'core/utilities' as *;
+@use 'core/reset';
+
+.site-header {
+  background: var(--background-gradient);
+  clip-path: polygon(0 100%, 100% 77.5%, 100% 0, 0 0);
+  color: var(--white);
+  display: flex;
+  min-height: rem(162);
+  padding: rem(22) 0 rem(52) 0;
+
+  @media (media(min, full)) {
+    min-height: rem(186);
+  }
+}
+
+.site-header__nav {
+  font-size: rem(20);
+  margin-bottom: rem(10);
+}
+
+.site-header__menu {
+  @include reset.list;
+  display: flex;
+
+  li:not(:last-of-type) {
+    margin-right: rem(25);
+  }
+}
+
+.site-header__title {
+  font-size: rem(44);
+  line-height: 1.2;
+
+  @media (media(min, 700)) {
+    width: 75%;
+  }
+
+  @media (media(min, full)) {
+    font-size: rem(62);
+  }
+}

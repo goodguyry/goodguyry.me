@@ -87,8 +87,8 @@ $bp-values: (
 
   @each $name, $value in $bp-values {
     $merged: map_merge($merged, (
-      'min-#{$name}': '(min-width: #{rems($value)})',
-      'max-#{$name}': '(max-width: #{rems($value - 1)})',
+      'min-#{$name}': 'min-width: #{rem($value)}',
+      'max-#{$name}': 'max-width: #{rem($value - 1)}',
     ));
   }
 
@@ -110,7 +110,7 @@ $media-queries: _create-breakpoints();
  */
 @function media($minMax, $length) {
   @if ('number' == type-of($length)) {
-    @return '(#{$minMax}-width: #{rems($length)})';
+    @return '#{$minMax}-width: #{rem($length)}';
   }
 
   $map-key: #{$minMax}-#{$length};
