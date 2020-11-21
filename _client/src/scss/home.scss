@@ -117,7 +117,7 @@
 
 .project {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--black-40);
   border-radius: rem(2);
   display: flex;
   max-width: rem(335);
