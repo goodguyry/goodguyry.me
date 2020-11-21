@@ -1,24 +1,26 @@
 /**
- * The CTA for linking to more info/blog posts.
+ * Possble link styles
+ * @todo unused.
  */
-@mixin more-link {
-  font-size: rem(16);
-  padding-top: rem(5);
+@mixin link-background {
   position: relative;
-  width: max-content;
+  z-index: 0;
 
-  &::before {
-    background-color: currentColor;
-    content: '';
-    display: block;
-    height: 1px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-
+  &:focus,
   &:hover {
+    outline: none;
     text-decoration: none;
+
+    &::after {
+      background-color: var(--black-40);
+      content: '';
+      display: block;
+      height: 110%;
+      left: -5%;
+      position: absolute;
+      top: -5%;
+      width: 110%;
+      z-index: -1;
+    }
   }
 }
