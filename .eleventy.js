@@ -6,6 +6,7 @@ const doStyles = require('./_client/config/doStyles');
 // Plugins.
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const pluginInjector = require('@infinity-interactive/eleventy-plugin-injector');
+const svgContents = require('eleventy-plugin-svg-contents');
 
 // Shortcodes.
 const figure = require('./.eleventy/shortcode-figure');
@@ -62,6 +63,7 @@ module.exports = function(eleventyConfig) {
 
   // Add syntax highlighting.
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(svgContents);
 
   // Copy the `build/` directory.
   eleventyConfig.addPassthroughCopy({
