@@ -1,0 +1,16 @@
+@use 'core/utilities' as *;
+
+@import './global/post-list';
+
+.archive {
+  margin-bottom: rem(100);
+
+  @media (media(min, full)) {
+    display: grid;
+    grid-column-gap: rem(20);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      '. list list'
+      '. cta cta';
+  }
+}

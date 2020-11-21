@@ -3,6 +3,8 @@
 @use 'core/reset';
 @use 'core/layout';
 
+@import './global/post-list';
+
 /**
  * About.
  */
@@ -77,12 +79,12 @@
 .projects__heading {
   font-size: rem(44);
   margin-bottom: rem(42);
+  padding-right: tidy-offset(1);
   text-align: right;
 
   @media (media(min, 800)) {
     font-size: rem(62);
     margin-bottom: rem(32);
-    padding-right: tidy-offset(1);
   }
 
   @media (media(min, full)) {
@@ -113,7 +115,7 @@
   text-align: center;
 }
 
-.project_content {
+.project__content {
   @include layout.auto-margins;
   padding: 0 rem(44);
 }
@@ -129,4 +131,37 @@
 
 .cta--projects {
   /* tbd */
+}
+
+/**
+ * Notes.
+ */
+
+.notes {
+  margin-bottom: rem(100);
+
+  @media (media(min, full)) {
+    display: grid;
+    grid-column-gap: rem(20);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      '. heading heading'
+      '. list list'
+      '. cta cta';
+  }
+}
+
+.notes__heading {
+  color: var(--secondary);
+  font-size: rem(44);
+  grid-area: heading;
+  margin-bottom: rem(40);
+  padding-right: tidy-offset(1);
+  text-align: right;
+
+  @media (media(min, full)) {
+    font-size: rem(62);
+    margin-bottom: rem(16);
+    padding-right: tidy-offset-full(1);
+  }
 }

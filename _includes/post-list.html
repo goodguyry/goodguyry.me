@@ -1,18 +1,18 @@
-<ul>
+<ul class="post-list">
 	{% assign posts = collections.descendingPosts %}
 	{% for post in posts limit: count %}
-		<li>
-			<h3 class="heading__base">
+		<li class="post-list__post">
+			<h3 class="post-list__title heading__base base__gradient-text">
 				<a href="{{ post.url }}">{{ post.data.title }}</a>
 			</h3>
 
-			<p>{{ post.data.excerpt }}</p>
+			<p class="post-list__excerpt">{{ post.data.excerpt }}</p>
 		</li>
 	{% endfor %}
 </ul>
 
 {% if collections.post.size > count %}
-	<a href="{{ site.blogroll }}">More Notes</a>
+	<a class="cta cta--post-list" href="{{ site.blogroll }}">More Notes</a>
 {% else %}
-	<p><a href="{{ '/feed.xml' | prepend: site.url }}">Subscribe via RSS</a>.</p>
+	<a class="cta cta--post-list" href="{{ '/feed.xml' | prepend: site.url }}">Subscribe via RSS</a>
 {% endif %}

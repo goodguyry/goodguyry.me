@@ -1,0 +1,38 @@
+@use 'core/utilities' as *;
+@use 'core/reset';
+@use 'core/layout';
+
+.post-list {
+  @include reset.list;
+  display: grid;
+  grid-area: list;
+  grid-gap: rem(50);
+  margin-bottom: rem(50);
+}
+
+.post-list__post {
+  /* tbd */
+}
+
+.post-list__title {
+  display: inline-block;
+  font-size: rem(30);
+  margin-bottom: rem(12);
+
+  @media (media(min, full)) {
+    font-size: rem(36);
+  }
+}
+
+.post-list__excerpt {
+  padding-left: tidy-offset(2);
+
+  @media (media(min, full)) {
+    padding-left: tidy-offset-full(2);
+  }
+}
+
+.cta--post-list {
+  @include layout.auto-margins;
+  grid-area: cta;
+}
