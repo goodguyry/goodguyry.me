@@ -1,3 +1,5 @@
+const data = require('../_data/site');
+
 /**
  * Adds an account tag
  * {% account 'twitter' %}
@@ -16,7 +18,7 @@ module.exports = function(site) {
   const { [site]: baseUrl } = urls;
 
   if (undefined !== baseUrl) {
-    return `${baseUrl}/goodguyry`;
+    return `${baseUrl}/${data.username}/`;
   }
 
   return '';

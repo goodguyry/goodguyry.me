@@ -13,10 +13,5 @@
     "name": "DreamBox",
     "description": "A Vagrant environment based on DreamHost's shared hosting.",
     "slug": "dreambox"
-  },
-  {
-    "name": "Dotfiles",
-    "description": "Dev-related packages and shell configuration. Very exciting.",
-    "slug": "dotfiles"
   }
 ]

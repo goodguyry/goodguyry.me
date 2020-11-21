@@ -1,11 +1,9 @@
-$mono: Consolas, Monaco, 'Andale Mono', monospace;
-$global-font: 'Gelasio', 'Palatino', 'Georgia', serif;
+$mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+$primary: SourceSerifPro, Georgia, serif;
 
-@mixin heading-secondary {
-  font-size: rem(36);
+/**
+ * Base heading styles.
+ */
+@mixin heading-base {
   font-weight: 600;
-}
-
-@mixin heading-tertiary {
-  font-size: rem(24);
 }

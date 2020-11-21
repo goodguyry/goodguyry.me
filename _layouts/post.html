@@ -3,21 +3,37 @@ layout: default
 ---
 
 <article>
-	<header class="post__header">
-		<p class="post__meta">
+	<header>
+		<p>
 			<time datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | date: "%B %d, %Y" }}</time>
 		</p>
-
-		<h1 class="post__title">{{ title }}</h1>
 	</header>
 
-	<div class="post-content post__content">
+	<div class="post-content">
 		{{ content }}
 	</div>
 
-	<hr class="post__divider">
+	<hr>
 
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
-		{% include components/post-footer.html %}
+		<footer>
+			{% if resources %}
+				<h3 class="heading__base">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
+
+				<ul>
+					{% for resource in resources %}
+						<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+			{% unless tags contains 'personal' %}
+				{% capture github_url %}{% account 'github' %}{% endcapture %}
+
+				<div>
+					<p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ github_url | append: '/goodguyry.me/issues/new' }}">Open an issue on Github</a> or <a href="{% account 'twitter' %}">let me know on Twitter</a>.</em></p>
+				</div>
+			{% endunless %}
+		</footer>
 	{% endunless %}
 </article>

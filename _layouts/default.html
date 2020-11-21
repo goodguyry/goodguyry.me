@@ -4,15 +4,34 @@
 {% include head.html %}
 
 <body>
-	<div class="global__wrapper }}">
-		{% include components/global-header.html %}
+	{% unless permalink == '/' %}
+		<header role="banner">
+			{% unless permalink == '/errors.php' %}
+				{% assign navurl = page.url | remove: 'index.html' %}
 
-		<main role="main" class="global__main">
-			{{ content }}
-		</main>
+				<nav role="navigation">
+					<ul>
+						{% for item in nav %}
+							<li>{% if item.url == navurl %}{{ item.text }}{% else %}<a href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+						{% endfor %}
+					</ul>
+				</nav>
+			{% endunless %}
 
-		{% include components/global-footer.html %}
-	</div>
+			<h1 class="heading__base">{{ title }}</h1>
+		</header>
+	{% endunless %}
+
+	<main role="main">
+		{{ content }}
+	</main>
+
+	<footer role="contentinfo">
+		<p>&copy;2009&ndash;{{ site.time | date: '%Y' }} Ryan Domingue</p>
+
+		{% capture github_url %}{% account 'github' %}{% endcapture %}
+		<p>This site&rsquo;s source is on <a href="{{ github_url | append: '/goodguyry.me' }}">Github</a>.</p>
+	</footer>
 
 	<!-- build: {{ site.time }} -->
 </body>

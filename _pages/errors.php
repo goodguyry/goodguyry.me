@@ -68,6 +68,6 @@ if (false === $title || 3 !== strlen($status)) {
 
 	<p><?php echo $message; ?></p>
 
-	<a class="global__more" href="/">Return to the home page</a>.
+	<a href="/">Return to the home page</a>.
 
 </article>
