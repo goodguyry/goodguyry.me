@@ -5,7 +5,7 @@ permalink: /
 ---
 
 <article>
-	<section class="container about">
+	<section class="about container">
 		<header class="about__header">
 			<h1 class="about__heading heading__base">I am Ryan</h1>
 		</header>
@@ -21,26 +21,28 @@ permalink: /
 		</div>
 	</section>
 
-	<section>
+	<section class="projects">
 		{% capture github_url %}{% account 'github' %}{% endcapture %}
 
-		<h2 class="heading__base">Projects</h2>
+		<div class="container">
+			<h2 class="projects__heading heading__base">Select Projects</h2>
 
-		<ul>
-			{% for project in projects %}
-				<li>
+			<ul class="projects__list">
+				{% for project in projects %}
+					<li class="project">
+						<article class="project_content">
+							<h3 class="project__title heading__base">
+								<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
+							</h3>
 
-					<h3 class="heading__base">
-						<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
-					</h3>
+							<p class="project__description">{{ project.description }}</p>
+						</article>
+					</li>
+				{% endfor %}
+			</ul>
 
-					<p>{{ project.description }}</p>
-
-				</li>
-			{% endfor %}
-		</ul>
-
-		<a href="{{ github_url }}">See more on GitHub</a>
+			<a class="cta cta--projects" href="{{ github_url }}">See more on GitHub</a>
+		</div>
 	</section>
 
 	{% if collections.post.size > 0 %}

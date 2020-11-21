@@ -1,9 +1,15 @@
 @use 'core/block-styles';
 @use 'core/utilities' as *;
+@use 'core/reset';
+@use 'core/layout';
 
+/**
+ * About.
+ */
 .about {
   display: grid;
   grid-gap: rem(20);
+  margin-bottom: rem(60);
   padding-top: rem(44);
 
   @media (media(min, 800)) {
@@ -39,4 +45,69 @@
   @media (media(min, 800)) {
     max-width: none;
   }
+}
+
+/**
+ * Projects.
+ */
+.projects {
+  background: var(--background-gradient);
+  color: var(--white);
+}
+
+.projects__heading {
+  font-size: rem(44);
+  margin-bottom: rem(42);
+  text-align: right;
+
+  @media (media(min, 800)) {
+    font-size: rem(62);
+    margin-bottom: rem(32);
+    padding-right: tidy-offset(1);
+  }
+
+  @media (media(min, full)) {
+    padding-right: tidy-offset-full(1);
+  }
+}
+
+.projects__list {
+  @include reset.list;
+  display: grid;
+  grid-gap: rem(40);
+  justify-content: center;
+
+  @media (media(min, 800)) {
+    grid-gap: rem(20);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: rem(2);
+  display: flex;
+  max-width: rem(335);
+  min-height: rem(145);
+  padding: rem(12) 0;
+  text-align: center;
+}
+
+.project_content {
+  @include layout.auto-margins;
+  max-width: 75%;
+}
+
+.project__title {
+  font-size: rem(24);
+  margin-bottom: rem(12);
+}
+
+.project__description {
+  /* tbd */
+}
+
+.cta--projects {
+  /* tbd */
 }
