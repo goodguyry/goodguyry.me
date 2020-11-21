@@ -97,10 +97,21 @@
   display: grid;
   grid-gap: rem(40);
   justify-content: center;
+  margin-bottom: rem(40);
 
   @media (media(min, 800)) {
     grid-gap: rem(20);
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projects__link {
+  @include layout.auto-margins;
+  display: block;
+  width: max-content;
+
+  @media (media(min, full)) {
+    margin-right: 0;
   }
 }
 
@@ -126,10 +137,6 @@
 }
 
 .project__description {
-  /* tbd */
-}
-
-.cta--projects {
   /* tbd */
 }
 

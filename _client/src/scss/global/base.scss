@@ -82,3 +82,51 @@ img::selection {
   display: block;
   -webkit-text-fill-color: transparent;
 }
+
+.cta {
+  --cta-offset: var(--cta-after-offset, #{rem(16)});
+  display: block;
+  padding: calc(var(--cta-offset) / 2);
+  position: relative;
+  width: max-content;
+  z-index: 0;
+
+  span {
+    background: var(--cta-bg, var(--white));
+    border: 1px solid;
+    color: var(--cta-color, var(--accent));
+    display: block;
+    padding: calc(var(--cta-offset) / 2);
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &::after {
+      transform: translate(0);
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    span {
+      @include focus-ring;
+    }
+  }
+
+  &::after {
+    background: var(--cta-after-bg, var(--text-gradient));
+    content: '';
+    display: block;
+    height: calc(100% - var(--cta-offset));
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(var(--cta-offset), var(--cta-offset));
+    transition: transform 150ms ease;
+    width: calc(100% - var(--cta-offset));
+    z-index: -2;
+  }
+}
