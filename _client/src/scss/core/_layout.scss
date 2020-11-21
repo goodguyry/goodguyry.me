@@ -1,3 +1,5 @@
+@use 'core/utilities' as *;
+
 /**
  * Centered block.
  */
@@ -13,5 +15,5 @@
   @include auto-margins;
   max-width: rem(960);
   position: relative; // To contain text selection highlighting
-  width: calc(100% - #{rem(20)});
+  width: calc(100% - #{rem(40)});
 }
