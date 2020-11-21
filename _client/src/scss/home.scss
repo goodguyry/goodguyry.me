@@ -51,8 +51,27 @@
  * Projects.
  */
 .projects {
-  background: var(--background-gradient);
   color: var(--white);
+  position: relative;
+  z-index: 0;
+  padding: rem(28) 0;
+
+  @media (media(min, full)) {
+    padding: rem(50) 0;
+  }
+
+  &::after {
+    background: var(--background-gradient);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: skew(-1.5deg) rotate(-1.5deg);
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .projects__heading {
@@ -90,13 +109,13 @@
   display: flex;
   max-width: rem(335);
   min-height: rem(145);
-  padding: rem(12) 0;
+  padding: rem(20) 0;
   text-align: center;
 }
 
 .project_content {
   @include layout.auto-margins;
-  max-width: 75%;
+  padding: 0 rem(44);
 }
 
 .project__title {
