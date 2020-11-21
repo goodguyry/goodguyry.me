@@ -8,4 +8,6 @@ module.exports = {
   description: 'Ryan Domingue works with HTML, CSS, and JavaScript, and spends his time learning and creating. Ryan loves coffee and cannot be trusted around cookies.',
   blogroll: '/notes/',
   url: `http://goodguyry.${isDev ? 'http' : 'me'}`,
+  username: 'goodguyry',
+  themeColor: '#008583',
 };

@@ -45,8 +45,8 @@
 	<meta name="twitter:description" content="{{ site.description }}" />
 	<meta name="twitter:image" content="{{ '/card.png' | prepend: config.url }}" />
 	<meta name="twitter:card" content="summary_large_image" />
-	{% if site.twitterUsername %}
-		<meta name="twitter:site" content="{{ site.twitterUsername }}" />
+	{% if site.username %}
+		<meta name="twitter:site" content="@{{ site.username }}" />
 	{% endif %}
 
 	<meta name="HandheldFriendly" content="True" />
