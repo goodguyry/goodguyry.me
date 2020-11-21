@@ -1,5 +1,42 @@
-@use 'core/block-styles' as *;
+@use 'core/block-styles';
 @use 'core/utilities' as *;
-@use 'core/layout' as *;
-@use 'core/typography' as *;
-@use 'core/theme' as *;
+
+.about {
+  display: grid;
+  grid-gap: rem(20);
+  padding-top: rem(44);
+
+  @media (media(min, 800)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about__header {
+  padding-left: tidy-offset(1);
+
+  @media (media(min, 800)) {
+    grid-column: span 2;
+  }
+
+  @media (media(min, full)) {
+    padding-left: tidy-offset-full(1);
+  }
+}
+
+.about__heading {
+  color: var(--accent);
+  font-size: rem(64);
+
+  @media (media(min, full)) {
+    font-size: rem(78);
+  }
+}
+
+.about__content {
+  @include block-styles.content-text;
+  max-width: rem(460);
+
+  @media (media(min, 800)) {
+    max-width: none;
+  }
+}
