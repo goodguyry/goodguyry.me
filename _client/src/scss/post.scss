@@ -19,6 +19,10 @@
   @media (media(min, full)) {
     tidy-span: 7;
   }
+
+  hr {
+    margin-bottom: $vertical-rhythm;
+  }
 }
 
 .post-footer__feedback {

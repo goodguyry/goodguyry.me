@@ -10,20 +10,24 @@ layout: default
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
 		<footer class="post-footer">
 			{% if resources %}
-			<div class="resources">
-				<div class="resources__inner">
-					<h3 class="resources__heading heading__base base__gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
+				<div class="resources">
+					<div class="resources__inner">
+						<h3 class="resources__heading heading__base base__gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
 
-					<ul class="resources__list">
-						{% for resource in resources %}
-							<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
-						{% endfor %}
-					</ul>
+						<ul class="resources__list">
+							{% for resource in resources %}
+								<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
 				</div>
-			</div>
 			{% endif %}
 
 			{% unless tags contains 'personal' %}
+				{% unless resources %}
+					<hr />
+				{% endunless %}
+
 				{% capture github_url %}{% account 'github' %}{% endcapture %}
 
 				<div class="post-footer__feedback">
