@@ -4,8 +4,6 @@
 @use 'core/layout';
 @use 'core/theme';
 
-@import './global/post-list';
-
 /**
  * About.
  */
@@ -178,3 +176,5 @@
     padding-right: tidy-offset-full(1);
   }
 }
+
+@import './global/post-list';
