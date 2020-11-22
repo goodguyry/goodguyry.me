@@ -13,7 +13,7 @@
       margin-bottom: var(--vertical-rhythm);
     }
 
-    @media (media(min, full)) {
+    @media (media(min, md)) {
 
       &:not(figure):not(hr) {
         tidy-span: 7;
@@ -51,7 +51,7 @@
   }
 
   figure {
-    @media (media(min, full)) {
+    @media (media(min, md)) {
       align-items: flex-start;
       display: flex;
       justify-content: space-between;
@@ -76,10 +76,9 @@
 
   figcaption {
     font-size: rem(14);
-    margin-left: rem(18);
     margin-top: rem(3);
 
-    @media (media(min, full)) {
+    @media (media(min, md)) {
       margin: 0;
       order: 2;
       tidy-span: 4;

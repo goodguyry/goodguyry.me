@@ -23,7 +23,7 @@
 .post-list__excerpt {
   padding-left: tidy-offset(2);
 
-  @media (media(min, full)) {
+  @media (media(min, md)) {
     padding-left: tidy-offset-full(2);
   }
 }

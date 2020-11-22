@@ -14,7 +14,7 @@
 .post-footer {
   margin-bottom: rem(100);
 
-  @media (media(min, full)) {
+  @media (media(min, md)) {
     tidy-span: 7;
   }
 
