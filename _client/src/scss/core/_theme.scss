@@ -24,3 +24,14 @@
     }
   }
 }
+
+/**
+ * Selection styles for txt with a gradient background.
+ */
+@mixin in-gradient-selection {
+
+  ::selection {
+    background: var(--secondary-70);
+    color: var(--white);
+  }
+}

@@ -2,6 +2,7 @@
 @use 'core/utilities' as *;
 @use 'core/reset';
 @use 'core/layout';
+@use 'core/theme';
 
 @import './global/post-list';
 
@@ -53,6 +54,7 @@
  * Projects.
  */
 .projects {
+  @include theme.in-gradient-selection;
   color: var(--white);
   position: relative;
   z-index: 0;

@@ -64,18 +64,13 @@ a {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--white);
-}
-
-// Invert anchors to keep them legible
-a::selection {
-  color: var(--actual-black);
+  background: var(--accent-10);
+  color: var(--secondary);
 }
 
 img::selection {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent-10);
+  color: var(--secondary);
 }
 
 hr {
@@ -104,6 +99,11 @@ hr {
   position: relative;
   width: max-content;
   z-index: 0;
+
+  ::selection {
+    background: unset;
+    color: unset;
+  }
 
   span {
     background: var(--cta-bg, var(--white));
