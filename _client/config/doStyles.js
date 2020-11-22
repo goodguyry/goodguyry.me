@@ -31,7 +31,7 @@ module.exports = async (inputFile) => {
         '48rem': {
           columns: 12,
           gap: '1.25rem',
-          siteMax: '60rem',
+          siteMax: '62.5rem',
         },
       },
     }),
