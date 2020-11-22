@@ -150,8 +150,6 @@
  */
 
 .notes {
-  margin-bottom: rem(100);
-
   @media (media(min, md)) {
     display: grid;
     grid-column-gap: rem(20);
