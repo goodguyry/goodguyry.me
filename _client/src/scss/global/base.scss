@@ -6,20 +6,27 @@
  * Common base styles
  */
 
-// Declare as Sass variables to work around `rgba` issues.
-$accent: #008583;
-$secondary: #5C0BAA;
-
 :root {
+  --rgb-accent: 0, 133, 131;
+  --rgb-secondary: 92, 11, 170;
+  --rgb-black: 0, 0, 0;
+
+  --accent: rgb(var(--rgb-accent));
+  --secondary: rgb(var(--rgb-secondary));
+
   --white: #FFFFFF;
   --black: #333333;
-  --black-40: rgba(0, 0, 0, 0.4);
-  --actual-black: #000000;
-  --accent: #{$accent};
-  --secondary: #{$secondary};
+  --actual-black: rgb(var(--rgb-black));
   --decoration: #CCCCCC;
 
-  --background-gradient: linear-gradient(to right, #{rgba($accent, 0.7)}, #{rgba($secondary, 0.7)});
+  // RGBA alternates.
+  --black-40: rgba(var(--rgb-black), 0.4);
+  --accent-70: rgba(var(--rgb-accent), 0.7);
+  --secondary-70: rgba(var(--rgb-secondary), 0.7);
+  --accent-10: rgba(var(--rgb-accent), 0.1);
+  --secondary-10: rgba(var(--rgb-secondary), 0.1);
+
+  --background-gradient: linear-gradient(to right, var(--accent-70), var(--secondary-70));
   --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
   --border-radius: 2px;
 }
