@@ -6,19 +6,21 @@
   @include theme.in-gradient-selection;
   align-items: flex-end;
   background: var(--background-gradient);
-  clip-path: polygon(0 49%, 0 100%, 100% 100%, 100% 0);
+  clip-path: polygon(0 var(--clip-distance), 0 100%, 100% 100%, 100% 0);
   color: var(--white);
   display: flex;
-  padding: rem(50) 0 rem(16) 0;
+  padding: var(--clip-distance) 0 rem(16) 0;
 }
 
 .container--footer {
   align-items: center;
   display: grid;
   grid-row-gap: rem(6);
+  padding-top: rem(10);
 
   @media (media(min, full)) {
     grid-template-columns: repeat(2, 1fr);
+    padding-top: rem(20);
   }
 }
 

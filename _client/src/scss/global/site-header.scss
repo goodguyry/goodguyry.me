@@ -5,10 +5,10 @@
 .site-header {
   @include theme.in-gradient-selection;
   background: var(--background-gradient);
-  clip-path: polygon(0 100%, 100% 77.5%, 100% 0, 0 0);
+  clip-path: polygon(0 100%, 100% calc(100% - var(--clip-distance)), 100% 0, 0 0);
   color: var(--white);
   min-height: rem(162);
-  padding: rem(22) 0 rem(52) 0;
+  padding: rem(22) 0 var(--clip-distance) 0;
   margin-bottom: rem(25);
 
   @media (media(min, full)) {
@@ -42,10 +42,6 @@
 .site-header__title {
   font-size: clamp(rem(30), 11vw, rem(62));
   line-height: 1.2;
-
-  @media (media(min, 800)) {
-    tidy-span: 9;
-  }
 }
 
 .site-header__meta {

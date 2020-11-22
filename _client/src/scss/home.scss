@@ -56,7 +56,7 @@
   margin-bottom: rem(20);
 
   @media (media(min, md)) {
-    padding: rem(50) 0;
+    padding: rem(50) 0 rem(80) 0;
   }
 
   &::after {
@@ -67,7 +67,7 @@
     left: 0;
     position: absolute;
     top: 0;
-    transform: skew(-1.5deg) rotate(-1.5deg);
+    transform: skew(-3.4deg) rotate(-3.4deg);
     width: 100%;
     z-index: -1;
   }
