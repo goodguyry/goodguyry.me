@@ -86,7 +86,7 @@ hr {
   @include typography.heading-base;
 }
 
-.base__gradient-text {
+.gradient-text {
   background: var(--text-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
