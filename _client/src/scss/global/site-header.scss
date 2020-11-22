@@ -40,15 +40,11 @@
 }
 
 .site-header__title {
-  font-size: rem(44);
+  font-size: clamp(rem(30), 11vw, rem(62));
   line-height: 1.2;
 
   @media (media(min, 700)) {
     width: 75%;
-  }
-
-  @media (media(min, full)) {
-    font-size: rem(62);
   }
 }
 

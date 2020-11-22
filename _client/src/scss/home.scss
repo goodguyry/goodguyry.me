@@ -34,11 +34,7 @@
 
 .about__heading {
   color: var(--accent);
-  font-size: rem(64);
-
-  @media (media(min, full)) {
-    font-size: rem(78);
-  }
+  font-size: clamp(rem(40), 14vw, rem(78));
 }
 
 .about__content {
@@ -79,13 +75,12 @@
 }
 
 .projects__heading {
-  font-size: rem(44);
+  font-size: clamp(rem(30), 11vw, rem(62));
   margin-bottom: rem(42);
   padding-right: tidy-offset(1);
   text-align: right;
 
   @media (media(min, 800)) {
-    font-size: rem(62);
     margin-bottom: rem(32);
   }
 
@@ -162,14 +157,13 @@
 
 .notes__heading {
   color: var(--secondary);
-  font-size: rem(44);
+  font-size: clamp(rem(30), 11vw, rem(62));
   grid-area: heading;
   margin-bottom: rem(40);
   padding-right: tidy-offset(1);
   text-align: right;
 
   @media (media(min, full)) {
-    font-size: rem(62);
     margin-bottom: rem(16);
     padding-right: tidy-offset-full(1);
   }

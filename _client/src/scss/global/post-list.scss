@@ -16,12 +16,8 @@
 
 .post-list__title {
   display: inline-block;
-  font-size: rem(30);
+  font-size: clamp(rem(30), 8vw, rem(36));
   margin-bottom: rem(12);
-
-  @media (media(min, full)) {
-    font-size: rem(36);
-  }
 }
 
 .post-list__excerpt {
