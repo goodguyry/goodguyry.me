@@ -3,7 +3,6 @@ const path = require('path');
 const projectRoot = path.join(__dirname, '../../');
 
 module.exports = {
-  build: path.join(projectRoot, 'build'),
   projectRoot,
   site: path.join(projectRoot, '_site'),
   public: path.join(projectRoot, '_site'),

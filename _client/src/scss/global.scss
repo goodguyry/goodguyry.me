@@ -11,15 +11,3 @@
 // Components.
 @import './global/site-header';
 @import './global/site-footer';
-
-.wrapper {
-  /* tbd */
-}
-
-.main {
-  @include container;
-}
-
-.more {
-  @include more-link;
-}
