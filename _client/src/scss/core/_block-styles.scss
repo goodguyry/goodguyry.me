@@ -8,10 +8,6 @@ $vertical-rhythm: rem(24);
  */
 @mixin content-text {
 
-  p:not(:last-child) {
-    margin-bottom: $vertical-rhythm;
-  }
-
   a {
     color: var(--accent);
     text-decoration: underline;
@@ -67,8 +63,14 @@ $vertical-rhythm: rem(24);
 
   @media (media(min, full)) {
 
-    > *:not(figure):not(hr) {
-      tidy-span: 7;
+    > * {
+      &:not(:last-child) {
+        margin-bottom: $vertical-rhythm;
+      }
+
+      &:not(figure):not(hr) {
+        tidy-span: 7;
+      }
     }
 
     figure {
@@ -97,22 +99,18 @@ $vertical-rhythm: rem(24);
 
   h2 {
     font-size: 2rem;
-    margin-bottom: $vertical-rhythm;
   }
 
   h3 {
     font-size: 1.5rem;
-    margin-bottom: $vertical-rhythm;
   }
 
   h4 {
     font-size: 1.25rem;
-    margin-bottom: $vertical-rhythm;
   }
 
   h5 {
     font-size: 1rem;
-    margin-bottom: $vertical-rhythm;
   }
 
   // To keep code/path font sizes consistent within the figcaptions
@@ -121,7 +119,7 @@ $vertical-rhythm: rem(24);
   }
 
   figure {
-    margin-bottom: $vertical-rhythm;
+    /* tbd */
   }
 
   figcaption {
@@ -135,7 +133,7 @@ $vertical-rhythm: rem(24);
 
   ul,
   ol {
-    margin-bottom: $vertical-rhythm;
+    /* tbd */
   }
 
   ul {
@@ -168,7 +166,6 @@ $vertical-rhythm: rem(24);
    */
   blockquote {
     width: 100%;
-    margin-bottom: $vertical-rhythm;
     padding: 0.5rem;
     border-top: 3px double var(--decoration);
     border-bottom: 3px double var(--decoration);
@@ -268,10 +265,6 @@ $vertical-rhythm: rem(24);
   code.path {
     border: none;
     color: var(--black);
-  }
-
-  hr {
-    margin-bottom: $vertical-rhythm;
   }
 
   .hey {
