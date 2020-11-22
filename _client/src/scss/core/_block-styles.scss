@@ -4,51 +4,10 @@
 $vertical-rhythm: rem(24);
 
 /**
- * Headings
- */
-@mixin content-headings {
-
-  h2,
-  h3,
-  h4,
-  h5 {
-    @include typography.heading-base;
-    line-height: 1;
-  }
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: $vertical-rhythm;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: $vertical-rhythm;
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    margin-bottom: $vertical-rhythm;
-  }
-
-  h5 {
-    font-size: 1rem;
-    margin-bottom: $vertical-rhythm;
-  }
-}
-
-/**
  * Inline text styles.
  */
 @mixin content-text {
-  line-height: 1.5; // Applied to .post-content when included.
 
-  /**
-   * Most of the <p> element's styling will be inherited from <body>
-   * Overrides:
-   *     _components.footer: <footer>
-   *     _overrides.block: <blockquote>
-   */
   p:not(:last-child) {
     margin-bottom: $vertical-rhythm;
   }
@@ -102,7 +61,108 @@ $vertical-rhythm: rem(24);
   }
 }
 
-@mixin content-quotes {
+.post-content {
+  @include content-text;
+  line-height: 1.5;
+
+  @media (media(min, full)) {
+
+    > *:not(figure):not(hr) {
+      tidy-span: 7;
+    }
+
+    figure {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      pre,
+      img {
+        tidy-span: 8;
+      }
+
+      figcaption {
+        tidy-span: 4;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    @include typography.heading-base;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: $vertical-rhythm;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: $vertical-rhythm;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: $vertical-rhythm;
+  }
+
+  h5 {
+    font-size: 1rem;
+    margin-bottom: $vertical-rhythm;
+  }
+
+  // To keep code/path font sizes consistent within the figcaptions
+  figcaption code {
+    font-size: inherit;
+  }
+
+  figure {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  figcaption {
+    font-size: rem(14);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ul,
+  ol {
+    margin-bottom: $vertical-rhythm;
+  }
+
+  ul {
+    list-style: disc outside none;
+    margin-left: 1rem;
+  }
+
+  ol {
+    list-style: decimal outside none;
+    margin-left: 1.5rem;
+  }
+
+  // Nested lists
+  li ul,
+  li ol {
+    margin-bottom: 0;
+    padding-left: 1.5rem;
+  }
+
+  li ul {
+    list-style-type: circle;
+  }
+
+  li ol {
+    list-style-type: lower-alpha;
+  }
+
   /**
    * Full-width, double-lined box with large text
    */
@@ -147,9 +207,7 @@ $vertical-rhythm: rem(24);
       }
     }
   }
-}
 
-@mixin content-code {
   /**
    * This is mostly setup for <code>
    * - Some padding for breathing room
@@ -212,94 +270,9 @@ $vertical-rhythm: rem(24);
     color: var(--black);
   }
 
-  // To keep code/path font sizes consistent within the figcaptions
-  figcaption code {
-    font-size: inherit;
-  }
-}
-
-@mixin content-images {
-
-  @media (media(min, full)) {
-
-    > *:not(figure):not(hr) {
-      tidy-span: 7;
-    }
-
-    figure {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-
-      pre,
-      img {
-        tidy-span: 8;
-      }
-
-      figcaption {
-        tidy-span: 4;
-      }
-    }
-  }
-
-  figure {
-    margin-bottom: $vertical-rhythm;
-  }
-
-  figcaption {
-    font-size: rem(14);
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-  }
-}
-
-/**
- * Common list styles
- */
-@mixin content-lists {
-
-  ul,
-  ol {
-    margin-bottom: $vertical-rhythm;
-  }
-
-  ul {
-    list-style: disc outside none;
-    margin-left: 1rem;
-  }
-
-  ol {
-    list-style: decimal outside none;
-    margin-left: 1.5rem;
-  }
-
-  // Nested lists
-  li ul,
-  li ol {
-    margin-bottom: 0;
-    padding-left: 1.5rem;
-  }
-
-  li ul {
-    list-style-type: circle;
-  }
-
-  li ol {
-    list-style-type: lower-alpha;
-  }
-}
-
-@mixin content-block-level {
-
   hr {
     margin-bottom: $vertical-rhythm;
   }
-}
-
-@mixin content-hey {
 
   .hey {
     border-radius: var(--border-radius);

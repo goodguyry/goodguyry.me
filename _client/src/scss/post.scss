@@ -13,17 +13,6 @@
   margin-bottom: rem(30);
 }
 
-.post-content {
-  @include content-headings;
-  @include content-text;
-  @include content-quotes;
-  @include content-code;
-  @include content-images;
-  @include content-lists;
-  @include content-block-level;
-  @include content-hey;
-}
-
 .post-footer {
   margin-bottom: rem(100);
 
