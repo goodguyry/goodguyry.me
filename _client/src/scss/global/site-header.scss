@@ -7,6 +7,7 @@
   color: var(--white);
   min-height: rem(162);
   padding: rem(22) 0 rem(52) 0;
+  margin-bottom: rem(25);
 
   @media (media(min, full)) {
     min-height: rem(186);
@@ -46,5 +47,15 @@
 
   @media (media(min, full)) {
     font-size: rem(62);
+  }
+}
+
+.site-header__meta {
+  font-size: rem(12);
+  font-style: italic;
+  margin-bottom: rem(12);
+
+  @media (media(min, full)) {
+    tidy-span: 7;
   }
 }

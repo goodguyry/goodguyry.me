@@ -1,5 +1,4 @@
 @use 'core/utilities' as *;
-// @use 'core/layout' as *;
 @use 'core/typography';
 
 $vertical-rhythm: rem(24);
@@ -9,18 +8,12 @@ $vertical-rhythm: rem(24);
  */
 @mixin content-headings {
 
-  h1,
   h2,
   h3,
   h4,
   h5 {
     @include typography.heading-base;
     line-height: 1;
-  }
-
-  h1 {
-    font-size: 2.6rem;
-    margin-bottom: 0;
   }
 
   h2 {
@@ -48,6 +41,8 @@ $vertical-rhythm: rem(24);
  * Inline text styles.
  */
 @mixin content-text {
+  line-height: 1.5; // Applied to .post-content when included.
+
   /**
    * Most of the <p> element's styling will be inherited from <body>
    * Overrides:
@@ -89,7 +84,7 @@ $vertical-rhythm: rem(24);
     border: 1px solid var(--decoration);
     background-color: #393939;
     color: var(--white);
-    border-radius: 3px;
+    border-radius: var(--border-radius);
   }
 
   cite {
@@ -195,7 +190,7 @@ $vertical-rhythm: rem(24);
 
     code {
       background-color: var(--decoration-light);
-      border-radius: 3px;
+      border-radius: var(--border-radius);
       border: 1px solid var(--decoration);
       color: var(--black);
       display: inline-block;
@@ -225,14 +220,34 @@ $vertical-rhythm: rem(24);
 
 @mixin content-images {
 
+  @media (media(min, full)) {
+
+    > *:not(figure):not(hr) {
+      tidy-span: 7;
+    }
+
+    figure {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      pre,
+      img {
+        tidy-span: 8;
+      }
+
+      figcaption {
+        tidy-span: 4;
+      }
+    }
+  }
+
   figure {
     margin-bottom: $vertical-rhythm;
   }
 
   figcaption {
-    text-align: right;
     font-size: rem(14);
-    margin-top: rem(3);
   }
 
   img {
@@ -287,13 +302,10 @@ $vertical-rhythm: rem(24);
 @mixin content-hey {
 
   .hey {
-    font: {
-      size: rem(14);
-      style: italic;
-    }
-    padding: 0.5rem;
-    background-color: var(--decoration-light);
+    border-radius: var(--border-radius);
     border: 1px solid var(--decoration);
-    border-radius: 3px;
+    border-top-width: 10px;
+    font-style: italic;
+    padding: rem(12);
   }
 }

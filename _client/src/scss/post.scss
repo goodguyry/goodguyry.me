@@ -3,6 +3,15 @@
 @use 'core/layout' as *;
 @use 'core/typography' as *;
 @use 'core/theme' as *;
+@use 'core/reset';
+
+.post {
+  /* tbd */
+}
+
+.post__content {
+  margin-bottom: rem(30);
+}
 
 .post-content {
   @include content-headings;
@@ -13,4 +22,63 @@
   @include content-lists;
   @include content-block-level;
   @include content-hey;
+}
+
+.post-footer {
+  margin-bottom: rem(100);
+
+  @media (media(min, full)) {
+    tidy-span: 7;
+  }
+}
+
+.post-footer__feedback {
+  line-height: 1.5;
+}
+
+.resources {
+  margin-bottom: rem(30);
+  padding: 0 rem(15) rem(15) 0;
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    background: var(--text-gradient);
+    bottom: 0;
+    content: '';
+    display: block;
+    height: calc(100% - #{rem(15)});
+    position: absolute;
+    right: 0;
+    width: calc(100% - #{rem(15)});
+    z-index: -2;
+  }
+}
+
+.resources__inner {
+  background-color: var(--white);
+  border: 1px solid var(--accent);
+  padding: rem(20);
+}
+
+.resources__heading {
+  display: inline-block;
+  font-size: rem(24);
+  margin-bottom: rem(12);
+
+  @media (media(min, full)) {
+    margin-left: tidy-offset-full(1);
+  }
+}
+
+.resources__list {
+  @include reset.list;
+  line-height: 1.5;
+  list-style: disc outside none;
+  margin-left: 1rem;
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
 }

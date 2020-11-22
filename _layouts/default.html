@@ -20,6 +20,10 @@
 				{% endunless %}
 
 				<h1 class="heading__base site-header__title">{{ title }}</h1>
+
+				{% if layout == 'post' %}
+					<time class="site-header__meta" datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | date: "%B %d, %Y" }}</time>
+				{% endif %}
 			</div>
 		</header>
 	{% endunless %}
