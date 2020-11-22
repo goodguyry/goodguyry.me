@@ -29,6 +29,7 @@
   --background-gradient: linear-gradient(to right, var(--accent-70), var(--secondary-70));
   --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
   --border-radius: 2px;
+  --vertical-rhythm: #{rem(24)};
 }
 
 // Adjust base font size for screen size

@@ -1,0 +1,239 @@
+@use 'core/utilities' as *;
+@use 'core/typography';
+
+/**
+ * Post wrapper.
+ */
+.post-content {
+  @include typography.rich-text;
+
+  > * {
+
+    &:not(:last-child) {
+      margin-bottom: var(--vertical-rhythm);
+    }
+
+    @media (media(min, full)) {
+
+      &:not(figure):not(hr) {
+        tidy-span: 7;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include typography.heading-base;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: rem(36);
+  }
+
+  h3 {
+    font-size: rem(32);
+  }
+
+  h4 {
+    font-size: rem(28);
+  }
+
+  h5 {
+    font-size: rem(22);
+  }
+
+  h6 {
+    font-size: rem(18);
+  }
+
+  figure {
+    @media (media(min, full)) {
+      align-items: flex-start;
+      display: flex;
+      justify-content: space-between;
+
+      pre,
+      img,
+      blockquote {
+        tidy-span: 8;
+      }
+    }
+
+    blockquote {
+      padding-top: rem(18);
+
+      &:first-letter {
+        font-size: rem(40);
+        font-weight: 700;
+        line-height: 1;
+      }
+    }
+  }
+
+  figcaption {
+    font-size: rem(14);
+    margin-left: rem(18);
+    margin-top: rem(3);
+
+    @media (media(min, full)) {
+      margin: 0;
+      order: 2;
+      tidy-span: 4;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ul,
+  ol {
+    /* tbd */
+  }
+
+  ul {
+    list-style: disc outside none;
+    margin-left: rem(16);
+  }
+
+  ol {
+    list-style: decimal outside none;
+    margin-left: rem(24);
+  }
+
+  // Nested lists
+  li ul,
+  li ol {
+    margin-bottom: 0;
+    padding-left: rem(24);
+  }
+
+  li ul {
+    list-style-type: circle;
+  }
+
+  li ol {
+    list-style-type: lower-alpha;
+  }
+
+  dl {
+    /* tbd */
+  }
+
+  dt {
+    font-weight: 700;
+    margin-bottom: rem(4);
+  }
+
+  dd {
+    border-left: 2px solid var(--accent-70);
+    margin-bottom: rem(15);
+    padding-left: rem(15);
+  }
+
+  /**
+   * Full-width, double-lined box with large text
+   */
+  blockquote {
+    border-left: rem(10) solid var(--accent-70);
+    font-size: rem(20);
+    padding: rem(8) 0 rem(8) rem(8);
+    quotes: none;
+    width: 100%;
+
+    &::before,
+    &::after {
+      content: none;
+    }
+
+    // The quote citation
+    + figcaption {
+
+      &::before {
+        content: unicode('2014');
+        display: inline-block;
+        margin-right: rem(4);
+      }
+    }
+  }
+
+  /**
+   * This is mostly setup for <code>
+   * - Some padding for breathing room
+   * - The colored background
+   */
+  pre {
+    background-color: #1F2430;
+    padding: rem(16);
+    position: relative;
+  }
+
+  /**
+   * Code samples
+   * Syntax highlighting found in /css/code.scss
+   */
+  code {
+    font-family: typography.$mono;
+    hyphens: none;
+    line-height: inherit;
+    max-width: 100%;
+    overflow: auto;
+    position: relative;
+    white-space: pre;
+  }
+
+  // All code blocks
+  pre code {
+    color: var(--white);
+    display: block;
+    font-size: rem(14);
+    height: 100%;
+    tab-size: 2;
+  }
+
+  // Inline code
+  p,
+  li,
+  figcaption {
+
+    code {
+      border: 1px dashed var(--secondary-70);
+      vertical-align: middle;
+    }
+  }
+
+  samp {
+    background-color: var(--secondary-10);
+  }
+
+  kbd {
+    background-color: var(--secondary);
+    border-radius: var(--border-radius);
+    color: var(--white);
+  }
+
+  // Inline code that's inside an anchor
+  a code {
+    color: var(--accent);
+  }
+
+  // Style file and directory paths as code,
+  //  but without the border
+  code.path {
+    border: none;
+    color: var(--black);
+  }
+
+  .hey {
+    border-radius: var(--border-radius);
+    border-top-width: rem(10);
+    border: 1px solid var(--decoration);
+    font-style: italic;
+    padding: rem(12);
+  }
+}

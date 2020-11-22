@@ -1,4 +1,4 @@
-@use 'core/block-styles';
+@use 'core/typography';
 @use 'core/utilities' as *;
 @use 'core/reset';
 @use 'core/layout';
@@ -41,7 +41,7 @@
 }
 
 .about__content {
-  @include block-styles.content-text;
+  @include typography.rich-text;
   max-width: rem(460);
 
   @media (media(min, 800)) {
