@@ -24,7 +24,7 @@ vagrant up
 {% endhighlight %}
 {% endfigure %}
 
-### User setup
+## User setup
 
 Once the VM is created and ready, `ssh` into the VM and run `sudo user_setup`.
 

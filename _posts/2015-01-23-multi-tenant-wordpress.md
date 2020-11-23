@@ -10,7 +10,7 @@ permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 
 <p class="hey">This post was inspired by Jason McCreary's <a href="http://jason.pureconcepts.net/2012/08/wordpress-multitenancy/">WordPress Multitenancy</a> (and <a href="http://jason.pureconcepts.net/2013/04/updated-wordpress-multitenancy/">his follow-up</a>).</p>
 
-### Overview
+## Overview
 
 The multi-tenant WordPress setup allows multiple &quot;tenant&quot; sites to run from one &quot;core&quot; WordPress install, but with separate databases. The WordPress files are placed in versioned directories outside of the site&rsquo;s root, such as <code class="path">/opt/wordpress/{version}/</code>, then symlinked to the tenant sites&rsquo; root directories.
 
@@ -46,11 +46,11 @@ By taking advantage of some fully supported alternative configuration and setup 
 
 That last point is especially attractive if you develop multiple WordPress sites; make this your local setup and you&rsquo;re golden.
 
-### Getting Started
+## Getting Started
 
 We're essentially going to be [giving WordPress its own directory](http://codex.wordpress.org/Giving_WordPress_Its_Own_Directory), then moving the <code class="path">wp-content</code> directory to the site&rsquo;s root.
 
-#### Give WordPress its own directory
+### Give WordPress its own directory
 
 As mentioned, the core WordPress files should be moved into versioned directories outside of the site&rsquo;s root. We then symlink the version directory to the site's root.
 
@@ -71,7 +71,7 @@ require( dirname( __FILE__ ) . '/wordpress/wp-blog-header.php' );
 {% endhighlight %}
 {% endfigure %}
 
-#### Move wp-content
+### Move wp-content
 
 In my experience, the <code class="path">wp-content</code> directory isn&rsquo;t necessary in the core WordPress files, so we can safely move it to our site&rsquo;s root.
 
@@ -89,7 +89,7 @@ ls -l
 {% endhighlight %}
 {% endfigure %}
 
-#### The config files
+### The config files
 
 For the main config file, the `DB_NAME`, `DB_USER`, `DB_PASSWORD` and `DB_HOST` definitions and Authentication Unique Keys should be removed and placed in the tenant config files. In their place is some code to require a tenant config file, based on the host.
 

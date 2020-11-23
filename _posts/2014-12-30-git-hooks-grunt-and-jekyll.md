@@ -36,11 +36,11 @@ Dreamhost already has Git and Ruby installed, but that didn&rsquo;t stop me from
 
 ---
 
-### Node and NPM
+## Node and NPM
 
 I originally installed Node on my server a while back by cloning the source and compiling myself. And while that worked fine, when it came time to install Grunt and some tasks, I ran into a few problems getting the latest versions of everything. After a bit of Googling, I found [NVM](https://github.com/creationix/nvm).
 
-#### NVM : Node :: RVM : Ruby
+### NVM : Node :: RVM : Ruby
 
 NVM makes it almost *too* easy to install and update Node. I chose the manual install to avoid having my <code class="path">bash_profile</code> automatically written to.
 
@@ -78,7 +78,7 @@ I spent about an hour or so working through my Ruby and Node installation issues
 
 This was my first experience with Git hooks, so I think I let that cloud what was actually a pretty simple problem to fix.
 
-#### The non-login environment
+## The non-login environment
 
 I haven&rsquo;t researched this a whole lot, so forgive me if I don't have this 100% correct, but, as far as I could figure out, my Git hook is running in a non-login shell, meaning all my fancy <code class="path">bash_profile</code> settings and `$PATH` weren't set as they should have been.
 

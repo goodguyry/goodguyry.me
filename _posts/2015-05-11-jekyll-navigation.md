@@ -19,7 +19,7 @@ In this post, I&rsquo;ll introduce a technique for creating navigation for a Jek
 
 In these examples, I&rsquo;ll use data files to hold the list of navigation items, then a [Liquid `for` loop](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers#for-loops) to build the navigation list. [Jekyll data files](http://jekyllrb.com/docs/datafiles/) hold additional data for Jekyll to load while generating your site. They&rsquo;re a great place to store strings, common URLs, and more.
 
-### The Basic Nav
+## The Basic Nav
 
 First, create a list of items in <code class="path">_data/nav.yaml</code>, each with &lsquo;text&rsquo; and &lsquo;url&rsquo; properties to hold the necessary information.
 
@@ -44,7 +44,7 @@ Now that the data file is ready, assign the current page&rsquo;s URL to a variab
 
 So as Jekyll iterates through the pages in the site, each page&rsquo;s URL will be captured and used for building the rest of the navigation.
 
-#### One Small Problem
+### One Small Problem
 
 The home page doesn&rsquo;t need the &lsquo;home&rsquo; link, so the loop should skip over the first list item when Jekyll builds the home page. Liquid provides a handy `offset` property, available inside `for` loops, for which this is a perfect use-case.
 
@@ -60,7 +60,7 @@ To set the `offset`, test whether or not the current page is the home page. If i
 {% endhighlight %}
 {% endfigure %}
 
-#### The Loop
+### The Loop
 
 Now that all the pieces are in place, add the loop to build the navigation list.
 
@@ -82,11 +82,11 @@ Use a `for` loop to iterate over the items in `site.data.nav`, comparing each it
 {% endhighlight %}
 {% endfigure %}
 
-### The Multi-Lingual Nav
+## The Multi-Lingual Nav
 
 I&rsquo;m in the process of building a website that needs to be translated into Spanish, including the navigation, which proved to be a bit tricky. Here&rsquo;s my approach to a multi-lingual navigation, which builds off of _The Basic Nav_ idea above.
 
-#### The Data Files
+### The Data Files
 
 For this site, the data files also serve to hold translated strings. As such, there are two data files:
 
@@ -158,7 +158,7 @@ For the offset, the only difference is checking for the translated home page URL
 {% endhighlight %}
 {% endfigure %}
 
-#### The Problem, Part Deux
+### The Problem, Part Deux
 
 As with _The Basic Nav_ above, the home pages &mdash; both the translated site and the english site &mdash; shouldn&rsquo;t show a home link. We solve this by conditionally setting the `offset`. But on the home page, the link to the translated home page _should_ show.
 
