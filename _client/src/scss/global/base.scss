@@ -83,6 +83,10 @@ hr {
   max-width: rem(200);
 }
 
+.text-only-content {
+  @include text-only-content;
+}
+
 .container {
   @include layout.container;
 }

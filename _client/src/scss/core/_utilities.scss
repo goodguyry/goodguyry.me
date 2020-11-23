@@ -141,3 +141,17 @@ $media-queries: _create-breakpoints();
 @function unicode($codepoint){
   @return unquote("\"")+unquote(str-insert($codepoint, "\\", 1))+unquote("\"")
 }
+
+/**
+ * Visually hide an element and leave it only for screenreaders.
+ */
+@mixin text-only-content {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
