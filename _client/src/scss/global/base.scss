@@ -7,7 +7,7 @@
  */
 
 :root {
-  --rgb-accent: 0, 133, 131;
+  --rgb-accent: 0, 132, 132;
   --rgb-secondary: 92, 11, 170;
   --rgb-black: 0, 0, 0;
 
@@ -21,12 +21,12 @@
 
   // RGBA alternates.
   --black-40: rgba(var(--rgb-black), 0.4);
-  --accent-70: rgba(var(--rgb-accent), 0.7);
-  --secondary-70: rgba(var(--rgb-secondary), 0.7);
+  --accent-80: rgba(var(--rgb-accent), 0.8);
+  --secondary-80: rgba(var(--rgb-secondary), 0.8);
   --accent-10: rgba(var(--rgb-accent), 0.1);
   --secondary-10: rgba(var(--rgb-secondary), 0.1);
 
-  --background-gradient: linear-gradient(to right, var(--accent-70), var(--secondary-70));
+  --background-gradient: linear-gradient(to right, var(--accent-80), var(--secondary-80));
   --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
   --border-radius: 2px;
   --vertical-rhythm: #{rem(24)};

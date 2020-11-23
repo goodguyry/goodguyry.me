@@ -45,11 +45,7 @@
 }
 
 .site-header__meta {
-  font-size: rem(12);
+  font-size: rem(14);
   font-style: italic;
   margin-bottom: rem(12);
-
-  @media (media(min, full)) {
-    tidy-span: 7;
-  }
 }

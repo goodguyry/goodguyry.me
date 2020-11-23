@@ -31,7 +31,7 @@
 @mixin in-gradient-selection {
 
   ::selection {
-    background: var(--secondary-70);
+    background: var(--secondary-80);
     color: var(--white);
   }
 }

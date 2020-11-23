@@ -130,7 +130,7 @@
   }
 
   dd {
-    border-left: 2px solid var(--accent-70);
+    border-left: 2px solid var(--accent-80);
     margin-bottom: rem(15);
     padding-left: rem(15);
   }
@@ -139,7 +139,7 @@
    * Full-width, double-lined box with large text
    */
   blockquote {
-    border-left: rem(10) solid var(--accent-70);
+    border-left: rem(10) solid var(--accent-80);
     font-size: rem(20);
     padding: rem(8) 0 rem(8) rem(8);
     quotes: none;
@@ -201,7 +201,7 @@
   figcaption {
 
     code {
-      border: 1px dashed var(--secondary-70);
+      border: 1px dashed var(--secondary-80);
       vertical-align: middle;
     }
   }
