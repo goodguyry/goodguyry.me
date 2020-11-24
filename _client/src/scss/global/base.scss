@@ -108,22 +108,41 @@ hr {
 .cta {
   --cta-offset: var(--cta-after-offset, #{rem(16)});
   display: block;
-  padding: calc(var(--cta-offset) / 2);
+  padding: 0 calc(var(--cta-offset) / 2) calc(var(--cta-offset) / 2) 0;
   position: relative;
-  width: max-content;
   z-index: 0;
 
-  ::selection {
-    background: unset;
-    color: unset;
-  }
-
-  span {
+  > * {
     background: var(--cta-bg, var(--white));
     border: 1px solid;
     color: var(--cta-color, var(--accent));
     display: block;
     padding: calc(var(--cta-offset) / 2);
+  }
+
+  &::after {
+    background: var(--cta-after-bg, var(--text-gradient));
+    content: '';
+    display: block;
+    height: calc(100% - calc(var(--cta-offset) / 2));
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(calc(var(--cta-offset) / 2), calc(var(--cta-offset) / 2));
+    width: calc(100% - calc(var(--cta-offset) / 2));
+    z-index: -2;
+  }
+}
+
+.cta--link {
+  padding: calc(var(--cta-offset) / 2);
+  width: max-content;
+
+  &::after {
+    height: calc(100% - var(--cta-offset));
+    transform: translate(var(--cta-offset), var(--cta-offset));
+    transition: transform 150ms ease;
+    width: calc(100% - var(--cta-offset));
   }
 
   &:hover,
@@ -143,17 +162,8 @@ hr {
     }
   }
 
-  &::after {
-    background: var(--cta-after-bg, var(--text-gradient));
-    content: '';
-    display: block;
-    height: calc(100% - var(--cta-offset));
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: translate(var(--cta-offset), var(--cta-offset));
-    transition: transform 150ms ease;
-    width: calc(100% - var(--cta-offset));
-    z-index: -2;
+  ::selection {
+    background: unset;
+    color: unset;
   }
 }

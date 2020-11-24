@@ -12,11 +12,11 @@
 </ul>
 
 {% if collections.post.size > count %}
-	<a class="cta cta--post-list" href="{{ site.blogroll }}">
+	<a class="cta cta--link cta--post-list" href="{{ site.blogroll }}">
 		<span>More Notes</span>
 	</a>
 {% else %}
-	<a class="cta cta--post-list" href="{{ '/feed.xml' | prepend: site.url }}">
+	<a class="cta cta--link cta--post-list" href="{{ '/feed.xml' | prepend: site.url }}">
 		<span>Subscribe via RSS</span>
 	</a>
 {% endif %}
