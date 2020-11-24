@@ -74,7 +74,6 @@
 }
 
 .projects__heading {
-  font-size: clamp(rem(30), 11vw, rem(62));
   margin-bottom: rem(42);
   text-align: center;
 
@@ -163,7 +162,6 @@
 
 .notes__heading {
   color: var(--secondary);
-  font-size: clamp(rem(30), 11vw, rem(62));
   grid-area: heading;
   margin-bottom: rem(40);
   padding-right: tidy-offset(1);

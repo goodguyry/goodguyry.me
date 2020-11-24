@@ -95,6 +95,10 @@ hr {
   @include typography.heading-base;
 }
 
+.heading__section {
+  font-size: clamp(rem(30), 11vw, rem(62));
+}
+
 .gradient-text {
   background: var(--text-gradient);
   background-clip: text;

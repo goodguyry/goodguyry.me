@@ -25,7 +25,7 @@ permalink: /
 		{% capture github_url %}{% account 'github' %}{% endcapture %}
 
 		<div class="container">
-			<h2 class="projects__heading heading__base">Select Projects</h2>
+			<h2 class="projects__heading heading__base heading__section">Select Projects</h2>
 
 			<ul class="projects__list">
 				{% for project in projects %}
@@ -47,7 +47,7 @@ permalink: /
 
 	{% if collections.post.size > 0 %}
 		<section class="notes container">
-			<h2 class="notes__heading heading__base">Notes</h2>
+			<h2 class="notes__heading heading__base heading__section">Notes</h2>
 
 			{% include post-list.html, count: 4 %}
 		</section>
