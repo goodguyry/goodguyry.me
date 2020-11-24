@@ -17,3 +17,12 @@
   position: relative; // To contain text selection highlighting
   width: calc(100% - #{rem(40)});
 }
+
+/**
+ * Grid with three columns.
+ */
+@mixin three-across-grid {
+  display: grid;
+  grid-column-gap: rem(20);
+  grid-template-columns: repeat(3, 1fr);
+}

@@ -1,12 +1,11 @@
 @use 'core/utilities' as *;
+@use 'core/layout';
 
 @import './global/post-list';
 
 .archive {
   @media (media(min, md)) {
-    display: grid;
-    grid-column-gap: rem(20);
-    grid-template-columns: repeat(3, 1fr);
+    @include layout.three-across-grid;
     grid-template-areas:
       '. list list'
       '. cta cta';
