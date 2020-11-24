@@ -31,6 +31,15 @@
   --border-radius: 2px;
   --vertical-rhythm: #{rem(24)};
   --clip-distance: 6vw;
+  --heading-offset: tidy-offset(1);
+
+  @media (media(min, md)) {
+    --heading-offset: tidy-offset(1);
+  }
+
+  @media (media(min, full)) {
+    --heading-offset: tidy-offset-full(1);
+  }
 }
 
 // Adjust base font size for screen size

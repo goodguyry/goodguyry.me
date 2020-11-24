@@ -19,20 +19,15 @@
 }
 
 .about__header {
-  padding-left: tidy-offset(1);
-
   @media (media(min, 800)) {
     grid-column: span 2;
-  }
-
-  @media (media(min, full)) {
-    padding-left: tidy-offset-full(1);
   }
 }
 
 .about__heading {
   color: var(--accent);
   font-size: clamp(rem(40), 14vw, rem(78));
+  margin-left: var(--heading-offset);
 }
 
 .about__content {
@@ -79,12 +74,8 @@
 
   @media (media(min, 800)) {
     margin-bottom: rem(32);
-    padding-right: tidy-offset(1);
+    margin-right: var(--heading-offset);
     text-align: right;
-  }
-
-  @media (media(min, full)) {
-    padding-right: tidy-offset-full(1);
   }
 }
 
@@ -162,12 +153,11 @@
   color: var(--secondary);
   grid-area: heading;
   margin-bottom: rem(40);
-  padding-right: tidy-offset(1);
+  margin-right: var(--heading-offset);
   text-align: right;
 
   @media (media(min, full)) {
     margin-bottom: rem(16);
-    padding-right: tidy-offset-full(1);
   }
 }
 

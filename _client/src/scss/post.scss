@@ -36,10 +36,7 @@
   display: inline-block;
   font-size: rem(24);
   margin-bottom: rem(12);
-
-  @media (media(min, full)) {
-    margin-left: tidy-offset-full(1);
-  }
+  margin-left: calc(var(--heading-offset) - (var(--cta-offset) / 2)); // Reduce offset by box padding.
 }
 
 .resources__list {
