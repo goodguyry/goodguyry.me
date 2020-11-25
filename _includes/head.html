@@ -9,10 +9,13 @@
 
 	<link rel="stylesheet" href="/css/global.css" />
 
+	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
 		<link rel="stylesheet" href="/css/home.css" />
-	{% else %}
-		<link rel="stylesheet" href="css/{{ layout }}.css" />
+	{% elsif post_layouts contains layout %}
+		<link rel="stylesheet" href="css/post.css" />
+	{% elsif layout == 'archive' %}
+		<link rel="stylesheet" href="css/archive.css" />
 	{% endif %}
 
 	{% if code %}

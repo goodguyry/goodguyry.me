@@ -1,6 +1,6 @@
 ---
 # Errors
-layout: default
+layout: page
 title: Oops...
 permalink: /errors.php
 ---
@@ -62,12 +62,8 @@ if (false === $title || 3 !== strlen($status)) {
 }
 ?>
 
-<article class="post-content">
+<h2><?php echo "{$code}: {$code_desc}"; ?></h2>
 
-	<h2><?php echo "{$code}: {$code_desc}"; ?></h2>
+<p><?php echo $message; ?></p>
 
-	<p><?php echo $message; ?></p>
-
-	<a href="/">Return to the home page</a>.
-
-</article>
+<a href="/">Return to the home page</a>.
