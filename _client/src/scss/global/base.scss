@@ -48,19 +48,19 @@
 }
 
 body {
-  width: 100%;
-  font-family: typography.$primary;
-  font-weight: 400;
-  font-size: rem(16);
-  line-height: normal;
   background-color: var(--white);
   color: var(--black);
+  font-family: typography.$primary;
+  font-size: rem(16);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizeSpeed;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
 }
 
 main {
