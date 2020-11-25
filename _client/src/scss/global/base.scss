@@ -50,12 +50,15 @@
 body {
   background-color: var(--white);
   color: var(--black);
+  display: flex;
+  flex-direction: column;
   font-family: typography.$primary;
   font-size: rem(16);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   line-height: normal;
+  min-height: 100vh;
   text-rendering: optimizeSpeed;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -64,6 +67,7 @@ body {
 }
 
 main {
+  flex: 1 0 auto;
   margin-bottom: rem(100);
 }
 
