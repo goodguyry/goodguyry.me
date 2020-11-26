@@ -1,5 +1,6 @@
 @use 'core/utilities' as *;
 @use 'core/reset';
+@use 'core/typography';
 
 @import 'global/post-content';
 
@@ -22,6 +23,7 @@
 }
 
 .post-footer__feedback {
+  @include typography.rich-text;
   line-height: 1.5;
 }
 
