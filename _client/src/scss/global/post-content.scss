@@ -230,8 +230,9 @@
 
   .hey {
     border-radius: var(--border-radius);
+    border: 1px solid rgba(var(--rgb-accent), 0.4);
+    border-top-style: double;
     border-top-width: rem(10);
-    border: 1px solid var(--decoration);
     font-style: italic;
     padding: rem(12);
   }
