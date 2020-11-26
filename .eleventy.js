@@ -65,8 +65,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(svgContents);
 
-  // Copy the `build/` directory.
+  // Copy the directories.
   eleventyConfig.addPassthroughCopy({
+    '_client/src/images/**/*.ico': '.',
     '_client/src/images': 'images',
     '_client/src/fonts': 'fonts',
   });

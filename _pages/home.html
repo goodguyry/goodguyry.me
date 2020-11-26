@@ -4,46 +4,52 @@ title: I am Ryan.
 permalink: /
 ---
 
-<article >
-	<header>
-		<h1 class="heading__base">I am Ryan</h1>
+<article>
+	<header class="about__header container">
+		<h1 class="about__heading heading__base">I am Ryan</h1>
 	</header>
 
-	<section>
-		<p>I am a husband, dog father and Seattle transplant. I might be found cheering on <a href="https://soundersfc.com">Sounders FC</a>, playing my guitar, yelling at the TV or Googling the current topic of conversation.</p>
+	<section class="about container">
+		<h2 class="text-only-content">About</h2>
 
-		<p>As a Senior <abbr title="User Experience">UX</abbr> Developer at <a href="https://alley.co/">Alley Interactive</a>, I focus on front-end development as part of a team of immensely talented folks creating solutions for digital publishers.</p>
+		<div class="about__content post-content">
+			<p>I am a husband, dog father and Seattle transplant. I might be found cheering on <a href="https://soundersfc.com">Sounders FC</a>, playing my guitar, yelling at the TV or Googling the current topic of conversation.</p>
 
-		<p>I love coffee and cannot be trusted around cookies.</p>
+			<p>As a Senior <abbr title="User Experience">UX</abbr> Developer at <a href="https://alley.co/">Alley</a> I focus on front-end development as part of a team of immensely talented folks creating solutions for digital publishers.</p>
 
-		<p>Find me online at <a href="{% account 'twitter' %}">Twitter</a> and <a href="{% account 'github' %}">GitHub</a>.</p>
+			<p>I love coffee and cannot be trusted around cookies.</p>
+
+			<p>Find me online at <a href="{% account 'twitter' %}">Twitter</a> and <a href="{% account 'github' %}">GitHub</a>.</p>
+		</div>
 	</section>
 
-	<section>
+	<section class="projects">
 		{% capture github_url %}{% account 'github' %}{% endcapture %}
 
-		<h2 class="heading__base">Projects</h2>
+		<div class="container">
+			<h2 class="projects__heading heading__base heading__section">Select Projects</h2>
 
-		<ul>
-			{% for project in projects %}
-				<li>
+			<ul class="projects__list">
+				{% for project in projects %}
+					<li class="project">
+						<article class="project__content">
+							<h3 class="project__title heading__base">
+								<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
+							</h3>
 
-					<h3 class="heading__base">
-						<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
-					</h3>
+							<p class="project__description">{{ project.description }}</p>
+						</article>
+					</li>
+				{% endfor %}
+			</ul>
 
-					<p>{{ project.description }}</p>
-
-				</li>
-			{% endfor %}
-		</ul>
-
-		<a href="{{ github_url }}">See more on GitHub</a>
+			<a class="projects__link" href="{{ github_url }}">See more on GitHub</a>
+		</div>
 	</section>
 
 	{% if collections.post.size > 0 %}
-		<section>
-			<h2 class="heading__base">Notes</h2>
+		<section class="notes container">
+			<h2 class="notes__heading heading__base heading__section">Notes</h2>
 
 			{% include post-list.html, count: 4 %}
 		</section>

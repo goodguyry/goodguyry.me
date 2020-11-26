@@ -1,12 +1,15 @@
 @use 'core/utilities' as *;
 @use 'core/reset';
+@use 'core/theme';
 
 .site-header {
+  @include theme.in-gradient-selection;
   background: var(--background-gradient);
-  clip-path: polygon(0 100%, 100% 77.5%, 100% 0, 0 0);
+  clip-path: polygon(0 100%, 100% calc(100% - var(--clip-distance)), 100% 0, 0 0);
   color: var(--white);
   min-height: rem(162);
-  padding: rem(22) 0 rem(52) 0;
+  padding: rem(22) 0 var(--clip-distance) 0;
+  margin-bottom: rem(25);
 
   @media (media(min, full)) {
     min-height: rem(186);
@@ -25,17 +28,23 @@
   li:not(:last-of-type) {
     margin-right: rem(25);
   }
+
+  a {
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+  }
 }
 
 .site-header__title {
-  font-size: rem(44);
   line-height: 1.2;
+}
 
-  @media (media(min, 700)) {
-    width: 75%;
-  }
-
-  @media (media(min, full)) {
-    font-size: rem(62);
-  }
+.site-header__meta {
+  font-size: rem(14);
+  font-style: italic;
+  margin-bottom: rem(12);
 }

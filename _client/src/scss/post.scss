@@ -1,16 +1,52 @@
-@use 'core/block-styles' as *;
 @use 'core/utilities' as *;
-@use 'core/layout' as *;
-@use 'core/typography' as *;
-@use 'core/theme' as *;
+@use 'core/reset';
+@use 'core/typography';
 
-.post-content {
-  @include content-headings;
-  @include content-text;
-  @include content-quotes;
-  @include content-code;
-  @include content-images;
-  @include content-lists;
-  @include content-block-level;
-  @include content-hey;
+@import 'global/post-content';
+
+.post {
+  /* tbd */
+}
+
+.post__content {
+  margin-bottom: rem(30);
+}
+
+.post-footer {
+  @media (media(min, md)) {
+    tidy-span: 7;
+  }
+
+  hr {
+    margin-bottom: var(--vertical-rhythm);
+  }
+}
+
+.post-footer__feedback {
+  @include typography.rich-text;
+  line-height: 1.5;
+}
+
+.resources {
+  --cta-offset: #{rem(30)};
+  margin-bottom: rem(30);
+}
+
+.resources__heading {
+  display: inline-block;
+  font-size: rem(24);
+  margin-bottom: rem(12);
+  margin-left: calc(var(--heading-offset) - (var(--cta-offset) / 2)); // Reduce offset by box padding.
+}
+
+.resources__list {
+  @include reset.list;
+  line-height: 1.5;
+  list-style: disc outside none;
+  margin-left: 1rem;
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
 }

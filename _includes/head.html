@@ -1,7 +1,25 @@
+{% capture canonicalUrl %}{{ page.url | prepend: site.url }}{% endcapture %}
+{% capture metaTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+
+{% capture metaDescription %}
+	{% if description %}
+		{{ description }}
+	{% else %}
+		{{ site.description }}
+	{% endif %}
+{% endcapture %}
+
+{% capture socialCard %}
+	{% if mainImage %}
+		{{ mainImage | prepend: site.url }}
+	{% else %}
+		{{ '/images/social-card.png' | prepend: site.url }}
+	{% endif %}
+{% endcapture %}
+
 <head>
 	<meta charset="utf-8">
-
-	<base href="{{ site.url }}" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
 
 	{% for fontFile in fonts %}
 		<link rel="preload" href="/fonts/{{ fontFile }}" as="font" type="font/woff2" crossorigin />
@@ -9,51 +27,44 @@
 
 	<link rel="stylesheet" href="/css/global.css" />
 
+	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
 		<link rel="stylesheet" href="/css/home.css" />
-	{% else %}
-		<link rel="stylesheet" href="css/{{ layout }}.css" />
+	{% elsif post_layouts contains layout %}
+		<link rel="stylesheet" href="/css/post.css" />
+	{% elsif layout == 'archive' %}
+		<link rel="stylesheet" href="/css/archive.css" />
 	{% endif %}
 
 	{% if code %}
 		<link rel="stylesheet" href="/css/code.css" />
 	{% endif %}
 
-	<title>{% if page.title %}{{ page.title | append: " - goodguyry.me" }}{% else %}{{ site.title }}{% endif %}</title>
+	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>
 
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+	<link rel="canonical" href="{{ canonicalUrl }}" />
 
-	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+	<meta name="description" content="{{ metaDescription | strip }}" />
 	<meta name="author" content="Ryan Domingue" />
 	<meta name="copyright" content="2009-{{ site.time | date: '%Y' }}" />
 	<meta name="robots" content="index, follow" />
 
-	<meta itemprop="name" content="{{ site.title }}">
-	<meta itemprop="description" content="{{ site.description }}">
-	<meta itemprop="image" content="{% if page.mainImage %}{{ page.mainImage | prepend: site.url }}{% else %}{{ '/images/social-card.png' | prepend: site.url }}{% endif %}" />
-
-	<meta property="og:image" content="{% if page.mainImage %}{{ page.mainImage | prepend: site.url }}{% else %}{{ '/images/social-card.png' | prepend: site.url }}{% endif %}" />
+	<meta property="og:image" content="{{ socialCard | strip }}" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}" />
+	<meta property="og:title" content="{{ metaTitle }}" />
+	<meta property="og:url" content="{{ canonicalUrl }}" />
 	<meta property="og:site_name" content="Good Guy Ry dot me" />
 	<meta property="og:type" content="website" />
-	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+	<meta property="og:description" content="{{ metaDescription | strip }}" />
 
-	<meta name="twitter:title" content="{{ site.title }}" />
-	<meta name="twitter:description" content="{{ site.description }}" />
-	<meta name="twitter:image" content="{{ '/card.png' | prepend: config.url }}" />
+	<meta name="twitter:title" content="{{ metaTitle }}" />
+	<meta name="twitter:description" content="{{ metaDescription | strip }}" />
+	<meta name="twitter:image" content="{{ socialCard | strip }}" />
 	<meta name="twitter:card" content="summary_large_image" />
-	{% if site.username %}
-		<meta name="twitter:site" content="@{{ site.username }}" />
-	{% endif %}
+	<meta name="twitter:site" content="@{{ site.username }}" />
 
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="MobileOptimized" content="320" />
-	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
-
-	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" type="image/png" href="/images/device-icons/favicon-152.png" sizes="152x152" />
 	<link rel="apple-touch-icon" type="image/png" href="/images/device-icons/favicon-167.png" sizes="167x167" />
 	<link rel="apple-touch-icon" type="image/png" href="/images/device-icons/favicon-180.png" sizes="180x180" />

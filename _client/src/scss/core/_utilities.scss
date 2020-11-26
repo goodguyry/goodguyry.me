@@ -122,3 +122,36 @@ $media-queries: _create-breakpoints();
 
   @return map-get($media-queries, $map-key);
 }
+
+/**
+ * Adds focus ring outline.
+ */
+@mixin focus-ring {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+/**
+ * Corrects Sass processing of unicode characters, which by default results in a
+ * charset rule at the top of the stylesheet.
+ *
+ * @param  {string} $codepoint The unicode point without escaping (ex, '2715' to represent '\2715').
+ * @return {string}            A properly formatted unicode string.
+ */
+@function unicode($codepoint){
+  @return unquote("\"")+unquote(str-insert($codepoint, "\\", 1))+unquote("\"")
+}
+
+/**
+ * Visually hide an element and leave it only for screenreaders.
+ */
+@mixin text-only-content {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

@@ -1,9 +1,3 @@
-@use 'core/block-styles' as *;
-@use 'core/utilities' as *;
-@use 'core/layout' as *;
-@use 'core/typography' as *;
-@use 'core/theme' as *;
-
 @import './global/reset';
 @import './global/fonts';
 @import './global/base';
@@ -11,15 +5,3 @@
 // Components.
 @import './global/site-header';
 @import './global/site-footer';
-
-.wrapper {
-  /* tbd */
-}
-
-.main {
-  @include container;
-}
-
-.more {
-  @include more-link;
-}

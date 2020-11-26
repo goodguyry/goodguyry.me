@@ -2,35 +2,35 @@
 layout: default
 ---
 
-<article>
-	<header>
-		<p>
-			<time datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | date: "%B %d, %Y" }}</time>
-		</p>
-	</header>
-
-	<div class="post-content">
+<article class="post container">
+	<div class="post-content post__content">
 		{{ content }}
 	</div>
 
-	<hr>
-
 	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
-		<footer>
+		<footer class="post-footer">
 			{% if resources %}
-				<h3 class="heading__base">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h3>
+				<div class="resources cta">
+					<div class="resources__inner">
+						<h2 class="resources__heading heading__base gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h2>
 
-				<ul>
-					{% for resource in resources %}
-						<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
-					{% endfor %}
-				</ul>
+						<ul class="resources__list">
+							{% for resource in resources %}
+								<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
 			{% endif %}
 
 			{% unless tags contains 'personal' %}
+				{% unless resources %}
+					<hr />
+				{% endunless %}
+
 				{% capture github_url %}{% account 'github' %}{% endcapture %}
 
-				<div>
+				<div class="post-footer__feedback">
 					<p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ github_url | append: '/goodguyry.me/issues/new' }}">Open an issue on Github</a> or <a href="{% account 'twitter' %}">let me know on Twitter</a>.</em></p>
 				</div>
 			{% endunless %}

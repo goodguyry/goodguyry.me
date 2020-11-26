@@ -6,20 +6,40 @@
  * Common base styles
  */
 
-// Declare as Sass variables to work around `rgba` issues.
-$accent: #008583;
-$secondary: #5C0BAA;
-
 :root {
+  --rgb-accent: 0, 132, 132;
+  --rgb-secondary: 92, 11, 170;
+  --rgb-black: 0, 0, 0;
+
+  --accent: rgb(var(--rgb-accent));
+  --secondary: rgb(var(--rgb-secondary));
+
   --white: #FFFFFF;
   --black: #333333;
-  --actual-black: #000000;
-  --accent: #{$accent};
-  --secondary: #{$secondary};
+  --actual-black: rgb(var(--rgb-black));
   --decoration: #CCCCCC;
 
-  --background-gradient: linear-gradient(to right, #{rgba($accent, 0.7)}, #{rgba($secondary, 0.7)});
+  // RGBA alternates.
+  --black-40: rgba(var(--rgb-black), 0.4);
+  --accent-80: rgba(var(--rgb-accent), 0.8);
+  --secondary-80: rgba(var(--rgb-secondary), 0.8);
+  --accent-10: rgba(var(--rgb-accent), 0.1);
+  --secondary-10: rgba(var(--rgb-secondary), 0.1);
+
+  --background-gradient: linear-gradient(to right, var(--accent-80), var(--secondary-80));
   --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
+  --border-radius: 2px;
+  --vertical-rhythm: #{rem(24)};
+  --clip-distance: 6vw;
+  --heading-offset: tidy-offset(1);
+
+  @media (media(min, md)) {
+    --heading-offset: tidy-offset(1);
+  }
+
+  @media (media(min, full)) {
+    --heading-offset: tidy-offset-full(1);
+  }
 }
 
 // Adjust base font size for screen size
@@ -28,19 +48,27 @@ $secondary: #5C0BAA;
 }
 
 body {
-  width: 100%;
-  font-family: typography.$primary;
-  font-weight: 400;
-  font-size: rem(16);
-  line-height: normal;
   background-color: var(--white);
   color: var(--black);
+  display: flex;
+  flex-direction: column;
+  font-family: typography.$primary;
+  font-size: rem(16);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
+  font-weight: 400;
+  line-height: normal;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+  margin-bottom: rem(100);
 }
 
 a {
@@ -54,18 +82,22 @@ a {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--white);
-}
-
-// Invert anchors to keep them legible
-a::selection {
-  color: var(--actual-black);
+  background: var(--accent-10);
+  color: var(--secondary);
 }
 
 img::selection {
-  background: var(--accent);
-  color: var(--white);
+  background: var(--accent-10);
+  color: var(--secondary);
+}
+
+hr {
+  background: var(--text-gradient);
+  max-width: rem(200);
+}
+
+.text-only-content {
+  @include text-only-content;
 }
 
 .container {
@@ -76,9 +108,75 @@ img::selection {
   @include typography.heading-base;
 }
 
+.heading__section {
+  font-size: clamp(rem(30), 11vw, rem(62));
+}
+
 .gradient-text {
   background: var(--text-gradient);
   background-clip: text;
-  display: block;
   -webkit-text-fill-color: transparent;
+}
+
+.cta {
+  --cta-offset: var(--cta-after-offset, #{rem(16)});
+  display: block;
+  padding: 0 calc(var(--cta-offset) / 2) calc(var(--cta-offset) / 2) 0;
+  position: relative;
+  z-index: 0;
+
+  > * {
+    background: var(--cta-bg, var(--white));
+    border: 1px solid;
+    color: var(--cta-color, var(--accent));
+    display: block;
+    padding: calc(var(--cta-offset) / 2);
+  }
+
+  &::after {
+    background: var(--cta-after-bg, var(--text-gradient));
+    content: '';
+    display: block;
+    height: calc(100% - calc(var(--cta-offset) / 2));
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(calc(var(--cta-offset) / 2), calc(var(--cta-offset) / 2));
+    width: calc(100% - calc(var(--cta-offset) / 2));
+    z-index: -2;
+  }
+}
+
+.cta--link {
+  padding: calc(var(--cta-offset) / 2);
+  width: max-content;
+
+  &::after {
+    height: calc(100% - var(--cta-offset));
+    transform: translate(var(--cta-offset), var(--cta-offset));
+    transition: transform 150ms ease;
+    width: calc(100% - var(--cta-offset));
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    &::after {
+      transform: translate(0);
+    }
+  }
+
+  &:focus {
+    outline: none;
+
+    span {
+      @include focus-ring;
+    }
+  }
+
+  ::selection {
+    background: unset;
+    color: unset;
+  }
 }
