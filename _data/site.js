@@ -5,7 +5,7 @@ const isDev = ('development' === environment);
 module.exports = {
   environment,
   title: 'Ryan Domingue is a UX Developer living in Seattle, Washington',
-  description: 'Ryan Domingue works with HTML, CSS, and JavaScript, and spends his time learning and creating. Ryan loves coffee and cannot be trusted around cookies.',
+  description: 'Ryan Domingue bends markup and CSS to his will, and writes as much or as little JavaScript as needed.',
   blogroll: '/notes/',
   url: `http://goodguyry.${isDev ? 'http' : 'me'}`,
   username: 'goodguyry',
