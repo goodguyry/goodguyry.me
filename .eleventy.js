@@ -67,6 +67,7 @@ module.exports = function(eleventyConfig) {
 
   // Copy the directories.
   eleventyConfig.addPassthroughCopy({
+    '_client/src/images/**/*.ico': '.',
     '_client/src/images': 'images',
     '_client/src/fonts': 'fonts',
   });
