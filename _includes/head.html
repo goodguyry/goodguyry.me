@@ -21,9 +21,34 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
 
-	{% for fontFile in fonts %}
-		<link rel="preload" href="/fonts/{{ fontFile }}" as="font" type="font/woff2" crossorigin />
-	{% endfor %}
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-Italic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-Regular-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-SemiBold-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-SemiBoldItalic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
 
 	{{ '/css/global.css' | inlineContents }}
 
