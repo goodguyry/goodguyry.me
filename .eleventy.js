@@ -11,6 +11,9 @@ const svgContents = require('eleventy-plugin-svg-contents');
 const figure = require('./.eleventy/shortcode-figure');
 const account = require('./.eleventy/shortcode-account');
 
+// Filters
+const inlineContents = require('./.eleventy/filter-inlineContents');
+
 module.exports = function(eleventyConfig) {
   // The Config object.
   const dir = {
@@ -29,7 +32,8 @@ module.exports = function(eleventyConfig) {
       './_client/src/scss/code.scss',
     ].forEach( async (entry) => {
       const basename = path.basename(entry, '.scss');
-      const cssPath = path.resolve(paths.src, `css/${basename}.css`);
+      const outputFilname = `css/${basename}.css`;
+      const cssPath = path.resolve(paths.src, outputFilname);
 
       // Create css path if it doesn't exist.
       if (! fs.existsSync(path.dirname(cssPath))) {
@@ -49,6 +53,8 @@ module.exports = function(eleventyConfig) {
         processedCss,
         (error) => console.error(`Error writing generated CSS: ${error}`)
       );
+
+      console.log('Writing', outputFilname, 'from', entry);
     });
   });
 
@@ -70,6 +76,8 @@ module.exports = function(eleventyConfig) {
   // Shortcodes.
   eleventyConfig.addShortcode('account', account);
   eleventyConfig.addPairedShortcode('figure', figure);
+
+  eleventyConfig.addFilter('inlineContents', inlineContents);
 
   // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({

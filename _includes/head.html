@@ -25,19 +25,19 @@
 		<link rel="preload" href="/fonts/{{ fontFile }}" as="font" type="font/woff2" crossorigin />
 	{% endfor %}
 
-	<link rel="stylesheet" href="/css/global.css" />
+	{{ '/css/global.css' | inlineContents }}
 
 	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
-		<link rel="stylesheet" href="/css/home.css" />
+		{{ '/css/home.css' | inlineContents }}
 	{% elsif post_layouts contains layout %}
-		<link rel="stylesheet" href="/css/post.css" />
+		{{ '/css/post.css' | inlineContents }}
 	{% elsif layout == 'archive' %}
-		<link rel="stylesheet" href="/css/archive.css" />
+		{{ '/css/archive.css' | inlineContents }}
 	{% endif %}
 
 	{% if code %}
-		<link rel="stylesheet" href="/css/code.css" />
+		{{ '/css/code.css' | inlineContents }}
 	{% endif %}
 
 	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>
