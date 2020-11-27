@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const paths = require('../_client/config/paths');
+const paths = require('./paths');
 
 /**
  * Read CSS file and return a style tag for inline styles.

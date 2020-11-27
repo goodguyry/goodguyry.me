@@ -8,11 +8,11 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const svgContents = require('eleventy-plugin-svg-contents');
 
 // Shortcodes.
-const figure = require('./.eleventy/shortcode-figure');
-const account = require('./.eleventy/shortcode-account');
+const figure = require('./_client/config/shortcode-figure');
+const account = require('./_client/config/shortcode-account');
 
 // Filters
-const inlineContents = require('./.eleventy/filter-inlineContents');
+const inlineContents = require('./_client/config/filter-inlineContents');
 
 module.exports = function(eleventyConfig) {
   // The Config object.
