@@ -1,4 +1,4 @@
-const data = require('../_data/site');
+const data = require('../_client/data/site');
 
 /**
  * Adds an account tag

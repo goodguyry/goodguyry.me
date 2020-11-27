@@ -18,6 +18,7 @@ module.exports = function(eleventyConfig) {
   // The Config object.
   const dir = {
     layouts: '_layouts',
+    data: '_client/data',
   };
 
   // Watch files.
