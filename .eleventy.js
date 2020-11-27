@@ -1,17 +1,11 @@
 const path = require('path');
 const fs = require('fs');
-const paths = require('./_client/config/paths');
-const doStyles = require('./_client/config/doStyles');
-
-// Plugins.
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const svgContents = require('eleventy-plugin-svg-contents');
-
-// Shortcodes.
+const paths = require('./_client/config/paths');
+const doStyles = require('./_client/config/doStyles');
 const figure = require('./_client/config/shortcode-figure');
 const account = require('./_client/config/shortcode-account');
-
-// Filters
 const inlineContents = require('./_client/config/filter-inlineContents');
 
 module.exports = function(eleventyConfig) {
@@ -24,6 +18,7 @@ module.exports = function(eleventyConfig) {
   // Watch files.
   eleventyConfig.addWatchTarget('./_client/src/scss/');
 
+  // Process files before building.
   eleventyConfig.on('beforeBuild', () => {
     [
       './_client/src/scss/global.scss',
@@ -78,6 +73,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode('account', account);
   eleventyConfig.addPairedShortcode('figure', figure);
 
+  // Filters.
   eleventyConfig.addFilter('inlineContents', inlineContents);
 
   // Override BrowserSync options.
