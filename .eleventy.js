@@ -19,38 +19,38 @@ module.exports = function(eleventyConfig) {
 
   // Process files before building.
   eleventyConfig.on('beforeBuild', () => {
-    [
-      './_client/src/scss/global.scss',
-      './_client/src/scss/home.scss',
-      './_client/src/scss/archive.scss',
-      './_client/src/scss/post.scss',
-      './_client/src/scss/code.scss',
-    ].forEach( async (entry) => {
-      const basename = path.basename(entry, '.scss');
-      const outputFilname = `css/${basename}.css`;
-      const cssPath = path.resolve(paths.src, outputFilname);
+    fs.readdirSync(paths.scss)
+      // Filter out directories.
+      .filter((file) => {
+        return fs.statSync(path.resolve(paths.scss, file)).isFile();
+      })
+      .forEach( async (file) => {
+        const entry = path.resolve(paths.scss, file);
+        const basename = path.basename(entry, '.scss');
+        const outputFilname = `css/${basename}.css`;
+        const cssPath = path.resolve(paths.src, outputFilname);
 
-      // Create css path if it doesn't exist.
-      if (! fs.existsSync(path.dirname(cssPath))) {
-        try {
-          fs.mkdirSync(path.dirname(cssPath), { recursive: true });
-        } catch (error) {
-          console.error(`Error making directory for CSS output: ${error}`);
+        // Create css path if it doesn't exist.
+        if (! fs.existsSync(path.dirname(cssPath))) {
+          try {
+            fs.mkdirSync(path.dirname(cssPath), { recursive: true });
+          } catch (error) {
+            console.error(`Error making directory for CSS output: ${error}`);
+          }
         }
-      }
 
-      // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
-      const processedCss = await doStyles(path.resolve(paths.projectRoot, entry));
+        // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
+        const processedCss = await doStyles(path.resolve(paths.projectRoot, entry));
 
-      // Write the output to disk.
-      fs.writeFileSync(
-        cssPath,
-        processedCss,
-        (error) => console.error(`Error writing generated CSS: ${error}`)
-      );
+        // Write the output to disk.
+        fs.writeFileSync(
+          cssPath,
+          processedCss,
+          (error) => console.error(`Error writing generated CSS: ${error}`)
+        );
 
-      console.log('Writing', outputFilname, 'from', entry);
-    });
+        console.log('Writing', outputFilname, 'from', file);
+      });
   });
 
   // Add syntax highlighting.
