@@ -1,65 +1,57 @@
 const path = require('path');
 const fs = require('fs');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const svgContents = require('eleventy-plugin-svg-contents');
 const paths = require('./_client/config/paths');
 const doStyles = require('./_client/config/doStyles');
-
-// Plugins.
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const pluginInjector = require('@infinity-interactive/eleventy-plugin-injector');
-const svgContents = require('eleventy-plugin-svg-contents');
-
-// Shortcodes.
-const figure = require('./.eleventy/shortcode-figure');
-const account = require('./.eleventy/shortcode-account');
+const account = require('./_client/config/shortcode-account');
+const inlineContents = require('./_client/config/filter-inlineContents');
 
 module.exports = function(eleventyConfig) {
   // The Config object.
   const dir = {
     layouts: '_layouts',
+    data: '_client/data',
   };
 
   // Watch files.
   eleventyConfig.addWatchTarget('./_client/src/scss/');
 
-  eleventyConfig.addPlugin(
-    pluginInjector,
-    {
-      watch: [
-        '_client/src/scss/**/*.scss',
-      ],
-      inject: function(eleventyInstance, options, file) {
-        [
-          './_client/src/scss/global.scss',
-          './_client/src/scss/home.scss',
-          './_client/src/scss/archive.scss',
-          './_client/src/scss/post.scss',
-          './_client/src/scss/code.scss',
-        ].forEach( async (entry) => {
-          const basename = path.basename(entry, '.scss');
-          const cssPath = path.resolve(paths.public, `css/${basename}.css`);
+  // Process files before building.
+  eleventyConfig.on('beforeBuild', () => {
+    fs.readdirSync(paths.scss)
+      // Filter out directories.
+      .filter((file) => {
+        return fs.statSync(path.resolve(paths.scss, file)).isFile();
+      })
+      .forEach( async (file) => {
+        const entry = path.resolve(paths.scss, file);
+        const basename = path.basename(entry, '.scss');
+        const outputFilname = `css/${basename}.css`;
+        const cssPath = path.resolve(paths.src, outputFilname);
 
-          // Create css path if it doesn't exist.
-          if (! fs.existsSync(path.dirname(cssPath))) {
-            try {
-              fs.mkdirSync(path.dirname(cssPath), { recursive: true });
-            } catch (error) {
-              console.error(`Error making directory for CSS output: ${error}`);
-            }
+        // Create css path if it doesn't exist.
+        if (! fs.existsSync(path.dirname(cssPath))) {
+          try {
+            fs.mkdirSync(path.dirname(cssPath), { recursive: true });
+          } catch (error) {
+            console.error(`Error making directory for CSS output: ${error}`);
           }
+        }
 
-          // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
-          const processedCss = await doStyles(path.resolve(paths.projectRoot, entry));
+        // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
+        const processedCss = await doStyles(path.resolve(paths.projectRoot, entry));
 
-          // Write the output to disk.
-          fs.writeFileSync(
-            cssPath,
-            processedCss,
-            (error) => console.error(`Error writing generated CSS: ${error}`)
-          );
-        });
-      }
-    }
-  );
+        // Write the output to disk.
+        fs.writeFileSync(
+          cssPath,
+          processedCss,
+          (error) => console.error(`Error writing generated CSS: ${error}`)
+        );
+
+        console.log('Writing', outputFilname, 'from', file);
+      });
+  });
 
   // Add syntax highlighting.
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -67,6 +59,7 @@ module.exports = function(eleventyConfig) {
 
   // Copy the directories.
   eleventyConfig.addPassthroughCopy({
+    '_client/src/css': 'css',
     '_client/src/images/**/*.ico': '.',
     '_client/src/images': 'images',
     '_client/src/fonts': 'fonts',
@@ -77,7 +70,12 @@ module.exports = function(eleventyConfig) {
 
   // Shortcodes.
   eleventyConfig.addShortcode('account', account);
-  eleventyConfig.addPairedShortcode('figure', figure);
+
+  // Filters.
+  eleventyConfig.addFilter('inlineContents', inlineContents);
+  eleventyConfig.addFilter('toUTCString', function(date) {
+    return new Date(date).toUTCString();
+  });
 
   // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({

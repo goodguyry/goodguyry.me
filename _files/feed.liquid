@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>{{ site.url }}/</id>
+    <title>{{ site.title | escape }}</title>
+    <updated>{{ "now" | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
+    <author>
+        <name>Ryan Domingue</name>
+    </author>
+    <icon>/images/device-icons/favicon-128.png</icon>
+    <logo>/images/social-card.png</logo>
+    <rights>©2009—{{ "now" | date: '%Y' }} Ryan Domingue</rights>
+    {% assign posts = collections.descendingPosts %}
+    {% for post in posts limit: 10 %}
+        <entry>
+            <title>{{ post.data.title | escape }}</title>
+            {% capture updated %}{% if post.data.updated %}{{ post.data.updated }}{% else %}{{ post.date }}{% endif %}{% endcapture %}
+            <updated>{{ updated | toUTCString | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
+            <link href="{{ post.url | prepend: site.url }}" />
+            <summary>{{ post.data.excerpt | escape }}</summary>
+        </entry>
+    {% endfor %}
+</feed>

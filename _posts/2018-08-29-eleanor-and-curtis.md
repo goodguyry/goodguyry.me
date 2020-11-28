@@ -2,7 +2,7 @@
 layout: post
 title: Eleanor & Curtis
 excerpt: The story of my grandparents' fateful meeting – twice.
-description: The story of my grandparents met by chance, fell out of touch, then reconnected by chance over a year later.
+description: The story of how my grandparents met by chance, fell out of touch, then reconnected by chance over a year later.
 tags: 
   - personal
   - family

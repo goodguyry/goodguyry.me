@@ -21,23 +21,48 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
 
-	{% for fontFile in fonts %}
-		<link rel="preload" href="/fonts/{{ fontFile }}" as="font" type="font/woff2" crossorigin />
-	{% endfor %}
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-Italic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-Regular-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-SemiBold-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/fonts/SourceSerifPro-SemiBoldItalic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
 
-	<link rel="stylesheet" href="/css/global.css" />
+	{{ '/css/global.css' | inlineContents }}
 
 	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
-		<link rel="stylesheet" href="/css/home.css" />
+		{{ '/css/home.css' | inlineContents }}
 	{% elsif post_layouts contains layout %}
-		<link rel="stylesheet" href="/css/post.css" />
+		{{ '/css/post.css' | inlineContents }}
 	{% elsif layout == 'archive' %}
-		<link rel="stylesheet" href="/css/archive.css" />
+		{{ '/css/archive.css' | inlineContents }}
 	{% endif %}
 
 	{% if code %}
-		<link rel="stylesheet" href="/css/code.css" />
+		{{ '/css/code.css' | inlineContents }}
 	{% endif %}
 
 	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>

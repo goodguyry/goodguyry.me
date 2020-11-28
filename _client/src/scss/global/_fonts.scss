@@ -1,0 +1,39 @@
+/**
+ * SourceSerifPro
+ */
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: url('/fonts/SourceSerifPro-Regular-subset.woff2') format('woff2'),
+    url('/fonts/SourceSerifPro-Regular-subset.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: url('/fonts/SourceSerifPro-Italic-subset.woff2') format('woff2'),
+    url('/fonts/SourceSerifPro-Italic-subset.woff') format('woff');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: url('/fonts/SourceSerifPro-SemiBold-subset.woff2') format('woff2'),
+    url('/fonts/SourceSerifPro-SemiBold-subset.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SourceSerifPro';
+  src: url('/fonts/SourceSerifPro-SemiBoldItalic-subset.woff2') format('woff2'),
+    url('/fonts/SourceSerifPro-SemiBoldItalic-subset.woff') format('woff');
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
