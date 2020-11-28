@@ -4,7 +4,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const svgContents = require('eleventy-plugin-svg-contents');
 const paths = require('./_client/config/paths');
 const doStyles = require('./_client/config/doStyles');
-const figure = require('./_client/config/shortcode-figure');
 const account = require('./_client/config/shortcode-account');
 const inlineContents = require('./_client/config/filter-inlineContents');
 
@@ -71,7 +70,6 @@ module.exports = function(eleventyConfig) {
 
   // Shortcodes.
   eleventyConfig.addShortcode('account', account);
-  eleventyConfig.addPairedShortcode('figure', figure);
 
   // Filters.
   eleventyConfig.addFilter('inlineContents', inlineContents);

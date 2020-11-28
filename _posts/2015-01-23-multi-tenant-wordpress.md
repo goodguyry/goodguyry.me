@@ -16,7 +16,7 @@ The multi-tenant WordPress setup allows multiple &quot;tenant&quot; sites to run
 
 The main <code class="path">wp-config.php</code> file is in <code class="path">/opt/wordpress</code> and contains all shared WordPress settings and definitions, along with a bit of code to require the tenants&rsquo; config files, based on the host.
 
-{% figure '/opt/wordpress/' %}
+<figure>
 {% highlight shell-session %}
 wordpress
 ├── 4.1/
@@ -26,16 +26,18 @@ wordpress
 │   ├── clientsite.dev-config.php
 └── wp-config.php
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>/opt/wordpress/</figcaption>
+</figure>
 
-{% figure "The site&rsquo;s root" %}
+<figure>
 {% highlight shell-session %}
 ├── .htaccess
 ├── index.php
 ├── wordpress -> /opt/wordpress/4.1/
 └── wp-content
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>The site&rsquo;s root</figcaption>
+</figure>
 
 By taking advantage of some fully supported alternative configuration and setup options, we can allow for:
 
@@ -54,22 +56,24 @@ We're essentially going to be [giving WordPress its own directory](http://codex.
 
 As mentioned, the core WordPress files should be moved into versioned directories outside of the site&rsquo;s root. We then symlink the version directory to the site's root.
 
-{% figure "Symlink the core WordPress files to the site&rsquo;s root" %}
+<figure>
 {% highlight shell-session %}
 ln -s /opt/wordpress/4.1/ /path/to/site/wordpress
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>Symlink the core WordPress files to the site&rsquo;s root</figcaption>
+</figure>
 
 **Copy** index.php from <code class="path">/opt/wordpress/4.1/</code> to the site&rsquo;s root directory and edit the last line to add the <code class="path">wordpress</code> symlinked directory.
 
-{% figure 'Tell WordPress where to find itself' %}
+<figure>
 {% highlight php %}
 <?php 
 // Loads the WordPress Environment and Template
 require( dirname( __FILE__ ) . '/wordpress/wp-blog-header.php' ); 
 ?>
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>Tell WordPress where to find itself</figcaption>
+</figure>
 
 ### Move wp-content
 
@@ -79,7 +83,7 @@ One tip you may find useful: Copy <code class="path">wp-content</code> to the <c
 
 We'll need to make some changes to the main <code class="path">wp-config.php</code> and tenant config files to make sure WordPress can find our <code class="path">wp-content</code> directory, but the files are now all in place.
 
-{% figure "We&rsquo;re all set" %}
+<figure>
 {% highlight shell-session %}
 ls -l
 
@@ -87,13 +91,14 @@ ls -l
 1 root root   19 Jan 15 22:05 wordpress -> /opt/wordpress/4.1/
 4 root root 4096 Jan 15 22:07 wp-content
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>We&rsquo;re all set</figcaption>
+</figure>
 
 ### The config files
 
 For the main config file, the `DB_NAME`, `DB_USER`, `DB_PASSWORD` and `DB_HOST` definitions and Authentication Unique Keys should be removed and placed in the tenant config files. In their place is some code to require a tenant config file, based on the host.
 
-{% figure 'Require the tenant config files based on their host name' %}
+<figure>
 {% highlight php %}
 <?php // From /opt/wordpress/wp-config.php
 
@@ -108,11 +113,12 @@ if (file_exists($host_config_file)) {
 }
 ?>
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>Require the tenant config files based on their host name</figcaption>
+</figure>
 
 The tenant config files hold the tenant-specific database settings and Authentication Unique Keys, along with a couple declarations to tell WordPress where the <code class="path">wp-content</code> directory is located.
 
-{% figure "The last two lines tell WordPress where the <code class='path'>wp-content</code> directory is located." %}
+<figure>
 {% highlight php %}
 <?php
 /**
@@ -143,7 +149,8 @@ define('WP_CONTENT_URL', 'http://mysite.com/wp-content');
 
 ?>
 {% endhighlight %}
-{% endfigure %}
+  <figcaption>The last two lines tell WordPress where the <code class='path'>wp-content</code> directory is located.</figcaption>
+</figure>
 
 ### Intall WordPress
 
