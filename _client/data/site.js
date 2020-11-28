@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const environment = process.env.ELEVENTY_ENV;
 const isDev = ('development' === environment);
 
