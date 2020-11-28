@@ -73,6 +73,9 @@ module.exports = function(eleventyConfig) {
 
   // Filters.
   eleventyConfig.addFilter('inlineContents', inlineContents);
+  eleventyConfig.addFilter('toUTCString', function(date) {
+    return new Date(date).toUTCString();
+  });
 
   // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({
