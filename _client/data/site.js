@@ -22,4 +22,5 @@ module.exports = {
     isDev: ('dev' === environment),
     isDotMe: ('dotMe' === environment),
   },
+  version: '1.0.0',
 };
