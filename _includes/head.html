@@ -1,4 +1,4 @@
-{% capture canonicalUrl %}{{ page.url | prepend: site.url }}{% endcapture %}
+{% capture canonicalUrl %}{{ page.url | prepend: site.domain }}{% endcapture %}
 {% capture metaTitle %}{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
 
 {% capture metaDescription %}
@@ -11,9 +11,9 @@
 
 {% capture socialCard %}
 	{% if mainImage %}
-		{{ mainImage | prepend: site.url }}
+		{{ mainImage | prepend: site.domain }}
 	{% else %}
-		{{ '/assets/images/social-card.png' | prepend: site.url }}
+		{{ '/assets/images/social-card.png' | prepend: site.domain }}
 	{% endif %}
 {% endcapture %}
 

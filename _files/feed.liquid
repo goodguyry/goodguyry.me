@@ -4,7 +4,7 @@ permalink: /feed.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>{{ site.url }}/</id>
+    <id>{{ site.domain }}/</id>
     <title>{{ site.title | escape }}</title>
     <updated>{{ "now" | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
     <author>
@@ -19,7 +19,7 @@ permalink: /feed.xml
             <title>{{ post.data.title | escape }}</title>
             {% capture updated %}{% if post.data.updated %}{{ post.data.updated }}{% else %}{{ post.date }}{% endif %}{% endcapture %}
             <updated>{{ updated | toUTCString | date: "%a, %d %b %Y %H:%M:%S %z" }}</updated>
-            <link href="{{ post.url | prepend: site.url }}" />
+            <link href="{{ post.url | prepend: site.domain }}" />
             <summary>{{ post.data.excerpt | escape }}</summary>
         </entry>
     {% endfor %}

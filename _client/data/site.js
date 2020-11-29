@@ -6,7 +6,7 @@ module.exports = {
   title: 'Ryan Domingue is a UX Developer living in Seattle, Washington',
   description: 'Ryan Domingue bends markup and CSS to his will, and writes as much or as little JavaScript as needed.',
   blogroll: '/notes/',
-  url: `http://goodguyry.${isDev ? 'http' : 'me'}`,
+  domain: `http://goodguyry.${isDev ? 'http' : 'me'}`,,
   username: 'goodguyry',
   themeColor: '#008583',
 };
