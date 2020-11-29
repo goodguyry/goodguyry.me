@@ -19,13 +19,11 @@ permalink: /
 
 			<p>I love coffee and cannot be trusted around cookies.</p>
 
-			<p>Find me online at <a href="{% account 'twitter' %}">Twitter</a> and <a href="{% account 'github' %}">GitHub</a>.</p>
+			<p>Find me online at <a href="{{ accounts.twitter }}">Twitter</a> and <a href="{{ accounts.github }}">GitHub</a>.</p>
 		</div>
 	</section>
 
 	<section class="projects">
-		{% capture github_url %}{% account 'github' %}{% endcapture %}
-
 		<div class="container">
 			<h2 class="projects__heading heading__base heading__section">Select Projects</h2>
 
@@ -34,7 +32,7 @@ permalink: /
 					<li class="project">
 						<article class="project__content">
 							<h3 class="project__title heading__base">
-								<a href="{{ github_url | append: project.slug }}">{{ project.name }}</a>
+								<a href="{{ project.url }}">{{ project.name }}</a>
 							</h3>
 
 							<p class="project__description">{{ project.description }}</p>
@@ -43,7 +41,7 @@ permalink: /
 				{% endfor %}
 			</ul>
 
-			<a class="projects__link" href="{{ github_url }}">See more on GitHub</a>
+			<a class="projects__link" href="{{ accounts.github }}">See more on GitHub</a>
 		</div>
 	</section>
 

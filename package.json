@@ -32,5 +32,9 @@
   "homepage": "https://github.com/goodguyry/goodguyry.me",
   "dependencies": {
     "fontfaceobserver": "^1.7.3"
+  },
+  "engines": {
+    "node": "14",
+    "npm": "6"
   }
 }
