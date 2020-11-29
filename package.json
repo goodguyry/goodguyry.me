@@ -17,10 +17,9 @@
     "url": "http://github.com/goodguyry/goodguyry.me"
   },
   "scripts": {
-    "dev": "npm run 11ty:serve",
-    "build": "npm run 11ty:prod",
-    "11ty:serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
-    "11ty:prod": "ELEVENTY_ENV=production npx @11ty/eleventy"
+    "start": "ELEVENTY_ENV=local npx @11ty/eleventy --serve",
+    "build:dev": "ELEVENTY_ENV=dev npx @11ty/eleventy",
+    "build:me": "ELEVENTY_ENV=dotMe npx @11ty/eleventy"
   },
   "author": "Ryan Domingue",
   "license": "GPL-3.0",
