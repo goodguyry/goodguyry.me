@@ -22,10 +22,10 @@ module.exports = function(eleventyConfig) {
 
   // Copy the directories.
   eleventyConfig.addPassthroughCopy({
-    '_client/src/css': 'css',
+    '_client/src/css': 'assets/css',
     '_client/src/images/**/*.ico': '.',
-    '_client/src/images': 'images',
-    '_client/src/fonts': 'fonts',
+    '_client/src/images': 'assets/images',
+    '_client/src/fonts': 'assets/fonts',
   });
 
   // Don't use the gitignore file.
