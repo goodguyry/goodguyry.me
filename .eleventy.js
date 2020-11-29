@@ -4,7 +4,6 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const svgContents = require('eleventy-plugin-svg-contents');
 const paths = require('./_client/config/paths');
 const doStyles = require('./_client/config/doStyles');
-const account = require('./_client/config/shortcode-account');
 const inlineContents = require('./_client/config/filter-inlineContents');
 
 module.exports = function(eleventyConfig) {
@@ -67,9 +66,6 @@ module.exports = function(eleventyConfig) {
 
   // Don't use the gitignore file.
   eleventyConfig.setUseGitIgnore(false);
-
-  // Shortcodes.
-  eleventyConfig.addShortcode('account', account);
 
   // Filters.
   eleventyConfig.addFilter('inlineContents', inlineContents);

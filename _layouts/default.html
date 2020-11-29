@@ -34,8 +34,7 @@
 		<div class="container container--footer">
 			<p class="site-footer__copyright">&copy;2009&ndash;{{ page.date | date: '%Y' }} Ryan Domingue</p>
 
-			{% capture github_url %}{% account 'github' %}{% endcapture %}
-			<p class="site-footer__notice">This site&rsquo;s source is on <a href="{{ github_url | append: '/goodguyry.me' }}">Github</a>.</p>
+			<p class="site-footer__notice">This site&rsquo;s source is on <a href="{{ accounts.github | append: '/goodguyry.me' }}">Github</a>.</p>
 		</div>
 	</footer>
 
