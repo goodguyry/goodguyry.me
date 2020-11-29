@@ -32,7 +32,7 @@ First, create a list of items in <code class="path">_data/nav.yaml</code>, each 
 - text: Blog
   url: /blog/
 {% endhighlight %}
-  <figcaption>From \_data/nav.yaml</figcaption>
+  <figcaption>From _data/nav.yaml</figcaption>
 </figure>
 
 Now that the data file is ready, assign the current page&rsquo;s URL to a variable. &ldquo;Current page&rdquo; in this context refers to the page being processed during Jekyll&rsquo;s build.
