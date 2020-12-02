@@ -1,22 +1,37 @@
 ---
 layout: default
 ---
-{% assign post = site.data.classnames.post %}
 
-<article>
-
-	<p class="{{ post.post-meta }}">
-		<time datetime="{{ page.date | date: "%F %R %Z"}}">{{ page.date | date: "%B %-d, %Y" }}</time>
-	</p>
-
-	<h1 class="{{ post.post-title }}">{{ page.title }}</h1>
-
-	<div class="post-content">
+<article class="post container">
+	<div class="post-content post__content">
 		{{ content }}
 	</div>
 
-	<hr>
+	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
+		<footer class="post-footer">
+			{% if resources %}
+				<div class="resources cta">
+					<div class="resources__inner">
+						<h2 class="resources__heading heading__base gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h2>
 
-	{% include components/post-footer.html %}
+						<ul class="resources__list">
+							{% for resource in resources %}
+								<li><a href="{{ resource.url }}">{{ resource.text }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			{% endif %}
 
+			{% unless tags contains 'personal' %}
+				{% unless resources %}
+					<hr />
+				{% endunless %}
+
+				<div class="post-footer__feedback">
+					<p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ accounts.github | append: '/goodguyry.me/issues/new' }}">Open an issue on Github</a> or <a href="{{ accounts.twitter }}">let me know on Twitter</a>.</em></p>
+				</div>
+			{% endunless %}
+		</footer>
+	{% endunless %}
 </article>

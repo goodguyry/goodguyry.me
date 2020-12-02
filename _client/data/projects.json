@@ -1,0 +1,17 @@
+[
+  {
+    "name": "AriaComponents",
+    "description": "Quickly create accessible interactive components based on the W3C spec and examples.",
+    "url": "https://github.com/goodguyry/AriaComponents"
+  },
+  {
+    "name": "PostCSS Tidy Columns",
+    "description": "PostCSS plugin to manage column and margin alignment.",
+    "url": "https://github.com/goodguyry/postcss-tidy-columns"
+  },
+  {
+    "name": "DreamBox",
+    "description": "A Vagrant environment based on DreamHost's shared hosting.",
+    "url": "https://github.com/goodguyry/dreambox"
+  }
+]

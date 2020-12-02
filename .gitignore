@@ -1,7 +1,4 @@
 ht[ap]*
 vm-config.yaml
+_client/src/css
 _site/
-css/*
-build
-_data/assets.yaml
-_data/classnames.yaml

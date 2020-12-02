@@ -1,0 +1,10 @@
+_drafts/README.md
+LICENSE
+node_modules
+package-lock.json
+package.json
+README.md
+Vagrantfile
+_site/
+.eleventy/
+_client/src/css/

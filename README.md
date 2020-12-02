@@ -1,7 +1,7 @@
 [goodguyry.me](http://goodguyry.me)
 ===================
 
-A website &mdash; now with more Jekyll!
+A website &mdash; now with more 11ty!
 
 Code licensed under [GNU GPL 3.0](http://www.gnu.org/licenses/gpl-3.0.txt); content licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 

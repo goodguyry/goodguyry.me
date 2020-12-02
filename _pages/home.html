@@ -1,19 +1,55 @@
 ---
 layout: default
-title: Greetings, Earthling!
+title: I am Ryan.
 permalink: /
 ---
 
-{% assign classes = site.data.classnames.home %}
+<article>
+	<header class="about-header container">
+		<h1 class="about-header__heading heading__base">I am Ryan</h1>
+	</header>
 
-{% include components/projects.html %}
+	<section class="about container">
+		<h2 class="text-only-content">About</h2>
 
-{% if site.posts.size > 0 %}
-	<article>
+		<div class="about__content post-content">
+			<p>I am a husband, dog father and Seattle transplant. I might be found cheering on <a href="https://soundersfc.com">Sounders FC</a>, playing my guitar, yelling at the TV or Googling the current topic of conversation.</p>
 
-		<h2 class="{{ classes.post-list-heading }}">{{ strings.blog_heading }}</h2>
+			<p>As a Senior <abbr title="User Experience">UX</abbr> Developer at <a href="https://alley.co/">Alley</a> I focus on front-end development as part of a team of immensely talented folks creating solutions for digital publishers.</p>
 
-		{% include components/post-list.html limit=4 %}
+			<p>I love coffee and cannot be trusted around cookies.</p>
 
-	</article>
-{% endif %}
+			<p>Find me online at <a href="{{ accounts.twitter }}">Twitter</a> and <a href="{{ accounts.github }}">GitHub</a>.</p>
+		</div>
+	</section>
+
+	<section class="projects">
+		<div class="container">
+			<h2 class="projects__heading heading__base heading__section">Select Projects</h2>
+
+			<ul class="projects__list">
+				{% for project in projects %}
+					<li class="project">
+						<article class="project__content">
+							<h3 class="project__title heading__base">
+								<a href="{{ project.url }}">{{ project.name }}</a>
+							</h3>
+
+							<p class="project__description">{{ project.description }}</p>
+						</article>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<a class="projects__link" href="{{ accounts.github }}">See more on GitHub</a>
+		</div>
+	</section>
+
+	{% if collections.post.size > 0 %}
+		<section class="notes container">
+			<h2 class="notes__heading heading__base heading__section">Notes</h2>
+
+			{% include post-list.html, count: 4 %}
+		</section>
+	{% endif %}
+</article>

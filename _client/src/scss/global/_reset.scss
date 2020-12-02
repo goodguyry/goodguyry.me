@@ -1,0 +1,32 @@
+/**
+ * Reset (Modified to suit my needs)
+ * http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ */
+html, body, div, figure, figcaption, img, hr,
+blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, li ul, li ol,
+abbr, a, cite, code, em, kbd, li, span, strike, strong, sub, sup,
+main, article, aside, footer, header, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+main, article, aside, footer, header, nav, section {
+  display: block;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+}

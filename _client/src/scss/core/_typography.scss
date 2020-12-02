@@ -1,0 +1,73 @@
+@use 'core/utilities' as *;
+
+$mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+$primary: SourceSerifPro, Georgia, serif;
+
+/**
+ * Base heading styles.
+ */
+@mixin heading-base {
+  font-weight: 600;
+}
+
+/**
+ * Inline text styles.
+ */
+@mixin rich-text {
+  line-height: 1.5;
+
+  p {
+
+    &:not(:last-child) {
+      margin-bottom: var(--vertical-rhythm);
+    }
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  del,
+  strike,
+  .strike {
+    text-decoration: line-through;
+  }
+
+  sub,
+  sup {
+    line-height: 0;
+  }
+
+  code,
+  samp,
+  kbd {
+    border-radius: var(--border-radius);
+    display: inline-block;
+    font-family: $mono;
+    font-size: 75%;
+    padding: 0 0.5em;
+  }
+
+  cite {
+    font-style: italic;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted var(--decoration);
+    cursor: help;
+    text-decoration: none;
+  }
+
+  output {
+    font-weight: 600;
+  }
+}

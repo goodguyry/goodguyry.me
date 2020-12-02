@@ -1,36 +1,43 @@
-{% assign default = site.data.classnames.default %}
-{% assign assets = site.data.assets %}
-{% assign strings = site.data.strings %}
-
 <!DOCTYPE html>
-<!--#if expr="$HTTP_COOKIE=/fonts_loaded\=true/" -->
-<html class="fonts-loaded">
-<!--#else -->
-<html>
-<!--#endif -->
+<html lang="en">
 
 {% include head.html %}
 
 <body>
+	{% unless permalink == '/' %}
+		<header role="banner" class="site-header">
+			<div class="container">
+				{% assign navurl = page.url | remove: 'index.html' %}
 
-	<div class="{{ default.wrapper }}">
+				<nav role="navigation" class="site-header__nav">
+					<ul class="site-header__menu">
+						{% for item in nav %}
+							<li>{% if item.url == navurl %}{{ item.text }}{% else %}<a href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+						{% endfor %}
+					</ul>
+				</nav>
 
-		{% include components/global-header.html %}
+				<h1 class="site-header__title heading__base heading__section">{{ title }}</h1>
 
-		<main role="main" class="{{ default.main }}">
+				{% if layout == 'post' %}
+					<time class="site-header__meta" datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | toUTCString | date: "%B %d, %Y" }}</time>
+				{% endif %}
+			</div>
+		</header>
+	{% endunless %}
 
-			{{ content }}
+	<main role="main">
+		{{ content }}
+	</main>
 
-		</main>
+	<footer role="contentinfo" class="site-footer">
+		<div class="container container--footer">
+			<p class="site-footer__copyright">&copy;2009&ndash;{{ page.date | date: '%Y' }} Ryan Domingue</p>
 
-		{% include components/global-footer.html %}
+			<p class="site-footer__notice"><a href="{{ accounts.github | append: '/goodguyry.me' }}">This site&rsquo;s source is on Github</a>.</p>
+		</div>
+	</footer>
 
-	</div>
-
-	<!-- build: {{ site.time }} -->
-
-	<script src="/build/{{ assets.base.js }}"></script>
-
+	<!-- build: {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
 </body>
-
 </html>

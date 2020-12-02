@@ -1,0 +1,255 @@
+[class^="language-"] {
+  --gray-light: #CBCCC6;
+  --ui: #707A8C;
+  --teal: #73D0FF;
+  --green: #BAE67E; // rgb(188, 228, 136)
+  --regexp: #95E6CB;
+  --grapefruit: #F28779;
+  --orange: #FFA759;
+  --gold: #FFDD99;
+  --comment: #5C6773;
+  --purple: #D4BFFF;
+  --error: #FF3333;
+}
+
+.language-html {
+  color: var(--white);
+
+  .token {
+
+    &.tag {
+      color: var(--teal);
+    }
+
+    &.attr-name {
+      color: var(--gold);
+    }
+
+    &.attr-value {
+      color: var(--green);
+
+      .punctuation:first-child,
+      .punctuation:last-child, {
+        color: var(--green);
+      }
+    }
+  }
+}
+
+.language-css {
+  color: var(--orange) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--gold);
+    }
+
+    &.property {
+      color: var(--teal);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.url {
+      color: var(--green);
+
+      .function {
+        color: var(--grapefruit);
+      }
+    }
+  }
+}
+
+.language-scss {
+  color: var(--orange) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.selector {
+      color: var(--gold);
+    }
+
+    &.property {
+      color: var(--teal);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.url {
+      color: var(--grapefruit);
+    }
+  }
+}
+
+.language-javascript {
+  color: var(--white);
+
+  .token {
+
+    &.keyword,
+    &.operator {
+      color: var(--orange);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+
+    &.function {
+      color: var(--gold);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.parameter {
+      color: var(--purple);
+    }
+  }
+}
+
+.language-json {
+  color: var(--white);
+
+  .token {
+
+    &.property,
+    &.string {
+      color: var(--green);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+  }
+}
+
+.language-yml,
+.language-yaml {
+  color: var(--green) !important;
+
+  .token {
+
+    &.punctuation {
+      color: var(--white);
+    }
+
+    &.key {
+      color: var(--teal);
+    }
+
+    &.number {
+      color: var(--gold);
+    }
+
+    &.boolean {
+      color: var(--gold);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+  }
+}
+
+.language-php {
+
+  .token {
+
+    &.function {
+      color: var(--grapefruit);
+    }
+
+    &.string {
+      color: var(--green);
+    }
+
+    &.operator,
+    &.keyword {
+      color: var(--orange);
+    }
+
+    &.comment {
+      color: var(--comment);
+    }
+  }
+}
+
+.language-shell,
+.language-shell-session {
+  color: var(--gray-light) !important;
+}
+
+.language-bash {
+
+  .token {
+
+    &.shebang,
+    &.comment {
+      color: var(--comment);
+    }
+
+    &.builtin {
+      color: var(--grapefruit);
+    }
+
+    &.constant {
+      color: var(--gold);
+    }
+
+    &.operator {
+      color: var(--orange);
+    }
+
+    &.keyword {
+      color: var(--orange);
+    }
+
+    &.variable {
+
+      .function {
+        color: var(--gold);
+      }
+    }
+
+    &.string {
+      color: var(--green);
+
+      .constant {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.language-liquid {
+
+  .token {
+
+    &.keyword {
+      color: var(--teal);
+    }
+
+    &.operator {
+      color: var(--orange);
+    }
+  }
+}

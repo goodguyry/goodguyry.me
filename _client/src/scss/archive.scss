@@ -1,0 +1,13 @@
+@use 'core/utilities' as *;
+@use 'core/layout';
+
+@import './global/post-list';
+
+.archive {
+  @media (media(min, md)) {
+    @include layout.three-across-grid;
+    grid-template-areas:
+      '. list list'
+      '. cta cta';
+  }
+}

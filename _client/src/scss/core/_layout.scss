@@ -1,0 +1,28 @@
+@use 'core/utilities' as *;
+
+/**
+ * Centered block.
+ */
+@mixin auto-margins {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Full-width container minus edge spacing.
+ */
+@mixin container {
+  @include auto-margins;
+  max-width: rem(960);
+  position: relative; // To contain text selection highlighting
+  width: calc(100% - #{rem(40)});
+}
+
+/**
+ * Grid with three columns.
+ */
+@mixin three-across-grid {
+  display: grid;
+  grid-column-gap: rem(20);
+  grid-template-columns: repeat(3, 1fr);
+}

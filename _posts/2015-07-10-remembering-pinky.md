@@ -3,15 +3,24 @@ layout: post
 title: Remembering Pinky
 excerpt: A tribute to the best dog ever, and the source of my wife&rsquo;s greatest joy.
 description: A tribute to the best dog ever, and the source of my wife's greatest joy.
-mainImage: /images/posts/remembering-pinky-hero.jpg
-tags: personal family
-picturefill: true
+mainImage: /assets/images/posts/remembering-pinky/hero-1266.jpg
+tags: 
+  - personal
+  - family
+  - post
+permalink: "{{ site.blogroll }}/{{ page.fileSlug }}.html"
 ---
 
-<img alt=""
-     src="/images/posts/remembering-pinky-hero.jpg"
-     srcset="/images/posts/remembering-pinky-hero-400.jpg 400w, /images/posts/remembering-pinky-hero.jpg 720w"
-     sizes="(min-width: 720px) 720px, 100vw">
+<figure>
+  <img 
+    alt=""
+    src="/assets/images/posts/remembering-pinky/hero-633.jpg"
+    srcset="/assets/images/posts/remembering-pinky/hero-320.jpg 320w, /assets/images/posts/remembering-pinky/hero-400.jpg 400w, /assets/images/posts/remembering-pinky/hero-633.jpg 633w, /assets/images/posts/remembering-pinky/hero-640.jpg 640w, /assets/images/posts/remembering-pinky/hero-800.jpg 800w, /assets/images/posts/remembering-pinky/hero-1266.jpg 1266w"
+    sizes="(min-width: 673px) 633px, (min-width: 768px) 62.4vw, calc(100vw - 40px)"
+    width="623"
+    height="422"
+  >
+</figure>
 
 I first met Pinky after a night of partying that, I didn&rsquo;t realize at the time, changed the course of my life. It was the night Loren *finally* took interest in an invitation from me to go out after work on a Saturday, after three or four weeks of &ldquo;We&rsquo;re all going for beer and crawfish. Want to come?&rdquo;
 
@@ -28,10 +37,15 @@ Pinky never met anyone she didn&rsquo;t like. Over the years, our friends and fa
 She was Chief Grocery Bag Inspector, insisting upon sticking her nose in every bag we brought in, to which we happily obliged. She was incredibly obedient, and always willing to sit still while we dressed her up in swimming gear or soccer jerseys.
 
 <figure>
-  <img alt="Pinky and Loren wearing matching Colombia soccer jerseys"
-       src="/images/posts/remembering-pinky-good-sport.jpg"
-       srcset="/images/posts/remembering-pinky-good-sport-400.jpg 400w, /images/posts/remembering-pinky-good-sport.jpg 720w"
-       sizes="(min-width: 720px) 720px, 100vw">
+  <img 
+    alt="Pinky and Loren wearing matching Colombia soccer jerseys"
+    src="/assets/images/posts/remembering-pinky/good-sport-633.jpg"
+    srcset="/assets/images/posts/remembering-pinky/good-sport-320.jpg 320w, /assets/images/posts/remembering-pinky/good-sport-400.jpg 400w, /assets/images/posts/remembering-pinky/good-sport-633.jpg 633w, /assets/images/posts/remembering-pinky/good-sport-640.jpg 640w, /assets/images/posts/remembering-pinky/good-sport-800.jpg 800w, /assets/images/posts/remembering-pinky/good-sport-1266.jpg 1266w"
+    sizes="(min-width: 673px) 633px, (min-width: 768px) 62.4vw, calc(100vw - 40px)"
+    width="633"
+    height="475"
+    loading="lazy"
+  >
   <figcaption>Supporting mom&rsquo;s home side during the 2014 World Cup</figcaption>
 </figure>
 
@@ -46,10 +60,15 @@ Pinky was loyal, and loved Loren unconditionally. When Loren was upset, Pinky co
 I&rsquo;m not sure who loved who more: Pinky, or Loren. It&rsquo;s probably a draw.
 
 <figure>
-  <img alt="Pinky smiling big, posing with her mom"
-       src="/images/posts/remembering-pinky-with-momma.jpg"
-       srcset="/images/posts/remembering-pinky-with-momma-400.jpg 400w, /images/posts/remembering-pinky-with-momma.jpg 720w"
-       sizes="(min-width: 720px) 720px, 100vw">
+  <img 
+    alt="Pinky smiling big, posing with her mom"
+    src="/assets/images/posts/remembering-pinky/with-momma-633.jpg"
+    srcset="/assets/images/posts/remembering-pinky/with-momma-320.jpg 320w, /assets/images/posts/remembering-pinky/with-momma-400.jpg 400w, /assets/images/posts/remembering-pinky/with-momma-633.jpg 633w, /assets/images/posts/remembering-pinky/with-momma-640.jpg 640w, /assets/images/posts/remembering-pinky/with-momma-800.jpg 800w, /assets/images/posts/remembering-pinky/with-momma-1266.jpg 1266w"
+    sizes="(min-width: 673px) 633px, (min-width: 768px) 62.4vw, calc(100vw - 40px)"
+    width="633"
+    height="475"
+    loading="lazy"
+  >
   <figcaption>Unconditional love</figcaption>
 </figure>
 
@@ -63,7 +82,14 @@ We said goodbye to Pinky Maria &ldquo;Big Mama&rdquo; Villegas today after 14 wo
 
 She was the best dog ever.
 
-<img alt="Pinky, Loren and me at the park"
-     src="/images/posts/remembering-pinky-family.jpg"
-     srcset="/images/posts/remembering-pinky-family-400.jpg 400w, /images/posts/remembering-pinky-family.jpg 720w"
-     sizes="(min-width: 720px) 720px, 100vw">
+<figure>
+  <img 
+    alt="Pinky, Loren and me at the park"
+    src="/assets/images/posts/remembering-pinky/family-633.jpg"
+    srcset="/assets/images/posts/remembering-pinky/family-320.jpg 320w, /assets/images/posts/remembering-pinky/family-400.jpg 400w, /assets/images/posts/remembering-pinky/family-633.jpg 633w, /assets/images/posts/remembering-pinky/family-640.jpg 640w, /assets/images/posts/remembering-pinky/family-800.jpg 800w, /assets/images/posts/remembering-pinky/family-1266.jpg 1266w"
+    sizes="(min-width: 673px) 633px, (min-width: 768px) 62.4vw, calc(100vw - 40px)"
+    width="633"
+    height="475"
+    loading="lazy"
+  >
+</figure>

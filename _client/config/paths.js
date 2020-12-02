@@ -1,14 +1,10 @@
 const path = require('path');
 
+const projectRoot = path.join(__dirname, '../../');
+
 module.exports = {
-  build: path.join(__dirname, '../../build'),
-  projectRoot: path.join(__dirname, '../../'),
-  site: path.join(__dirname, '../../_site'),
-  components: path.join(__dirname, '../components'),
-  styles: path.join(__dirname, '../src/scss'),
-  scripts: path.join(__dirname, '../src/js'),
-  entries: path.join(__dirname, '../entries'),
-  jekyllSass: path.join(__dirname, '../../_scss'),
-  siteData: path.join(__dirname, '../../_data'),
-  config: __dirname,
+  projectRoot,
+  public: path.join(projectRoot, '_site'),
+  src: path.join(projectRoot, '_client/src'),
+  scss: path.join(projectRoot, '_client/src/scss'),
 };
