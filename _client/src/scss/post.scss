@@ -2,7 +2,8 @@
 @use 'core/reset';
 @use 'core/typography';
 
-@import 'global/post-content';
+@use 'global/post-content';
+@use 'global/cta';
 
 .post {
   /* tbd */

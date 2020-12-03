@@ -1,0 +1,40 @@
+@use 'core/utilities' as *;
+@use 'core/typography';
+@use 'core/theme';
+
+/**
+ * Styles the homepage header and About block.
+ */
+.about-header {
+  padding-top: rem(28);
+  margin-bottom: rem(28);
+
+  @media (media(min, 800)) {
+    grid-column: span 2;
+  }
+}
+
+.about-header__heading {
+  color: var(--accent);
+  font-size: clamp(rem(40), 14vw, rem(78));
+  margin-left: var(--heading-offset);
+}
+
+.about {
+  display: grid;
+  grid-gap: rem(20);
+  margin-bottom: rem(60);
+
+  @media (media(min, 800)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about__content {
+  @include typography.rich-text;
+  max-width: rem(460);
+
+  @media (media(min, 800)) {
+    max-width: none;
+  }
+}

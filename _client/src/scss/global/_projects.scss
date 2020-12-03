@@ -1,0 +1,98 @@
+@use 'core/utilities' as *;
+@use 'core/reset';
+@use 'core/layout';
+@use 'core/theme';
+
+/**
+ * Styles the homepage Projects section.
+ */
+.projects {
+  @include theme.in-gradient-selection;
+  color: var(--white);
+  position: relative;
+  z-index: 0;
+  padding: rem(28) 0;
+  margin-bottom: rem(20);
+
+  @media (media(min, md)) {
+    padding: rem(50) 0 rem(80) 0;
+  }
+
+  &::after {
+    background: var(--background-gradient);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: skew(-3.4deg) rotate(-3.4deg);
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.projects__heading {
+  margin-bottom: rem(42);
+  text-align: center;
+
+  @media (media(min, 800)) {
+    margin-bottom: rem(32);
+  }
+}
+
+.projects__list {
+  @include reset.list;
+  display: grid;
+  grid-gap: rem(40);
+  justify-content: center;
+  margin-bottom: rem(40);
+
+  @media (media(min, md)) {
+    grid-gap: rem(20);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projects__link {
+  @include layout.auto-margins;
+  display: block;
+  width: max-content;
+
+  @media (media(min, md)) {
+    margin-right: 0;
+  }
+}
+
+.project {
+  align-items: center;
+  background-color: var(--black-40);
+  border-radius: var(--border-radius);
+  display: flex;
+  max-width: rem(335);
+  min-height: rem(145);
+  padding: rem(20) 0;
+  text-align: center;
+
+  @media (media(min, md)) {
+    max-width: none;
+  }
+}
+
+.project__content {
+  @include layout.auto-margins;
+  padding: 0 rem(44);
+
+  @media (media(min, md)) {
+    padding: 0 rem(20);
+  }
+}
+
+.project__title {
+  font-size: rem(24);
+  margin-bottom: rem(12);
+}
+
+.project__description {
+  /* tbd */
+}

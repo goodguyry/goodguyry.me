@@ -2,6 +2,7 @@
 @use './global/fonts';
 @use './global/base';
 
-// Components.
 @use './global/site-header';
-@use './global/site-footer';
+
+@use './global/about';
+@use './global/projects';

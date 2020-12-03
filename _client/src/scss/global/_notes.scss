@@ -1,0 +1,27 @@
+@use 'core/utilities' as *;
+@use 'core/layout';
+
+/**
+ * Styles the homepage Notes section.
+ */
+.notes {
+  @media (media(min, md)) {
+    @include layout.three-across-grid;
+    grid-template-areas:
+      '. heading heading'
+      '. list list'
+      '. cta cta';
+  }
+}
+
+.notes__heading {
+  color: var(--secondary);
+  grid-area: heading;
+  margin-bottom: rem(40);
+  margin-right: var(--heading-offset);
+  text-align: right;
+
+  @media (media(min, full)) {
+    margin-bottom: rem(16);
+  }
+}
