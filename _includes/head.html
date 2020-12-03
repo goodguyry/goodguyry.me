@@ -54,7 +54,13 @@
 
 	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
-		<link rel="stylesheet" href="/assets/css/home.css?v={{ site.version }}" />
+		{{ '/css/critical.home.css' | inlineContents }}
+		<link
+			rel="stylesheet"
+			href="/assets/css/home.css?v={{ site.version }}"
+			media="print"
+			onload="this.onload=null;this.media='all'"
+		>
 	{% elsif post_layouts contains layout %}
 		<link rel="stylesheet" href="/assets/css/post.css?v={{ site.version }}" />
 	{% elsif layout == 'archive' %}
