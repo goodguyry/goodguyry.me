@@ -1,8 +1,8 @@
 @use 'core/utilities' as *;
 @use 'core/layout';
 
-@import './global/post-list';
-@import './global/cta';
+@use './global/post-list';
+@use './global/cta';
 
 .archive {
   @media (media(min, md)) {

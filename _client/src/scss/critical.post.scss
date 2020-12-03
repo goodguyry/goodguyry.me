@@ -1,7 +1,7 @@
-@import './global/reset';
-@import './global/fonts';
-@import './global/base';
+@use './global/reset';
+@use './global/fonts';
+@use './global/base';
 
-@import './global/site-header';
+@use './global/site-header';
 
-@import './global/post-content';
+@use './global/post-content';
