@@ -50,11 +50,16 @@
 		crossorigin
 	/>
 
-	<link rel="stylesheet" href="/assets/css/global.css?v={{ site.version }}" />
-
 	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
 		{{ '/css/critical.home.css' | inlineContents }}
+
+		<link
+			rel="stylesheet"
+			href="/assets/css/global.css?v={{ site.version }}"
+			media="print"
+			onload="this.onload=null;this.media='all'"
+		>
 		<link
 			rel="stylesheet"
 			href="/assets/css/home.css?v={{ site.version }}"
@@ -63,6 +68,13 @@
 		>
 	{% elsif post_layouts contains layout %}
 		{{ '/css/critical.post.css' | inlineContents }}
+
+		<link
+			rel="stylesheet"
+			href="/assets/css/global.css?v={{ site.version }}"
+			media="print"
+			onload="this.onload=null;this.media='all'"
+		>
 		<link
 			rel="stylesheet"
 			href="/assets/css/post.css?v={{ site.version }}"
@@ -70,6 +82,7 @@
 			onload="this.onload=null;this.media='all'"
 		>
 	{% elsif layout == 'archive' %}
+		<link rel="stylesheet" href="/assets/css/global.css?v={{ site.version }}" />
 		<link rel="stylesheet" href="/assets/css/archive.css?v={{ site.version }}" />
 	{% endif %}
 
