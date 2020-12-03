@@ -2,6 +2,7 @@
 @use 'core/layout';
 
 @import './global/post-list';
+@import './global/cta';
 
 .archive {
   @media (media(min, md)) {
