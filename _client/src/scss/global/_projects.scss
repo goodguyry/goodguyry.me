@@ -52,8 +52,7 @@
   margin-bottom: rem(40);
 
   @media (media(min, md)) {
-    grid-gap: rem(20);
-    grid-template-columns: repeat(3, 1fr);
+    @include layout.three-across-grid
   }
 }
 
