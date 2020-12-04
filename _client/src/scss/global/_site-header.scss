@@ -1,5 +1,4 @@
 @use 'core/utilities' as *;
-@use 'core/reset';
 @use 'core/theme';
 
 /**
@@ -26,7 +25,6 @@
 }
 
 .site-header__menu {
-  @include reset.list;
   display: flex;
 
   li:not(:last-of-type) {

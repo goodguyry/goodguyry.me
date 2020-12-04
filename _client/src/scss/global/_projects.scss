@@ -1,5 +1,4 @@
 @use 'core/utilities' as *;
-@use 'core/reset';
 @use 'core/layout';
 @use 'core/theme';
 
@@ -45,7 +44,6 @@
 }
 
 .projects__list {
-  @include reset.list;
   display: grid;
   grid-gap: rem(40);
   justify-content: center;

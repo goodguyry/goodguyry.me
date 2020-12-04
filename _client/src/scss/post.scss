@@ -1,5 +1,4 @@
 @use 'core/utilities' as *;
-@use 'core/reset';
 @use 'core/typography';
 
 @use 'global/post-content';
@@ -41,7 +40,6 @@
 }
 
 .resources__list {
-  @include reset.list;
   line-height: 1.5;
   list-style: disc outside none;
   margin-left: 1rem;

@@ -1,5 +1,4 @@
 @use 'core/utilities' as *;
-@use 'core/reset';
 @use 'core/layout';
 
 /**
@@ -7,7 +6,6 @@
  */
 
 .post-list {
-  @include reset.list;
   display: grid;
   grid-area: list;
   grid-gap: rem(50);
