@@ -1,32 +1,4 @@
 /**
- * Possble link styles.
- *
- * @todo This is unused.
- */
-@mixin link-background {
-  position: relative;
-  z-index: 0;
-
-  &:focus,
-  &:hover {
-    outline: none;
-    text-decoration: none;
-
-    &::after {
-      background-color: var(--black-40);
-      content: '';
-      display: block;
-      height: 110%;
-      left: -5%;
-      position: absolute;
-      top: -5%;
-      width: 110%;
-      z-index: -1;
-    }
-  }
-}
-
-/**
  * Selection styles for txt with a gradient background.
  */
 @mixin in-gradient-selection {
