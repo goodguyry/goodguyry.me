@@ -17,7 +17,7 @@
 					</ul>
 				</nav>
 
-				<h1 class="site-header__title heading__base heading__section">{{ title }}</h1>
+				<h1 class="site-header__title heading__section">{{ title }}</h1>
 
 				{% if layout == 'post' %}
 					<time class="site-header__meta" datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | toUTCString | date: "%B %d, %Y" }}</time>

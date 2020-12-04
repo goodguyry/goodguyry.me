@@ -4,15 +4,6 @@ $mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 $primary: SourceSerifPro, Georgia, serif;
 
 /**
- * Base heading styles.
- *
- * @todo Move this to reset.
- */
-@mixin heading-base {
-  font-weight: 600;
-}
-
-/**
  * Inline text styles.
  */
 @mixin rich-text {

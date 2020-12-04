@@ -6,7 +6,7 @@ permalink: /
 
 <article>
 	<header class="about-header container">
-		<h1 class="about-header__heading heading__base">I am Ryan</h1>
+		<h1 class="about-header__heading">I am Ryan</h1>
 	</header>
 
 	<section class="about container">
@@ -25,13 +25,13 @@ permalink: /
 
 	<section class="projects">
 		<div class="container">
-			<h2 class="projects__heading heading__base heading__section">Select Projects</h2>
+			<h2 class="projects__heading heading__section">Select Projects</h2>
 
 			<ul class="projects__list">
 				{% for project in projects %}
 					<li class="project">
 						<article class="project__content">
-							<h3 class="project__title heading__base">
+							<h3 class="project__title">
 								<a href="{{ project.url }}">{{ project.name }}</a>
 							</h3>
 
@@ -47,7 +47,7 @@ permalink: /
 
 	{% if collections.post.size > 0 %}
 		<section class="notes container">
-			<h2 class="notes__heading heading__base heading__section">Notes</h2>
+			<h2 class="notes__heading heading__section">Notes</h2>
 
 			{% include post-list.html, count: 4 %}
 		</section>
