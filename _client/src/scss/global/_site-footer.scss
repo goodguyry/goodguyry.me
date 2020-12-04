@@ -2,6 +2,10 @@
 @use 'core/utilities' as *;
 @use 'core/theme';
 
+/**
+ * Styles the global site footer.
+ */
+
 .site-footer {
   @include theme.in-gradient-selection;
   align-items: flex-end;

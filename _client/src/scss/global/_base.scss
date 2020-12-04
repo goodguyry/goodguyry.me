@@ -3,7 +3,8 @@
 @use 'core/utilities' as *;
 
 /**
- * Common base styles
+ * Common base styles.
+ * @todo How much of this file can me moved to reset.scss?
  */
 
 :root {
@@ -42,7 +43,6 @@
   }
 }
 
-// Adjust base font size for screen size
 :root {
   font-size: medium;
 }
@@ -71,6 +71,7 @@ main {
   margin-bottom: rem(100);
 }
 
+// @todo Can this be removed?
 a {
   color: inherit;
   text-decoration: none;

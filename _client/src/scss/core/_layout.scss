@@ -20,6 +20,9 @@
 
 /**
  * Grid with three columns.
+ *
+ * @todo Move this to a utility class.
+ * @todo Use this for the homepage projects.
  */
 @mixin three-across-grid {
   display: grid;

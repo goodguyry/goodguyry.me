@@ -1,5 +1,9 @@
 @use 'core/utilities' as *;
 
+/**
+ * Styles the CTA container and link.
+ */
+
 .cta {
   --cta-offset: var(--cta-after-offset, #{rem(16)});
   display: block;

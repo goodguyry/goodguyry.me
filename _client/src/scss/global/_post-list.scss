@@ -2,6 +2,10 @@
 @use 'core/reset';
 @use 'core/layout';
 
+/**
+ * Styles the list of Notes posts.
+ */
+
 .post-list {
   @include reset.list;
   display: grid;

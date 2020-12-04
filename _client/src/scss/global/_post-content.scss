@@ -2,8 +2,9 @@
 @use 'core/typography';
 
 /**
- * Post wrapper.
+ * Styles post and page content.
  */
+
 .post-content {
   @include typography.rich-text;
 

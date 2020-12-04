@@ -1,3 +1,8 @@
+/**
+ * Reset list styles.
+ *
+ * @todo Move to the main reset file and remove this file.
+ */
 @mixin list {
   list-style: none;
 }

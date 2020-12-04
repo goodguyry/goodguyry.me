@@ -2,6 +2,10 @@
 @use 'core/reset';
 @use 'core/theme';
 
+/**
+ * Styles the site header, visible on all but the homepage.
+ */
+
 .site-header {
   @include theme.in-gradient-selection;
   background: var(--background-gradient);
