@@ -55,6 +55,7 @@ body {
   font-family: typography.$primary;
   font-size: rem(16);
   min-height: 100vh;
+  overflow-x: hidden; // Prevent projects section background overflow in some browsers.
 }
 
 main {

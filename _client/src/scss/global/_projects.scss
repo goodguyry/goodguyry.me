@@ -11,10 +11,10 @@
 .projects {
   @include theme.in-gradient-selection;
   color: var(--white);
+  margin-bottom: rem(20);
+  padding: rem(28) 0;
   position: relative;
   z-index: 0;
-  padding: rem(28) 0;
-  margin-bottom: rem(20);
 
   @media (media(min, md)) {
     padding: rem(50) 0 rem(80) 0;
