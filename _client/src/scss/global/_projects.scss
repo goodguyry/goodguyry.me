@@ -35,12 +35,8 @@
 }
 
 .projects__heading {
-  margin-bottom: rem(42);
+  margin-bottom: rem(32);
   text-align: center;
-
-  @media (media(min, 800)) {
-    margin-bottom: rem(32);
-  }
 }
 
 .projects__list {
