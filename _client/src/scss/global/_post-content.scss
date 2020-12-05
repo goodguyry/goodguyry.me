@@ -2,8 +2,9 @@
 @use 'core/typography';
 
 /**
- * Post wrapper.
+ * Styles post and page content.
  */
+
 .post-content {
   @include typography.rich-text;
 
@@ -26,7 +27,6 @@
   h4,
   h5,
   h6 {
-    @include typography.heading-base;
     line-height: 1.3;
   }
 

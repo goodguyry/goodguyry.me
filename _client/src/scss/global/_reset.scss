@@ -22,11 +22,40 @@ main, article, aside, footer, header, nav, section {
 }
 
 /* HTML5 display-role reset for older browsers */
-main, article, aside, footer, header, nav, section {
+main,
+article,
+aside,
+footer,
+header,
+nav,
+section {
   display: block;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: normal;
+  text-rendering: optimizeSpeed;
+  text-size-adjust: 100%;
+  width: 100%;
 }
 
 hr {
   border: 0;
-  height: 2px;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }

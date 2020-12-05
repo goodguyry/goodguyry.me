@@ -3,7 +3,7 @@
 @use 'core/utilities' as *;
 
 /**
- * Common base styles
+ * Common base styles.
  */
 
 :root {
@@ -42,7 +42,6 @@
   }
 }
 
-// Adjust base font size for screen size
 :root {
   font-size: medium;
 }
@@ -54,16 +53,8 @@ body {
   flex-direction: column;
   font-family: typography.$primary;
   font-size: rem(16);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  line-height: normal;
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  width: 100%;
+  overflow-x: hidden; // Prevent projects section background overflow in some browsers.
 }
 
 main {
@@ -72,8 +63,12 @@ main {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+
+  &,
+  &:visited {
+    color: inherit;
+    text-decoration: none;
+  }
 
   &:hover,
   &:focus {
@@ -93,6 +88,7 @@ img::selection {
 
 hr {
   background: var(--text-gradient);
+  height: 2px;
   max-width: rem(200);
 }
 
@@ -102,10 +98,6 @@ hr {
 
 .container {
   @include layout.container;
-}
-
-.heading__base {
-  @include typography.heading-base;
 }
 
 .heading__section {

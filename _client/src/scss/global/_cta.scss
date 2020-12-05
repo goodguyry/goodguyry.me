@@ -1,5 +1,9 @@
 @use 'core/utilities' as *;
 
+/**
+ * Styles the CTA container and link.
+ */
+
 .cta {
   --cta-offset: var(--cta-after-offset, #{rem(16)});
   display: block;
@@ -31,6 +35,7 @@
 
 .cta--link {
   padding: calc(var(--cta-offset) / 2);
+  text-decoration: none;
   width: max-content;
 
   &::after {

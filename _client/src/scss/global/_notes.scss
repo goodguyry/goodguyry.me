@@ -4,6 +4,7 @@
 /**
  * Styles the homepage Notes section.
  */
+
 .notes {
   @media (media(min, md)) {
     @include layout.three-across-grid;
