@@ -56,13 +56,13 @@
 
 		<link
 			rel="stylesheet"
-			href="/assets/css/global.css?v={{ site.version }}"
+			href="/assets/css/global.css?v={{ pkg.version }}"
 			media="print"
 			onload="this.onload=null;this.media='all'"
 		>
 		<link
 			rel="stylesheet"
-			href="/assets/css/home.css?v={{ site.version }}"
+			href="/assets/css/home.css?v={{ pkg.version }}"
 			media="print"
 			onload="this.onload=null;this.media='all'"
 		>
@@ -71,25 +71,25 @@
 
 		<link
 			rel="stylesheet"
-			href="/assets/css/global.css?v={{ site.version }}"
+			href="/assets/css/global.css?v={{ pkg.version }}"
 			media="print"
 			onload="this.onload=null;this.media='all'"
 		>
 		<link
 			rel="stylesheet"
-			href="/assets/css/post.css?v={{ site.version }}"
+			href="/assets/css/post.css?v={{ pkg.version }}"
 			media="print"
 			onload="this.onload=null;this.media='all'"
 		>
 	{% elsif layout == 'archive' %}
-		<link rel="stylesheet" href="/assets/css/global.css?v={{ site.version }}" />
-		<link rel="stylesheet" href="/assets/css/archive.css?v={{ site.version }}" />
+		<link rel="stylesheet" href="/assets/css/global.css?v={{ pkg.version }}" />
+		<link rel="stylesheet" href="/assets/css/archive.css?v={{ pkg.version }}" />
 	{% endif %}
 
 	{% if code %}
 		<link
 			rel="stylesheet"
-			href="/assets/css/code.css?v={{ site.version }}"
+			href="/assets/css/code.css?v={{ pkg.version }}"
 			media="print"
 			onload="this.onload=null;this.media='all'"
 		>

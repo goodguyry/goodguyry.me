@@ -1,6 +1,6 @@
 {
   "name": "goodguyry.me",
-  "version": "2.0.0",
+  "version": "25.0.3",
   "description": "A website",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
