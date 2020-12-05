@@ -1,9 +1,9 @@
 const environment = process.env.ELEVENTY_ENV;
-let domain = 'http://goodguyry.me';
+let domain = 'https://goodguyry.me';
 
 switch (environment) {
   case 'local':
-    domain = 'http://goodguyry.http';
+    domain = 'https://goodguyry.dev';
     break;
   case 'dev':
     domain = 'http://dev.goodguyry.me';
