@@ -3,10 +3,10 @@
 
 {% include head.html %}
 
-<body>
-	{% unless permalink == '/' %}
-		<header role="banner" class="site-header">
-			<div class="container">
+<body class="{{ page.fileSlug }}">
+	<header role="banner" class="site-header">
+		<div class="container">
+			{% unless permalink == '/' %}
 				{% assign navurl = page.url | remove: 'index.html' %}
 
 				<nav role="navigation" class="site-header__nav">
@@ -16,15 +16,15 @@
 						{% endfor %}
 					</ul>
 				</nav>
+			{% endunless %}
 
-				<h1 class="site-header__title heading__section">{{ title }}</h1>
+			<h1 class="site-header__title heading__section">{{ title }}</h1>
 
-				{% if layout == 'post' %}
-					<time class="site-header__meta" datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | toUTCString | date: "%B %d, %Y" }}</time>
-				{% endif %}
-			</div>
-		</header>
-	{% endunless %}
+			{% if layout == 'post' %}
+				<time class="site-header__meta" datetime='{{ page.date | date: "%Y-%m-%d %H:%M%z" }}'>{{ page.date | toUTCString | date: "%B %d, %Y" }}</time>
+			{% endif %}
+		</div>
+	</header>
 
 	<main role="main">
 		{{ content }}

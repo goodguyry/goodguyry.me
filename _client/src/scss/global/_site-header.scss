@@ -2,20 +2,24 @@
 @use 'core/theme';
 
 /**
- * Styles the site header, visible on all but the homepage.
+ * Styles the global site header.
  */
 
 .site-header {
-  @include theme.in-gradient-selection;
-  background: var(--background-gradient);
-  clip-path: polygon(0 100%, 100% calc(100% - var(--clip-distance)), 100% 0, 0 0);
-  color: var(--white);
-  min-height: rem(162);
-  padding: rem(22) 0 var(--clip-distance) 0;
   margin-bottom: rem(25);
+  padding-top: rem(22);
 
-  @media (media(min, full)) {
-    min-height: rem(186);
+  body:not(.home) & {
+    @include theme.in-gradient-selection;
+    background: var(--background-gradient);
+    clip-path: polygon(0 100%, 100% calc(100% - var(--clip-distance)), 100% 0, 0 0);
+    color: var(--white);
+    min-height: rem(162);
+    padding-bottom: var(--clip-distance);
+
+    @media (media(min, full)) {
+      min-height: rem(186);
+    }
   }
 }
 
@@ -43,6 +47,12 @@
 
 .site-header__title {
   line-height: 1.2;
+
+  .home & {
+    color: var(--accent);
+    font-size: clamp(rem(40), 14vw, rem(78));
+    margin-left: var(--heading-offset);
+  }
 }
 
 .site-header__meta {
