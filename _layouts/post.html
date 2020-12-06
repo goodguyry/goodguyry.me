@@ -7,12 +7,12 @@ layout: default
 		{{ content }}
 	</div>
 
-	{% unless page.resources.size == 0 or page.tags contains 'personal' %}
+	{% if 0 < page.resources.size or true == code %}
 		<footer class="post-footer">
 			{% if resources %}
 				<div class="resources cta">
 					<div class="resources__inner">
-						<h2 class="resources__heading gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional resources{% endif %}</h2>
+						<h2 class="resources__heading gradient-text">{% if page.resources.size < 2 %}Additional resource{% else %}Additional Resources{% endif %}</h2>
 
 						<ul class="resources__list">
 							{% for resource in resources %}
@@ -23,7 +23,7 @@ layout: default
 				</div>
 			{% endif %}
 
-			{% unless tags contains 'personal' %}
+			{% if true == code %}
 				{% unless resources %}
 					<hr />
 				{% endunless %}
@@ -31,7 +31,7 @@ layout: default
 				<div class="post-footer__feedback">
 					<p><em>See something that&rsquo;s not quite right? Have a question about something in this post? <a href="{{ accounts.github | append: '/goodguyry.me/issues/new' }}">Open an issue on Github</a> or <a href="{{ accounts.twitter }}">let me know on Twitter</a>.</em></p>
 				</div>
-			{% endunless %}
+			{% endif %}
 		</footer>
-	{% endunless %}
+	{% endif %}
 </article>
