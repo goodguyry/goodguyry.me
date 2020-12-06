@@ -12,7 +12,12 @@
 				<nav role="navigation" class="site-header__nav">
 					<ul class="site-header__menu">
 						{% for item in nav %}
-							<li>{% if item.url == navurl %}{{ item.text }}{% else %}<a href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+							<li>
+								<a
+									href="{{ item.url }}"
+									{% if item.url == navurl %}aria-current="page"{% endif %}
+								>{{ item.text }}</a>
+							</li>
 						{% endfor %}
 					</ul>
 				</nav>
