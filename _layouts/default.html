@@ -9,10 +9,19 @@
 			{% unless permalink == '/' %}
 				{% assign navurl = page.url | remove: 'index.html' %}
 
-				<nav role="navigation" class="site-header__nav">
+				<nav
+					role="navigation"
+					class="site-header__nav"
+					aria-label="Main"
+				>
 					<ul class="site-header__menu">
 						{% for item in nav %}
-							<li>{% if item.url == navurl %}{{ item.text }}{% else %}<a href="{{ item.url }}">{{ item.text }}</a>{% endif %}</li>
+							<li>
+								<a
+									href="{{ item.url }}"
+									{% if item.url == navurl %}aria-current="page"{% endif %}
+								>{{ item.text }}</a>
+							</li>
 						{% endfor %}
 					</ul>
 				</nav>
