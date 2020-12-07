@@ -41,12 +41,12 @@
 
 	<footer role="contentinfo" class="site-footer">
 		<div class="container container--footer">
-			<p class="site-footer__copyright">&copy;2009&ndash;{{ page.date | date: '%Y' }} Ryan Domingue</p>
+			<p class="site-footer__copyright">&copy;2009&ndash;{{ 'now' | date: '%Y' }} Ryan Domingue</p>
 
 			<p class="site-footer__notice"><a href="{{ accounts.github | append: '/goodguyry.me' }}">This site&rsquo;s source is on Github</a>.</p>
 		</div>
 	</footer>
 
-	<!-- build: {{ "now" | date: "%Y-%m-%d %H:%M" }} -->
+	<!-- build: {{ 'now' | date: '%Y-%m-%d %H:%M' }} -->
 </body>
 </html>
