@@ -1,3 +1,4 @@
+const copydir = require('copy-dir');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const svgContents = require('eleventy-plugin-svg-contents');
 const writeCSS = require('./_client/config/writeCSS');
@@ -15,6 +16,11 @@ module.exports = function(eleventyConfig) {
 
   // Process files before building.
   eleventyConfig.on('beforeBuild', writeCSS);
+  // Manually copy CSS directory to ensure it arrives.
+  eleventyConfig.on('afterBuild', () => {
+    console.log('Copying _client/src/css to _site/assets/css');
+    copydir('./_client/src/css', './_site/assets/css', { cover: false });
+  });
 
   // Plugins.
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -22,7 +28,6 @@ module.exports = function(eleventyConfig) {
 
   // Copy the directories.
   eleventyConfig.addPassthroughCopy({
-    '_client/src/css': 'assets/css',
     '_client/src/images/**/*.ico': '.',
     '_client/src/images': 'assets/images',
     '_client/src/fonts': 'assets/fonts',
