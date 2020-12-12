@@ -19,7 +19,7 @@ module.exports = function(eleventyConfig) {
   // Manually copy CSS directory to ensure it arrives.
   eleventyConfig.on('afterBuild', () => {
     console.log('Copying _client/src/css to _site/assets/css');
-    copydir('./_client/src/css', './_site/assets/css', { cover: false });
+    copydir('./_client/src/css', './_site/assets/css', { cover: true });
   });
 
   // Plugins.
