@@ -52,9 +52,13 @@ body {
   display: flex;
   flex-direction: column;
   font-family: typography.$primary;
-  font-size: rem(16);
+  font-size: rem(18);
   min-height: 100vh;
   overflow-x: hidden; // Prevent projects section background overflow in some browsers.
+
+  @media (media(min, md)) {
+    font-size: rem(16);
+  }
 }
 
 main {
