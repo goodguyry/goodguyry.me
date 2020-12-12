@@ -1,3 +1,4 @@
+const { getThemeByName } = require('./themes');
 const environment = process.env.ELEVENTY_ENV;
 let domain = 'https://goodguyry.me';
 
@@ -22,4 +23,5 @@ module.exports = {
     isDev: ('dev' === environment),
     isDotMe: ('dotMe' === environment),
   },
+  themeOverride: getThemeByName('sounders'),
 };

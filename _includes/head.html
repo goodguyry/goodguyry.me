@@ -95,6 +95,15 @@
 		>
 	{% endif %}
 
+	{% if site.themeOverride %}
+		<style>
+			:root {
+				--rgb-accent: {{ site.themeOverride.accent }};
+				--rgb-secondary: {{ site.themeOverride.secondary }};
+			}
+		</style>
+	{% endif %}
+
 	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>
 
 	<link rel="canonical" href="{{ canonicalUrl }}" />
