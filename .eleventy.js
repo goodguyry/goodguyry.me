@@ -45,7 +45,7 @@ module.exports = function(eleventyConfig) {
   // Override BrowserSync options.
   eleventyConfig.setBrowserSyncConfig({
     server: false,
-    proxy: 'http://goodguyry.http',
+    proxy: 'https://goodguyry.dev',
   });
 
   // Simple posts collection in descending order.
