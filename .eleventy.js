@@ -23,7 +23,9 @@ module.exports = function(eleventyConfig) {
   });
 
   // Plugins.
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    lineSeparator: '<br>\n',
+  });
   eleventyConfig.addPlugin(svgContents);
 
   // Copy the directories.
