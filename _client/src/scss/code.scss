@@ -1,4 +1,4 @@
-[class^="language-"] {
+[class*="language-"] {
   --gray-light: #CBCCC6;
   --ui: #707A8C;
   --teal: #73D0FF;
@@ -10,6 +10,10 @@
   --comment: #5C6773;
   --purple: #D4BFFF;
   --error: #FF3333;
+
+  ::selection {
+    background: #5d5c5c;
+  }
 }
 
 .language-html {
