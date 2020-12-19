@@ -10,6 +10,10 @@
   --comment: #5C6773;
   --purple: #D4BFFF;
   --error: #FF3333;
+
+  ::selection {
+    background: #5d5c5c;
+  }
 }
 
 .language-html {
