@@ -14,7 +14,7 @@
 
 .post-footer {
   @media (media(min, md)) {
-    tidy-span: 7;
+    width: tidy-span(7);
   }
 
   hr {

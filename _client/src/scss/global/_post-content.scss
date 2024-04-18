@@ -17,7 +17,7 @@
     @media (media(min, md)) {
 
       &:not(figure):not(hr) {
-        tidy-span: 7;
+        width: tidy-span(7);
       }
     }
   }
@@ -59,7 +59,7 @@
       pre,
       img,
       blockquote {
-        tidy-span: 8;
+        width: tidy-span(8);
       }
     }
 
@@ -82,7 +82,7 @@
     @media (media(min, md)) {
       margin: 0;
       order: 2;
-      tidy-span: 4;
+      width: tidy-span(4);
     }
   }
 
