@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
 
   // Process files before building.
   eleventyConfig.on('beforeBuild', writeCSS);
+
   // Manually copy CSS directory to ensure it arrives.
   eleventyConfig.on('afterBuild', () => {
     console.log('Copying _client/src/css to _site/assets/css');
@@ -44,11 +45,8 @@ module.exports = function(eleventyConfig) {
     return new Date(date).toUTCString();
   });
 
-  // Override BrowserSync options.
-  eleventyConfig.setBrowserSyncConfig({
-    server: false,
-    proxy: 'https://goodguyry.dev',
-  });
+  // Enable Markdown indented code blocks.
+  eleventyConfig.amendLibrary('md', (mdLib) => mdLib.enable('code'));
 
   // Simple posts collection in descending order.
   // Using Liquid's `reverse` filter had strange side-effects.
