@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /**
  * Strip CSS units from a value.
  *
@@ -27,7 +29,7 @@
     @return $px;
   }
 
-  @return _strip-units($px) / $base-value * 1rem;
+  @return math.div(_strip-units($px), $base-value) * 1rem;
 }
 
 /**
