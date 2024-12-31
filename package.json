@@ -19,6 +19,8 @@
   },
   "scripts": {
     "start": "ELEVENTY_ENV=local npx @11ty/eleventy --serve",
+    "debug": "DEBUG=Eleventy* ELEVENTY_ENV=local npx @11ty/eleventy",
+    "build:local": "ELEVENTY_ENV=local npx @11ty/eleventy",
     "build:dev": "ELEVENTY_ENV=dev npx @11ty/eleventy",
     "build:me": "ELEVENTY_ENV=dotMe npx @11ty/eleventy"
   },
