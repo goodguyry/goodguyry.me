@@ -26,8 +26,8 @@
   --accent-10: rgba(var(--rgb-accent), 0.1);
   --secondary-10: rgba(var(--rgb-secondary), 0.1);
 
-  --background-gradient: linear-gradient(to right, var(--accent-80), var(--secondary-80));
-  --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
+  --background-gradient: linear-gradient(in oklch to right, var(--accent-80), var(--secondary-80));
+  --text-gradient: linear-gradient(in oklch to right, var(--accent) 0%, var(--secondary) 100%);
   --border-radius: 2px;
   --vertical-rhythm: #{rem(24)};
   --clip-distance: 6vw;
