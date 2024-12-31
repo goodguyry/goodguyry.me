@@ -55,8 +55,12 @@ body {
   flex-direction: column;
   font-family: typography.$primary;
   font-size: rem(18);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden; // Prevent projects section background overflow in some browsers.
+  text-rendering: optimizeSpeed;
+  text-size-adjust: 100%;
 
   @media (min-width(md)) {
     font-size: rem(16);
@@ -66,6 +70,15 @@ body {
 main {
   flex: 1 0 auto;
   margin-bottom: rem(100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
 }
 
 a {
