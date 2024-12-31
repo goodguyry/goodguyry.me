@@ -13,7 +13,7 @@
 }
 
 .post-footer {
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     width: tidy-span(7);
   }
 

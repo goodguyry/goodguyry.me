@@ -34,7 +34,7 @@
 }
 
 .post-list__excerpt {
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     padding-left: tidy-offset(2);
   }
 }

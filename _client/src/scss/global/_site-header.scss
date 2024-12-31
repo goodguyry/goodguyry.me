@@ -17,7 +17,7 @@
     min-height: rem(162);
     padding-bottom: var(--clip-distance);
 
-    @media (media(min, full)) {
+    @media (min-width(full)) {
       min-height: rem(186);
     }
   }

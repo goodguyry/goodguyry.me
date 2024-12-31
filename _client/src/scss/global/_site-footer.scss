@@ -22,7 +22,7 @@
   grid-row-gap: rem(6);
   padding-top: rem(10);
 
-  @media (media(min, full)) {
+  @media (min-width(full)) {
     grid-template-columns: repeat(2, 1fr);
     padding-top: rem(20);
   }
@@ -31,7 +31,7 @@
 .site-footer__copyright {
   text-align: right;
 
-  @media (media(min, full)) {
+  @media (min-width(full)) {
     text-align: unset;
   }
 }

@@ -37,7 +37,7 @@
   --site-gap: 0.5rem;
   --site-edge: 1.25rem;
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     --site-columns: 12;
     --site-gap: 1.25rem;
     --site-max: 62.5rem;
@@ -58,7 +58,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden; // Prevent projects section background overflow in some browsers.
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     font-size: rem(16);
   }
 }

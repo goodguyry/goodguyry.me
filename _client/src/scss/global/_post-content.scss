@@ -14,7 +14,7 @@
       margin-bottom: var(--vertical-rhythm);
     }
 
-    @media (media(min, md)) {
+    @media (min-width(md)) {
 
       &:not(figure):not(hr) {
         width: tidy-span(7);
@@ -51,7 +51,7 @@
   }
 
   figure {
-    @media (media(min, md)) {
+    @media (min-width(md)) {
       align-items: flex-start;
       display: flex;
       justify-content: space-between;
@@ -79,7 +79,7 @@
     font-style: italic;
     margin-top: rem(3);
 
-    @media (media(min, md)) {
+    @media (min-width(md)) {
       margin: 0;
       order: 2;
       width: tidy-span(4);

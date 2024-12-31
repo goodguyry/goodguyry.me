@@ -5,7 +5,7 @@
 @use './global/cta';
 
 .archive {
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     @include layout.three-across-grid;
     grid-template-areas:
       '. list list'
