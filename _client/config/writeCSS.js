@@ -30,13 +30,13 @@ module.exports = () => {
       // Get the processed CSS. This works without resolving the path, but we'll do it anyway.
       const processedCss = await getProcessedCSS(path.resolve(paths.projectRoot, entry));
 
+      console.log('Writing', outputFilname, 'from', file);
+
       // Write the output to disk.
       fs.writeFileSync(
         cssPath,
         processedCss,
         (error) => console.error(`Error writing generated CSS: ${error}`)
       );
-
-      console.log('Writing', outputFilname, 'from', file);
     });
 };
