@@ -21,34 +21,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, minimum-scale=1.0, user-scalable=1" />
 
-	<link
-		rel="preload"
-		href="/assets/fonts/SourceSerifPro-Italic-subset.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
-	<link
-		rel="preload"
-		href="/assets/fonts/SourceSerifPro-Regular-subset.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
-	<link
-		rel="preload"
-		href="/assets/fonts/SourceSerifPro-SemiBold-subset.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
-	<link
-		rel="preload"
-		href="/assets/fonts/SourceSerifPro-SemiBoldItalic-subset.woff2"
-		as="font"
-		type="font/woff2"
-		crossorigin
-	/>
+	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>
 
 	{% assign post_layouts = "post,page" | split: "," %}
 	{% if permalink == '/' %}
@@ -104,7 +77,34 @@
 		</style>
 	{% endif %}
 
-	<title>{{ metaTitle | append: " - goodguyry.me" }}</title>
+	<link
+		rel="preload"
+		href="/assets/fonts/SourceSerifPro-Italic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/assets/fonts/SourceSerifPro-Regular-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/assets/fonts/SourceSerifPro-SemiBold-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+	<link
+		rel="preload"
+		href="/assets/fonts/SourceSerifPro-SemiBoldItalic-subset.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
 
 	<link rel="canonical" href="{{ canonicalUrl }}" />
 
