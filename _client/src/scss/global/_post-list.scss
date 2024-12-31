@@ -34,10 +34,8 @@
 }
 
 .post-list__excerpt {
-  padding-left: tidy-offset(2);
-
   @media (media(min, md)) {
-    padding-left: tidy-offset-full(2);
+    padding-left: tidy-offset(2);
   }
 }
 

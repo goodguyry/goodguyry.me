@@ -38,15 +38,9 @@
   --site-edge: 1.25rem;
 
   @media (media(min, md)) {
-    --heading-offset: tidy-offset(1);
-
     --site-columns: 12;
     --site-gap: 1.25rem;
     --site-max: 62.5rem;
-  }
-
-  @media (media(min, full)) {
-    --heading-offset: tidy-offset-full(1);
   }
 }
 
