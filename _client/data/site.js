@@ -4,7 +4,7 @@ let domain = 'https://goodguyry.me';
 
 switch (environment) {
   case 'local':
-    domain = 'https://goodguyry.dev';
+    domain = 'http://goodguyry.test';
     break;
   case 'dev':
     domain = 'http://dev.goodguyry.me';
