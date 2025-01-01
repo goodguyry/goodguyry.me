@@ -52,11 +52,11 @@ figure {
 }
 
 a {
-  color: inherit;
+  text-decoration: revert;
 
-  &:hover,
-  &:focus {
-    text-decoration: revert;
+  &,
+  &:visited {
+    color: inherit;
   }
 }
 

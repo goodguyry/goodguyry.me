@@ -46,7 +46,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
+    --cta-color: var(--secondary);
     text-decoration: none;
 
     &::after {
@@ -54,11 +55,12 @@
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
 
     span {
       @include focus-ring;
+      outline-color: var(--cta-color);
     }
   }
 

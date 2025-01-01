@@ -178,3 +178,15 @@ $media-queries: _create-breakpoints();
   position: absolute;
   width: 1px;
 }
+
+/**
+ * Removes link underlines.
+ *
+ * You're being naughty.
+ */
+@mixin remove-helpful-link-underline {
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}

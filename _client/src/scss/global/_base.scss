@@ -82,16 +82,22 @@ h6 {
 }
 
 a {
+  text-decoration: underline;
 
-  &,
-  &:visited {
-    color: inherit;
+  &:hover {
+    text-underline-offset: var(--link--hover--underline-offset, 0.25em);
+  }
+
+  &:focus-visible {
+    outline: var(--link--focus--outline-width, 2px) solid;
+    outline-offset: var(--link--focus--outline-offset, 5px);
     text-decoration: none;
   }
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
+  // Inline links should have a smaller outline.
+  p:has(&),
+  li:has(&) {
+    --link--focus--outline-offset: 2px;
   }
 }
 
@@ -127,4 +133,10 @@ hr {
   background: var(--text-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  // Match the gradient text with a gradient border.
+  a:hover,
+  a:focus-visible {
+    border-image: var(--background-gradient) 1;
+  }
 }

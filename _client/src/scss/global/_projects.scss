@@ -83,8 +83,14 @@
 }
 
 .project__title {
+  // Revert the list style override.
+  --link--focus--outline-offset: initial;
   font-size: rem(24);
   margin-bottom: rem(12);
+
+  a {
+    @include remove-helpful-link-underline;
+  }
 }
 
 .project__description {
