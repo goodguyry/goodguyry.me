@@ -37,6 +37,10 @@
 
   a {
     @include remove-helpful-link-underline;
+
+    &[aria-current=page]:not(:hover,:focus-visible) {
+      text-decoration: overline;
+    }
   }
 }
 
