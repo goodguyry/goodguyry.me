@@ -29,11 +29,8 @@
 }
 
 .site-header__menu {
+  column-gap: rem(25);
   display: flex;
-
-  li:not(:last-of-type) {
-    margin-right: rem(25);
-  }
 
   a {
     @include remove-helpful-link-underline;

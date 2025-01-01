@@ -6,10 +6,12 @@
  */
 
 .post-list {
-  display: grid;
   grid-area: list;
-  grid-gap: rem(50);
   margin-bottom: rem(50);
+
+  > li + li {
+    margin-top: rem(50);
+  }
 }
 
 .post-list__post {
@@ -34,7 +36,7 @@
 
 .post-list__excerpt {
   @media (min-width(md)) {
-    padding-left: tidy-offset(2);
+    padding-left: tidy-offset(1);
   }
 }
 
