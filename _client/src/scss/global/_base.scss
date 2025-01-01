@@ -26,19 +26,21 @@
   --accent-10: rgba(var(--rgb-accent), 0.1);
   --secondary-10: rgba(var(--rgb-secondary), 0.1);
 
-  --background-gradient: linear-gradient(to right, var(--accent-80), var(--secondary-80));
-  --text-gradient: linear-gradient(to right, var(--accent) 0%, var(--secondary) 100%);
+  --background-gradient: linear-gradient(in oklch to right, var(--accent-80), var(--secondary-80));
+  --text-gradient: linear-gradient(in oklch to right, var(--accent) 0%, var(--secondary) 100%);
   --border-radius: 2px;
   --vertical-rhythm: #{rem(24)};
   --clip-distance: 6vw;
   --heading-offset: tidy-offset(1);
 
-  @media (media(min, md)) {
-    --heading-offset: tidy-offset(1);
-  }
+  --site-columns: 8;
+  --site-gap: 0.5rem;
+  --site-edge: 1.25rem;
 
-  @media (media(min, full)) {
-    --heading-offset: tidy-offset-full(1);
+  @media (min-width(md)) {
+    --site-columns: 12;
+    --site-gap: 1.25rem;
+    --site-max: 62.5rem;
   }
 }
 
@@ -53,10 +55,14 @@ body {
   flex-direction: column;
   font-family: typography.$primary;
   font-size: rem(18);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden; // Prevent projects section background overflow in some browsers.
+  text-rendering: optimizeSpeed;
+  text-size-adjust: 100%;
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     font-size: rem(16);
   }
 }
@@ -66,17 +72,32 @@ main {
   margin-bottom: rem(100);
 }
 
-a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
 
-  &,
-  &:visited {
-    color: inherit;
+a {
+  text-decoration: underline;
+
+  &:hover {
+    text-underline-offset: var(--link--hover--underline-offset, 0.25em);
+  }
+
+  &:focus-visible {
+    outline: var(--link--focus--outline-width, 2px) solid;
+    outline-offset: var(--link--focus--outline-offset, 5px);
     text-decoration: none;
   }
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
+  // Inline links should have a smaller outline.
+  p:has(&),
+  li:has(&) {
+    --link--focus--outline-offset: 2px;
   }
 }
 
@@ -112,4 +133,10 @@ hr {
   background: var(--text-gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  // Match the gradient text with a gradient border.
+  a:hover,
+  a:focus-visible {
+    border-image: var(--background-gradient) 1;
+  }
 }

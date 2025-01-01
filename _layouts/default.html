@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-{% include head.html %}
+{% include 'head.html' %}
 
 <body class="{{ page.fileSlug }}">
 	<header role="banner" class="site-header">
@@ -14,7 +14,7 @@
 					class="site-header__nav"
 					aria-label="Main"
 				>
-					<ul class="site-header__menu">
+					<ul class="site-header__menu" role="list">
 						{% for item in nav %}
 							<li>
 								<a

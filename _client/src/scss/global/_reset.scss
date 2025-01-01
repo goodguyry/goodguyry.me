@@ -1,61 +1,82 @@
-/**
- * Reset (Modified to suit my needs)
- * http://meyerweb.com/eric/tools/css/reset/
- * v2.0 | 20110126
+
+/*
+ * Remove all the styles of the "User-Agent-Stylesheet", except for certain
+ * properties necessary for accessibility and/or layout.
+ *
+ * The `:where()` pseudo-class is used to reduce the specificity of `:not()`
+ * so these styles are easily overridden.
+ *
+ * https://elad2412.github.io/the-new-css-reset/
  */
-html, body, div, figure, figcaption, img, hr,
-blockquote, h1, h2, h3, h4, h5, h6, ol, p, pre, ul, li ul, li ol,
-abbr, a, cite, code, em, kbd, li, span, strike, strong, sub, sup,
-main, article, aside, footer, header, nav, section {
+*:where(
+  // 1. Replaced elements.
+  // 2. Omit SVGs so they render as expected.
+  // 3. Lists are reset further down.
+  :not(img, video, audio, use):not(svg, svg *, symbol *):not(ol, ul)
+) {
+  all: unset;
+
+  cursor: revert;
+  display: revert;
+  outline: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+ * Using `:focus-within` prevents smooth scrolling while jumping through browser
+ * in-page search results.
+ *
+ * https://piccalil.li/blog/a-modern-css-reset/
+ */
+@media (prefers-reduced-motion: no-preference) {
+
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+img,
+picture {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  text-decoration: revert;
+
+  &,
+  &:visited {
+    color: inherit;
+  }
+}
+
+ol,
+ul {
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-  box-sizing: border-box;
+
+  /*
+   * Remove list styles on ul, ol elements with a list role, which suggests
+   * default styling will be removed.
+   *
+   * https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html
+   */
+  &[role='list'] {
+    list-style: none;
+  }
 }
 
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-/* HTML5 display-role reset for older browsers */
-main,
-article,
-aside,
-footer,
-header,
-nav,
-section {
+svg {
   display: block;
-}
-
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 400;
-  line-height: normal;
-  text-rendering: optimizeSpeed;
-  text-size-adjust: 100%;
-  width: 100%;
-}
-
-hr {
-  border: 0;
-}
-
-ul,
-ol {
-  list-style-type: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
+  pointer-events: none;
 }

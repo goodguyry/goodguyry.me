@@ -6,11 +6,6 @@ const themes = [
     secondary: '92, 11, 170',
   },
   {
-    name: 'sounders',
-    accent: '32, 102, 0',
-    secondary: '0, 85, 149',
-  },
-  {
     name: 'poop',
     accent: '116, 73, 0',
     secondary: '0, 0, 0',
@@ -19,11 +14,6 @@ const themes = [
     name: 'red-to-brown',
     accent: '181, 0, 1',
     secondary: '120, 78, 0',
-  },
-  {
-    name: 'merica',
-    accent: '181, 0, 1',
-    secondary: '0, 96, 116',
   },
   // Solid colors.
   {

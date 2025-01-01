@@ -14,7 +14,7 @@
   position: relative;
   z-index: 0;
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     padding: rem(50) 0 rem(80) 0;
   }
 
@@ -43,7 +43,7 @@
   justify-content: center;
   margin-bottom: rem(40);
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     @include layout.three-across-grid
   }
 }
@@ -53,22 +53,20 @@
   display: block;
   width: max-content;
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     margin-right: 0;
   }
 }
 
 .project {
-  align-items: center;
   background-color: var(--black-40);
   border-radius: var(--border-radius);
-  display: flex;
   max-width: rem(335);
   min-height: rem(145);
   padding: rem(20) 0;
   text-align: center;
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     max-width: none;
   }
 }
@@ -77,14 +75,20 @@
   @include layout.auto-margins;
   padding: 0 rem(44);
 
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     padding: 0 rem(20);
   }
 }
 
 .project__title {
+  // Revert the list style override.
+  --link--focus--outline-offset: initial;
   font-size: rem(24);
   margin-bottom: rem(12);
+
+  a {
+    @include remove-helpful-link-underline;
+  }
 }
 
 .project__description {

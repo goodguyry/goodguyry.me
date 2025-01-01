@@ -6,20 +6,10 @@
  */
 
 .about {
-  display: grid;
-  grid-gap: rem(20);
   margin-bottom: rem(60);
-
-  @media (media(min, lg)) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .about__content {
   @include typography.rich-text;
   max-width: rem(460);
-
-  @media (media(min, lg)) {
-    max-width: none;
-  }
 }

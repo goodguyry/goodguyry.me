@@ -14,10 +14,10 @@
       margin-bottom: var(--vertical-rhythm);
     }
 
-    @media (media(min, md)) {
+    @media (min-width(md)) {
 
       &:not(figure):not(hr) {
-        tidy-span: 7;
+        width: tidy-span(7);
       }
     }
   }
@@ -51,7 +51,7 @@
   }
 
   figure {
-    @media (media(min, md)) {
+    @media (min-width(md)) {
       align-items: flex-start;
       display: flex;
       justify-content: space-between;
@@ -59,7 +59,7 @@
       pre,
       img,
       blockquote {
-        tidy-span: 8;
+        width: tidy-span(8);
       }
     }
 
@@ -79,10 +79,10 @@
     font-style: italic;
     margin-top: rem(3);
 
-    @media (media(min, md)) {
+    @media (min-width(md)) {
       margin: 0;
       order: 2;
-      tidy-span: 4;
+      width: tidy-span(4);
     }
   }
 
@@ -138,19 +138,15 @@
   }
 
   /**
-   * Full-width, double-lined box with large text
+   * Full-width box with large text.
+   *
+   * @todo Make the border a gradient.
    */
   blockquote {
-    border-left: rem(10) solid var(--accent-80);
-    font-size: rem(20);
-    padding: rem(8) 0 rem(8) rem(8);
-    quotes: none;
+    border-left: rem(8) solid var(--accent-80);
+    font-size: rem(18);
+    padding: rem(8) 0 rem(8) rem(12);
     width: 100%;
-
-    &::before,
-    &::after {
-      content: none;
-    }
 
     // The quote citation
     + figcaption {
@@ -223,8 +219,7 @@
     color: var(--accent);
   }
 
-  // Style file and directory paths as code,
-  //  but without the border
+  // Style file and directory paths as code, but without the border
   code.path {
     border: none;
     color: var(--black);

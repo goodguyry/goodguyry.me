@@ -17,7 +17,7 @@
     min-height: rem(162);
     padding-bottom: var(--clip-distance);
 
-    @media (media(min, full)) {
+    @media (min-width(full)) {
       min-height: rem(186);
     }
   }
@@ -29,18 +29,14 @@
 }
 
 .site-header__menu {
+  column-gap: rem(25);
   display: flex;
 
-  li:not(:last-of-type) {
-    margin-right: rem(25);
-  }
-
   a {
+    @include remove-helpful-link-underline;
 
-    &:focus,
-    &:hover {
-      text-decoration: none;
-      border-bottom: 1px solid;
+    &[aria-current=page]:not(:hover,:focus-visible) {
+      text-decoration: overline;
     }
   }
 }

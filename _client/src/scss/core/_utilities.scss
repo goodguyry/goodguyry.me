@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /**
  * Strip CSS units from a value.
  *
@@ -27,7 +29,7 @@
     @return $px;
   }
 
-  @return _strip-units($px) / $base-value * 1rem;
+  @return math.div(_strip-units($px), $base-value) * 1rem;
 }
 
 /**
@@ -102,12 +104,12 @@ $media-queries: _create-breakpoints();
 /**
  * Retrive prepared media query, or create one from a value.
  *
- * Ex. @media media(min, lg) {}
+ * Ex. @media min-width(lg) {}
  * Ex. @media media(max, 1100) {}
  *
- * @param {string|number}   $minMax The width prefix of the media query.
- * @param {string|number}   $length Key to acess in the $media-queries map, or a number.
- * @return {string|boolean}         The media query string or false if the key doesn't exist.
+ * @param {string}        $minMax The width prefix of the media query.
+ * @param {string|number} $length Key to access in the $media-queries map, or a number.
+ * @return {string|boolean} The media query string or false if the key doesn't exist.
  */
 @function media($minMax, $length) {
   @if ('number' == type-of($length)) {
@@ -122,6 +124,26 @@ $media-queries: _create-breakpoints();
   }
 
   @return map-get($media-queries, $map-key);
+}
+
+/**
+ * Output a min-width media query.
+ *
+ * @param {string|number} $length Key to access in the $media-queries map, or a number.
+ * @return {string|boolean} The media query string or false if the key doesn't exist.
+ */
+@function min-width($length) {
+  @return media(min, $length);
+}
+
+/**
+ * Output a max-width media query.
+ *
+ * @param {string|number} $length Key to access in the $media-queries map, or a number.
+ * @return {string|boolean} The media query string or false if the key doesn't exist.
+ */
+@function max-width($length) {
+  @return media(max, $length);
 }
 
 /**
@@ -155,4 +177,16 @@ $media-queries: _create-breakpoints();
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+/**
+ * Removes link underlines.
+ *
+ * You're being naughty.
+ */
+@mixin remove-helpful-link-underline {
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
 }

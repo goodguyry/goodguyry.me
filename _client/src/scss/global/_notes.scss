@@ -6,7 +6,7 @@
  */
 
 .notes {
-  @media (media(min, md)) {
+  @media (min-width(md)) {
     @include layout.three-across-grid;
     grid-template-areas:
       '. heading heading'
@@ -22,7 +22,7 @@
   margin-right: var(--heading-offset);
   text-align: right;
 
-  @media (media(min, full)) {
+  @media (min-width(full)) {
     margin-bottom: rem(16);
   }
 }

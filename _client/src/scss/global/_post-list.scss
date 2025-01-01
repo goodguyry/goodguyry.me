@@ -6,10 +6,12 @@
  */
 
 .post-list {
-  display: grid;
   grid-area: list;
-  grid-gap: rem(50);
   margin-bottom: rem(50);
+
+  > li + li {
+    margin-top: rem(50);
+  }
 }
 
 .post-list__post {
@@ -21,23 +23,20 @@
   font-size: clamp(rem(30), 8vw, rem(36));
   margin-bottom: rem(12);
 
-  &.gradient-text {
+  a {
+    text-decoration: none;
 
-    a:hover,
-    a:focus {
+    &:hover,
+    &:focus-visible {
       border-bottom: 2px solid;
-      border-image: var(--background-gradient) 1;
       outline: none;
-      text-decoration: none;
     }
   }
 }
 
 .post-list__excerpt {
-  padding-left: tidy-offset(2);
-
-  @media (media(min, md)) {
-    padding-left: tidy-offset-full(2);
+  @media (min-width(md)) {
+    padding-left: tidy-offset(1);
   }
 }
 

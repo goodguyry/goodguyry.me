@@ -24,9 +24,8 @@
     content: '';
     display: block;
     height: calc(100% - calc(var(--cta-offset) / 2));
-    left: 0;
+    inset: 0;
     position: absolute;
-    top: 0;
     transform: translate(calc(var(--cta-offset) / 2), calc(var(--cta-offset) / 2));
     width: calc(100% - calc(var(--cta-offset) / 2));
     z-index: -2;
@@ -46,7 +45,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
+    --cta-color: var(--secondary);
     text-decoration: none;
 
     &::after {
@@ -54,11 +54,12 @@
     }
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
 
     span {
       @include focus-ring;
+      outline-color: var(--cta-color);
     }
   }
 

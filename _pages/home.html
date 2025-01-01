@@ -23,7 +23,7 @@ permalink: /
 		<div class="container">
 			<h2 class="projects__heading heading__section">Select Projects</h2>
 
-			<ul class="projects__list">
+			<ul class="projects__list" role="list">
 				{% for project in projects %}
 					<li class="project">
 						<article class="project__content">
@@ -45,7 +45,7 @@ permalink: /
 		<section class="notes container">
 			<h2 class="notes__heading heading__section">Notes</h2>
 
-			{% include post-list.html, count: 4 %}
+			{% include 'post-list.html', count: 4 %}
 		</section>
 	{% endif %}
 </article>
